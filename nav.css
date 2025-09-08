@@ -21,7 +21,7 @@ header {
 }
 
 .nav a {
-  padding: 10px 0px;
+  padding: 10px 12px;
   border-radius: 12px;
 }
 .nav a:hover { background: #D4E0ED; }
