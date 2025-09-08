@@ -20,25 +20,19 @@ header {
   white-space: nowrap;
 }
 
-.brand span {
-  opacity: .6;
-  font-weight: 500;
-}
-
 .nav a {
   padding: 10px 12px;
   border-radius: 12px;
 }
-
-.nav a:hover {
-  background: #D4E0ED;
-}
+.nav a:hover { background: #D4E0ED; }
 
 /* Hide hamburger by default (desktop) */
 .menu-toggle {
   display: none;
   background: transparent;
   border: 0;
+  padding: 10px;
+  border-radius: 12px;
 }
 
 /* Hamburger icon */
@@ -66,10 +60,7 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    border-radius: 12px;
   }
-  .menu-toggle:hover { background: #D4E0ED; }
 
   header .nav { position: relative; min-height: 56px; }
 
@@ -87,13 +78,9 @@ header {
     padding: 10px;
     margin-top: 8px;
   }
-  #primary-nav a {
-    padding: 12px;
-    border-radius: 8px;
-  }
+  #primary-nav a { padding: 12px; border-radius: 8px; }
   #primary-nav a:hover { background: #D4E0ED; }
 
-  #primary-nav.open {
-    display: flex !important;
-  }
+  #primary-nav.open { display: flex !important; }
+
 }
