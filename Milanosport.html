@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milanosport — UX/UI Case Study</title>
+  <meta name="description" content="Compact UX/UI case study for the Milanosport website redesign — overview, research, IA, wireframes, final design, outcomes." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#666;
+      --accent:#B99A5B; /* matches your Nexus page accent */
+      --accent-2:#f3ecdd;
+      --card:#f7f7f8;
+      --radius:16px;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --maxw:1100px;
+      --wide:1280px;
+      --card-hover:#A8BBCE;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:var(--bg)}
+    img{max-width:100%; display:block; border-radius:12px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+
+    /* Header */
+    header{position:sticky; top:0; background:rgba(255,255,255,.85); backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid #eee; z-index:20}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{font-weight:700}
+    .nav a{padding:10px 12px; border-radius:12px}
+    .nav a:hover{background:#D4E0ED}
+
+    /* Progress bar */
+    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:30}
+
+    /* Hero */
+    .hero{padding:32px 0 8px}
+    .breadcrumbs{font-size:13px; color:var(--muted)}
+    .breadcrumbs a{color:var(--muted)}
+    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:8px 0 8px}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:14px}
+    .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee}
+
+    /* Mast image */
+    .mast{margin:16px auto; max-width:var(--wide)}
+
+    /* Layout: content + toc */
+    .layout{display:grid; grid-template-columns:1fr; gap:28px}
+    @media (min-width:1060px){
+      .layout{grid-template-columns: 1fr 260px}
+    }
+    .content{min-width:0}
+    .toc{position:sticky; top:84px; align-self:start; display:none}
+    @media (min-width:1060px){.toc{display:block}}
+    .toc h4{margin:8px 0; font-size:13px; color:#444; }
+    .toc a{display:block; padding:6px 0; font-size:14px; color:var(--muted)}
+    .toc a.active{color:var(--accent); font-weight:600}
+
+    /* Sections */
+    section{padding:28px 0; border-top:1px solid #eee}
+    section:first-of-type{border-top:none}
+    .section-title{font-size:22px; margin:0 0 10px}
+    figure{margin:14px 0}
+    figcaption{font-size:13px; color:var(--muted); margin-top:6px}
+
+    /* Callouts & grids */
+    .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    @media (min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    /* Buttons */
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff}
+    .btn:hover{background:var(--card-hover);color:white;border:1px solid var(--card-hover);}
+    .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:all .25s ease}
+    .btn-arrow:hover::after{opacity:1; transform:translateX(0)}
+
+    footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><a href="index.html" style="padding:0; background:none;">Alessandra Sgariglia</a></div>
+      <nav class="links">
+        <a href="index.html">My projects</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="breadcrumbs"><a href="index.html">My projects</a> / Milanosport — Website Redesign</div>
+      <h1>Milanosport — Website Redesign</h1>
+      <div class="meta">
+        <span class="pill" style="color:var(--accent);border:1px solid var(--accent);">UX/UI</span>
+        <span class="pill">Usability</span>
+        <span class="pill">Accessibility</span>
+      </div>
+    </div>
+
+    <!-- Mast / Cover image -->
+    <figure class="mast">
+      <img src="imgs/cover_milanosport.png" alt="Milanosport redesign cover" />
+      <figcaption>Figure 1. Milanosport — redesigned UI overview.</figcaption>
+    </figure>
+
+    <!-- Layout: Content + ToC -->
+    <div class="layout">
+      <article class="content" id="content">
+        <section id="overview">
+          <h2 class="section-title">Overview</h2>
+          <p>Milanosport is the Municipality of Milan’s platform for 24 sport facilities. We redesigned the website to fix usability and accessibility issues, streamline booking, and align the interface with web standards.</p>
+          <h4>Timeline</h4>
+          <img src="imgs/Milanosport/timeline.png" alt="Timeline of the project" style="margin-bottom:2%;"/>
+          <div class="grid cols-2">
+            <div class="callout"><strong>My role</strong><br/>
+              Equally contributed to all the phases of the project
+            </div>
+            <div class="callout"><strong>Tools</strong><br/>
+              Figma
+            </div>
+          </div>
+        </section>
+
+        <section id="problem">
+          <h2 class="section-title">Problem</h2>
+          <ul>
+            <li>Confusing information architecture and inconsistent UI.</li>
+            <li>Booking was fragmented (16 clicks, multiple pages).</li>
+            <li>Accessibility gaps: poor contrast, missing alt text, overcrowded pages.</li>
+          </ul>
+          <figure>
+            <img src="imgs/Milanosport/before.png" alt="Before redesign screenshots" />
+            <img src="imgs/Milanosport/before2.png" alt="Before redesign screenshots" />
+            <img src="imgs/Milanosport/before3.png" alt="Before redesign screenshots" />
+            <figcaption>Figure 2. Before — inconsistent navigation and crowded pages.</figcaption>
+          </figure>
+        </section>
+
+        <section id="goals">
+          <h2 class="section-title">Goals</h2>
+          <ul>
+            <li>Reorganize content and simplify navigation.</li>
+            <li>Design a clear end-to-end booking flow.</li>
+            <li>Improve accessibility and visual coherence with a design system.</li>
+          </ul>
+        </section>
+
+        <section id="research">
+          <h2 class="section-title">Research & Insights</h2>
+          <h4>Usability Heuristic Evaluation</h4>
+          <p>Issues across visibility of status, consistency, error prevention, minimalist design, help, and accessibility.</p>
+          <img src="imgs/Milanosport/heuristic.png" alt="The heuristic evaluation we did of the current website" style="border-radius:0;">
+
+          <h4>Competitor Analysis</h4>
+          <p>We tried to understand the main direct and indirect competitors of Milano Sport, and we analyzed the main services offered by them to see how Milano Sport is performing and in which areas it is lagging behind.</p>
+          <img src="imgs/Milanosport/competitors.png" alt="Analysis of the competitors" style="border-radius:0;">
+
+          <h4>Competitor Analysis & Benchmarking</h4>
+          <p>We found the following and identified the potential improvement areas for Milano Sport:</p>
+          <ul>
+            <li><strong>Consistency</strong> and <strong>coherence</strong> is the parameter that the competitors excel at and should be improved in Milano Sport</li>
+            <li>Airbnb and Trainline are very usable and straightforward, due to <strong>seamless and simple navigation, clear call to actions</strong> and minimalist design</li>
+            <li>Milano Sport perform poorer in level of <strong>error-proof, minimalism, readability, and ease of navigation</strong> and can take inspiration from their simplicity, clarity and modern design language</li>
+          </ul>
+          <img src="imgs/Milanosport/benchmarking.png" alt="Benchmarking" style="border-radius:0;">
+
+          <h4>Comparison summary</h4>
+          <p>We tried to schematize all the competitors and benchmarking brands analyzed based on the unique features and usability aspects.</p>
+          <img src="imgs/Milanosport/comparison.png" alt="Comparison of all competitors and benchmarked brands" style="border-radius:0;">
+
+          <h4>User personas</h4>
+          <p>We identified five personas based on the different features and services available on the competitors:</p>
+          <img src="imgs/Milanosport/personas.png" alt="The user personas" style="border-radius:0;">
+
+          <h4>Task matrix</h4>
+          <p>For all the personas we identified which tasks were relevant:</p>
+          <img src="imgs/Milanosport/task.png" alt="The task matrix" style="border-radius:0;">
+
+          <h4>Cognitive walkthrough</h4>
+          <p>We identified four main tasks and subtasks, and we analyzed the flow and the number of clicks required of the current Milano Sport website for each one of them:</p>
+          <img src="imgs/Milanosport/cognitive.png" alt="The cognitive walkthrough" style="border-radius:0;">
+
+        </section>
+
+        <section id="ia">
+          <h2 class="section-title">Information Architecture</h2>
+          <p>We simplified the structure of the website and added new sections, such as profile and routes.</p>
+          <img src="imgs/Milanosport/ia.png" alt="Information architecture map" />
+        </section>
+
+        <section id="wireframes">
+          <h2 class="section-title">Wireframes</h2>
+          <p>Since there were many usability issues in Milanosport, including but not limited to accessibility, consistency, and user control and freedom, we decided to design it from scratch. To do so, we created wireframes based on our information architecture.</p>
+          <img src="imgs/Milanosport/wireframes.png" alt="The wireframes" style="border-radius:0;">
+        </section>
+
+        <section id="design">
+          <h2 class="section-title">Design system</h2>
+
+          <h4>Logo</h4>
+          <p>We designed a new logo in a more modern and minimal style that is more legible in small sizes.</p>
+          <img src="imgs/Milanosport/logo.png" alt="New milanosport logo" style="border-radius:0; width:40%;"/>
+          <h4>Colors</h4>
+          <p>We used Stark app to evaluate and improve the contrast while considering different color blindness conditions.</p>
+          <img src="imgs/Milanosport/colors.png" alt="New milanosport colors" style="border-radius:0; width:40%;"/>
+
+          <h4>Typography</h4>
+          <p>We chose this Atkinson Hyperlegible because in our personas we have users who have difficulties in reading, therefore we wanted to make the website accessible to everyone.</p>
+          <img src="imgs/Milanosport/type.png" alt="New milanosport typography" style="border-radius:0;"/>
+
+          <h4>Icons</h4>
+          <p>We recreated the icons for a unified visual language.</p>
+          <img src="imgs/Milanosport/icons.png" alt="New milanosport icons" style="border-radius:0; width:50%;"/>
+
+          <h4>Buttons, selections & text inputs</h4>
+          <p>We tried to visually give feedback to the user with different states.</p>
+          <img src="imgs/Milanosport/buttons.png" alt="New milanosport buttons, selections & text inputs" style="border-radius:0;"/>
+
+        </section>
+
+        <section id="outcomes">
+          <h2 class="section-title">Redesign</h2>
+          <h4>Home page</h4>
+          <p>We simplified the overall look and the content for the home. We organized the content in terms of their hierarchy and importance to make it more understandable and easy to use. We wanted to highlight the centers and their locations, that is why we added a interactive map, where the users can access the important information easily.</p>
+          <img src="imgs/Milanosport/home.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+          <h4>Centers page</h4>
+          <p>It was hard to find the centers page before. That is why, we made it a part of the navigation bar to ease the access. We added filters and an interactive map to make the users find the relevant center faster and more efficiently.</p>
+          <img src="imgs/Milanosport/centers.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+          <h4>Specific center page</h4>
+          <p>We highlighted the booking call to action and carried important information (e.g. working hours, sports and facilities) to the top, making them easily reachable. We added reviews and comments and we embedded the booking process in the same page.</p>
+          <img src="imgs/Milanosport/specific.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+          <h4>Events page</h4>
+          <p>We added images, price, date, place and a short description for events to give information in a compact and concise way without tiring the user. We also added filters so that the users can list the relevant events for them. We removed events that were not relevant to sport activities, and improved the single events page.</p>
+          <img src="imgs/Milanosport/events.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+          <h4>Summercamps page</h4>
+          <p>The campus page had a name that wasn’t clear and straightforward, therefore we decided to change the title to “summercamps”. The information present on the page was redundant and not structured, therefore we simplified it and created a hierarchy, making the available options very clear.</p>
+          <img src="imgs/Milanosport/summer.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+          <h4>New features</h4>
+          <h5>Personal profile</h5>
+          <p>We decided to add a profile, where the user could check their upcoming and past bookings and where they can manage all their personal data. We also implemented a review system for the past bookings, which will appear in the evaluation of the sport centers.</p>
+          <h5>Routes page</h5>
+          <p>Since Milanosport is a municipality website, we took inspiration from Spor Istanbul, and implemented suggestions about sport routes around the city of Milan catered to their physical activity preferences.</p>
+          <img src="imgs/Milanosport/new.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+          <h4>Summary</h4>
+          <p>For each task we significantly reduced the number of clicks and pages visited, therefore simplifying the navigation flow.</p>
+          <img src="imgs/Milanosport/summary.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+          <h4>Accessibility</h4>
+          <p>We tested our prototype considering different types of color blindness conditions using the Stark app.</p>
+          <img src="imgs/Milanosport/access.png" alt="comparison of old homepage with new one" style="border-radius:0;"/>
+
+        </section>
+
+        <section id="prototype">
+          <h2 class="section-title">Prototype</h2>
+          <p><a class="btn btn-arrow" href="https://www.figma.com/proto/yqXNSnzRU0b9U369VcUS2g/Milanosport?page-id=0%3A1&node-id=1-1264&viewport=13%2C293%2C0.1&t=7e4tESL1m22uF6A8-1&scaling=scale-down-width&content-scaling=fixed" target="_blank" rel="noreferrer">Open interactive prototype</a></p>
+        </section>
+
+        <section id="credits">
+          <h2 class="section-title">Credits</h2>
+          <p>
+            <strong>Course:</strong> Ergonomics applied to the design of usable web pages and apps (part of MSc in Digital & Interaction Design at Politecnico di Milano)<br>
+            <strong>Professors:</strong> Roberto Dadda, Paolo Negri<br>
+            <strong>Team:</strong> Duru Erdem, Alessandra Sgariglia, Yaren Yavuz<br>
+          </p>
+        </section>
+      </article>
+
+      <!-- Table of contents -->
+      <aside class="toc" id="toc">
+        <h4>On this page</h4>
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#goals">Goals</a>
+        <a href="#research">Research & Insights</a>
+        <a href="#ia">Information Architecture</a>
+        <a href="#wireframes">Wireframes</a>
+        <a href="#design">Final Design</a>
+        <a href="#outcomes">Redesign</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#credits">Credits</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="btn" href="index.html">← Back to my projects</a>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress
+    const bar = document.getElementById('progress');
+    document.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = scrolled + '%';
+    });
+
+    // TOC active link
+    const links = [...document.querySelectorAll('#toc a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const activate = () => {
+      let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
+      if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
+      links.forEach(l => l.classList.remove('active'));
+      links[idx]?.classList.add('active');
+    };
+    document.addEventListener('scroll', activate, {passive:true});
+    activate();
+  </script>
+</body>
+</html>

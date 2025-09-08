@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luma — Case Study</title>
+  <meta name="description" content="Case study page for Luma — a personal dome immersive experience translating travel memories into light and sound." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#666;
+      --accent:#B99A5B;
+      --card:#f7f7f8;
+      --radius:16px;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --maxw:1100px;
+      --wide:1280px;
+      --card-hover:#A8BBCE;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:var(--bg)}
+    img{max-width:100%; display:block; border-radius:12px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+
+    header{position:sticky; top:0; background:rgba(255,255,255,.85); backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid #eee; z-index:20}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{font-weight:700}
+    .nav a{padding:10px 12px; border-radius:12px}
+    .nav a:hover{background:#D4E0ED}
+
+    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:30}
+
+    .hero{padding:32px 0 8px}
+    .breadcrumbs{font-size:13px; color:var(--muted)}
+    .breadcrumbs a{color:var(--muted)}
+    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:8px 0 8px}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:14px}
+    .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee}
+
+    .mast{margin:16px auto; max-width:var(--wide)}
+
+    .layout{display:grid; grid-template-columns:1fr; gap:28px}
+    @media (min-width:1060px){.layout{grid-template-columns: 1fr 260px}}
+    .content{min-width:0}
+    .toc{position:sticky; top:84px; align-self:start; display:none}
+    @media (min-width:1060px){.toc{display:block}}
+    .toc h4{margin:8px 0; font-size:13px; color:#444}
+    .toc a{display:block; padding:6px 0; font-size:14px; color:var(--muted)}
+    .toc a.active{color:var(--accent); font-weight:600}
+
+    section{padding:28px 0; border-top:1px solid #eee}
+    section:first-of-type{border-top:none}
+    .section-title{font-size:22px; margin:0 0 10px}
+    figure{margin:14px 0}
+    figcaption{font-size:13px; color:var(--muted); margin-top:6px}
+
+    .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    @media (min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff}
+    .btn:hover{background:var(--card-hover);color:white;border:1px solid var(--card-hover);}
+    .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:all .25s ease}
+    .btn-arrow:hover::after{opacity:1; transform:translateX(0)}
+
+    footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><a href="index.html" style="padding:0; background:none;">Alessandra Sgariglia</a></div>
+      <nav class="links">
+        <a href="index.html">My projects</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="breadcrumbs"><a href="index.html">My projects</a> / Luma — Personal Dome Experience</div>
+      <h1>Luma — Personal Dome Experience</h1>
+      <div class="meta">
+        <span class="pill" style="color:var(--accent);border:1px solid var(--accent);">Interaction Design</span>
+        <span class="pill">Exhibition Design</span>
+      </div>
+    </div>
+
+    <figure class="mast">
+      <img src="imgs/cover_luma.png" alt="Luma installation cover" />
+    </figure>
+
+    <div class="layout">
+      <article class="content" id="content">
+        <section id="overview">
+          <h2 class="section-title">Overview</h2>
+          <p>Luma is an immersive installation that lets people re‑live a travel memory inside a personal dome (an umbrella). Colors extracted from a user’s photo are translated into light and sound, creating a calm, meditative space. In shared settings, domes can interact so that memories “contaminate” one another, forming a collective experience.</p>
+          <div class="grid cols-2">
+            <div class="callout"><strong>My role</strong><br/>
+              The whole group contributed equally to the whole process of the creation and development of this project
+            </div>
+            <div class="callout"><strong>Tools</strong><br/>
+              <ul>
+                <li>Figma</li>
+                <li>Arduino/ESP32</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="concept">
+          <h2 class="section-title">Concept definition</h2>
+          <p>Rooted in the metaphor of the umbrella as a personal dome, Luma explores how light and sound can embody memory. Photos become <em>palettes</em>, not pictures, preserving intimacy while evoking place. When multiple domes meet, their color fields blend—making memory sharing visible and felt.</p>
+          <h4>Our process</h4>
+          <figure>
+            <img src="imgs/Luma/process.png" alt="Umbrella dome concept diagram" style="margin:5% 0 5% 0;"/>
+          </figure>
+          <h4 style="margin-top:8%;">Our approach</h4>
+          <p>As a project we decided to use as a prototyping approach the <strong>Research through Design</strong> approach, which consists in a way to experiment with future practices and experiences using objects that might be.</p>
+          <p>This way we aimed at researching the correlation between feelings experienced while traveling and the recall of these feelings through colors, in a personal and meditative space</p>
+        </section>
+
+        <section id="prototype">
+          <h2 class="section-title">Prototyping</h2>
+          <p>The first prototype we built was structured using the following hardware:
+            <ul>
+              <li>Arduino Uno - to manage all the connections and the logic behind each interaction.</li>
+              <li>Powerbank - to make the umbrella portable and allow the movement of the users.</li>
+              <li>Accellerometer - to detect the picking up of the umbrella and the twisting interaction.</li>
+              <li>Proximity sensor - to detect the presence of a second umbrella.</li>
+              <li>LED strips - that would function as the main interfact during the interaction.</li>
+            </ul>
+          </p>
+
+          <figure>
+            <img src="imgs/Luma/prototype_1.png" alt="the structure of the prototype" />
+          </figure>
+
+          <div class="grid cols-2">
+            <figure>
+              <img src="imgs/Luma/umbrella1.png" alt="Umbrella protoype photo" />
+            </figure>
+            <figure>
+              <img src="imgs/Luma/test1.png" alt="Umbrella protoype photo" />
+            </figure>
+          </div>
+
+          <h4>Image processing</h4>
+          <p>To process the images and transform them into the colors that would appear in the umbrella, we used sample images that would represent the ones that people could upload in an ideal scenario. The image would then be scaled and through a program we would detect the overall distribution of RGB colors, which would show before the twirling motion. After the twirling motion, the image would be divided into four sections and the average color of each section would then be represented in the umbrella LEDs.</p>
+          <figure>
+            <img src="imgs/Luma/processing.png" alt="The image processing process"/>
+          </figure>
+        </section>
+
+        <section id="testing">
+          <h2 class="section-title">User Testing</h2>
+          <h4>Round 1 (8 users)</h4>
+          <p>The research questions we wanted to answer with our prototype were the following:
+            <ul>
+              <li>Does the action of twirling the umbrella feel natural to users?</li>
+              <li>Do users associate colors to images?</li>
+              <li>Do users understand the interaction between the two umbrellas getting close to each other?</li>
+            </ul>
+          </p>
+          <p style="margin-top:8%;">To test the previous questions, we structured the interaction flow of the first exhibition in the following way:</p>
+          <figure>
+            <img src="imgs/Luma/interaction1.png" alt="Interaction storyboard" />
+          </figure>
+          <p style="margin-top:8%;">And decided to structure the testing session in the following way:</p>
+          <figure>
+            <img src="imgs/Luma/test_1.png" alt="User testing" />
+          </figure>
+
+          <p style="margin-top:8%;">Through the observation of natural interaction of users in the environment and a questionnaire after the experience we discovered the following opportunities:
+            <figure>
+              <img src="imgs/Luma/problems.png" alt="Interaction storyboard" />
+            </figure>
+          </p>
+
+          <h4 style="margin-top:8%;">Round 2 (16 users)</h4>
+          <p>To solve some of the problems we encountered during the first testing session we decided to integrate the following changes in the prototype:
+            <ul>
+              <li>We decided to use a <strong>ESP32</strong> board because:
+                <ul>
+                  <li>Compact dimensions - to mount it on the umbrella and leave ease of movement</li>
+                  <li>Wi-Fi - to send info remotely between user testing and not disrupt the test by having to connect the cable every time</li>
+                  <li>Bluetooth - to sense the proximity with another umbrella</li>
+                </ul>
+              </li>
+              <li><strong>Longer cables</strong> because:
+                <ul>
+                  <li>To connect everything in a solid way to allow actions like twirling (hidden not to make user worry of breaking prototype).</li>
+                </ul>
+              </li>
+              <li>We <strong>covered the inside of the umbrella with cotton</strong> because:
+                <ul>
+                  <li>it would help diffuse the lights of the LEDs</li>
+                  <li>it would help hide the hardware (which was intimidating for some users)</li>
+                </ul>
+              </li>
+              <li>We created a <strong>path to follow</strong> during the interaction because:
+                <ul>
+                  <li>most of our users stayed still in the room during the user testing</li>
+                  <li>to guide the user on two sides of the room moving towards the center of the room where the second umbrella interaction will have place</li>
+                </ul>
+              </li>
+            </ul>
+          </p>
+
+            <img src="imgs/Luma/prototype_2.png" alt="User testing" style="border-radius:0;"/>
+          </figure>
+
+          <figure>
+            <img src="imgs/Luma/new.png" alt="User testing"/>
+          </figure>
+
+          <h4 style="margin-top:8%;">The new integrated interactions</h4>
+          <figure>
+            <img src="imgs/Luma/action1.png" alt="interactions scheme" style="width:100%;"/>
+          </figure>
+          <p>At the beginning of the experience a LED turning around the circumference of the umbrella would prompt the user to twirl it.</p>
+          <figure>
+            <img src="imgs/Luma/action2.png" alt="interactions scheme" style="width:100%;"/>
+          </figure>
+          <p>After the twirl the colors of the personal image would continue spinning around the umbrella.</p>
+          <figure>
+            <img src="imgs/Luma/action3.png" alt="interactions scheme" style="width:100%;"/>
+          </figure>
+          <p>When one umbrella would approach another one it would get contaminated with the other's colors.</p>
+
+          <h4>New questions</h4>
+          <p>The new set of research questions we wanted to answer with our prototype in this testing session were the following:
+            <ul>
+              <li>Are the general interactions such as the new twirl and blinking understood by users?</li>
+              <li>Is there a correlation between the feeling of the memory and colors?</li>
+              <li>Do users understand the interaction between the two umbrellas getting close to each other (considering the path)?</li>
+            </ul>
+          </p>
+
+          <p style="margin-top:8%;">To test the previous questions, we structured the interaction flow of the second exhibition in the following way:</p>
+          <figure>
+            <img src="imgs/Luma/new_interaction_flow.png" alt="Interaction storyboard" />
+          </figure>
+
+          <h4 style="margin-top:8%;">The setting of the testing session</h4>
+          <p>The testing session was conducted in a Politecnico di Milano's laboratory space (Edme Lab), that allowed us to create a meditative space, by projecting the looping video of rain falling on the three walls of a small room, and add the relaxing sound of rain during the whole experience.</p>
+          <figure>
+            <img src="imgs/Luma/setting.png" alt="The setting of the user testing" style="width:100%;"/>
+          </figure>
+
+          <figure>
+            <img src="imgs/Luma/testing.png" alt="Photos during the user testing" style="width:100%;"/>
+          </figure>
+
+          <h4 style="margin-top:8%;">Storyboard of the interaction</h4>
+          <p>These are the main steps of how the interactive part of this project was conducted during this second testing session.</p>
+          <figure>
+            <img src="imgs/Luma/storyboard.png" alt="Storyboard of the interaction" />
+            <figcaption>Floor path guiding domes to meet.</figcaption>
+          </figure>
+        </section>
+
+        <section id="ideal">
+          <h2 class="section-title">Ideal Scenario</h2>
+          <p>After the second, and last testing session we imagined the ideal scenario in which Luma would be used: in a public space, such as an exhibition, keeping the possibility of the user to experiment a personal or collective experience, based on their moods and wants. </p>
+          <figure>
+            <img src="imgs/Luma/ideal.png" alt="Ideal scenario" />
+          </figure>
+          <h4 style="margin-top:8%;">Interaction flow</h4>
+          <p>For the ideal interaction flow we integrated some of the ideas that were collected during the second testing's interviews and questionnaire.</p>
+          <figure>
+            <img src="imgs/Luma/ideal_interaction.png" alt="Ideal scenario interaction flow" />
+          </figure>
+        </section>
+
+        <section id="credits">
+          <h2 class="section-title">Credits</h2>
+          <p><strong>Course:</strong> Embodied Interaction Studio (part of MSc in Digital & Interaction Design at Politecnico di Milano)<br>
+          <strong>Professors:</strong> Fiammetta Costa, Carlo Emilio Standoli<br>
+          <strong>Team:</strong> Camila Contreras, Francesco Scaramuzzi, Alessandra Sgariglia, Sara Sorrentino, Andrea Villarreal<br>
+          </p>
+
+        </section>
+      </article>
+
+      <aside class="toc" id="toc">
+        <h4>On this page</h4>
+        <a href="#overview">Overview</a>
+        <a href="#concept">Concept</a>
+        <a href="#prototype">Prototyping</a>
+        <a href="#testing">User Testing</a>
+        <a href="#ideal">Ideal Scenario</a>
+        <a href="#credits">Credits</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="btn" href="index.html">← Back to my projects</a>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('progress');
+    document.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = scrolled + '%';
+    });
+
+    const links = [...document.querySelectorAll('#toc a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const activate = () => {
+      let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
+      if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
+      links.forEach(l => l.classList.remove('active'));
+      links[idx]?.classList.add('active');
+    };
+    document.addEventListener('scroll', activate, {passive:true});
+    activate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alessandra Sgariglia — Portfolio</title>
+  <meta name="description" content="UX & Interaction Designer portfolio — projects, skills, and contact." />
+  <style>
+    /* ====== Base ====== */
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#666;
+      --accent:#7997b5;
+      --accent-2:#dcecfc;
+      --card:#f7f7f8;
+      --radius:16px;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --maxw:1100px;
+      --card-hover:#A8BBCE;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:auto;padding:24px}
+
+    /* ====== Header / Nav ====== */
+    header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #eee; z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:700;}
+    .brand span{opacity:.6;font-weight:500}
+    .nav a{padding:10px 12px;border-radius:12px}
+    .nav a:hover{background: #D4E0ED;}
+
+    /* ====== Hero ====== */
+    .hero{padding:64px 24px 24px}
+    .hero .inner{max-width:900px;margin:0;text-align:left}
+    h1{font-size:clamp(28px, 4vw, 44px);line-height:1.15;margin:10px 0 12px;}
+    .tag{display:inline-block;background:var(--accent-2);color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:600;margin-bottom:12px}
+    .lead{font-size:clamp(18px, 2.2vw, 22px);color:#2a2a2a;max-width:100%}
+
+    /* ====== Sections ====== */
+    section{padding:40px 0}
+    .section-title{font-size:22px;margin:0 0 16px}
+    .muted{color:var(--muted)}
+
+    /* ====== Projects grid ====== */
+    .grid{
+      display:grid;
+      gap:18px;
+      grid-auto-flow: row;
+      align-items: stretch;
+    }
+    @media (max-width: 679px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    @media (min-width:680px) and (max-width:999px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width:1000px){
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* The grid children are the outer links */
+    .grid > a.card-link{
+      display:block;
+      grid-column:auto;
+      min-width:0;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      transition: background-color 0.3s ease; /* smooth transition */
+    }
+    .thumb{aspect-ratio:16/9;background:#ddd}
+    .card-body{padding:16px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .pill{display:inline-block;font-size:14px;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid #B99A5B;margin-right:6px}
+    .card-footer{padding:12px 16px;border-top:1px solid #eee;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:0;
+      border:0;
+      background:transparent;
+      font-weight:600;
+    }
+    .btn:hover{background:transparent; border:1px solid var(--card-hover);}
+    .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:transform .25s ease, opacity .25s ease;}
+    .btn-arrow:hover::after{opacity:1; transform:translateX(0)}
+
+    .card-link { text-decoration:none; color:inherit; }
+    .card-link .btn { pointer-events:none; } /* whole card is the link */
+    .card-link:hover .card {background-color: var(--card-hover);}
+    .card-link:hover .btn-arrow::after,.card-link:focus-visible .btn-arrow::after{opacity:1;transform:translateX(0);}
+
+    /* ====== About / Skills ====== */
+    .about{display:grid;gap:24px}
+    @media (min-width:860px){.about{grid-template-columns:1.2fr .8fr}}
+    .badge{background:#111;color:#fff;border-radius:999px;padding:4px 10px;font-size:12px;display:inline-block}
+    .list{display:flex;flex-wrap:wrap;gap:8px}
+
+    /* ====== Contact ====== */
+    .contact-row{display:flex;flex-wrap:wrap;gap:10px}
+    .contact a{border:1px solid #e7e7e9;border-radius:12px;padding:10px 14px;background:#fff}
+    .contact a:hover {
+      background: var(--card-hover);
+    }
+
+    /* ====== Footer ====== */
+    footer{padding:24px 0 40px;color:var(--muted);border-top:1px solid #eee}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Alessandra Sgariglia</div>
+      <nav class="links">
+        <a href="index.html" style="font-weight:600; color:#B99A5B;">My projects</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Masthead -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <h1 style="width:100%;">I create digital moments that jump off the screen—making people stop, smile, and think.</h1>
+      <p class="lead">Graphic/Creative Direction roots, now crafting humane and more-than-human experiences across different media and formats.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="wrap">
+    <h2 class="section-title">My projects</h2>
+    <div class="grid">
+
+      <!-- Card 1 -->
+      <a href="Nexus.html" rel="noreferrer" class="card-link">
+        <article class="card">
+          <img class="thumb" src="imgs/cover_nexus.png" alt="Project cover" />
+          <div class="card-body">
+            <h3>Nexus — An Immersive Installation</h3>
+            <p>An interactive installation that imagines a new way to reconnect with the wounded ecosystem in order to raise awareness of the interconnectedness of all entities.</p>
+            <div class="list">
+              <span class="pill" style="background-color:var(--card);">Interaction Design</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p><span class="btn btn-arrow">Discover more</span></p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="Milanosport.html" rel="noreferrer" class="card-link">
+        <article class="card">
+          <img class="thumb" src="imgs/cover_milanosport.png" alt="Project cover" />
+          <div class="card-body">
+            <h3>Milanosport — Website Redesign</h3>
+            <p>Usability- and ergonomics-led redesign of Milan’s public sports service: clearer navigation, smoother booking, better accessibility.</p>
+            <div class="list">
+              <span class="pill" style="background-color:var(--card);">UX/UI</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p><span class="btn btn-arrow">Discover more</span></p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="Luma.html" rel="noreferrer" class="card-link">
+        <article class="card">
+          <img class="thumb" src="imgs/cover_luma.png" alt="Project cover" />
+          <div class="card-body">
+            <h3>Luma — Personal Dome Experience</h3>
+            <p>An installation that turns a travel photo into a calming colorscape with rain visuals and sound. In shared rooms, memories mingle to co-create new ones.</p>
+            <div class="list">
+              <span class="pill" style="background-color:var(--card);">Interaction Design</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p><span class="btn btn-arrow">Discover more</span></p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="AirPal.html" rel="noreferrer" class="card-link">
+        <article class="card">
+          <img class="thumb" src="imgs/cover_airpal.png" alt="Project cover" />
+          <div class="card-body">
+            <h3>AirPal — Urban Wellbeing Companion</h3>
+            <p>A friendly companion that tracks your “health battery” against air quality; when it drains, it nudges you to recharge in nearby green areas.</p>
+            <div class="list">
+              <span class="pill" style="background-color:var(--card);">UX/UI</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p><span class="btn btn-arrow">Discover more</span></p>
+          </div>
+        </article>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="wrap contact">
+    <h2 class="section-title">Contacts</h2>
+    <p class="muted">Say hi or tell me about a project you would like to build together.</p>
+    <div class="contact-row">
+      <a class="btn" href="mailto:alesgar.designs@gmail.com" target="_blank">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© <span id="y"></span> Alessandra Sgariglia · Built by me with plain HTML & CSS</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
