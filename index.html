@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alessandra Sgariglia — Portfolio</title>
   <meta name="description" content="UX & Interaction Designer portfolio — projects, skills, and contact." />
+
   <style>
     /* ====== Base ====== */
     :root{
@@ -30,19 +31,6 @@
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:auto;padding:24px}
-
-    /* ====== Header / Nav ====== */
-    header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #eee; z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-weight:700;}
-    .brand span{opacity:.6;font-weight:500}
-    .nav a{padding:10px 12px;border-radius:12px}
-    .nav a:hover{background: #D4E0ED;}
-    .menu-toggle{
-      display:none;
-      background:transparent; /* transparent background */
-      border:0;
-    }
 
     /* ====== Hero ====== */
     .hero{padding:64px 24px 24px}
@@ -73,12 +61,7 @@
       .grid{ grid-template-columns: repeat(3, 1fr); }
     }
 
-    /* The grid children are the outer links */
-    .grid > a.card-link{
-      display:block;
-      grid-column:auto;
-      min-width:0;
-    }
+    .grid > a.card-link{display:block; grid-column:auto; min-width:0;}
 
     .card{
       background:var(--card);
@@ -88,28 +71,20 @@
       display:flex;
       flex-direction:column;
       height:100%;
-      transition: background-color 0.3s ease; /* smooth transition */
+      transition: background-color 0.3s ease;
     }
     .thumb{aspect-ratio:16/9;background:#ddd}
     .card-body{padding:16px}
     .card h3{margin:0 0 6px;font-size:18px}
     .pill{display:inline-block;font-size:14px;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid #B99A5B;margin-right:6px}
     .card-footer{padding:12px 16px;border-top:1px solid #eee;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:0;
-      border:0;
-      background:transparent;
-      font-weight:600;
-    }
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:transparent;font-weight:600;}
     .btn:hover{background:transparent; border:1px solid var(--card-hover);}
     .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:transform .25s ease, opacity .25s ease;}
     .btn-arrow:hover::after{opacity:1; transform:translateX(0)}
 
     .card-link { text-decoration:none; color:inherit; }
-    .card-link .btn { pointer-events:none; } /* whole card is the link */
+    .card-link .btn { pointer-events:none; }
     .card-link:hover .card {background-color: var(--card-hover);}
     .card-link:hover .btn-arrow::after,.card-link:focus-visible .btn-arrow::after{opacity:1;transform:translateX(0);}
 
@@ -122,87 +97,34 @@
     /* ====== Contact ====== */
     .contact-row{display:flex;flex-wrap:wrap;gap:10px}
     .contact a{border:1px solid #e7e7e9;border-radius:12px;padding:10px 14px;background:#fff}
-    .contact a:hover {
-      background: var(--card-hover);
-    }
+    .contact a:hover { background: var(--card-hover); }
 
     /* ====== Footer ====== */
     footer{padding:24px 0 40px;color:var(--muted);border-top:1px solid #eee}
-  
-/* ===== MOBILE ONLY (<= 679px) ===== */
-@media (max-width: 679px){
-  .brand{
-    white-space: nowrap;
-    font-size: clamp(14px, 4.2vw, 18px);
-    line-height: 1;
-  }
-  .menu-toggle{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border:0;
-    background:transparent;
-    padding:10px;
-    border-radius:12px;
-  }
-  .menu-toggle:hover{ background:#D4E0ED; }
-  .menu-toggle .menu-box{
-    display:inline-block;
-    width:24px; height:2px;
-    background:#1a1a1a;
-    position:relative;
-  }
-  .menu-toggle .menu-box::before,
-  .menu-toggle .menu-box::after{
-    content:"";
-    position:absolute; left:0; right:0;
-    height:2px; background:#1a1a1a;
-  }
-  .menu-toggle .menu-box::before{ top:-7px; }
-  .menu-toggle .menu-box::after{ top:7px; }
-
-  header .nav{ position:relative; min-height:56px; }
-  #primary-nav{
-    position:absolute;
-    top:100%;
-    left:24px; right:24px;
-    display:none;
-    flex-direction:column;
-    gap:8px;
-    background:#fff;
-    border:1px solid #eee;
-    border-radius:12px;
-    box-shadow: var(--shadow);
-    padding:10px;
-    margin-top:8px;
-    z-index:1000;
-  }
-  #primary-nav a{
-    padding:12px; border-radius:8px;
-  }
-  #primary-nav a:hover{ background:#D4E0ED; }
-  #primary-nav.open{ display:flex; }
-}
-
   </style>
+
+  <!-- External navigation stylesheet -->
+  <link rel="stylesheet" href="nav.css">
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="wrap nav">
       <div class="brand">Alessandra Sgariglia</div>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span class="menu-box" aria-hidden="true"></span></button>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-box" aria-hidden="true"></span>
+      </button>
       <nav id="primary-nav" class="links">
         <a href="index.html" style="font-weight:600; color:#B99A5B;">My projects</a>
-        <a href="About.html">About me</a>
+        <a href="about.html">About me</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero / Masthead -->
   <section class="hero" id="home">
-    <div class="wrap">
-      <h1 style="width:100%;">I create digital moments that jump off the screen—making people stop, smile, and think.</h1>
+    <div class="wrap" style="padding-left:0;">
+      <h1>I create digital moments that jump off the screen—making people stop, smile, and think.</h1>
       <p class="lead">Graphic/Creative Direction roots, now crafting humane and more-than-human experiences across different media and formats.</p>
     </div>
   </section>
@@ -211,7 +133,7 @@
   <section id="projects" class="wrap">
     <h2 class="section-title">My projects</h2>
     <div class="grid">
-
+      <!-- Your project cards here -->
       <!-- Card 1 -->
       <a href="Nexus.html" rel="noreferrer" class="card-link">
         <article class="card">
@@ -297,31 +219,9 @@
     <div class="wrap">© <span id="y"></span> Alessandra Sgariglia · Built by me with plain HTML & CSS</div>
   </footer>
 
+  <script src="nav.js"></script>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
-
-<script>
-  (function(){
-    const btn = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('primary-nav');
-    if(!btn || !nav) return;
-    function closeMenu(){
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-    }
-    btn.addEventListener('click', ()=>{
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
-    });
-    nav.addEventListener('click', e=>{
-      if(e.target.tagName === 'A') closeMenu();
-    });
-    window.addEventListener('resize', ()=>{
-      if (window.innerWidth > 679) closeMenu();
-    });
-  })();
-</script>
-
 </body>
 </html>
