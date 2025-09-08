@@ -123,6 +123,62 @@
 
     /* ====== Footer ====== */
     footer{padding:24px 0 40px;color:var(--muted);border-top:1px solid #eee}
+  
+/* ===== MOBILE ONLY (<= 679px) ===== */
+@media (max-width: 679px){
+  .brand{
+    white-space: nowrap;
+    font-size: clamp(14px, 4.2vw, 18px);
+    line-height: 1;
+  }
+  .menu-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    background:transparent;
+    padding:10px;
+    border-radius:12px;
+  }
+  .menu-toggle:hover{ background:#D4E0ED; }
+  .menu-toggle .menu-box{
+    display:inline-block;
+    width:24px; height:2px;
+    background:#1a1a1a;
+    position:relative;
+  }
+  .menu-toggle .menu-box::before,
+  .menu-toggle .menu-box::after{
+    content:"";
+    position:absolute; left:0; right:0;
+    height:2px; background:#1a1a1a;
+  }
+  .menu-toggle .menu-box::before{ top:-7px; }
+  .menu-toggle .menu-box::after{ top:7px; }
+
+  header .nav{ position:relative; min-height:56px; }
+  #primary-nav{
+    position:absolute;
+    top:100%;
+    left:24px; right:24px;
+    display:none;
+    flex-direction:column;
+    gap:8px;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:12px;
+    box-shadow: var(--shadow);
+    padding:10px;
+    margin-top:8px;
+    z-index:1000;
+  }
+  #primary-nav a{
+    padding:12px; border-radius:8px;
+  }
+  #primary-nav a:hover{ background:#D4E0ED; }
+  #primary-nav.open{ display:flex; }
+}
+
   </style>
 </head>
 <body>
@@ -130,9 +186,10 @@
   <header>
     <div class="wrap nav">
       <div class="brand">Alessandra Sgariglia</div>
-      <nav class="links">
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span class="menu-box" aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="links">
         <a href="index.html" style="font-weight:600; color:#B99A5B;">My projects</a>
-        <a href="About.html">About me</a>
+        <a href="about.html">About me</a>
       </nav>
     </div>
   </header>
@@ -238,5 +295,28 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+
+<script>
+  (function(){
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('primary-nav');
+    if(!btn || !nav) return;
+    function closeMenu(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+    btn.addEventListener('click', ()=>{
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    nav.addEventListener('click', e=>{
+      if(e.target.tagName === 'A') closeMenu();
+    });
+    window.addEventListener('resize', ()=>{
+      if (window.innerWidth > 679) closeMenu();
+    });
+  })();
+</script>
+
 </body>
 </html>
