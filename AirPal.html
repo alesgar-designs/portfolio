@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AirPal — Case Study</title>
+  <meta name="description" content="AirPal — a smart companion that visualizes air quality as a health battery to nudge healthier urban habits." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#666;
+      --accent:#B99A5B;
+      --card:#f7f7f8;
+      --radius:16px;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --maxw:1100px;
+      --wide:1280px;
+      --card-hover:#A8BBCE;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:var(--bg)}
+    img{max-width:100%; display:block; border-radius:12px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+
+    header{position:sticky; top:0; background:rgba(255,255,255,.85); backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid #eee; z-index:20}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{font-weight:700}
+    .nav a{padding:10px 12px; border-radius:12px}
+    .nav a:hover{background:#D4E0ED}
+
+    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:30}
+
+    .hero{padding:32px 0 8px}
+    .breadcrumbs{font-size:13px; color:var(--muted)}
+    .breadcrumbs a{color:var(--muted)}
+    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:8px 0 8px}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:14px}
+    .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee}
+
+    .mast{margin:16px auto; max-width:var(--wide)}
+
+    .layout{display:grid; grid-template-columns:1fr; gap:28px}
+    @media (min-width:1060px){.layout{grid-template-columns: 1fr 260px}}
+    .content{min-width:0}
+    .toc{position:sticky; top:84px; align-self:start; display:none}
+    @media (min-width:1060px){.toc{display:block}}
+    .toc h4{margin:8px 0; font-size:13px; color:#444}
+    .toc a{display:block; padding:6px 0; font-size:14px; color:var(--muted)}
+    .toc a.active{color:var(--accent); font-weight:600}
+
+    section{padding:28px 0; border-top:1px solid #eee}
+    section:first-of-type{border-top:none}
+    .section-title{font-size:22px; margin:0 0 10px}
+    figure{margin:14px 0}
+    figcaption{font-size:13px; color:var(--muted); margin-top:6px}
+
+    .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    @media (min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff}
+    .btn:hover{background:var(--card-hover);color:white;border:1px solid var(--card-hover);}
+    .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:all .25s ease}
+    .btn-arrow:hover::after{opacity:1; transform:translateX(0)}
+
+    footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><a href="index.html" style="padding:0; background:none;">Alessandra Sgariglia</a></div>
+      <nav class="links">
+        <a href="index.html">My projects</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="breadcrumbs"><a href="index.html">My projects</a> / AirPal — Urban Wellbeing Companion</div>
+      <h1>AirPal — Urban Wellbeing Companion</h1>
+      <div class="meta">
+        <span class="pill" style="color:var(--accent);border:1px solid var(--accent);">UX/UI</span>
+        <span class="pill">Prototyping</span>
+      </div>
+    </div>
+
+    <figure class="mast">
+      <img src="imgs/cover_airpal.png" alt="AirPal device and app mockups" />
+    </figure>
+
+    <div class="layout">
+      <article class="content" id="content">
+        <section id="overview">
+          <h2 class="section-title">Overview</h2>
+          <p>AirPal is a friendly companion that visualizes your “health battery” against air quality. Time spent in pollution discharges your PAL and makes it look sick; spending time in cleaner, greener spaces recharges it. The goal is to make air quality tangible and motivate small, healthier routines.</p>
+          <div class="grid cols-2">
+            <div class="callout"><strong>My role</strong><br/>The whole group contributed equally to the whole process of the creation and development of this project</div>
+            <div class="callout"><strong>Tools</strong><br/>
+              <ul>
+                <li>Figma</li>
+                <li>Arduino</li>
+                <li>ProtoPie</li>
+                <li>Illustrator</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="concept">
+          <h2 class="section-title">Concept</h2>
+          <p>City life is stressful: polluted air, tight schedules, little time for self‑care. AirPal borrows from Tamagotchi‑like play—by taking care of your PAL, you also take care of yourself. Clear visuals (battery/face), small celebrations, and a social layer help make healthy choices stick.</p>
+        </section>
+
+        <section id="how">
+          <h2 class="section-title">How It Works</h2>
+
+          <div class="grid cols-3">
+            <figure>
+              <img src="imgs/AirPal/cityMode.png" alt="City mode" style="border-radius:0;"/>
+              <p>By being exposed to polluted air for more than one hour, one notch of the LED circle will power off. A sound will alert you only when your battery completely runs out. You can check your PAL’s status though the app: if you lose battery it gets sick.</p>
+            </figure>
+            <figure>
+              <img src="imgs/AirPal/natureMode.png" alt="Nature mode" style="border-radius:0;"/>
+              <p>To recharge, you need to spend time where the air is clean. Every hour spent in nature will recharge one notch and your PAL will gradually feel better. Each time you reach a full charge you’ll earn points and advance in the rankings.</p>
+            </figure>
+            <figure>
+              <img src="imgs/AirPal/socialMode.png" alt="Social mode" style="border-radius:0;"/>
+              <p>AirPAL allows you to join a network of people with whom you share the same interests. You can challenge your friends in the rankings, and  break old bad habits together, like having a nice walk in the park.</p>
+            </figure>
+          </div>
+        </section>
+
+        <section id="prototype">
+          <h2 class="section-title">Prototype</h2>
+          <h4>The hardware</h4>
+          <p>To build our prototype we used an Arduino Uno board, the MQ135 Air Quality Sensor, a Piezo Buzzer and a LED ring, connecting them in the following scheme.
+            All sensors and actuators were connected to the Arduino board, which was connected to the laptop both as a power source, and to also connect to the software prototype (made in Protopie).</p>
+          <img src="imgs/AirPal/hardware.png" alt="Prototype board and wiring" style="border-radius:0; width:100%;"/>
+
+
+          <p style="margin-top:8%;">All of these elements were then positioned into a 3D printed case with holes to make the air quality sensor work properly and others to show the LEDs to the user.</p>
+          <figure>
+            <img src="imgs/AirPal/case.png" alt="The case in which we placed the hardware"/>
+          </figure>
+          <figure>
+            <img src="imgs/AirPal/HowItWorks.gif" alt="video of how the hardware works"/>
+          </figure>
+        </section>
+
+        <section id="design">
+          <h2 class="section-title">Design</h2>
+          <p>The following are the main elements that define AirPal:
+            <ul>
+              <li><strong>Feedback:</strong> only positive nudges; celebrate achievements instead of shaming.</li>
+              <li><strong>Cute character:</strong> an interactive PAL to engage the user to make the experience light and fun.</li>
+              <li><strong>Personalization:</strong> change PAL color and nickname.</li>
+              <li><strong>Gamification:</strong> simple ranking to encourage group activity in green areas.</li>
+            </ul>
+          </p>
+          <img src="imgs/AirPal/pals.png" alt="PALs expressions" style="margin-top:8%;"/>
+
+
+        </section>
+
+        <section id="outcomes">
+          <h2 class="section-title">Outcomes</h2>
+          <ul>
+            <li>Functional prototype combining sensor data, LED feedback, and app simulation.</li>
+            <li>Showed that playful, social framing can motivate healthier air‑quality habits.</li>
+            <li>Next: explore wearables or public displays; integrate official AQI APIs.</li>
+          </ul>
+        </section>
+
+        <section id="credits">
+          <h2 class="section-title">Credits</h2>
+          <p>
+            <strong>Course:</strong> Hardware & Software Technologies for Design (part of MSc in Digital & Interaction Design at Politecnico di Milano)<br>
+            <strong>Professors:</strong> Paolo Perego<br>
+            <strong>Team:</strong> Alessandra Sgariglia & Erika Caffo<br>
+          </p>
+        </section>
+      </article>
+
+      <aside class="toc" id="toc">
+        <h4>On this page</h4>
+        <a href="#overview">Overview</a>
+        <a href="#concept">Concept</a>
+        <a href="#how">How It Works</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#design">Design</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#credits">Credits</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="btn" href="index.html">← Back to my projects</a>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('progress');
+    document.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = scrolled + '%';
+    });
+
+    const links = [...document.querySelectorAll('#toc a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const activate = () => {
+      let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
+      if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
+      links.forEach(l => l.classList.remove('active'));
+      links[idx]?.classList.add('active');
+    };
+    document.addEventListener('scroll', activate, {passive:true});
+    activate();
+  </script>
+</body>
+</html>

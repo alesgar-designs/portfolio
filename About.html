@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Alessandra Sgariglia</title>
+  <meta name="description" content="About page for Alessandra Sgariglia — UX & Interaction Designer. Bio, skills, tools, experience, education." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#666;
+      --accent:#B99A5B;
+      --card:#f7f7f8;
+      --radius:16px;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --maxw:1100px;
+      --wide:1280px;
+      --card-hover:#A8BBCE;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:var(--bg)}
+    img{max-width:100%; display:block; border-radius:12px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+
+    /* Header */
+    header{position:sticky; top:0; background:rgba(255,255,255,.85); backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid #eee; z-index:20}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{font-weight:700}
+    .nav a{padding:10px 12px; border-radius:12px}
+    .nav a:hover{background:#D4E0ED}
+
+    /* Progress bar */
+    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:30}
+
+    /* Hero */
+    .hero{padding:32px 0 8px}
+    .breadcrumbs{font-size:13px; color:var(--muted)}
+    .breadcrumbs a{color:var(--muted)}
+    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:8px 0 8px}
+
+    /* Layout */
+    .layout{display:grid; grid-template-columns:1fr; gap:28px}
+    @media (min-width:1060px){
+      .layout{grid-template-columns: 1fr 260px}
+    }
+    .content{min-width:0}
+    .toc{position:sticky; top:84px; align-self:start; display:none}
+    @media (min-width:1060px){.toc{display:block}}
+    .toc h4{margin:8px 0; font-size:13px; color:#444}
+    .toc a{display:block; padding:6px 0; font-size:14px; color:var(--muted)}
+    .toc a.active{color:var(--accent); font-weight:600}
+
+    /* Sections */
+    section{padding:28px 0; border-top:1px solid #eee}
+    section:first-of-type{border-top:none}
+    .section-title{font-size:22px; margin:0 0 10px}
+    figure{margin:14px 0}
+    figcaption{font-size:13px; color:var(--muted); margin-top:6px}
+
+    /* Grid helpers */
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:760px){.grid.cols-2.about-split {grid-template-columns: 1fr 2fr; align-items: start;}}
+    @media (min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    /* Pills */
+    ul.pills{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px}
+    ul.pills li{
+      display:inline-flex !important;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid #e7e7e9;
+      line-height:1;              /* keep height tight */
+      height:auto;
+      width:auto;    /* kill any inherited sizing */
+      min-height:0; min-width:0;
+      white-space:nowrap;         /* keep short labels in one line */
+      flex:0 0 auto;              /* don't stretch */
+      max-width:100%;
+    }
+
+    .pill{display:inline-block; font-size:14px; padding:6px 12px; border-radius:999px; border:1px solid #e7e7e9; margin-right:6px}
+
+    /* Buttons */
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff}
+    .btn:hover{background:var(--card-hover); border:1px solid var(--card-hover); color:white;}
+    .btn-full{display:flex; width:100%; justify-content:center}
+
+    /* (Legacy) card kept for future use – not used below */
+    .card{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><a href="index.html" style="padding:0; background:none;">Alessandra Sgariglia</a> </div>
+      <nav class="links">
+        <a href="index.html">My projects</a>
+        <a href="about.html" aria-current="page" style="font-weight:600; color:#B99A5B;">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <h1>About me</h1>
+    </div>
+
+    <div class="layout">
+      <article class="content" id="content">
+        <section id="intro">
+          <h2 class="section-title">Hi, I'm Alessandra</h2>
+          <div class="grid cols-2 about-split">
+            <!-- Image: 1/3 -->
+            <figure style="margin:0;">
+              <img src="imgs/imgAle.png" alt="Portrait of Alessandra" />
+              <!-- Full-width button matches the figure/image width -->
+              <p style="margin-top:8px;">
+                <a class="btn btn-full" href="CV_AlessandraSgariglia_eng_2025.pdf" target="_blank" rel="noreferrer">Download my CV</a>
+              </p>
+            </figure>
+
+            <!-- Text: 2/3 -->
+            <div>
+              <p style="margin:0;">I’m a multidisciplinary designer with a visual thinking style and curiosity for many different things and topics. I’m drawn to making order out of chaos and turning information into something clear and engaging so as to make it understandable for people. <br>I believe design is not just about interfaces, but about empathy, curiosity, and making people reflect on the systems and stories that surround them.<br><br>I’m currently completing my MSc in Digital & Interaction Design at Politecnico di Milano.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills (pills, no card) -->
+        <section id="skills">
+          <h2 class="section-title">Core Skills</h2>
+            <ul class="pills">
+              <li>UX/UI Design</li>
+              <li>Information Architecture</li>
+              <li>Wireframing &amp; Prototyping</li>
+              <li>Accessibility &amp; Responsive Design</li>
+              <li>Service Design</li>
+              <li>Storytelling &amp; Narrative Design</li>
+              <li>Design Thinking</li>
+              <li>Design for Emotion</li>
+              <li>More-than-human Design</li>
+              <li>User Research &amp; Testing</li>
+              <li>Team Collaboration</li>
+              <li>Communication</li>
+            </ul>
+        </section>
+
+        <!-- Tools (pills, no card) -->
+        <section id="tools">
+          <h2 class="section-title">Design Tools</h2>
+            <ul class="pills">
+              <li>Figma</li><li>Miro</li><li>ProtoPie</li>
+              <li>TouchDesigner</li><li>Arduino</li><li>Unity</li>
+              <li>Illustrator</li><li>Photoshop</li><li>After Effects</li><li>HTML, CSS</li>
+            </ul>
+        </section>
+
+        <!-- Experience (no cards) -->
+        <section id="experience">
+          <h2 class="section-title">Experience</h2>
+          <div class="grid">
+            <div>
+              <strong>UX/UI Design Intern</strong> — Colla Studio · 2025<br/>
+              Implemented app flow updates; designed ecommerce proposal with responsive wireframes &amp; prototypes; contributed to a scalable design system and presentation materials.
+            </div>
+            <div>
+              <strong>Freelance Designer</strong> — 2022–2024<br/>
+              Built an e-learning website (Squarespace + Thinkific); developed a cohesive digital presence and content strategy for a creative agency.
+            </div>
+            <div>
+              <strong>Teaching Assistant &amp; Academic Collaborator</strong> — NABA Roma · 2022–2023<br/>
+              Co-led sessions on user-centered design and creative problem-solving; mentored students; supported events and exhibitions.
+            </div>
+          </div>
+        </section>
+
+        <!-- Education (no cards) -->
+        <section id="education">
+          <h2 class="section-title">Education</h2>
+          <div class="grid">
+            <div><strong>MSc — Digital &amp; Interaction Design</strong>, Politecnico di Milano (2023–2025)</div>
+            <div><strong>BA — Graphic Design &amp; Art Direction</strong>, NABA Roma (2019–2022)</div>
+          </div>
+        </section>
+
+        <!-- Languages (no card, keep pills) -->
+        <section id="languages">
+          <h2 class="section-title">Languages</h2>
+          <div>
+            <span class="pill">English — Fluent</span>
+            <span class="pill">Italian — Native</span>
+          </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section id="contact">
+          <h2 class="section-title">Contacts</h2>
+          <p class="muted">Say hi or tell me about a project you would like to build together.</p>
+          <div class="contact-row">
+            <a class="btn" href="mailto:alesgar.designs@gmail.com" target="_blank">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </section>
+      </article>
+
+      <aside class="toc" id="toc">
+        <h4>On this page</h4>
+        <a href="#intro">Intro</a>
+        <a href="#skills">Core Skills</a>
+        <a href="#tools">Design Tools</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#languages">Languages</a>
+        <a href="#contact">Contacts</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="btn" href="index.html">← Back to my projects</a>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress
+    const bar = document.getElementById('progress');
+    document.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = scrolled + '%';
+    });
+
+    // TOC active link
+    const links = [...document.querySelectorAll('#toc a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const activate = () => {
+      let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
+      if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
+      links.forEach(l => l.classList.remove('active'));
+      links[idx]?.classList.add('active');
+    };
+    document.addEventListener('scroll', activate, {passive:true});
+    activate();
+  </script>
+</body>
+</html>
