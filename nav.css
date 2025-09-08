@@ -1,0 +1,99 @@
+/* ====== Header / Nav ====== */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid #eee;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand span {
+  opacity: .6;
+  font-weight: 500;
+}
+
+.nav a {
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.nav a:hover {
+  background: #D4E0ED;
+}
+
+/* Hide hamburger by default (desktop) */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+}
+
+/* Hamburger icon */
+.menu-toggle .menu-box {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: #1a1a1a;
+  position: relative;
+}
+.menu-toggle .menu-box::before,
+.menu-toggle .menu-box::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: #1a1a1a;
+}
+.menu-toggle .menu-box::before { top: -7px; }
+.menu-toggle .menu-box::after { top: 7px; }
+
+/* ===== MOBILE ONLY (<= 679px) ===== */
+@media (max-width: 679px){
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .menu-toggle:hover { background: #D4E0ED; }
+
+  header .nav { position: relative; min-height: 56px; }
+
+  #primary-nav {
+    position: absolute;
+    top: 100%;
+    left: 24px; right: 24px;
+    display: none !important;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    margin-top: 8px;
+  }
+  #primary-nav a {
+    padding: 12px;
+    border-radius: 8px;
+  }
+  #primary-nav a:hover { background: #D4E0ED; }
+
+  #primary-nav.open {
+    display: flex !important;
+  }
+}
