@@ -13,8 +13,6 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-left:0;
-  padding-right:0;
 }
 
 .brand {
@@ -23,7 +21,7 @@ header {
 }
 
 .nav a {
-  padding: 10px 12px;
+  padding: 10px 0px;
   border-radius: 12px;
 }
 .nav a:hover { background: #D4E0ED; }
