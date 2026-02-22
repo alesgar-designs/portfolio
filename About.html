@@ -37,9 +37,6 @@
 
     /* Layout */
     .layout{display:grid; grid-template-columns:1fr; gap:28px}
-    @media (min-width:1060px){
-      .layout{grid-template-columns: 1fr 260px}
-    }
     .content{min-width:0}
 
     /* Sections */
@@ -51,7 +48,7 @@
 
     /* Grid helpers */
     .grid{display:grid; grid-template-columns:1fr; gap:16px}
-    @media (min-width:760px){.grid.cols-2.about-split {grid-template-columns: 1fr 2fr; align-items: start;}}
+    @media (min-width:760px){.grid.cols-2.about-split {grid-template-columns: 280px 1fr; gap: 40px; align-items: start;}}
     @media (min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
 
     /* Pills */
