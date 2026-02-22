@@ -123,19 +123,18 @@
         <section id="intro">
           <h2 class="section-title">Hi, I'm Alessandra</h2>
           <div class="grid cols-2 about-split">
-            <!-- Image: 1/3 -->
             <figure style="margin:0;">
               <img src="imgs/imgAle.png" alt="Portrait of Alessandra" />
-              <!-- Full-width button matches the figure/image width -->
               <p style="margin-top:8px;">
                 <a class="btn btn-full" href="CV_AlessandraSgariglia_2026.pdf" target="_blank" rel="noreferrer">Download my CV</a>
               </p>
             </figure>
-
-            <!-- Text: 2/3 -->
             <div>
-              <p style="margin:0;">UX/UI & Interaction Designer (MSc, Politecnico di Milano, 110/110). <br>I design clear user flows and expressive interactions—from research and information architecture to high-fidelity prototypes—with a focus on wellbeing, culture, and more-than-human design.
-<br>I'm drawn to making order out of chaos and believe design is about empathy, curiosity, and helping people reflect on the systems around them. <br>Currently seeking UX/UI or Interaction Design roles across Europe.</p>
+              <p style="margin:0 0 14px;">I'm a designer based between Rome and Milan, available for freelance projects.</p>
+              <p style="margin:0 0 14px;">My path to design wasn't linear, and I think that's what makes my work interesting. I started with a scientific high school formation, then studied computer science before finding my real home in visual communication — graduating in Graphic Design and Art Direction at NABA Roma, with a specialization in Creative Direction. After graduating I stayed on as a teaching assistant and academic collaborator in the same department, which taught me a lot about how to talk about design, not just make it.</p>
+              <p style="margin:0 0 14px;">Most recently I completed a Master's degree in Digital and Interaction Design at Politecnico di Milano (110/110), where I deepened my focus on UX/UI, interaction systems, and the relationship between people and the digital spaces they inhabit.</p>
+              <p style="margin:0 0 14px;">I work across branding and visual identity, UX/UI design, social media design, interaction and installation, and creative direction. What connects all of it is a belief that good design should feel considered — never cold, never purely decorative, always in service of the person on the other side of the screen.</p>
+              <p style="margin:0;">Outside of design, I'm a certified personal trainer and have been passionate about health, movement, and wellbeing for as long as I can remember. That world isn't separate from my design practice — it's part of why I'm drawn to working with wellness brands, fitness professionals, and health-focused products. I understand the culture from the inside, and I bring that with me.</p>
             </div>
           </div>
         </section>
@@ -145,17 +144,15 @@
           <h2 class="section-title">Core Skills</h2>
           <ul class="pills">
             <li>UX/UI Design</li>
+            <li>Branding &amp; Visual Identity</li>
             <li>Information Architecture</li>
             <li>Wireframing &amp; Prototyping</li>
             <li>Accessibility &amp; Responsive Design</li>
-            <li>Service Design</li>
+            <li>Creative Direction</li>
             <li>Storytelling &amp; Narrative Design</li>
-            <li>Design Thinking</li>
-            <li>Design for Emotion</li>
-            <li>More-than-human Design</li>
             <li>User Research &amp; Testing</li>
-            <li>Team Collaboration</li>
-            <li>Communication</li>
+            <li>Service Design</li>
+            <li>Design for Emotion</li>
           </ul>
         </section>
 
@@ -169,21 +166,24 @@
           </ul>
         </section>
 
-        <!-- Experience (no cards) -->
         <section id="experience">
           <h2 class="section-title">Experience</h2>
           <div class="grid">
             <div>
               <strong>UX/UI Design Intern</strong> — Colla Studio · 2025<br/>
-              Implemented app flow updates; designed ecommerce proposal with responsive wireframes &amp; prototypes; contributed to a scalable design system and presentation materials.
+              Implemented app flow updates; designed an ecommerce proposal with responsive wireframes and prototypes; contributed to a scalable design system and client presentation materials.
             </div>
             <div>
               <strong>Freelance Designer</strong> — 2022–2024<br/>
-              Built an e-learning website (Squarespace + Thinkific); developed a cohesive digital presence and content strategy for a creative agency.
+              Built an e-learning platform (Squarespace + Thinkific); developed a cohesive digital presence and content strategy for a creative agency. Worked independently with clients from brief to delivery.
             </div>
             <div>
               <strong>Teaching Assistant &amp; Academic Collaborator</strong> — NABA Roma · 2022–2023<br/>
-              Co-led sessions on user-centered design and creative problem-solving; mentored students; supported events and exhibitions.
+              Invited to stay on after graduating to co-lead sessions on user-centred design and creative problem-solving for the Graphic Design department. Mentored students, supported exhibitions, and contributed to the academic life of the department.
+            </div>
+            <div>
+              <strong>Certified Personal Trainer</strong> — NonSoloFitness · Primo Livello<br/>
+              Qualified PT certification reflecting a long-standing passion for health, movement, and wellbeing — an area that directly informs my design focus.
             </div>
           </div>
         </section>
@@ -209,9 +209,9 @@
         <!-- Contact CTA -->
         <section id="contact">
           <h2 class="section-title">Contacts</h2>
-          <p class="muted">Say hi or tell me about a project you would like to build together.</p>
+          <p class="muted">If you're working on something in the health and wellness space — or something else entirely — I'd love to hear about it.</p>
           <div class="contact-row">
-            <a class="btn" href="mailto:alesgar.designs@gmail.com" target="_blank">Email</a>
+            <a class="btn" href="/cdn-cgi/l/email-protection#c2a3aea7b1a5a3b0eca6a7b1aba5acb182a5afa3abaeeca1adaf" target="_blank">Email</a>
             <a class="btn" href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </section>
@@ -237,7 +237,7 @@
   </footer>
 
   <!-- Reusable nav script -->
-  <script src="nav.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="nav.js"></script>
 
   <script>
     // Scroll progress
@@ -255,10 +255,3 @@
       let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
       if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
       links.forEach(l => l.classList.remove('active'));
-      links[idx]?.classList.add('active');
-    };
-    document.addEventListener('scroll', activate, {passive:true});
-    activate();
-  </script>
-</body>
-</html>
