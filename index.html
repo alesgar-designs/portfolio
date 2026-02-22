@@ -33,11 +33,12 @@
     .wrap{max-width:var(--maxw);margin:auto;padding:24px}
 
     /* ====== Hero ====== */
-    .hero{padding:64px 24px 24px}
-    .hero .inner{max-width:900px;margin:0;text-align:left}
-    h1{font-size:clamp(28px, 4vw, 44px);line-height:1.15;margin:10px 0 12px;}
+    .hero{padding:80px 24px 32px; text-align:center;}
+    .hero .wrap{display:flex; flex-direction:column; align-items:center;}
+    h1{font-size:clamp(28px, 4vw, 44px);line-height:1.15;margin:10px 0 12px; max-width:760px;}
     .tag{display:inline-block;background:var(--accent-2);color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:600;margin-bottom:12px}
-    .lead{font-size:clamp(18px, 2.2vw, 22px);color:#2a2a2a;max-width:100%}
+    .lead{font-size:clamp(18px, 2.2vw, 22px);color:#2a2a2a;max-width:640px;}
+    .hero-sub{max-width:580px; margin:16px auto 0; font-size:clamp(15px, 1.8vw, 18px); color:var(--muted);}
 
     /* ====== Sections ====== */
     section{padding:40px 0}
@@ -126,7 +127,7 @@
     <div class="wrap">
       <h1>Good design should feel as good as it looks.</h1>
       <p class="lead">I'm a designer with roots in art direction and a genuine passion for health and wellness — I bring both to every project.</p>
-      <p style="margin-top:16px; font-size:clamp(15px, 1.8vw, 18px); color:var(--muted); max-width:680px;">I'm Alessandra, a designer based between Rome and Milan. My background spans art direction, interaction design, and creative direction — and I work with brands and people who want their digital presence to feel as good as it actually looks.</p>
+      <p class="hero-sub">I'm Alessandra, a designer based between Rome and Milan. My background spans art direction, interaction design, and creative direction — and I work with brands and people who want their digital presence to feel as good as it actually looks.</p>
     </div>
   </section>
 
@@ -135,8 +136,7 @@
     <h2 class="section-title">My projects</h2>
     <div class="grid">
       <!-- Your project cards here -->
-
-      <!-- Card AirPal-->
+      <!-- Card 1 -->
       <a href="AirPal.html" rel="noreferrer" class="card-link">
         <article class="card">
           <img class="thumb" src="imgs/cover_airpal.png" alt="Project cover" />
@@ -152,8 +152,8 @@
           </div>
         </article>
       </a>
-      
-      <!-- Card Milanosport -->
+
+      <!-- Card 2 -->
       <a href="Milanosport.html" rel="noreferrer" class="card-link">
         <article class="card">
           <img class="thumb" src="imgs/cover_milanosport.png" alt="Project cover" />
@@ -170,8 +170,7 @@
         </article>
       </a>
 
-      
-      <!-- Card Nexus -->
+      <!-- Card 3 -->
       <a href="Nexus.html" rel="noreferrer" class="card-link">
         <article class="card">
           <img class="thumb" src="imgs/cover_nexus.png" alt="Project cover" />
@@ -188,7 +187,7 @@
         </article>
       </a>
 
-      <!-- Card Luma -->
+      <!-- Card 4 -->
       <a href="Luma.html" rel="noreferrer" class="card-link">
         <article class="card">
           <img class="thumb" src="imgs/cover_luma.png" alt="Project cover" />
@@ -213,7 +212,7 @@
     <h2 class="section-title">Contacts</h2>
     <p class="muted">Say hi or tell me about a project you would like to build together.</p>
     <div class="contact-row">
-      <a class="btn" href="mailto:alesgar.designs@gmail.com" target="_blank">Email</a>
+      <a class="btn" href="/cdn-cgi/l/email-protection#a5c4c9c0d6c2c4d78bc1c0d6ccc2cbd6e5c2c8c4ccc98bc6cac8" target="_blank">Email</a>
       <a class="btn" href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
   </section>
@@ -222,9 +221,4 @@
     <div class="wrap">© <span id="y"></span> Alessandra Sgariglia · Website built by me with HTML, CSS & JavaScript</div>
   </footer>
 
-  <script src="nav.js"></script>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.
