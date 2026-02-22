@@ -41,11 +41,6 @@
       .layout{grid-template-columns: 1fr 260px}
     }
     .content{min-width:0}
-    .toc{position:sticky; top:84px; align-self:start; display:none}
-    @media (min-width:1060px){.toc{display:block}}
-    .toc h4{margin:8px 0; font-size:13px; color:#444}
-    .toc a{display:block; padding:6px 0; font-size:14px; color:var(--muted)}
-    .toc a.active{color:var(--accent); font-weight:600}
 
     /* Sections */
     section{padding:28px 0; border-top:1px solid #eee}
@@ -217,16 +212,7 @@
         </section>
       </article>
 
-      <aside class="toc" id="toc">
-        <h4>On this page</h4>
-        <a href="#intro">Intro</a>
-        <a href="#skills">Core Skills</a>
-        <a href="#tools">Design Tools</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#languages">Languages</a>
-        <a href="#contact">Contacts</a>
-      </aside>
+
     </div>
   </main>
 
@@ -247,11 +233,3 @@
       const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
       bar.style.width = scrolled + '%';
     });
-
-    // TOC active link
-    const links = [...document.querySelectorAll('#toc a')];
-    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
-    const activate = () => {
-      let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
-      if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
-      links.forEach(l => l.classList.remove('active'));
