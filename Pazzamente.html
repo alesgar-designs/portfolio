@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pazzamente — Case Study</title>
+  <meta name="description" content="Pazzamente — an Italian psychology podcast. Concept, brand identity, production, and social media strategy." />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#666;
+      --accent:#B99A5B;
+      --card:#f7f7f8;
+      --radius:16px;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --maxw:1100px;
+      --wide:1280px;
+      --card-hover:#A8BBCE;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:var(--bg)}
+    img{max-width:100%; display:block; border-radius:12px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+
+    /* Progress bar */
+    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:30}
+
+    /* Hero */
+    .hero{padding:32px 0 8px}
+    .breadcrumbs{font-size:13px; color:var(--muted)}
+    .breadcrumbs a{color:var(--muted)}
+    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:8px 0 8px}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:14px}
+    .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee}
+
+    /* Mast image */
+    .mast{margin:16px auto; max-width:var(--wide)}
+
+    /* Layout: content + toc */
+    .layout{display:grid; grid-template-columns:1fr; gap:28px}
+    @media (min-width:1060px){.layout{grid-template-columns: 1fr 260px}}
+    .content{min-width:0}
+    .toc{position:sticky; top:84px; align-self:start; display:none}
+    @media (min-width:1060px){.toc{display:block}}
+    .toc h4{margin:8px 0; font-size:13px; color:#444}
+    .toc a{display:block; padding:6px 0; font-size:14px; color:var(--muted)}
+    .toc a.active{color:var(--accent); font-weight:600}
+
+    /* Sections */
+    section{padding:28px 0; border-top:1px solid #eee}
+    section:first-of-type{border-top:none}
+    .section-title{font-size:22px; margin:0 0 10px}
+    figure{margin:14px 0}
+    figcaption{font-size:13px; color:var(--muted); margin-top:6px}
+    h4{margin:20px 0 6px;}
+
+    .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    @media (min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    /* Episode cards */
+    .episode{background:var(--card); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .episode-number{font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent); text-transform:uppercase; margin-bottom:4px;}
+    .episode-title{font-size:17px; font-weight:700; margin:0 0 4px;}
+    .episode-sub{font-size:14px; color:var(--muted); margin:0 0 8px;}
+    .episode p{font-size:14px; margin:0; color:var(--text);}
+
+    /* Buttons */
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff}
+    .btn:hover{background:var(--card-hover);color:white;border:1px solid var(--card-hover);}
+    .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:all .25s ease}
+    .btn-arrow:hover::after{opacity:1; transform:translateX(0)}
+    .btn-group{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+
+    footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee}
+  </style>
+
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><a href="index.html" style="padding:0; background:none;">Alessandra Sgariglia</a></div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-box" aria-hidden="true"></span>
+      </button>
+      <nav id="primary-nav" class="links">
+        <a href="index.html">My projects</a>
+        <a href="About.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="breadcrumbs"><a href="index.html">My projects</a> / Pazzamente</div>
+      <h1>Pazzamente</h1>
+      <div class="meta">
+        <span class="pill" style="color:var(--accent);border:1px solid var(--accent);">Brand Identity</span>
+        <span class="pill">Content Production</span>
+        <span class="pill">Social Media</span>
+        <span class="pill">Creative Direction</span>
+      </div>
+    </div>
+
+    <figure class="mast">
+      <img src="imgs/Pazzamente/cover.png" alt="Pazzamente podcast cover" />
+    </figure>
+
+    <div class="layout">
+      <article class="content" id="content">
+
+        <section id="overview">
+          <h2 class="section-title">Overview</h2>
+          <p>Mental health content in Italy tends to fall into one of two traps: it's either clinical and inaccessible, or it's oversimplified to the point of being useless. Pazzamente was built to occupy the space in between — a place where psychology is taken seriously but talked about like a conversation between two friends on a couch.</p>
+          <p>Pazzamente is an Italian psychology podcast co-hosted by Angela Mammana — psychologist, psychotherapist, and author — and Martina Gatto — TV presenter and actress. Each episode starts from a topic rooted in Angela's book <em>A modo mio — la libertà di essere</em>, then expands into a free-ranging conversation that ends with a practical tip the listener can actually try. The name says it all: to build a life that truly fits you, you need a bit of <em>pazzia</em> — a bit of crazy, a willingness to colour outside the lines.</p>
+          <p>Pazzamente started as a commission — Angela and Martina came to me to bring the project to life. I conceived the format, built the brand from scratch, and took responsibility for everything: the filming, the editing, the platform distribution, and the social media strategy. It has since grown into something I continue out of genuine passion. It is currently live on YouTube and Spotify, with new episodes in production.</p>
+          <div class="grid cols-2" style="margin-top:20px;">
+            <div class="callout">
+              <strong>My role</strong><br/><br/>
+              Sole creative director and producer across every phase of the project: concept and format design, brand identity (name, logo, visual system), filming and directing, video editing, platform distribution (YouTube, Spotify and more), and social media content and strategy.
+            </div>
+            <div class="callout">
+              <strong>Tools</strong><br/>
+              <ul>
+                <li>Adobe Premiere Pro</li>
+                <li>Adobe Illustrator</li>
+                <li>Adobe Photoshop</li>
+                <li>Figma</li>
+              </ul>
+              <br/>
+              <strong>Status</strong><br/>
+              Live · New episodes in production
+            </div>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-arrow" href="https://www.youtube.com/@PAZZAMENTE.podcast" target="_blank" rel="noreferrer">Watch on YouTube</a>
+            <a class="btn btn-arrow" href="https://open.spotify.com/show/5ZPWiVu8hsDf9JzDkjuvKX" target="_blank" rel="noreferrer">Listen on Spotify</a>
+          </div>
+        </section>
+
+        <section id="concept">
+          <h2 class="section-title">Concept & format</h2>
+          <p>The starting point was Angela's book — <em>A modo mio</em> is about self-affirmation and identity, about the freedom to be exactly who you are. That's a rich psychological territory, but also one that risks feeling heavy or abstract without the right container. The question I kept asking was: how do you make people feel like they're learning something real about themselves without feeling like they're in a lecture?</p>
+          <p>The answer was the couch. Two people, different worlds — a psychotherapist and a TV presenter — having the kind of honest, wandering conversation that friends have when they trust each other. Angela brings the knowledge; Martina brings the curiosity, the irony, and the energy that makes the content feel alive rather than studied. The tension between their perspectives is the format.</p>
+
+          <h4>Episode structure</h4>
+          <p>Each episode runs approximately 20 minutes and follows a consistent arc:</p>
+          <ul>
+            <li><strong>Opening topic</strong> — drawn from the book, introduced naturally in conversation rather than as a formal premise</li>
+            <li><strong>Free exploration</strong> — the conversation expands, connects to related themes, and moves between the psychological and the personal</li>
+            <li><strong>Practical tip</strong> — the final 5 minutes always end with something concrete the viewer can actually try</li>
+          </ul>
+          <p>That last element was a deliberate design choice. Mental health content often leaves people with insight but no action. Ending every episode with a tool — something small and doable — was a way of respecting the viewer's time and making the podcast genuinely useful, not just interesting.</p>
+          <img src="imgs/Pazzamente/episode_thumbnail.png" alt="Episode 1 thumbnail — A modo mio: La libertà di essere" style="margin-top:16px;"/>
+        </section>
+
+        <section id="brand">
+          <h2 class="section-title">Brand identity</h2>
+          <p>The name <strong>Pazzamente</strong> is an Italian adverb meaning "madly" or "crazily" — but it also splits into <em>pazza</em> (crazy/woman) and <em>mente</em> (mind). That double meaning was exactly right: the show is about the mind, and it takes a certain willingness to be a bit crazy to live authentically. The wordplay is visible in the logo, where <strong>PAZZA</strong> is set in yellow — warm, bold, playful — and <strong>MENTE</strong> follows in white, grounding it.</p>
+
+          <h4>Visual system</h4>
+          <p>The palette is built around a deep, saturated violet-purple — the colour of the mind, of introspection, of something slightly outside the ordinary. Against it, the yellow of <em>PAZZA</em> pops with energy and warmth. The teal used in the episode backgrounds adds a calmer, more intimate register for the longer-form content.</p>
+          <p>The background texture — an engraving-style illustration of a brain — was chosen deliberately over something more clinical or abstract. It has a vintage, almost curious quality that matches the show's tone: serious about psychology but not afraid to be playful about it.</p>
+          <img src="imgs/Pazzamente/brand.png" alt="Pazzamente brand identity — logo, palette, visual system" />
+        </section>
+
+        <section id="episodes">
+          <h2 class="section-title">Episodes</h2>
+          <p>Three episodes are currently live, each exploring a different dimension of the book's central theme of identity and self-affirmation:</p>
+          <div class="grid cols-3" style="margin-top:16px;">
+            <div class="episode">
+              <div class="episode-number">Episodio #1</div>
+              <div class="episode-title">A modo mio</div>
+              <div class="episode-sub">La libertà di essere</div>
+              <p>The freedom to be yourself — where identity begins and how we learn to claim it.</p>
+            </div>
+            <div class="episode">
+              <div class="episode-number">Episodio #2</div>
+              <div class="episode-title">Trasformazione</div>
+              <div class="episode-sub">Ritrovare se stessi dopo una crisi</div>
+              <p>How crisis can become a turning point — finding yourself again after everything changes.</p>
+            </div>
+            <div class="episode">
+              <div class="episode-number">Episodio #3</div>
+              <div class="episode-title">Esplorazione</div>
+              <div class="episode-sub">Scoprirsi attraverso nuove esperienze</div>
+              <p>How new experiences reveal parts of ourselves we didn't know existed.</p>
+            </div>
+          </div>
+          <img src="imgs/Pazzamente/youtube.png" alt="Pazzamente YouTube channel" style="margin-top:24px;"/>
+        </section>
+
+        <section id="production">
+          <h2 class="section-title">Production</h2>
+          <p>Every episode was filmed, directed, and edited by me. The visual language of the show — the couch setting, the warm lighting, the intimate two-shot framing — was a deliberate choice to make the conversation feel like something you're overhearing rather than watching. The camera stays close. The edit keeps the energy of real conversation rather than trimming it into something too polished.</p>
+          <p>For the teal-tinted episode cuts used in Shorts and social content, I developed a colour grading approach that creates a distinct visual register for the shorter-form content — more atmospheric, more contained — while keeping it clearly part of the same world as the full episodes.</p>
+          <img src="imgs/Pazzamente/production.png" alt="Behind the scenes — filming and production" />
+        </section>
+
+        <section id="social">
+          <h2 class="section-title">Social media</h2>
+          <p>The social media strategy was built around making the content feel as native to each platform as possible rather than just repurposing the same clip everywhere. On Instagram and TikTok, the teal-graded vertical cuts work as standalone moments — each one complete enough to make sense without the full episode, but interesting enough to send people looking for it.</p>
+          <p>The visual language of the social posts extends the brand system: the same brain texture, the same typography treatment, the same warm-playful tone. Every touchpoint — from the YouTube banner to the Spotify cover to an Instagram post — reads as unmistakably Pazzamente.</p>
+          <img src="imgs/Pazzamente/social.png" alt="Pazzamente social media posts" />
+          <img src="imgs/Pazzamente/spotify.png" alt="Pazzamente on Spotify" style="margin-top:16px;"/>
+        </section>
+
+        <section id="reflection">
+          <h2 class="section-title">Reflection</h2>
+          <p>Pazzamente started as a commission and became something I genuinely care about — which is the best thing a project can do. It stretched me the furthest not because any single part of it was beyond my skills, but because I had to hold all of it together at once. Designing the brand, directing the shoot, editing the footage, managing the distribution, and running the social media are things I've done separately before. Doing them all in service of one coherent vision, from scratch, with real collaborators and a real audience, was a different kind of challenge.</p>
+          <p>The most important design decision I made on this project wasn't visual — it was the format. The 5-minute practical tip at the end of each episode was something I insisted on from the beginning, and it's the thing viewers mention most. Designing a container for content is as much a design problem as designing a visual identity, and I'm glad I treated it that way.</p>
+          <p>What I've learned from watching people engage with it is that the tone is the product. The warmth, the lightness, the sense that two people are genuinely talking rather than performing — that's what makes people come back. And that tone had to be designed just as deliberately as the logo or the colour palette. New episodes are currently in production, and I'm looking forward to seeing where the conversation goes next.</p>
+        </section>
+
+        <section id="credits">
+          <h2 class="section-title">Credits</h2>
+          <p>
+            <strong>Commissioned by:</strong> Angela Mammana & Martina Gatto<br/>
+            <strong>Brand identity & creative direction:</strong> Alessandra Sgariglia<br/>
+            <strong>Filming, directing & editing:</strong> Alessandra Sgariglia<br/>
+            <strong>Platform distribution & social media:</strong> Alessandra Sgariglia<br/>
+            <strong>Hosts:</strong> Angela Mammana (psychologist, psychotherapist, author) · Martina Gatto (TV presenter, actress)<br/>
+            <strong>Inspired by:</strong> <em>A modo mio — la libertà di essere</em> by Angela Mammana
+          </p>
+        </section>
+
+      </article>
+
+      <aside class="toc" id="toc">
+        <h4>On this page</h4>
+        <a href="#overview">Overview</a>
+        <a href="#concept">Concept & format</a>
+        <a href="#brand">Brand identity</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#production">Production</a>
+        <a href="#social">Social media</a>
+        <a href="#reflection">Reflection</a>
+        <a href="#credits">Credits</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="btn" href="index.html">← Back to my projects</a>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const bar = document.getElementById('progress');
+    document.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = scrolled + '%';
+    });
+
+    const links = [...document.querySelectorAll('#toc a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const activate = () => {
+      let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
+      if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
+      links.forEach(l => l.classList.remove('active'));
+      links[idx]?.classList.add('active');
+    };
+    document.addEventListener('scroll', activate, {passive:true});
+    activate();
+  </script>
+</body>
+</html>
