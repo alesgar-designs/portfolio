@@ -122,10 +122,26 @@
       object-position: center top;
       display: block;
     }
-    .hero-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      border-radius: var(--radius);
+
+    /* Desktop: show clean photo, hide mobile version */
+    .photo-mobile { display: none; }
+    .photo-desktop { display: block; }
+
+    /* Mobile: swap to stamped version, dark bg, cover full area */
+    @media (max-width: 580px) {
+      .photo-desktop { display: none; }
+      .photo-mobile { display: block; }
+      .hero-photo {
+        background: #111;
+        aspect-ratio: 1/1;
+        border-radius: var(--radius);
+        width: 50%;
+        margin: 0 auto;
+      }
+      .hero-photo img {
+        object-fit: cover;
+        object-position: center center;
+      }
     }
 
     /* Middle col */
@@ -396,7 +412,7 @@
         <span class="menu-box" aria-hidden="true"></span>
       </button>
       <nav id="primary-nav" class="links">
-        <a href="mailto:alesgar.designs@gmail.com" target="_blank" class="nav-say-hi">Say hi</a>
+        <a href="/cdn-cgi/l/email-protection#2d4c41485e4a4c5f0349485e444a435e6d4a404c4441034e4240" class="nav-say-hi">Say hi</a>
       </nav>
     </div>
   </header>
@@ -407,7 +423,8 @@
 
       <!-- Photo -->
       <div class="hero-photo">
-        <img src="imgs/profile_pic.png" alt="Alessandra Sgariglia" />
+        <img class="photo-desktop" src="imgs/profile_pic.png" alt="Alessandra Sgariglia" />
+        <img class="photo-mobile" src="profile_pic_mobile.png" alt="Alessandra Sgariglia" />
       </div>
 
       <!-- Bio + skills + CTAs -->
