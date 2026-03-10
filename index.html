@@ -78,8 +78,8 @@
       margin-left: 6px;
     }
     .nav-say-hi:hover {
-      background: var(--gold);
-      border-color: var(--gold);
+      background: var(--gold) !important;
+      border-color: var(--gold) !important;
       color: #fff !important;
     }
     .nav-say-hi:hover::after {
@@ -396,7 +396,7 @@
         <span class="menu-box" aria-hidden="true"></span>
       </button>
       <nav id="primary-nav" class="links">
-        <a href="mailto:alesgar.designs@gmail.com" class="nav-say-hi">Say hi</a>
+        <a href="/cdn-cgi/l/email-protection#2d4c41485e4a4c5f0349485e444a435e6d4a404c4441034e4240" class="nav-say-hi">Say hi</a>
       </nav>
     </div>
   </header>
@@ -700,7 +700,7 @@
     <div class="wrap">© <span id="y"></span> Alessandra Sgariglia · Website built by me with HTML, CSS & JavaScript</div>
   </footer>
 
-  <script src="nav.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="nav.js"></script>
   <script>
     // ── Filters ──
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -722,13 +722,4 @@
           if (match) visible++;
         });
 
-        emptyState.classList.toggle('show', visible === 0);
-      });
-    });
-
-    // ── Footer year ──
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+        emptyState.classList.toggle('show', visible === 0)
