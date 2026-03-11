@@ -1,0 +1,96 @@
+/* ====== Header / Nav ====== */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid #eee;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #B99A5B;
+}
+
+/* ── Say hi button (desktop) ── */
+.nav-say-hi {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border: 1px solid #e7e7e9;
+  border-radius: 12px;
+  padding: 8px 16px;
+  background: #fff;
+  text-decoration: none;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+.nav-say-hi::after {
+  content: "→";
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: transform .25s ease, opacity .25s ease;
+  display: inline-block;
+  margin-left: 6px;
+}
+.nav-say-hi:hover {
+  background: #B99A5B !important;
+  border-color: #B99A5B !important;
+  color: #fff !important;
+}
+.nav-say-hi:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Override nav.css blue hover for all other nav links */
+.nav a:hover { background: transparent; }
+
+/* ── Email emoji button (mobile only) ── */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  font-size: 22px;
+  text-decoration: none;
+  line-height: 1;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ONLY (<= 679px) ===== */
+@media (max-width: 679px) {
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide Say hi on mobile */
+  .nav-say-hi { display: none !important; }
+
+  /* No dropdown needed anymore */
+  #primary-nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+}
