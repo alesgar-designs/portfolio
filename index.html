@@ -33,7 +33,7 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:auto;padding:24px}
 
-    /* ====== Nav (matches original) ====== */
+    /* ====== Nav ====== */
     header {
       border-bottom: 1px solid #eee;
       background: var(--bg);
@@ -52,7 +52,6 @@
     .links { display: flex; gap: 24px; align-items: center; }
     .links a { font-size: 15px; color: var(--muted); }
 
-    /* Hide email button on desktop */
     .menu-toggle { display: none; }
 
     @media (max-width: 679px) {
@@ -60,7 +59,6 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 22px;
         background: transparent;
         border: none;
         padding: 4px;
@@ -68,44 +66,37 @@
         line-height: 1;
         margin-left: auto;
       }
-      /* Hide Say hi button on mobile */
+      .menu-toggle svg .mail-bg { fill: none; }
+      .menu-toggle svg .mail-stroke { stroke: #1a1a1a; fill: none; stroke-width: 1.8; }
+      .menu-toggle svg .mail-flap { stroke: #1a1a1a; fill: none; stroke-width: 1.8; }
       .nav-say-hi { display: none !important; }
     }
 
-    /* Say hi nav button */
     .nav-say-hi {
       display: inline-flex;
       align-items: center;
-      gap: 0;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text) !important;
-      border: 1px solid #e7e7e9;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: none;
       border-radius: 12px;
-      padding: 8px 16px;
-      background: #fff;
-      transition: background 0.18s, border-color 0.18s, color 0.18s;
+      background: transparent;
+      transition: background 0.18s;
+      text-decoration: none;
+      flex-shrink: 0;
     }
-    .nav-say-hi::after {
-      content: "→";
-      opacity: 0;
-      transform: translateX(-6px);
-      transition: transform .25s ease, opacity .25s ease;
-      display: inline-block;
-      margin-left: 6px;
-    }
-    .nav-say-hi:hover {
-      background: var(--gold) !important;
-      border-color: var(--gold) !important;
-      color: #fff !important;
-    }
-    .nav-say-hi:hover::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    .nav-say-hi::after { display: none; }
+    .nav-say-hi svg { width: 22px; height: 22px; }
+    .nav-say-hi svg .mail-bg { fill: none; }
+    .nav-say-hi svg .mail-stroke { stroke: #1a1a1a; fill: none; transition: stroke 0.18s, fill 0.18s; }
+    .nav-say-hi svg .mail-flap { stroke: #1a1a1a; fill: none; transition: stroke 0.18s; }
+    .nav-say-hi:hover { background: transparent !important; border-color: transparent !important; }
+    .nav-say-hi:hover svg .mail-bg { fill: var(--gold); }
+    .nav-say-hi:hover svg .mail-stroke { stroke: var(--gold); fill: var(--gold); }
+    .nav-say-hi:hover svg .mail-flap { stroke: #fff; }
 
     /* ====== Hero ====== */
-    .hero { padding: 64px 24px 56px; overflow: visible; }
+    .hero { padding: 64px 24px 40px; overflow: visible; }
     .hero-inner {
       max-width: var(--maxw);
       margin: auto;
@@ -139,12 +130,8 @@
       object-position: center top;
       display: block;
     }
-
-    /* Desktop: show clean photo, hide mobile version */
     .photo-mobile { display: none; }
     .photo-desktop { display: block; }
-
-    /* Mobile: swap to stamped version, dark bg, cover full area */
     @media (max-width: 580px) {
       .photo-desktop { display: none; }
       .photo-mobile { display: block; }
@@ -155,19 +142,11 @@
         width: 50%;
         margin: 0 auto;
       }
-      .hero-photo img {
-        object-fit: cover;
-        object-position: center center;
-      }
+      .hero-photo img { object-fit: cover; object-position: center center; }
     }
 
     /* Middle col */
-    .hero-mid {}
-    h1 {
-      font-size: clamp(26px, 3.2vw, 42px);
-      line-height: 1.15;
-      margin: 0 0 14px;
-    }
+    h1 { font-size: clamp(26px, 3.2vw, 42px); line-height: 1.15; margin: 0 0 14px; }
     .lead {
       font-size: clamp(15px, 1.6vw, 18px);
       color: #333;
@@ -176,68 +155,9 @@
       max-width: 520px;
     }
 
-    /* Skills in hero */
-    .hero-skills { margin-bottom: 24px; }
-    .hero-skills-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .pills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-    .pill-badge {
-      display: inline-block;
-      font-size: 13px;
-      padding: 5px 13px;
-      border-radius: 999px;
-      border: 1px solid #e7e7e9;
-      background: var(--card);
-      color: var(--text);
-      line-height: 1;
-    }
-
-    /* CTAs */
-    .hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: background 0.2s;
-    }
-    .btn-primary:hover { background: #6282a0; }
-    .btn-secondary {
-      display: inline-block;
-      border: 1px solid #e0e0e0;
-      color: var(--text);
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: border-color 0.2s, background 0.2s;
-      background: #fff;
-    }
-    .btn-secondary:hover { border-color: var(--accent); background: var(--accent-2); color: var(--accent); }
-
-    /* Right col — linktree CTA card */
+    /* Right col — no card background */
     .hero-right {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
       min-width: 200px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
     }
     .hero-right-label {
       font-size: 11px;
@@ -245,33 +165,98 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* Skills section — full width below hero */
+    .skills-section {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+    .skills-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: stretch;
     }
     .cta-link {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 11px 14px;
+      gap: 10px;
+      padding: 11px 12px;
       background: #fff;
       border: 1px solid #e7e7e9;
       border-radius: 12px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       transition: border-color 0.18s, background 0.18s;
       color: var(--text);
+      height: 100%;
     }
     .cta-link:hover { border-color: var(--accent); background: var(--accent-2); }
     .cta-link .cta-icon {
-      width: 32px; height: 32px;
+      width: 28px; height: 28px;
       border-radius: 8px;
       background: var(--accent-2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
+      font-size: 14px;
       flex-shrink: 0;
     }
     .cta-link .cta-text { display: flex; flex-direction: column; }
-    .cta-link .cta-title { font-weight: 600; font-size: 14px; line-height: 1.2; }
-    .cta-link .cta-sub { font-size: 12px; color: var(--muted); line-height: 1.2; margin-top: 1px; }
+    .cta-link .cta-title { font-weight: 600; font-size: 13px; line-height: 1.2; }
+    .cta-link .cta-sub { font-size: 11px; color: var(--muted); line-height: 1.2; margin-top: 1px; }
+
+    /* Filter pills under My projects */
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .project-filter-btn {
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .project-filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .project-filter-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+    .pills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill-badge {
+      display: inline-block;
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid #e7e7e9;
+      background: var(--card);
+      color: var(--text);
+      line-height: 1;
+      cursor: default;
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+    }
+    .pill-badge.clickable { cursor: pointer; }
+    .pill-badge.clickable:hover { border-color: var(--gold); color: var(--gold); background: #fff; }
+    .pill-badge.clickable.active { background: var(--gold); border-color: var(--gold); color: #fff; }
 
     /* ====== Divider ====== */
     .section-divider { border: none; border-top: 1px solid #eee; margin: 0; }
@@ -286,43 +271,7 @@
       flex-wrap: wrap;
     }
     .section-title { font-size: 22px; margin: 0; }
-    .section-subtitle {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 0;
-    }
     .muted { color: var(--muted); }
-
-    /* ====== Filter pills ====== */
-    .filters-wrap { margin-bottom: 24px; }
-    .filters-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .filter-btn {
-      font: inherit;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 6px 16px;
-      border-radius: 999px;
-      border: 1px solid #e0e0e0;
-      background: #fff;
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .filter-btn[data-filter="all"].active { background: var(--text); border-color: var(--text); }
 
     /* ====== Projects grid ====== */
     .grid {
@@ -362,7 +311,6 @@
     .card-link:focus-visible .btn-arrow::after { opacity: 1; transform: translateX(0); }
     .list { display: flex; flex-wrap: wrap; gap: 8px; }
 
-    /* empty state */
     .empty-state {
       display: none;
       grid-column: 1 / -1;
@@ -404,7 +352,6 @@
     .exp-role { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
     .exp-company { font-size: 14px; color: var(--muted); font-weight: 400; }
     .exp-desc { font-size: 14px; color: #444; line-height: 1.6; margin: 6px 0 0; }
-
     .edu-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -427,9 +374,21 @@
   <header>
     <div class="wrap nav">
       <div class="brand">Alessandra Sgariglia</div>
-      <a href="/cdn-cgi/l/email-protection#96f7faf3e5f1f7e4b8f2f3e5fff1f8e5d6f1fbf7fffab8f5f9fb" class="menu-toggle" aria-label="Send email">✉️</a>
+      <a href="mailto:alesgar.designs@gmail.com" class="menu-toggle" aria-label="Send email">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;">
+          <rect class="mail-bg" x="2" y="5" width="20" height="14" rx="3" ry="3"/>
+          <rect class="mail-stroke" x="2" y="5" width="20" height="14" rx="3" ry="3" stroke-width="1.8"/>
+          <polyline class="mail-flap" points="2,5 12,13.5 22,5" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </a>
       <nav id="primary-nav" class="links">
-        <a href="/cdn-cgi/l/email-protection#07666b6274606675296362746e60697447606a666e6b2964686a" target="_blank" class="nav-say-hi">Say hi</a>
+        <a href="mailto:alesgar.designs@gmail.com" class="nav-say-hi" aria-label="Send email">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <rect class="mail-bg" x="2" y="5" width="20" height="14" rx="3" ry="3"/>
+            <rect class="mail-stroke" x="2" y="5" width="20" height="14" rx="3" ry="3" stroke-width="1.8"/>
+            <polyline class="mail-flap" points="2,5 12,13.5 22,5" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </nav>
     </div>
   </header>
@@ -444,67 +403,64 @@
         <img class="photo-mobile" src="imgs/profile_pic_mobile.png" alt="Alessandra Sgariglia" />
       </div>
 
-      <!-- Bio + skills + CTAs -->
+      <!-- Bio -->
       <div class="hero-mid">
         <h1>Hi, I'm Alessandra.</h1>
         <p class="lead">A designer based between Rome and Milan. My background spans UX/UI, interaction design, branding, and creative direction — I work with people who want their digital presence to feel as intentional as it looks.</p>
         <p class="lead" style="margin-top:-8px;">I care about the whole experience: from the first impression to the last interaction. Whether that's a product, a brand, or a system — I bring research, craft, and a point of view.</p>
-
-        <div class="hero-skills">
-          <p class="hero-skills-label">What I do</p>
-          <div class="pills-list">
-            <span class="pill-badge">UX/UI Design</span>
-            <span class="pill-badge">Interaction Design</span>
-            <span class="pill-badge">Branding & Identity</span>
-            <span class="pill-badge">Art Direction</span>
-            <span class="pill-badge">Prototyping</span>
-            <span class="pill-badge">Content Production</span>
-            <span class="pill-badge">Video Making & Editing</span>
-          </div>
-        </div>
-
-        
-      </div>
-
-      <!-- Right: quick links card -->
-      <div class="hero-right">
-        <p class="hero-right-label">Find me on</p>
-
-        <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="cta-link">
-          <span class="cta-icon">🌿</span>
-          <span class="cta-text">
-            <span class="cta-title">Work with me</span>
-            <span class="cta-sub">Tell me about your project</span>
-          </span>
-        </a>
-
-        <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="cta-link">
-          <span class="cta-icon">📷</span>
-          <span class="cta-text">
-            <span class="cta-title">Instagram</span>
-            <span class="cta-sub">@alesgar_design</span>
-          </span>
-        </a>
-
-        <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="cta-link">
-          <span class="cta-icon">💼</span>
-          <span class="cta-text">
-            <span class="cta-title">LinkedIn</span>
-            <span class="cta-sub">Alessandra Sgariglia</span>
-          </span>
-        </a>
-
-        <a href="https://linktr.ee/pazzamente.podcast" target="_blank" rel="noreferrer" class="cta-link">
-          <span class="cta-icon">🎙</span>
-          <span class="cta-text">
-            <span class="cta-title">Pazzamente</span>
-            <span class="cta-sub">Psychology podcast</span>
-          </span>
-        </a>
       </div>
 
     </div>
   </section>
+
+  <!-- ====== WHAT I DO — full width ====== -->
+  <div class="skills-section">
+    <p class="skills-label">What I do</p>
+    <div class="pills-list">
+      <span class="pill-badge clickable" data-filter="UX/UI Design">UX/UI Design</span>
+      <span class="pill-badge clickable" data-filter="Interaction Design">Interaction Design</span>
+      <span class="pill-badge clickable" data-filter="Branding & Identity">Branding & Identity</span>
+      <span class="pill-badge clickable" data-filter="Art Direction">Art Direction</span>
+      <span class="pill-badge clickable" data-filter="Prototyping">Prototyping</span>
+      <span class="pill-badge clickable" data-filter="Content Production">Content Production</span>
+      <span class="pill-badge clickable" data-filter="Video Making & Editing">Video Making & Editing</span>
+    </div>
+  </div>
+
+  <!-- ====== FIND ME ON — full width ====== -->
+  <div class="skills-section" style="padding-top:0;">
+    <p class="hero-right-label">Find me on</p>
+    <div class="cta-grid">
+      <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="cta-link">
+        <span class="cta-icon">🌿</span>
+        <span class="cta-text">
+          <span class="cta-title">Work with me</span>
+          <span class="cta-sub">Tell me about your project</span>
+        </span>
+      </a>
+      <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="cta-link">
+        <span class="cta-icon">📷</span>
+        <span class="cta-text">
+          <span class="cta-title">Instagram</span>
+          <span class="cta-sub">@alesgar_design</span>
+        </span>
+      </a>
+      <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="cta-link">
+        <span class="cta-icon">💼</span>
+        <span class="cta-text">
+          <span class="cta-title">LinkedIn</span>
+          <span class="cta-sub">Alessandra Sgariglia</span>
+        </span>
+      </a>
+      <a href="https://linktr.ee/pazzamente.podcast" target="_blank" rel="noreferrer" class="cta-link">
+        <span class="cta-icon">🎙</span>
+        <span class="cta-text">
+          <span class="cta-title">Pazzamente</span>
+          <span class="cta-sub">Psychology podcast</span>
+        </span>
+      </a>
+    </div>
+  </div>
 
   <hr class="section-divider" />
 
@@ -513,31 +469,27 @@
     <div class="section-header">
       <h2 class="section-title">My projects</h2>
     </div>
-
-    <div class="filters-wrap">
-      <p class="filters-label">Filter by skill</p>
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="UX/UI">UX/UI</button>
-        <button class="filter-btn" data-filter="Interaction Design">Interaction Design</button>
-        <button class="filter-btn" data-filter="Branding">Branding</button>
-        <button class="filter-btn" data-filter="Illustration">Illustration</button>
-        <button class="filter-btn" data-filter="Content Production">Content Production</button>
-      </div>
+    <div class="project-filters">
+      <p style="font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin:0 0 10px; width:100%;">Filter by skill</p>
+      <button class="project-filter-btn active" data-filter="all">All</button>
+      <button class="project-filter-btn" data-filter="UX/UI Design">UX/UI Design</button>
+      <button class="project-filter-btn" data-filter="Interaction Design">Interaction Design</button>
+      <button class="project-filter-btn" data-filter="Branding & Identity">Branding & Identity</button>
+      <button class="project-filter-btn" data-filter="Art Direction">Art Direction</button>
+      <button class="project-filter-btn" data-filter="Prototyping">Prototyping</button>
+      <button class="project-filter-btn" data-filter="Content Production">Content Production</button>
+      <button class="project-filter-btn" data-filter="Video Making & Editing">Video Making & Editing</button>
     </div>
 
     <div class="grid" id="projectGrid">
-
-      <div class="card-wrap" data-tags='["UX/UI"]'>
+      <!-- AirPal: UX/UI Design, Prototyping -->
+      <div class="card-wrap" data-tags='["UX/UI Design","Prototyping"]'>
         <a href="AirPal.html" rel="noreferrer" class="card-link">
           <article class="card">
             <img class="thumb" src="imgs/cover_airpal.png" alt="Project cover" />
             <div class="card-body">
               <h3>AirPal<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Urban Wellbeing Companion</span></h3>
               <p>A physical device and app that makes air quality visible — draining your "health battery" in polluted areas and recharging it in green spaces.</p>
-              <div class="list">
-                <span class="pill" style="background-color:var(--card);">UX/UI</span>
-              </div>
             </div>
             <div class="card-footer">
               <p><span class="btn btn-arrow">Discover more</span></p>
@@ -546,16 +498,14 @@
         </a>
       </div>
 
-      <div class="card-wrap" data-tags='["UX/UI"]'>
+      <!-- Milanosport: UX/UI Design -->
+      <div class="card-wrap" data-tags='["UX/UI Design"]'>
         <a href="Milanosport.html" rel="noreferrer" class="card-link">
           <article class="card">
             <img class="thumb" src="imgs/cover_milanosport.png" alt="Project cover" />
             <div class="card-body">
               <h3>Milanosport<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Website Redesign</span></h3>
               <p>A full UX redesign of Milan's public sports platform — cutting the booking flow from 16 to 9 steps and rebuilding navigation from scratch.</p>
-              <div class="list">
-                <span class="pill" style="background-color:var(--card);">UX/UI</span>
-              </div>
             </div>
             <div class="card-footer">
               <p><span class="btn btn-arrow">Discover more</span></p>
@@ -564,16 +514,14 @@
         </a>
       </div>
 
-      <div class="card-wrap" data-tags='["Interaction Design"]'>
+      <!-- Nexus: Interaction Design, Art Direction, Prototyping -->
+      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
         <a href="Nexus.html" rel="noreferrer" class="card-link">
           <article class="card">
             <img class="thumb" src="imgs/cover_nexus.png" alt="Project cover" />
             <div class="card-body">
               <h3>Nexus<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">An Immersive Installation</span></h3>
               <p>A speculative installation set in 2150, where humans donate their breath — and their chemistry — to help a wounded ecosystem survive.</p>
-              <div class="list">
-                <span class="pill" style="background-color:var(--card);">Interaction Design</span>
-              </div>
             </div>
             <div class="card-footer">
               <p><span class="btn btn-arrow">Discover more</span></p>
@@ -582,16 +530,14 @@
         </a>
       </div>
 
-      <div class="card-wrap" data-tags='["Interaction Design"]'>
+      <!-- Luma: Interaction Design, Art Direction, Prototyping -->
+      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
         <a href="Luma.html" rel="noreferrer" class="card-link">
           <article class="card">
             <img class="thumb" src="imgs/cover_luma.png" alt="Project cover" />
             <div class="card-body">
               <h3>Luma<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Personal Dome Experience</span></h3>
               <p>An umbrella that turns a travel photo into light and sound — letting you re-live a memory inside a personal dome, or share it with a stranger.</p>
-              <div class="list">
-                <span class="pill" style="background-color:var(--card);">Interaction Design</span>
-              </div>
             </div>
             <div class="card-footer">
               <p><span class="btn btn-arrow">Discover more</span></p>
@@ -600,17 +546,14 @@
         </a>
       </div>
 
-      <div class="card-wrap" data-tags='["Branding","Illustration"]'>
+      <!-- Behind Closed Doors: Branding & Identity, Art Direction -->
+      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction"]'>
         <a href="BehindClosedDoors.html" rel="noreferrer" class="card-link">
           <article class="card">
             <img class="thumb" src="imgs/cover_BehindClosedDoors.png" alt="Behind Closed Doors poster" style="object-fit:contain; background:#1a1a2e;" />
             <div class="card-body">
               <h3>Behind Closed Doors<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Theatre Visual Identity</span></h3>
               <p>Poster, illustration, and digital assets for a mental health theatre show — hand-drawn, deliberately intimate, commissioned by Actors Circle Berlin.</p>
-              <div class="list">
-                <span class="pill" style="background-color:var(--card);">Branding</span>
-                <span class="pill" style="background-color:var(--card);">Illustration</span>
-              </div>
             </div>
             <div class="card-footer">
               <p><span class="btn btn-arrow">Discover more</span></p>
@@ -619,17 +562,14 @@
         </a>
       </div>
 
-      <div class="card-wrap" data-tags='["Branding","Content Production"]'>
+      <!-- Pazzamente: Branding & Identity, Art Direction, Content Production, Video Making & Editing -->
+      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Content Production","Video Making & Editing"]'>
         <a href="Pazzamente.html" rel="noreferrer" class="card-link">
           <article class="card">
             <img class="thumb" src="imgs/Pazzamente/cover.png" alt="Pazzamente podcast cover" />
             <div class="card-body">
               <h3>Pazzamente<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Italian Psychology Podcast</span></h3>
               <p>A psychology podcast making mental health accessible and human — concept, brand identity, production, and social media, all from scratch.</p>
-              <div class="list">
-                <span class="pill" style="background-color:var(--card);">Branding</span>
-                <span class="pill" style="background-color:var(--card);">Content Production</span>
-              </div>
             </div>
             <div class="card-footer">
               <p><span class="btn btn-arrow">Discover more</span></p>
@@ -648,14 +588,11 @@
   <!-- ====== EXPERIENCE / EDUCATION / LANGUAGES ====== -->
   <section id="background" class="wrap">
 
-    <!-- Experience -->
     <h2 class="section-title" style="margin-bottom:20px;">Experience</h2>
     <div class="exp-grid">
 
       <div class="exp-item">
-        <div class="exp-meta">
-          <span class="exp-period">2025</span>
-        </div>
+        <div class="exp-meta"><span class="exp-period">2025</span></div>
         <div class="exp-body">
           <p class="exp-role">UX/UI Design Intern <span class="exp-company">— Colla Studio</span></p>
           <p class="exp-desc">Implemented app flow updates based on client feedback; designed an e-commerce proposal with responsive wireframes and interactive prototypes; contributed to a scalable design system and client presentation materials.</p>
@@ -663,9 +600,7 @@
       </div>
 
       <div class="exp-item">
-        <div class="exp-meta">
-          <span class="exp-period">2022–now</span>
-        </div>
+        <div class="exp-meta"><span class="exp-period">2022–now</span></div>
         <div class="exp-body">
           <p class="exp-role">Freelance Designer <span class="exp-company">— Self-employed</span></p>
           <p class="exp-desc">Built an e-learning platform (Squarespace + Thinkific); developed cohesive digital presences and content strategies for clients across web and social. Worked independently from brief to delivery.</p>
@@ -673,9 +608,7 @@
       </div>
 
       <div class="exp-item">
-        <div class="exp-meta">
-          <span class="exp-period">2022–2023</span>
-        </div>
+        <div class="exp-meta"><span class="exp-period">2022–2023</span></div>
         <div class="exp-body">
           <p class="exp-role">Teaching Assistant & Academic Collaborator <span class="exp-company">— NABA Roma</span></p>
           <p class="exp-desc">Invited to co-lead sessions on user-centred design and creative problem-solving for the Graphic Design department. Mentored students, supported exhibitions, and contributed to the academic life of the department.</p>
@@ -686,7 +619,6 @@
 
     <hr class="section-divider" style="margin: 32px 0;" />
 
-    <!-- Education + Languages side by side -->
     <div class="edu-row">
       <div class="edu-col">
         <h2 class="section-title" style="margin-bottom:20px;">Education</h2>
@@ -708,9 +640,9 @@
 
       <div class="edu-col">
         <h2 class="section-title" style="margin-bottom:20px;">Languages</h2>
-        <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <span class="pill" style="font-size:15px; padding:8px 18px;">🇮🇹 Italian — Native</span>
-          <span class="pill" style="font-size:15px; padding:8px 18px;">🇬🇧 English — Fluent</span>
+        <div style="padding-top:20px;">
+          <span style="font-size:15px; display:block; margin-bottom:6px;">🇮🇹 Italian — Native</span>
+          <span style="font-size:15px; display:block;">🇬🇧 English — Fluent</span>
         </div>
       </div>
     </div>
@@ -724,7 +656,7 @@
     <h2 class="section-title">Contacts</h2>
     <p class="muted">Working on something interesting? I'd love to hear about it.</p>
     <div class="contact-row">
-      <a href="mailto:alesgar.designs@gmail.com" target="_blank">Email</a>
+      <a href="/cdn-cgi/l/email-protection#4829242d3b2f293a662c2d3b212f263b082f25292124662b2725">Email</a>
       <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
   </section>
@@ -733,36 +665,56 @@
     <div class="wrap">© <span id="y"></span> Alessandra Sgariglia · Website built by me with HTML, CSS & JavaScript</div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="nav.js"></script>
-  <script src="nav.js"></script>
-  <script src="nav.js"></script>
   <script src="nav.js"></script>
   <script>
-    // ── Filters ──
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cardWraps  = document.querySelectorAll('.card-wrap');
-    const emptyState = document.getElementById('emptyState');
+    const skillPills    = document.querySelectorAll('.pill-badge.clickable');
+    const projectBtns   = document.querySelectorAll('.project-filter-btn');
+    const cardWraps     = document.querySelectorAll('.card-wrap');
+    const emptyState    = document.getElementById('emptyState');
+    const projectsSection = document.getElementById('projects');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    function applyFilter(f) {
+      // sync pill-badges
+      skillPills.forEach(p => {
+        p.classList.toggle('active', p.dataset.filter === f);
+      });
+      // sync project filter buttons
+      projectBtns.forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === f);
+      });
+      // show/hide cards
+      let visible = 0;
+      cardWraps.forEach(wrap => {
+        const tags = JSON.parse(wrap.dataset.tags || '[]');
+        const match = f === 'all' || tags.includes(f);
+        wrap.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      emptyState.classList.toggle('show', visible === 0);
+    }
 
-        const f = btn.dataset.filter;
-        let visible = 0;
-
-        cardWraps.forEach(wrap => {
-          const tags = JSON.parse(wrap.dataset.tags || '[]');
-          const match = f === 'all' || tags.includes(f);
-          wrap.classList.toggle('hidden', !match);
-          if (match) visible++;
-        });
-
-        emptyState.classList.toggle('show', visible === 0);
+    // Skill pills in hero → filter + scroll to projects
+    skillPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const f = pill.dataset.filter;
+        const isActive = pill.classList.contains('active');
+        applyFilter(isActive ? 'all' : f);
+        const headerH = document.querySelector('header')?.offsetHeight || 0;
+        const top = projectsSection.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
       });
     });
 
-    // ── Footer year ──
+    // Project filter buttons → filter only (no scroll)
+    projectBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        const isActive = btn.classList.contains('active') && f !== 'all';
+        applyFilter(isActive ? 'all' : f);
+      });
+    });
+
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 
