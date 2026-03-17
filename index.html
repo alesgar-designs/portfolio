@@ -656,7 +656,7 @@
     <div class="wrap">© <span id="y"></span> Alessandra Sgariglia · Website built by me with HTML, CSS & JavaScript</div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="nav.js"></script>
+  <script src="nav.js"></script>
   <script>
     const skillPills    = document.querySelectorAll('.pill-badge.clickable');
     const projectBtns   = document.querySelectorAll('.project-filter-btn');
@@ -665,15 +665,8 @@
     const projectsSection = document.getElementById('projects');
 
     function applyFilter(f) {
-      // sync pill-badges
-      skillPills.forEach(p => {
-        p.classList.toggle('active', p.dataset.filter === f);
-      });
-      // sync project filter buttons
-      projectBtns.forEach(b => {
-        b.classList.toggle('active', b.dataset.filter === f);
-      });
-      // show/hide cards
+      skillPills.forEach(p => p.classList.toggle('active', p.dataset.filter === f));
+      projectBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === f));
       let visible = 0;
       cardWraps.forEach(wrap => {
         const tags = JSON.parse(wrap.dataset.tags || '[]');
@@ -684,16 +677,25 @@
       emptyState.classList.toggle('show', visible === 0);
     }
 
-    // Skill pills in hero → filter + scroll to projects
     skillPills.forEach(pill => {
       pill.addEventListener('click', () => {
         const f = pill.dataset.filter;
-        const isActive = pill.classList.contains('active');
-        applyFilter(isActive ? 'all' : f);
+        applyFilter(pill.classList.contains('active') ? 'all' : f);
         const headerH = document.querySelector('header')?.offsetHeight || 0;
         const top = projectsSection.getBoundingClientRect().top + window.scrollY - headerH - 16;
         window.scrollTo({ top, behavior: 'smooth' });
       });
     });
 
-    // Project filter
+    projectBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        applyFilter(btn.classList.contains('active') && f !== 'all' ? 'all' : f);
+      });
+    });
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
