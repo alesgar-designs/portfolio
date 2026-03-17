@@ -26,54 +26,33 @@ header {
 }
 .brand a { color: #B99A5B; }
 
-/* ── Say hi button ── */
+/* Nav links — no hover background by default */
+.nav a { background: transparent !important; }
+.nav a:hover { background: transparent !important; }
+
+/* ── Say hi icon button ── */
 .nav-say-hi {
-  display: inline-flex;
-  align-items: center;
-  font-size: 15px;
-  font-weight: 600;
-  color: #1a1a1a !important;
-  border: 1px solid #e7e7e9;
-  border-radius: 12px;
-  padding: 8px 16px;
-  background: #fff;
-  text-decoration: none;
-  transition: background 0.18s, border-color 0.18s, color 0.18s;
-}
-.nav-say-hi::after {
-  content: "→";
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: transform .25s ease, opacity .25s ease;
-  display: inline-block;
-  margin-left: 6px;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 .nav-say-hi:hover {
-  background: #B99A5B !important;
-  border-color: #B99A5B !important;
-  color: #fff !important;
-}
-.nav-say-hi:hover::after {
-  opacity: 1;
-  transform: translateX(0);
+  background: transparent !important;
+  border: none !important;
 }
 
-/* Override any blue hover on nav links */
-.nav a:hover { background: transparent; }
-
-/* ── Email emoji — hidden on desktop ── */
+/* ── Email icon — hidden on desktop ── */
 .menu-toggle {
   display: none;
 }
 
 /* ===== MOBILE (<= 679px) ===== */
 @media (max-width: 679px) {
-  /* Show email emoji, push to right */
   .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
     background: transparent;
     border: none;
     padding: 4px;
