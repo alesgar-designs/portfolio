@@ -18,7 +18,7 @@
     img{max-width:100%; display:block; border-radius:12px}
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--maxw); margin:auto; padding:24px}
-    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:999;}
+    .progress{position:absolute; bottom:0; left:0; height:3px; background:var(--accent); width:0; z-index:95; right:0;}
 
     /* ====== Nav ====== */
     header{position:sticky; top:0; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:100;}
@@ -28,8 +28,7 @@
     .menu-toggle{display:none;}
     @media(max-width:679px){
       .menu-toggle{display:inline-flex; align-items:center; justify-content:center; background:transparent; border:none; padding:4px; margin-left:auto; cursor:pointer; text-decoration:none;}
-      .nav-say-hi{display:none !important;}
-      #primary-nav{display:none !important;}
+      .nav-say-hi{display:none !important;} #primary-nav{display:none !important;}
     }
     .nav-say-hi{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:none; background:transparent; text-decoration:none; position:relative;}
     .nav-say-hi svg{width:22px; height:22px; position:absolute; transition:opacity 0.18s;}
@@ -38,19 +37,9 @@
     .nav-say-hi svg path{fill:#1a1a1a;} .nav-say-hi:hover svg path{fill:var(--accent);}
 
     /* ====== Sticky hero ====== */
-    .hero{
-      position:sticky; top:57px;
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid #eee;
-      z-index:90;
-      padding: 16px 0 12px;
-    }
-    .hero-inner {
-      max-width: var(--maxw);
-      margin: auto;
-      padding: 0 24px;
-    }
+    .hero{position:sticky; top:57px; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:90; padding:16px 0 0;}
+    .hero-inner{max-width:var(--maxw); margin:auto; padding:0 24px 12px;}
+    .process-label{font-size:11px; letter-spacing:0.1em; color:var(--muted); text-transform:uppercase; margin:0 0 2px; font-weight:400;}
     .breadcrumbs{font-size:13px; color:var(--muted);}
     .breadcrumbs a{color:var(--muted);}
     h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:4px 0 8px;}
@@ -58,51 +47,40 @@
     .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee;}
     .mast{margin:16px auto; max-width:var(--wide);}
 
-    /* ====== Fixed title stack ====== */
-    /* The title stack is a fixed panel that lives just below nav+hero.
-       Titles are added to it permanently as you scroll past each section.
-       The whole panel gets a translateY applied by JS when credits line pushes it up. */
-    #title-stack { display: none; } /* no longer used */
-
     /* ====== Sections ====== */
     .stack-section { }
     .section-body { padding-bottom: 40px; }
-
-    /* In-text title becomes sticky — travels up naturally and sticks */
     .section-title-text {
-      position: sticky;
-      background: var(--bg);
-      border-bottom: 1px solid #eee;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 700;
       margin: 0 0 20px;
-      padding: 14px 0;
+      padding: 32px 0 0;
       color: var(--text);
       line-height: 1.2;
-      /* top set by JS per section */
     }
+
+    /* ====== Rest ====== */
     figure{margin:14px 0;}
+    figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
     .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
     .grid{display:grid; grid-template-columns:1fr; gap:16px;}
     @media(min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr;}}
     @media(min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr);}}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff; transition: background 0.18s, border-color 0.18s, color 0.18s;}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff; transition:background 0.18s, border-color 0.18s, color 0.18s;}
     .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
   </style>
 </head>
 <body>
-  <div class="progress" id="progress"></div>
-
   <header>
     <div class="nav">
       <a href="index.html" class="brand">Alessandra Sgariglia</a>
-      <a href="/cdn-cgi/l/email-protection#54353831273335267a3031273d333a27143339353d387a373b39" class="menu-toggle" aria-label="Send email">
+      <a href="mailto:alesgar.designs@gmail.com" class="menu-toggle" aria-label="Send email">
         <svg viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z" fill="#1a1a1a"/></svg>
       </a>
       <nav id="primary-nav" class="links">
-        <a href="/cdn-cgi/l/email-protection#0d6c61687e6a6c7f2369687e646a637e4d6a606c6461236e6260" class="nav-say-hi" aria-label="Send email">
+        <a href="mailto:alesgar.designs@gmail.com" class="nav-say-hi" aria-label="Send email">
           <svg class="icon-outline" viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z"/></svg>
           <svg class="icon-filled" viewBox="0 0 382.27 268.77" xmlns="http://www.w3.org/2000/svg"><path d="M382.27,29.11v210.54c-1.05,3.24-1.97,6.45-3.52,9.75l-115.76-115.02,115.76-115.02c1.55,3.3,2.47,6.5,3.52,9.75Z"/><path d="M214.8,150.79c-13.12,13.05-34.22,13.01-47.13.17L19.38,3.52C23.55,1.42,27.87,0,33.03,0h316.21c5.17,0,9.48,1.42,13.65,3.52l-148.09,147.26Z"/><path d="M362.81,265.16c-4.18,2.45-8.9,3.61-14.33,3.61H33.03c-5.17,0-9.46-1.42-13.66-3.52l115.71-114.97,17.21,16.98c21.6,21.3,56.49,20.93,78.06-.36l16.82-16.61,115.62,114.87Z"/><path d="M3.63,249.31c-1.88-3.48-3.6-7.53-3.6-12.05l-.03-205.03c.42-4.89,1.4-8.81,3.52-12.88l115.76,115.03L3.63,249.31Z"/></svg>
         </a>
@@ -110,38 +88,29 @@
     </div>
   </header>
 
-  <!-- Fixed title stack panel -->
-  <div id="title-stack">
-    <div class="t-bar" id="tb-0"><div class="t-bar-inner">Overview</div></div>
-    <div class="t-bar" id="tb-1"><div class="t-bar-inner">Concept</div></div>
-    <div class="t-bar" id="tb-2"><div class="t-bar-inner">How It Works</div></div>
-    <div class="t-bar" id="tb-3"><div class="t-bar-inner">Prototype</div></div>
-    <div class="t-bar" id="tb-4"><div class="t-bar-inner">Design</div></div>
-    <div class="t-bar" id="tb-5"><div class="t-bar-inner">Reflection</div></div>
-  </div>
-
   <div class="hero" id="hero">
     <div class="hero-inner">
       <div class="breadcrumbs"><a href="index.html">My projects</a> / AirPal — Urban Wellbeing Companion</div>
+      <p class="process-label">The Process</p>
       <h1>AirPal — Urban Wellbeing Companion</h1>
       <div class="meta">
         <span class="pill" style="color:var(--accent);border:1px solid var(--accent);">UX/UI</span>
         <span class="pill">Prototyping</span>
       </div>
+      <div class="progress" id="progress"></div>
     </div>
   </div>
 
   <main class="wrap">
-
     <figure class="mast">
       <img src="imgs/cover_airpal.png" alt="AirPal device and app mockups" />
     </figure>
 
-    <div class="stack-container" id="stack-container">
+    <div class="stack-container">
 
       <div class="stack-section" id="sec-0">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-0">Overview</h2>
+          <h2 class="section-title-text">Overview</h2>
           <p>Air quality is invisible — and that's exactly the problem. Most people know pollution exists, but without being able to see or feel it in real time, it rarely changes behaviour. AirPal was our attempt to make it tangible, personal, and even a little playful.</p>
           <p>AirPal is a physical companion device paired with a mobile app that visualizes your "health battery" against real-time air quality data. Time spent in polluted areas drains your PAL and makes it look sick; time in cleaner, greener spaces recharges it. The goal was to nudge small, healthier habits without guilt or shame — borrowing the emotional logic of a Tamagotchi to make self-care feel like a game.</p>
           <div class="grid cols-2" style="margin-top:16px;">
@@ -153,16 +122,16 @@
 
       <div class="stack-section" id="sec-1">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-1">Concept</h2>
+          <h2 class="section-title-text">Concept</h2>
           <p>City life is stressful: polluted air, tight schedules, little time for self‑care. AirPal borrows from Tamagotchi‑like play — by taking care of your PAL, you also take care of yourself. Clear visuals (battery/face), small celebrations, and a social layer help make healthy choices stick.</p>
         </div>
       </div>
 
       <div class="stack-section" id="sec-2">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-2">How It Works</h2>
+          <h2 class="section-title-text">How It Works</h2>
           <div class="grid cols-3">
-            <figure><img src="imgs/AirPal/cityMode.png" alt="City mode" style="border-radius:0;"/><p>By being exposed to polluted air for more than one hour, one notch of the LED circle will power off. A sound will alert you only when your battery completely runs out.</p></figure>
+            <figure><img src="imgs/AirPal/cityMode.png" alt="City mode" style="border-radius:0;"/><p>By being exposed to polluted air for more than one hour, one notch of the LED circle will power off. You can check your PAL's status through the app: if you lose battery it gets sick.</p></figure>
             <figure><img src="imgs/AirPal/natureMode.png" alt="Nature mode" style="border-radius:0;"/><p>To recharge, you need to spend time where the air is clean. Every hour spent in nature will recharge one notch and your PAL will gradually feel better.</p></figure>
             <figure><img src="imgs/AirPal/socialMode.png" alt="Social mode" style="border-radius:0;"/><p>AirPAL allows you to join a network of people with whom you share the same interests. You can challenge your friends in the rankings.</p></figure>
           </div>
@@ -171,7 +140,7 @@
 
       <div class="stack-section" id="sec-3">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-3">Prototype</h2>
+          <h2 class="section-title-text">Prototype</h2>
           <h4>The hardware</h4>
           <p>To build our prototype we used an Arduino Uno board, the MQ135 Air Quality Sensor, a Piezo Buzzer and a LED ring. All sensors and actuators were connected to the Arduino board, which was connected to the laptop both as a power source, and to also connect to the software prototype (made in Protopie).</p>
           <img src="imgs/AirPal/hardware.png" alt="Prototype board and wiring" style="border-radius:0; width:100%;"/>
@@ -182,7 +151,7 @@
 
       <div class="stack-section" id="sec-4">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-4">Design</h2>
+          <h2 class="section-title-text">Design</h2>
           <ul>
             <li><strong>Feedback:</strong> only positive nudges; celebrate achievements instead of shaming.</li>
             <li><strong>Cute character:</strong> an interactive PAL to make the experience light and fun.</li>
@@ -195,7 +164,7 @@
 
       <div class="stack-section" id="sec-5">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-5">Reflection</h2>
+          <h2 class="section-title-text">Reflection</h2>
           <p>AirPal was the project where I most clearly felt the connection between design and wellbeing — the two things I care about most. Designing something that could genuinely shift a person's relationship with their environment, without lecturing them, was a design challenge I found deeply motivating.</p>
           <p>The biggest lesson was about framing. Early versions of the concept leaned toward warning and data — showing people how bad the air was. User feedback quickly told us that felt anxious and discouraging. Shifting to a positive, celebratory model completely changed how people related to the device.</p>
           <p>If I were to take this further, I'd explore integrating official AQI APIs for real city data, wearable form factors, and a more developed social layer.</p>
@@ -220,91 +189,33 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="nav.js"></script>
   <script src="nav.js"></script>
   <script>
-    const bar     = document.getElementById('progress');
-    const titles  = [...document.querySelectorAll('.section-title-text')];
-    const credits = document.getElementById('credits-line');
-    const TITLE_H = 51;
-
-    // Create fixed clones appended to body
-    const clones = titles.map((t, i) => {
-      const c = document.createElement('div');
-      c.style.cssText = `
-        position:fixed; left:0; right:0; background:#fff;
-        border-bottom:1px solid #eee;
-        ${i===0 ? 'box-shadow:0 -200px 0 200px #fff;' : ''}
-        font-size:18px; font-weight:700; color:#1a1a1a;
-        line-height:1.2; padding:14px 0;
-        z-index:${80-i}; display:none; box-sizing:border-box;
-        margin-top:-1px;
-      `;
-      const inner = document.createElement('div');
-      inner.style.cssText = 'max-width:1100px; margin:auto; padding:0 24px;';
-      inner.textContent = t.textContent;
-      c.appendChild(inner);
-      document.body.appendChild(c);
-      return c;
-    });
-
-    function getBase() {
-      return document.querySelector('header').offsetHeight +
-             document.getElementById('hero').offsetHeight;
-    }
-
-    function setup() {
-      const base = getBase();
-      titles.forEach((t, i) => {
-        t.style.top    = (base + TITLE_H * i - i) + 'px';
-        t.style.zIndex = 80 - i;
-      });
-      clones.forEach((c, i) => {
-        c.style.top = (base + TITLE_H * i - i) + 'px';
-      });
-    }
+    const bar      = document.getElementById('progress');
+    const sections = [...document.querySelectorAll('.stack-section')];
+    const pills    = [...document.querySelectorAll('
 
     function update() {
       const h = document.documentElement;
       bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
 
-      const base = getBase();
-
-      titles.forEach((t, i) => {
-        const rect = t.getBoundingClientRect();
-        const target = base + TITLE_H * i - i;
-        if (rect.top <= target + 2) {
-          clones[i].style.display = 'block';
-          t.style.visibility = 'hidden';
-        } else {
-          clones[i].style.display = 'none';
-          t.style.visibility = 'visible';
+      const barBottom =      let activeIdx = -1;
+      sections.forEach((sec, i) => {
+        const titleEl = sec.querySelector('.section-title-text');
+        if (titleEl && titleEl.getBoundingClientRect().top <= barBottom + 4) {
+          activeIdx = i;
         }
       });
 
-      // The active section is the last one whose clone is showing
-      // (i.e. the lowest visible clone = the one being read)
-      let activeIdx = -1;
-      titles.forEach((t, i) => {
-        if (clones[i].style.display === 'block') activeIdx = i;
-      });
-      clones.forEach((c, i) => {
-        if (i === activeIdx) {
-          c.style.color = '#B99A5B';
-          c.style.fontWeight = '700';
-        } else {
-          c.style.color = '#1a1a1a';
-          c.style.fontWeight = '400';
-        }
+      pills.forEach((pill, i) => {
+        pill.classList.remove('active', 'past');
+        if (i === activeIdx) pill.classList.add('active');
+        else if (i < activeIdx) pill.classList.add('past');
       });
 
-      // Scroll stack away with credits line
-      const stackBottom = base + titles.length * TITLE_H - titles.length;
-      const creditsTop  = credits.getBoundingClientRect().top;
-      const shift = creditsTop < stackBottom ? stackBottom - creditsTop : 0;
-
-      clones.forEach((c, i) => c.style.top = (base + TITLE_H * i - i - shift) + 'px');
-      titles.forEach((t, i) => t.style.top = (base + TITLE_H * i - i - shift) + 'px');
+      lines.forEach((line, i) => {
+        line.classList.toggle('active', i < activeIdx);
+      });
     }
 
     setup();
