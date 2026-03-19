@@ -86,10 +86,9 @@
     .grid{display:grid; grid-template-columns:1fr; gap:16px;}
     @media(min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr;}}
     @media(min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr);}}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff;}
-    .btn:hover{background:var(--card-hover); color:white; border:1px solid var(--card-hover);}
-    .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:all .25s ease;}
-    .btn-arrow:hover::after{opacity:1; transform:translateX(0);}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff; transition: background 0.18s, border-color 0.18s, color 0.18s;}
+    .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
+    .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
   </style>
 </head>
