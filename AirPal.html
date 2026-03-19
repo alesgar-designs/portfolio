@@ -237,11 +237,12 @@
         border-bottom:1px solid #eee;
         ${i===0 ? 'box-shadow:0 -200px 0 200px #fff;' : ''}
         font-size:18px; font-weight:700; color:#1a1a1a;
-        line-height:1.2; padding:14px 24px;
+        line-height:1.2; padding:14px 0;
         z-index:${80-i}; display:none; box-sizing:border-box;
+        margin-top:-1px;
       `;
       const inner = document.createElement('div');
-      inner.style.cssText = 'max-width:1100px; margin:auto; padding:0;';
+      inner.style.cssText = 'max-width:1100px; margin:auto; padding:0 24px;';
       inner.textContent = t.textContent;
       c.appendChild(inner);
       document.body.appendChild(c);
@@ -256,11 +257,11 @@
     function setup() {
       const base = getBase();
       titles.forEach((t, i) => {
-        t.style.top    = (base + TITLE_H * i) + 'px';
+        t.style.top    = (base + TITLE_H * i - i) + 'px';
         t.style.zIndex = 80 - i;
       });
       clones.forEach((c, i) => {
-        c.style.top = (base + TITLE_H * i) + 'px';
+        c.style.top = (base + TITLE_H * i - i) + 'px';
       });
     }
 
@@ -272,7 +273,7 @@
 
       titles.forEach((t, i) => {
         const rect = t.getBoundingClientRect();
-        const target = base + TITLE_H * i;
+        const target = base + TITLE_H * i - i;
         if (rect.top <= target + 2) {
           clones[i].style.display = 'block';
           t.style.visibility = 'hidden';
@@ -299,12 +300,12 @@
       });
 
       // Scroll stack away with credits line
-      const stackBottom = base + titles.length * TITLE_H;
+      const stackBottom = base + titles.length * TITLE_H - titles.length;
       const creditsTop  = credits.getBoundingClientRect().top;
       const shift = creditsTop < stackBottom ? stackBottom - creditsTop : 0;
 
-      clones.forEach((c, i) => c.style.top = (base + TITLE_H * i - shift) + 'px');
-      titles.forEach((t, i) => t.style.top = (base + TITLE_H * i - shift) + 'px');
+      clones.forEach((c, i) => c.style.top = (base + TITLE_H * i - i - shift) + 'px');
+      titles.forEach((t, i) => t.style.top = (base + TITLE_H * i - i - shift) + 'px');
     }
 
     setup();
