@@ -5,89 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Behind Closed Doors — Case Study</title>
   <meta name="description" content="Visual identity and poster design for Behind Closed Doors, a theatre show about mental health. Commissioned by Actors Circle Berlin." />
-
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#1a1a1a;
-      --muted:#666;
-      --accent:#B99A5B;
-      --card:#f7f7f8;
-      --radius:16px;
-      --shadow: 0 6px 20px rgba(0,0,0,.08);
-      --maxw:1100px;
-      --wide:1280px;
-      --card-hover:#A8BBCE;
+      --bg:#ffffff; --text:#1a1a1a; --muted:#666; --accent:#B99A5B;
+      --card:#f7f7f8; --radius:16px; --shadow:0 6px 20px rgba(0,0,0,.08);
+      --maxw:1100px; --wide:1280px; --card-hover:#A8BBCE;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:var(--bg)}
+    *{box-sizing:border-box} html,body{margin:0}
+    body{font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;}
     img{max-width:100%; display:block; border-radius:12px}
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:999;}
 
-    /* Progress bar */
-    .progress{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:30}
+    /* ====== Nav ====== */
+    header{position:sticky; top:0; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:100;}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:var(--maxw); margin:auto; padding:16px 24px;}
+    .brand{font-size:22px; font-weight:600; color:var(--accent); white-space:nowrap; text-decoration:none;}
+    .links{display:flex; align-items:center;}
+    .menu-toggle{display:none;}
+    @media(max-width:679px){
+      .menu-toggle{display:inline-flex; align-items:center; justify-content:center; background:transparent; border:none; padding:4px; margin-left:auto; cursor:pointer; text-decoration:none;}
+      .nav-say-hi{display:none !important;}
+      #primary-nav{display:none !important;}
+    }
+    .nav-say-hi{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:none; background:transparent; text-decoration:none; position:relative;}
+    .nav-say-hi svg{width:22px; height:22px; position:absolute; transition:opacity 0.18s;}
+    .nav-say-hi .icon-outline{opacity:1;} .nav-say-hi .icon-filled{opacity:0;}
+    .nav-say-hi:hover .icon-outline{opacity:0;} .nav-say-hi:hover .icon-filled{opacity:1;}
+    .nav-say-hi svg path{fill:#1a1a1a;} .nav-say-hi:hover svg path{fill:var(--accent);}
 
-    /* Hero */
-    .hero{padding:32px 0 8px}
-    .breadcrumbs{font-size:13px; color:var(--muted)}
-    .breadcrumbs a{color:var(--muted)}
-    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:8px 0 8px}
-    .meta{display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:14px}
-    .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee}
+    /* ====== Sticky hero ====== */
+    .hero{position:sticky; top:57px; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:90; padding:16px 0 12px;}
+    .hero-inner{max-width:var(--maxw); margin:auto; padding:0 24px;}
+    .breadcrumbs{font-size:13px; color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:4px 0 8px;}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; font-size:14px; margin:0;}
+    .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee;}
+    .mast{margin:16px auto; max-width:var(--wide);}
 
-    /* Mast image */
-    .mast{margin:16px auto; max-width:var(--wide)}
+    /* ====== Sections ====== */
+    .stack-section{}
+    .section-body{padding-bottom:40px;}
+    .section-title-text{
+      position:sticky;
+      background:var(--bg);
+      border-bottom:1px solid #eee;
+      font-size:18px; font-weight:700;
+      margin:0 0 20px; padding:14px 0;
+      color:var(--text); line-height:1.2;
+    }
 
-    /* Layout: content + toc */
-    .layout{display:grid; grid-template-columns:1fr; gap:28px}
-    @media (min-width:1060px){.layout{grid-template-columns: 1fr 260px}}
-    .content{min-width:0}
-    .toc{position:sticky; top:84px; align-self:start; display:none}
-    @media (min-width:1060px){.toc{display:block}}
-    .toc h4{margin:8px 0; font-size:13px; color:#444}
-    .toc a{display:block; padding:6px 0; font-size:14px; color:var(--muted)}
-    .toc a.active{color:var(--accent); font-weight:600}
-
-    /* Sections */
-    section{padding:28px 0; border-top:1px solid #eee}
-    section:first-of-type{border-top:none}
-    .section-title{font-size:22px; margin:0 0 10px}
-    figure{margin:14px 0}
-    figcaption{font-size:13px; color:var(--muted); margin-top:6px}
-
-    .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
-    .grid{display:grid; grid-template-columns:1fr; gap:16px}
-    @media (min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}}
-    @media (min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
-
-    /* Buttons */
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff}
-    .btn:hover{background:var(--card-hover);color:white;border:1px solid var(--card-hover);}
-    .btn-arrow::after{content:"→"; opacity:0; transform:translateX(-6px); transition:all .25s ease}
-    .btn-arrow:hover::after{opacity:1; transform:translateX(0)}
-
-    footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee}
+    /* ====== Rest ====== */
+    figure{margin:14px 0;}
+    figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
+    .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px;}
+    @media(min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr;}}
+    @media(min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr);}}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff; transition:background 0.18s, border-color 0.18s, color 0.18s;}
+    .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
+    .btn-arrow::after{display:none;}
+    footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
   </style>
-
-  <link rel="stylesheet" href="nav.css">
 </head>
 <body>
   <div class="progress" id="progress"></div>
 
   <header>
-    <div class="wrap nav">
-      <div class="brand"><a href="index.html" style="padding:0; background:none; color:#B99A5B;">Alessandra Sgariglia</a></div>
-      <a href="mailto:alesgar.designs@gmail.com" class="menu-toggle" aria-label="Send email">✉️</a>
+    <div class="nav">
+      <a href="index.html" class="brand">Alessandra Sgariglia</a>
+      <a href="mailto:alesgar.designs@gmail.com" class="menu-toggle" aria-label="Send email">
+        <svg viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z" fill="#1a1a1a"/></svg>
+      </a>
       <nav id="primary-nav" class="links">
-        <a href="mailto:alesgar.designs@gmail.com" class="nav-say-hi">Say hi</a>
+        <a href="mailto:alesgar.designs@gmail.com" class="nav-say-hi" aria-label="Send email">
+          <svg class="icon-outline" viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z"/></svg>
+          <svg class="icon-filled" viewBox="0 0 382.27 268.77" xmlns="http://www.w3.org/2000/svg"><path d="M382.27,29.11v210.54c-1.05,3.24-1.97,6.45-3.52,9.75l-115.76-115.02,115.76-115.02c1.55,3.3,2.47,6.5,3.52,9.75Z"/><path d="M214.8,150.79c-13.12,13.05-34.22,13.01-47.13.17L19.38,3.52C23.55,1.42,27.87,0,33.03,0h316.21c5.17,0,9.48,1.42,13.65,3.52l-148.09,147.26Z"/><path d="M362.81,265.16c-4.18,2.45-8.9,3.61-14.33,3.61H33.03c-5.17,0-9.46-1.42-13.66-3.52l115.71-114.97,17.21,16.98c21.6,21.3,56.49,20.93,78.06-.36l16.82-16.61,115.62,114.87Z"/><path d="M3.63,249.31c-1.88-3.48-3.6-7.53-3.6-12.05l-.03-205.03c.42-4.89,1.4-8.81,3.52-12.88l115.76,115.03L3.63,249.31Z"/></svg>
+        </a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <div class="hero">
+  <div class="hero" id="hero">
+    <div class="hero-inner">
       <div class="breadcrumbs"><a href="index.html">My projects</a> / Behind Closed Doors</div>
       <h1>Behind Closed Doors</h1>
       <div class="meta">
@@ -96,42 +100,38 @@
         <span class="pill">Print Design</span>
       </div>
     </div>
+  </div>
 
+  <main class="wrap">
     <figure class="mast">
       <img src="imgs/BehindClosedDoors/cover.png" alt="Behind Closed Doors poster" />
     </figure>
 
-    <div class="layout">
-      <article class="content" id="content">
+    <div class="stack-container">
 
-        <section id="overview">
-          <h2 class="section-title">Overview</h2>
+      <div class="stack-section" id="sec-0">
+        <div class="section-body">
+          <h2 class="section-title-text" id="st-0">Overview</h2>
           <p>Mental health struggles are often invisible precisely because they happen behind closed doors — in private rooms, in private minds, in the parts of ourselves we don't show others. When Actors Circle Berlin commissioned the key visual for their theatre show of the same name, that tension between visibility and concealment became the entire design brief.</p>
           <p><em>Behind Closed Doors</em> is a show composed of three short plays, each exploring a different facet of mental health: a troubled relationship with a dying mother, a woman's relationship with her own body, and a public figure hiding an alcohol addiction. My task was to create a single visual that could hold all three stories — intimate, a little unsettling, and clear enough to work as event communication across print and digital.</p>
-          <div class="grid cols-2">
-            <div class="callout"><strong>My role</strong><br/><br/>
-              This was a solo commission. I handled the full creative process: concept development, all hand-drawn illustrations and lettering in Procreate, layout and composition in InDesign, and the adaptation of the system into digital formats (Instagram post and website ticketing banner). The project was completed in 3 days.
-            </div>
-            <div class="callout"><strong>Tools</strong><br/>
-              <ul>
-                <li>Procreate</li>
-                <li>InDesign</li>
-              </ul>
-              <br/>
-              <strong>Client</strong><br/>
-              Actors Circle Berlin
-            </div>
+          <div class="grid cols-2" style="margin-top:16px;">
+            <div class="callout"><strong>My role</strong><br/><br/>This was a solo commission. I handled the full creative process: concept development, all hand-drawn illustrations and lettering in Procreate, layout and composition in InDesign, and the adaptation of the system into digital formats (Instagram post and website ticketing banner). The project was completed in 3 days.</div>
+            <div class="callout"><strong>Tools</strong><br/><ul><li>Procreate</li><li>InDesign</li></ul><br/><strong>Client</strong><br/>Actors Circle Berlin</div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        <section id="brief">
-          <h2 class="section-title">The brief</h2>
+      <div class="stack-section" id="sec-1">
+        <div class="section-body">
+          <h2 class="section-title-text" id="st-1">The Brief</h2>
           <p>The goal was to create a key visual that felt intimate and unsettling — reflecting the secrecy of private life — while staying clear and readable for event communication. The deliverables were a printed poster, an Instagram post, and a website ticketing banner.</p>
           <p>Reading the three scripts was my starting point. Each play had a different emotional register and a different kind of hidden thing: illness, self-image, addiction. The challenge was finding a visual language that could hold all three without flattening them into a single message.</p>
-        </section>
+        </div>
+      </div>
 
-        <section id="concept">
-          <h2 class="section-title">Concept</h2>
+      <div class="stack-section" id="sec-2">
+        <div class="section-body">
+          <h2 class="section-title-text" id="st-2">Concept</h2>
           <p>The core idea came from a simple question: what does it feel like to witness something private you weren't supposed to see? I landed on the image of looking into lit windows at night — the audience becomes the intruder, peering into the characters' homes and minds. The warm glow of an interior seen from outside carries exactly the right emotional charge: intimacy, voyeurism, unease.</p>
           <p>Each of the three plays became a scene in one of those windows:</p>
           <ul>
@@ -141,91 +141,144 @@
           </ul>
           <p>The tone throughout was calibrated to create slight uneasiness — you're seeing something you're not supposed to see — without tipping into horror or melodrama.</p>
           <img src="imgs/BehindClosedDoors/concept.png" alt="Concept development sketches and ideation" />
-        </section>
+        </div>
+      </div>
 
-        <section id="design">
-          <h2 class="section-title">Design system</h2>
-
+      <div class="stack-section" id="sec-3">
+        <div class="section-body">
+          <h2 class="section-title-text" id="st-3">Design System</h2>
           <h4>Typography</h4>
           <p>I chose hand-drawn lettering to evoke an urgent, DIY feeling — like something written quickly, secretly, or under emotional pressure. It creates a deliberate rawness that sits in contrast with the composed layout, adding tension without being illegible.</p>
           <img src="imgs/BehindClosedDoors/typography.png" alt="Hand-drawn lettering" />
-
           <h4>Colour palette</h4>
           <p>A deep night blue as the base, with warm amber and ochre light accents to suggest lit interiors seen from outside in the dark. The contrast between cool exterior and warm interior is the emotional heart of the palette.</p>
           <img src="imgs/BehindClosedDoors/colors.png" alt="Colour palette" />
-
           <h4>Grid & layout</h4>
-          <p>A loose 3×3 structure — three columns, three rows — to house the three scenes. Selected elements are placed slightly off-grid to create movement and tension, resisting the rigidity that would undermine the emotional tone.</p>
+          <p>A loose 3×3 structure — three columns, three rows — to house the three scenes. Selected elements are placed slightly off-grid to create movement and tension.</p>
           <img src="imgs/BehindClosedDoors/grid.png" alt="Grid structure" />
-
           <h4>Illustration</h4>
-          <p>All illustrations, textures, patterns, and the main lettering were hand-drawn in Procreate, then composed and finalized in InDesign. The hand-made quality was important — it gives the piece a human imperfection that felt right for stories about very human vulnerabilities.</p>
+          <p>All illustrations, textures, patterns, and the main lettering were hand-drawn in Procreate, then composed and finalized in InDesign.</p>
           <img src="imgs/BehindClosedDoors/illustration.png" alt="Illustration process in Procreate" />
-        </section>
+        </div>
+      </div>
 
-        <section id="deliverables">
-          <h2 class="section-title">Final deliverables</h2>
+      <div class="stack-section" id="sec-4">
+        <div class="section-body">
+          <h2 class="section-title-text" id="st-4">Final Deliverables</h2>
           <p>The poster came first, establishing the full visual system. I then adapted it into an Instagram post and a website ticketing banner, maintaining the visual language while adjusting proportions and hierarchy for each format.</p>
           <img src="imgs/BehindClosedDoors/poster.png" alt="Final poster" />
           <img src="imgs/BehindClosedDoors/digital.png" alt="Instagram post and website banner adaptations" style="margin-top:16px;" />
-        </section>
+        </div>
+      </div>
 
-        <section id="reflection">
-          <h2 class="section-title">Reflection</h2>
+      <div class="stack-section" id="sec-5">
+        <div class="section-body">
+          <h2 class="section-title-text" id="st-5">Reflection</h2>
           <p>Behind Closed Doors is one of the projects I'm proudest of, partly because of the constraints: a 3-day timeline, a solo brief, and a subject matter that required genuine sensitivity. Mental health as a design theme is easy to get wrong — it can tip into cliché, or worse, into aestheticising something that deserves to be treated carefully. I'm glad the "lit window at night" concept gave the work a visual idea strong enough to anchor everything else without needing to be explicit.</p>
           <p>The constraint of three separate plays inside one visual actually made the design stronger. Rather than trying to represent "mental health" in the abstract, I had to translate three specific, concrete human situations into three specific scenes. That specificity is what gives the poster its texture — it rewards looking closely.</p>
           <p>Working with hand-drawn illustration and lettering rather than a polished digital aesthetic was also a deliberate choice I'd make again. The rawness serves the content. Not every design problem wants to look perfect.</p>
-        </section>
+        </div>
+      </div>
 
-        <section id="credits">
-          <h2 class="section-title">Credits</h2>
-          <p>
-            <strong>Client:</strong> Actors Circle Berlin<br/>
-            <strong>Design, illustration & hand lettering:</strong> Alessandra Sgariglia<br/>
-            <strong>Plays:</strong> "666" by Alex Casadio · "Woman/Body" by Roberta Sgariglia · "Blackout" by David Coyle
-          </p>
-        </section>
+    </div>
 
-      </article>
-
-      <aside class="toc" id="toc">
-        <h4>On this page</h4>
-        <a href="#overview">Overview</a>
-        <a href="#brief">The brief</a>
-        <a href="#concept">Concept</a>
-        <a href="#design">Design system</a>
-        <a href="#deliverables">Deliverables</a>
-        <a href="#reflection">Reflection</a>
-        <a href="#credits">Credits</a>
-      </aside>
+    <div id="credits-line" style="padding:48px 0 0; margin-top:32px; border-top:1px solid #eee;">
+      <h2 style="font-size:22px; font-weight:700; margin:0 0 12px;">Credits</h2>
+      <div style="color:var(--muted); font-size:14px;">
+        <strong style="color:var(--text);">Client:</strong> Actors Circle Berlin<br>
+        <strong style="color:var(--text);">Design, illustration & hand lettering:</strong> Alessandra Sgariglia<br>
+        <strong style="color:var(--text);">Plays:</strong> "666" by Alex Casadio · "Woman/Body" by Roberta Sgariglia · "Blackout" by David Coyle
+      </div>
     </div>
   </main>
 
   <footer>
     <div class="wrap">
-      <a class="btn" href="index.html">← Back to my projects</a>
+      <a class="btn btn-arrow" href="index.html">← Back to my projects</a>
     </div>
   </footer>
 
   <script src="nav.js"></script>
   <script>
-    const bar = document.getElementById('progress');
-    document.addEventListener('scroll', () => {
-      const h = document.documentElement;
-      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-      bar.style.width = scrolled + '%';
+    const bar     = document.getElementById('progress');
+    const titles  = [...document.querySelectorAll('.section-title-text')];
+    const credits = document.getElementById('credits-line');
+    const TITLE_H = 51;
+
+    const clones = titles.map((t, i) => {
+      const c = document.createElement('div');
+      c.style.cssText = `
+        position:fixed; left:0; right:0; background:#fff;
+        border-bottom:1px solid #eee;
+        ${i===0 ? 'box-shadow:0 -200px 0 200px #fff;' : ''}
+        font-size:18px; font-weight:700; color:#1a1a1a;
+        line-height:1.2; padding:14px 0;
+        z-index:${80-i}; display:none; box-sizing:border-box;
+        margin-top:-1px;
+      `;
+      const inner = document.createElement('div');
+      inner.style.cssText = 'max-width:1100px; margin:auto; padding:0 24px;';
+      inner.textContent = t.textContent;
+      c.appendChild(inner);
+      document.body.appendChild(c);
+      return c;
     });
 
-    const links = [...document.querySelectorAll('#toc a')];
-    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
-    const activate = () => {
-      let idx = sections.findIndex(sec => sec.getBoundingClientRect().top > 100);
-      if(idx === -1) idx = sections.length - 1; else idx = Math.max(0, idx-1);
-      links.forEach(l => l.classList.remove('active'));
-      links[idx]?.classList.add('active');
-    };
-    document.addEventListener('scroll', activate, {passive:true});
-    activate();
+    function getBase() {
+      return document.querySelector('header').offsetHeight +
+             document.getElementById('hero').offsetHeight;
+    }
+
+    function setup() {
+      const base = getBase();
+      titles.forEach((t, i) => {
+        t.style.top    = (base + TITLE_H * i - i) + 'px';
+        t.style.zIndex = 80 - i;
+      });
+      clones.forEach((c, i) => {
+        c.style.top = (base + TITLE_H * i - i) + 'px';
+      });
+    }
+
+    function update() {
+      const h = document.documentElement;
+      bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+
+      const base = getBase();
+
+      titles.forEach((t, i) => {
+        const rect = t.getBoundingClientRect();
+        const target = base + TITLE_H * i - i;
+        if (rect.top <= target + 2) {
+          clones[i].style.display = 'block';
+          t.style.visibility = 'hidden';
+        } else {
+          clones[i].style.display = 'none';
+          t.style.visibility = 'visible';
+        }
+      });
+
+      let activeIdx = -1;
+      titles.forEach((t, i) => {
+        if (clones[i].style.display === 'block') activeIdx = i;
+      });
+      clones.forEach((c, i) => {
+        c.style.color      = i === activeIdx ? '#B99A5B' : '#1a1a1a';
+        c.style.fontWeight = i === activeIdx ? '700' : '400';
+      });
+
+      const stackBottom = base + titles.length * TITLE_H - titles.length;
+      const creditsTop  = credits.getBoundingClientRect().top;
+      const shift = creditsTop < stackBottom ? stackBottom - creditsTop : 0;
+
+      clones.forEach((c, i) => c.style.top = (base + TITLE_H * i - i - shift) + 'px');
+      titles.forEach((t, i) => t.style.top = (base + TITLE_H * i - i - shift) + 'px');
+    }
+
+    setup();
+    window.addEventListener('resize', setup);
+    document.addEventListener('scroll', update, {passive: true});
+    update();
   </script>
 </body>
 </html>
