@@ -67,13 +67,14 @@
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
     .palette-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+    .palette-grid img{width:100%; height:auto; border-radius:12px;}
     .titles-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
     .titles-grid img:first-child{grid-column:1/-1;}
     .titles-grid img{width:100%; height:auto; border-radius:12px;}
     @media(max-width:599px){.titles-grid{grid-template-columns:1fr;}}
-    .palette-grid img{width:100%; height:auto; border-radius:12px;}
     @media(min-width:600px){
-      .palette-grid{grid-template-columns:repeat(3,1fr);}
+      .palette-grid{grid-template-columns:repeat(3,1fr); width:50%; margin-left:auto; margin-right:auto;}
+      .titles-grid{width:50%; margin-left:auto; margin-right:auto;}
     }
 
     /* ====== Hero collapse on scroll ====== */
@@ -205,7 +206,7 @@
         <div class="section-body">
           <h2 class="section-title-text">Deliverables</h2>
           <p>The poster came first, establishing the full visual system. I then adapted it into an Instagram post and a website ticketing banner, maintaining the visual language while adjusting proportions and hierarchy for each format.</p>
-          <img src="imgs/BehindClosedDoors/poster.png" alt="Final poster" />
+          <img src="imgs/BehindClosedDoors/poster.png" alt="Final poster" style="max-height:90vh; width:auto; margin:0 auto;" />
           <img src="imgs/BehindClosedDoors/digital.png" alt="Digital adaptations" style="margin-top:16px;" />
         </div>
       </div>
