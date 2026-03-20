@@ -64,7 +64,7 @@
     .section-title-text{font-size:22px; font-weight:700; margin:0 0 20px; padding:32px 0 0; color:var(--text); line-height:1.2;}
 
     /* ====== Rest ====== */
-    figure{margin:14px 0;}
+    .fig-label{display:block; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin:0 0 6px; font-weight:400;}
     figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
     .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
     .grid{display:grid; grid-template-columns:1fr; gap:16px;}
@@ -80,8 +80,8 @@
     .hero-inner h1 { transition: font-size .25s; }
     .sticky-header.scrolled .breadcrumbs { opacity:0; max-height:0; margin:0; pointer-events:none; }
     .sticky-header.scrolled .meta { opacity:0; max-height:0; margin:0; pointer-events:none; }
-    .sticky-header.scrolled h1 { font-size: 18px; margin-bottom: 0; }
-    .sticky-header.scrolled .hero-inner { padding-top: 24px; padding-bottom: 16px; }
+    .sticky-header.scrolled h1 { font-size: 18px; margin: 0; line-height: 1; }
+    .sticky-header.scrolled .hero-inner { padding-top: 24px; padding-bottom: 8px; }
   </style>
 </head>
 <body>
@@ -103,8 +103,8 @@
   <div class="sticky-header" id="sticky-header">
     <div class="hero" id="hero">
       <div class="hero-inner">
-        <div class="breadcrumbs"><a href="index.html">My projects</a> / AirPal — Urban Wellbeing Companion</div>
-        <h1>AirPal — Urban Wellbeing Companion</h1>
+        <div class="breadcrumbs"><a href="index.html">My projects</a> / AirPal</div>
+        <h1>AirPal</h1>
         <div class="meta">
           <span class="pill" style="color:var(--accent);border:1px solid var(--accent);">UX/UI</span>
           <span class="pill">Prototyping</span>
@@ -162,9 +162,9 @@
         <div class="section-body">
           <h2 class="section-title-text">How It Works</h2>
           <div class="grid cols-3">
-            <figure><img src="imgs/AirPal/cityMode.png" alt="City mode" style="border-radius:0;"/><p>By being exposed to polluted air for more than one hour, one notch of the LED circle will power off. You can check your PAL's status through the app: if you lose battery it gets sick.</p></figure>
-            <figure><img src="imgs/AirPal/natureMode.png" alt="Nature mode" style="border-radius:0;"/><p>To recharge, you need to spend time where the air is clean. Every hour spent in nature will recharge one notch and your PAL will gradually feel better.</p></figure>
-            <figure><img src="imgs/AirPal/socialMode.png" alt="Social mode" style="border-radius:0;"/><p>AirPAL allows you to join a network of people with whom you share the same interests. You can challenge your friends in the rankings.</p></figure>
+            <figure><span class="fig-label">City mode</span><img src="imgs/AirPal/cityMode.png" alt="City mode" style="border-radius:0;"/><p>By being exposed to polluted air for more than one hour, one notch of the LED circle will power off. You can check your PAL's status through the app: if you lose battery it gets sick.</p></figure>
+            <figure><span class="fig-label">Nature mode</span><img src="imgs/AirPal/natureMode.png" alt="Nature mode" style="border-radius:0;"/><p>To recharge, you need to spend time where the air is clean. Every hour spent in nature will recharge one notch and your PAL will gradually feel better.</p></figure>
+            <figure><span class="fig-label">Social mode</span><img src="imgs/AirPal/socialMode.png" alt="Social mode" style="border-radius:0;"/><p>AirPAL allows you to join a network of people with whom you share the same interests. You can challenge your friends in the rankings.</p></figure>
           </div>
         </div>
       </div>
