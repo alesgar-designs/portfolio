@@ -66,6 +66,14 @@
     .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
+    .illustration-grid{display:grid; grid-template-columns:1fr; gap:24px; margin-top:8px;}
+    @media(min-width:700px){.illustration-grid{grid-template-columns:repeat(3,1fr);}}
+    .illus-card{display:flex; flex-direction:column; gap:8px;}
+    .illus-card img{width:100%; height:auto; border-radius:12px;}
+    .illus-meta--top{display:flex; flex-direction:column; gap:1px;}
+    .illus-title{font-weight:700; font-size:15px; color:var(--text);}
+    .illus-author{font-size:13px; color:var(--muted);}
+    .illus-desc{font-size:13px; color:var(--muted); margin:0; line-height:1.5;}
     .palette-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
     .palette-grid img{width:100%; height:auto; border-radius:12px;}
     .titles-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
@@ -165,12 +173,6 @@
         <div class="section-body">
           <h2 class="section-title-text">Concept</h2>
           <p>The core idea came from a simple question: what does it feel like to witness something private you weren't supposed to see? I landed on the image of looking into lit windows at night — the audience becomes the intruder, peering into the characters' homes and minds.</p>
-          <p>Each of the three plays became a scene in one of those windows:</p>
-          <ul>
-            <li><strong>"666" by Alex Casadio</strong> — an unmade bed with an IV tower beside it, for a story about a troubled relationship with a dying mother.</li>
-            <li><strong>"Woman/Body" by Roberta Sgariglia</strong> — a female body, for a story about self-acceptance and the relationship a woman has with herself.</li>
-            <li><strong>"Blackout" by David Coyle</strong> — a hand pouring wine, bottles and glasses accumulating on a table, for a story about a public figure hiding an addiction.</li>
-          </ul>
           <img src="imgs/BehindClosedDoors/concept.png" alt="Concept sketches" style="margin-top:16px;"/>
         </div>
       </div>
@@ -198,7 +200,32 @@
           </div>
           <h4>Illustration</h4>
           <p>All illustrations, textures, patterns, and the main lettering were hand-drawn in Procreate, then composed and finalized in InDesign.</p>
-          <img src="imgs/BehindClosedDoors/illustration.png" alt="Illustration process" />
+          <div class="illustration-grid">
+            <div class="illus-card">
+              <div class="illus-meta illus-meta--top">
+                <span class="illus-title">"666"</span>
+                <span class="illus-author">by Alex Casadio</span>
+              </div>
+              <img src="imgs/BehindClosedDoors/illustrations/666.png" alt="666 illustration" />
+              <p class="illus-desc">A troubled relationship with a dying mother — an unmade bed, an IV tower, and the unbearable intimacy of illness.</p>
+            </div>
+            <div class="illus-card">
+              <div class="illus-meta illus-meta--top">
+                <span class="illus-title">"Woman/Body"</span>
+                <span class="illus-author">by Roberta Sgariglia</span>
+              </div>
+              <img src="imgs/BehindClosedDoors/illustrations/woman-body.png" alt="Woman/Body illustration" />
+              <p class="illus-desc">A woman alone with herself — the private, often painful relationship between a person and their own body.</p>
+            </div>
+            <div class="illus-card">
+              <div class="illus-meta illus-meta--top">
+                <span class="illus-title">"Blackout"</span>
+                <span class="illus-author">by David Coyle</span>
+              </div>
+              <img src="imgs/BehindClosedDoors/illustrations/blackout.png" alt="Blackout illustration" />
+              <p class="illus-desc">A public figure hiding an addiction — wine poured, bottles accumulating, the performance of control slowly unravelling.</p>
+            </div>
+          </div>
         </div>
       </div>
 
