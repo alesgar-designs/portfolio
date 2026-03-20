@@ -67,6 +67,10 @@
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
     .palette-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+    .titles-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    .titles-grid img:first-child{grid-column:1/-1;}
+    .titles-grid img{width:100%; height:auto; border-radius:12px;}
+    @media(max-width:599px){.titles-grid{grid-template-columns:1fr;}}
     .palette-grid img{width:100%; height:auto; border-radius:12px;}
     @media(min-width:600px){
       .palette-grid{grid-template-columns:repeat(4,1fr);}
@@ -176,17 +180,21 @@
           <h2 class="section-title-text">Design System</h2>
           <h4>Typography</h4>
           <p>Hand-drawn lettering to evoke an urgent, DIY feeling — like something written quickly, secretly, or under emotional pressure.</p>
-          <img src="imgs/BehindClosedDoors/typography.png" alt="Hand-drawn lettering" />
+          <div class="titles-grid">
+            <img src="imgs/BehindClosedDoors/titles/actorsCircle.png" alt="The Actors Circle Berlin lettering" />
+            <img src="imgs/BehindClosedDoors/titles/title.png" alt="Behind Closed Doors title" />
+            <img src="imgs/BehindClosedDoors/titles/title_centered.png" alt="Behind Closed Doors title centered" />
+          </div>
           <h4>Colour palette</h4>
           <p>A deep night blue as the base, with warm amber and ochre light accents to suggest lit interiors seen from outside in the dark.</p>
           <div class="palette-grid">
-            <img src="imgs/palette/1_blue1.svg" alt="Blue 1" />
-            <img src="imgs/palette/2_blue2.svg" alt="Blue 2" />
-            <img src="imgs/palette/3_blue3.svg" alt="Blue 3" />
-            <img src="imgs/palette/4_yellow.svg" alt="Yellow" />
-            <img src="imgs/palette/5_brown.svg" alt="Brown" />
-            <img src="imgs/palette/6_brown2.svg" alt="Brown 2" />
-            <img src="imgs/palette/7_white.svg" alt="White" />
+            <img src="imgs/BehindClosedDoors/palette/1_blue1.svg" alt="Blue 1" />
+            <img src="imgs/BehindClosedDoors/palette/2_blue2.svg" alt="Blue 2" />
+            <img src="imgs/BehindClosedDoors/palette/3_blue3.svg" alt="Blue 3" />
+            <img src="imgs/BehindClosedDoors/palette/4_yellow.svg" alt="Yellow" />
+            <img src="imgs/BehindClosedDoors/palette/5_brown.svg" alt="Brown" />
+            <img src="imgs/BehindClosedDoors/palette/6_brown2.svg" alt="Brown 2" />
+            <img src="imgs/BehindClosedDoors/palette/7_white.svg" alt="White" />
           </div>
           <h4>Grid & layout</h4>
           <p>A loose 3×3 structure — three columns, three rows — to house the three scenes. Selected elements are placed slightly off-grid to create movement and tension.</p>
