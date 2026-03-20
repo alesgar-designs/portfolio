@@ -70,7 +70,11 @@
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
     .goals-grid{display:grid; grid-template-columns:1fr; gap:16px;}
     @media(min-width:600px){.goals-grid{grid-template-columns:repeat(3,1fr);}}
-    .goal-card{background:var(--card); border-radius:var(--radius); padding:24px 20px; box-shadow:var(--shadow); font-size:15px; line-height:1.5;}
+    .goal-card{background:#FD5201; border-radius:var(--radius); padding:24px 20px; box-shadow:var(--shadow); font-size:15px; line-height:1.5; text-align:center; display:flex; align-items:center; justify-content:center; min-height:100px; color:#fff;}
+    .problem-grid{display:grid; grid-template-columns:1fr; gap:16px;}
+    @media(min-width:600px){.problem-grid{grid-template-columns:repeat(3,1fr);}}
+    .problem-card{background:#F2EFE6; border-radius:var(--radius); padding:24px 20px; box-shadow:var(--shadow); font-size:15px; line-height:1.5; text-align:center;}
+    .problem-card strong{display:block; margin-bottom:8px; font-size:15px;}
 
     /* ====== Hero collapse on scroll ====== */
     .breadcrumbs, .meta { transition: opacity .25s, max-height .25s, margin .25s; overflow:hidden; max-height: 60px; }
@@ -167,12 +171,11 @@
       <div class="stack-section" id="sec-1">
         <div class="section-body">
           <h2 class="section-title-text">Problem</h2>
-          <p>Through a thorough audit of the existing website, we identified three core failure areas:</p>
-          <ul>
-            <li><strong>Broken information architecture</strong> — inconsistent navigation, duplicate content, and no clear hierarchy made the site genuinely confusing to explore.</li>
-            <li><strong>A fragmented booking flow</strong> — completing a booking required 16 clicks across multiple disconnected pages, with no feedback on progress or errors.</li>
-            <li><strong>Accessibility failures</strong> — poor colour contrast, missing alt text, and overcrowded pages excluded a significant portion of the platform's intended users.</li>
-          </ul>
+          <div class="problem-grid">
+            <div class="problem-card"><strong>Broken information architecture</strong>Inconsistent navigation, duplicate content, and no clear hierarchy made the site genuinely confusing to explore.</div>
+            <div class="problem-card"><strong>A fragmented booking flow</strong>Completing a booking required 16 clicks across multiple disconnected pages, with no feedback on progress or errors.</div>
+            <div class="problem-card"><strong>Accessibility failures</strong>Poor colour contrast, missing alt text, and overcrowded pages excluded a significant portion of the platform's intended users.</div>
+          </div>
         </div>
       </div>
 
