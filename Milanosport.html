@@ -53,6 +53,7 @@
     .step-line.active{background:var(--accent); opacity:0.45;}
     .stack-section{}
     .section-body{padding-bottom:40px;}
+    @media(max-width:600px){.timeline-steps img{flex:0 0 calc(50% - 8px) !important; max-width:calc(50% - 8px) !important;}}
     .section-title-text{font-size:22px; font-weight:700; margin:0 0 20px; padding:32px 0 0; color:var(--text); line-height:1.2;}
     figure{margin:14px 0;}
     figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
@@ -95,8 +96,8 @@
   <div class="sticky-header" id="sticky-header">
     <div class="hero" id="hero">
       <div class="hero-inner">
-        <div class="breadcrumbs"><a href="index.html">My projects</a> / Milanosport — Website Redesign</div>
-        <h1>Milanosport — Website Redesign</h1>
+        <div class="breadcrumbs"><a href="index.html">My projects</a> / Milanosport</div>
+        <h1>Milanosport</h1>
         <div class="meta">
           <span class="pill" style="color:var(--accent);border:1px solid var(--accent);">UX/UI</span>
           <span class="pill">Usability</span>
@@ -145,7 +146,7 @@
           <p>Milanosport manages 24 public sports facilities across Milan, but its website made using them unnecessarily hard. Booking a session took 16 clicks across multiple pages. Finding an accessible facility required 10 steps. The information architecture was inconsistent, the visual design was dated, and key accessibility standards were unmet — all for a platform serving a diverse, city-wide public.</p>
           <p>This project was a full UX redesign: from research and diagnosis through to a new information architecture, visual identity, and high-fidelity prototype. The brief was clear — make it usable, make it accessible, make it feel like a modern public service.</p>
           <h4>Timeline</h4>
-          <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:2%; justify-content:center;">
+          <div class="timeline-steps" style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:2%; justify-content:center;">
             <img src="imgs/Milanosport/timeline/1_research.svg" alt="Research" style="flex:1; min-width:120px;"/>
             <img src="imgs/Milanosport/timeline/2_define.svg" alt="Define" style="flex:1; min-width:120px;"/>
             <img src="imgs/Milanosport/timeline/3_redesign.svg" alt="Redesign" style="flex:1; min-width:120px;"/>
