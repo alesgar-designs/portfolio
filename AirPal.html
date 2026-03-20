@@ -65,6 +65,10 @@
 
     /* ====== Rest ====== */
     .fig-label{display:block; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin:0 0 6px; font-weight:400;}
+    @media(max-width:600px){
+      .pals-row-5, .pals-row-4 { flex-wrap:wrap; }
+      .pals-row-5 img, .pals-row-4 img { width:calc(50% - 4px) !important; }
+    }
     figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
     .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
     .grid{display:grid; grid-template-columns:1fr; gap:16px;}
@@ -196,16 +200,20 @@
             <li><strong>Personalization:</strong> change PAL color and nickname.</li>
             <li><strong>Gamification:</strong> simple ranking to encourage group activity in green areas.</li>
           </ul>
-          <div class="grid cols-3" style="margin-top:24px; gap:8px;">
-            <img src="imgs/AirPal/pals/1.png" alt="PAL expression 1"/>
-            <img src="imgs/AirPal/pals/2.png" alt="PAL expression 2"/>
-            <img src="imgs/AirPal/pals/3.png" alt="PAL expression 3"/>
-            <img src="imgs/AirPal/pals/4.png" alt="PAL expression 4"/>
-            <img src="imgs/AirPal/pals/5.png" alt="PAL expression 5"/>
-            <img src="imgs/AirPal/pals/6.png" alt="PAL expression 6"/>
-            <img src="imgs/AirPal/pals/7.png" alt="PAL expression 7"/>
-            <img src="imgs/AirPal/pals/8.png" alt="PAL expression 8"/>
-            <img src="imgs/AirPal/pals/9.png" alt="PAL expression 9"/>
+          <div style="margin-top:24px;">
+            <div class="pals-row-5" style="display:flex; gap:8px; justify-content:center; margin-bottom:8px;">
+              <img src="imgs/AirPal/pals/1.svg" alt="PAL expression 1" style="width:calc(20% - 7px);"/>
+              <img src="imgs/AirPal/pals/2.svg" alt="PAL expression 2" style="width:calc(20% - 7px);"/>
+              <img src="imgs/AirPal/pals/3.svg" alt="PAL expression 3" style="width:calc(20% - 7px);"/>
+              <img src="imgs/AirPal/pals/4.svg" alt="PAL expression 4" style="width:calc(20% - 7px);"/>
+              <img src="imgs/AirPal/pals/5.svg" alt="PAL expression 5" style="width:calc(20% - 7px);"/>
+            </div>
+            <div class="pals-row-4" style="display:flex; gap:8px; justify-content:center;">
+              <img src="imgs/AirPal/pals/6.svg" alt="PAL expression 6" style="width:calc(20% - 7px);"/>
+              <img src="imgs/AirPal/pals/7.svg" alt="PAL expression 7" style="width:calc(20% - 7px);"/>
+              <img src="imgs/AirPal/pals/8.svg" alt="PAL expression 8" style="width:calc(20% - 7px);"/>
+              <img src="imgs/AirPal/pals/9.svg" alt="PAL expression 9" style="width:calc(20% - 7px);"/>
+            </div>
           </div>
         </div>
       </div>
