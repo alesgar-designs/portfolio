@@ -67,6 +67,8 @@
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
     .illustration-grid{display:grid; grid-template-columns:1fr; gap:24px; margin-top:8px;}
+    .mockups-grid{display:grid; grid-template-columns:1fr; gap:16px; margin-top:16px;}
+    @media(min-width:700px){.mockups-grid{grid-template-columns:repeat(3,1fr);}}
     @media(min-width:700px){.illustration-grid{grid-template-columns:repeat(3,1fr);}}
     .illus-card{display:flex; flex-direction:column; gap:8px;}
     .illus-card img{width:100%; height:auto; border-radius:12px;}
@@ -234,7 +236,11 @@
           <h2 class="section-title-text">Deliverables</h2>
           <p>The poster came first, establishing the full visual system. I then adapted it into an Instagram post and a website ticketing banner, maintaining the visual language while adjusting proportions and hierarchy for each format.</p>
           <img src="imgs/BehindClosedDoors/poster.png" alt="Final poster" style="max-height:90vh; width:auto; margin:0 auto;" />
-          <img src="imgs/BehindClosedDoors/digital.png" alt="Digital adaptations" style="margin-top:16px;" />
+          <div class="mockups-grid">
+            <img src="imgs/BehindClosedDoors/mockups/poster.png" alt="Poster mockup" />
+            <img src="imgs/BehindClosedDoors/mockups/instaPost.png" alt="Instagram post mockup" />
+            <img src="imgs/BehindClosedDoors/mockups/banner.png" alt="Website banner mockup" />
+          </div>
         </div>
       </div>
 
