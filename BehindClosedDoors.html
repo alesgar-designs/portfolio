@@ -66,6 +66,12 @@
     .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
+    .palette-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+    .palette-grid img{width:100%; height:auto; border-radius:12px;}
+    @media(min-width:600px){
+      .palette-grid{grid-template-columns:repeat(4,1fr);}
+      .palette-grid img:nth-child(5){grid-column:2;}
+    }
 
     /* ====== Hero collapse on scroll ====== */
     .breadcrumbs, .meta { transition: opacity .25s, max-height .25s, margin .25s; overflow:hidden; max-height: 60px; }
@@ -173,7 +179,15 @@
           <img src="imgs/BehindClosedDoors/typography.png" alt="Hand-drawn lettering" />
           <h4>Colour palette</h4>
           <p>A deep night blue as the base, with warm amber and ochre light accents to suggest lit interiors seen from outside in the dark.</p>
-          <img src="imgs/BehindClosedDoors/colors.png" alt="Colour palette" />
+          <div class="palette-grid">
+            <img src="imgs/1_blue1.svg" alt="Blue 1" />
+            <img src="imgs/2_blue2.svg" alt="Blue 2" />
+            <img src="imgs/3_blue3.svg" alt="Blue 3" />
+            <img src="imgs/4_yellow.svg" alt="Yellow" />
+            <img src="imgs/5_brown.svg" alt="Brown" />
+            <img src="imgs/6_brown2.svg" alt="Brown 2" />
+            <img src="imgs/7_white.svg" alt="White" />
+          </div>
           <h4>Grid & layout</h4>
           <p>A loose 3×3 structure — three columns, three rows — to house the three scenes. Selected elements are placed slightly off-grid to create movement and tension.</p>
           <img src="imgs/BehindClosedDoors/grid.png" alt="Grid structure" />
