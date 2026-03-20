@@ -33,9 +33,9 @@
     .nav-say-hi .icon-outline{opacity:1;} .nav-say-hi .icon-filled{opacity:0;}
     .nav-say-hi:hover .icon-outline{opacity:0;} .nav-say-hi:hover .icon-filled{opacity:1;}
     .nav-say-hi svg path{fill:#1a1a1a;} .nav-say-hi:hover svg path{fill:var(--accent);}
-    .sticky-header{position:sticky; top:57px; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); z-index:90;}
+    .sticky-header{position:sticky; top:58px; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); z-index:90;}
     .hero{border-bottom:none;}
-    .hero-inner{max-width:var(--maxw); margin:auto; padding:16px 24px 12px;}
+    .hero-inner{max-width:var(--maxw); margin:auto; padding:32px 24px 16px;}
     /* ====== Step bar ====== */
     .step-bar{border-top:1px solid #eee; border-bottom:1px solid #eee; padding:8px 0 10px;}
     .step-bar-inner{max-width:var(--maxw); margin:auto; padding:0 24px;}
@@ -66,6 +66,14 @@
     .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
+
+    /* ====== Hero collapse on scroll ====== */
+    .breadcrumbs, .meta { transition: opacity .25s, max-height .25s, margin .25s; overflow:hidden; max-height: 60px; }
+    .hero-inner h1 { transition: font-size .25s; }
+    .sticky-header.scrolled .breadcrumbs { opacity:0; max-height:0; margin:0; pointer-events:none; }
+    .sticky-header.scrolled .meta { opacity:0; max-height:0; margin:0; pointer-events:none; }
+    .sticky-header.scrolled h1 { font-size: 18px; margin-bottom: 0; }
+    .sticky-header.scrolled .hero-inner { padding-top: 24px; padding-bottom: 16px; }
   </style>
 </head>
 <body>
@@ -240,6 +248,13 @@
       });
     }
 
+
+      // Collapse hero on scroll
+      const stickyHeader = document.getElementById('sticky-header');
+      document.addEventListener('scroll', () => {
+        if (window.scrollY > 10) stickyHeader.classList.add('scrolled');
+        else stickyHeader.classList.remove('scrolled');
+      }, {passive: true});
     window.addEventListener('resize', update);
     document.addEventListener('scroll', update, {passive: true});
     update();
