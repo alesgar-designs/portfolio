@@ -68,6 +68,9 @@
     .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
+    .goals-grid{display:grid; grid-template-columns:1fr; gap:16px;}
+    @media(min-width:600px){.goals-grid{grid-template-columns:repeat(3,1fr);}}
+    .goal-card{background:var(--card); border-radius:var(--radius); padding:24px 20px; box-shadow:var(--shadow); font-size:15px; line-height:1.5;}
 
     /* ====== Hero collapse on scroll ====== */
     .breadcrumbs, .meta { transition: opacity .25s, max-height .25s, margin .25s; overflow:hidden; max-height: 60px; }
@@ -164,7 +167,7 @@
       <div class="stack-section" id="sec-1">
         <div class="section-body">
           <h2 class="section-title-text">Problem</h2>
-          <p>Through a thorough audit of the existing website, I identified three core failure areas:</p>
+          <p>Through a thorough audit of the existing website, we identified three core failure areas:</p>
           <ul>
             <li><strong>Broken information architecture</strong> — inconsistent navigation, duplicate content, and no clear hierarchy made the site genuinely confusing to explore.</li>
             <li><strong>A fragmented booking flow</strong> — completing a booking required 16 clicks across multiple disconnected pages, with no feedback on progress or errors.</li>
@@ -176,11 +179,11 @@
       <div class="stack-section" id="sec-2">
         <div class="section-body">
           <h2 class="section-title-text">Goals</h2>
-          <ul>
-            <li>Reorganize content and simplify navigation.</li>
-            <li>Design a clear end-to-end booking flow.</li>
-            <li>Improve accessibility and visual coherence with a design system.</li>
-          </ul>
+          <div class="goals-grid">
+            <div class="goal-card">Reorganize content and simplify navigation.</div>
+            <div class="goal-card">Design a clear end-to-end booking flow.</div>
+            <div class="goal-card">Improve accessibility and visual coherence with a design system.</div>
+          </div>
         </div>
       </div>
 
@@ -293,9 +296,9 @@
       <div class="stack-section" id="sec-9">
         <div class="section-body">
           <h2 class="section-title-text">Reflection</h2>
-          <p>Milanosport taught me the value of rigorous diagnosis before jumping to solutions. The heuristic evaluation and cognitive walkthroughs weren't just academic exercises — they gave us a shared, evidence-based language to talk about what was broken and why. When you can show a stakeholder that booking a sports session takes 16 steps and should take 9, the case for redesign practically makes itself.</p>
-          <p>The competitor analysis was also a turning point for me personally. Mapping how Airbnb and Trainline handle complex booking flows — and understanding exactly why they feel effortless — sharpened my eye for the difference between a UI that looks clean and one that actually thinks about the user's mental load. That distinction now shapes how I approach every UX project.</p>
-          <p>If I were to continue this work, I'd want to run usability testing with real Milanosport users — particularly older adults and people with disabilities, who are most affected by accessibility gaps — and iterate on the prototype based on their feedback.</p>
+          <p>Milanosport taught us the value of rigorous diagnosis before jumping to solutions. The heuristic evaluation and cognitive walkthroughs weren't just academic exercises — they gave us a shared, evidence-based language to talk about what was broken and why. When you can show a stakeholder that booking a sports session takes 16 steps and should take 9, the case for redesign practically makes itself.</p>
+          <p>The competitor analysis was also a turning point. Mapping how Airbnb and Trainline handle complex booking flows — and understanding exactly why they feel effortless — sharpened our eye for the difference between a UI that looks clean and one that actually thinks about the user's mental load. That distinction now shapes how we approach every UX project.</p>
+          <p>If we were to continue this work, we'd want to run usability testing with real Milanosport users — particularly older adults and people with disabilities, who are most affected by accessibility gaps — and iterate on the prototype based on their feedback.</p>
         </div>
       </div>
 
