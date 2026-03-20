@@ -69,6 +69,16 @@
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
     .scroll-on-mobile{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    .personas-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px;}
+    @media(min-width:800px){.personas-grid{grid-template-columns:repeat(5,1fr);}}
+    .persona-card{background:#F2EFE6; border-radius:var(--radius); padding:16px; display:flex; flex-direction:column; gap:4px;}
+    .persona-quote{font-size:12px; color:var(--muted); font-style:italic; margin:0 0 8px; line-height:1.4;}
+    .persona-avatar{width:100%; aspect-ratio:1; object-fit:cover; border-radius:12px; margin-bottom:8px;}
+    .persona-name{font-size:16px; font-weight:700; color:#FD5201; margin:0;}
+    .persona-meta{font-size:12px; color:var(--muted); margin:0;}
+    .persona-bio{font-size:13px; margin:6px 0 0; line-height:1.5;}
+    .persona-section-label{font-size:12px; font-weight:700; margin:10px 0 2px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted);}
+    .persona-list{font-size:13px; margin:0; padding-left:18px; line-height:1.6;}
     .scroll-on-mobile img{max-width:none; width:100%;}
     @media(max-width:599px){.scroll-on-mobile img{width:auto;}}
     .goals-grid{display:grid; grid-template-columns:1fr; gap:16px;}
@@ -215,7 +225,82 @@
           <img src="imgs/Milanosport/comparison.png" alt="Comparison summary" style="border-radius:0;">
           <h4>User personas</h4>
           <p>We identified five personas based on different features and services available on the competitors.</p>
-          <img src="imgs/Milanosport/personas.png" alt="User personas" style="border-radius:0;">
+          <div class="personas-grid">
+
+            <div class="persona-card">
+              <p class="persona-quote">"YOLO, lets just do it, man!"</p>
+              <img src="imgs/Milanosport/personas/bob.svg" alt="Bob" class="persona-avatar" />
+              <p class="persona-name">Bob</p>
+              <p class="persona-meta">25 y.o. / American</p>
+              <p class="persona-bio"><strong>International student</strong> who just moved to Milan.</p>
+              <p class="persona-section-label">Goals</p>
+              <ul class="persona-list">
+                <li>Scheduling sporting activities</li>
+                <li>Participating in sporting events</li>
+                <li>Meeting new people and exploring the city</li>
+              </ul>
+            </div>
+
+            <div class="persona-card">
+              <p class="persona-quote">"Nourish the mind and the body"</p>
+              <img src="imgs/Milanosport/personas/carla.svg" alt="Carla" class="persona-avatar" />
+              <p class="persona-name">Carla</p>
+              <p class="persona-meta">37 y.o. / Italian</p>
+              <p class="persona-bio">Olimpia Milano supporter that is a <strong>wheel-chair user</strong>.</p>
+              <p class="persona-section-label">Goals</p>
+              <ul class="persona-list">
+                <li>Finding competitions for wheel chair basketball</li>
+                <li>Being healthy</li>
+                <li>Finding facilities that offer accessible sporting options</li>
+              </ul>
+            </div>
+
+            <div class="persona-card">
+              <p class="persona-quote">"Use it or lose it"</p>
+              <img src="imgs/Milanosport/personas/lorenzo.svg" alt="Lorenzo" class="persona-avatar" />
+              <p class="persona-name">Lorenzo</p>
+              <p class="persona-meta">78 y.o. / Italian</p>
+              <p class="persona-bio"><strong>A retired senior</strong> who owns a dog and a cat.</p>
+              <p class="persona-section-label">Goals</p>
+              <ul class="persona-list">
+                <li>Easing the pain</li>
+                <li>Taking care of his health</li>
+                <li>Finding affordable classes</li>
+                <li>Socializing</li>
+              </ul>
+            </div>
+
+            <div class="persona-card">
+              <p class="persona-quote">"Be water, my friend"</p>
+              <img src="imgs/Milanosport/personas/fabio.svg" alt="Fabio" class="persona-avatar" />
+              <p class="persona-name">Fabio</p>
+              <p class="persona-meta">43 y.o. / Italian</p>
+              <p class="persona-bio">A <strong>colorblind</strong> body-builder gym manager.</p>
+              <p class="persona-section-label">Goals</p>
+              <ul class="persona-list">
+                <li>Have more clients</li>
+                <li>Manage the gym and its schedule</li>
+                <li>Organizing events</li>
+                <li>Having work-life balance</li>
+              </ul>
+            </div>
+
+            <div class="persona-card">
+              <p class="persona-quote">"Live your life like a work of art"</p>
+              <img src="imgs/Milanosport/personas/chiara.svg" alt="Chiara" class="persona-avatar" />
+              <p class="persona-name">Chiara</p>
+              <p class="persona-meta">38 y.o. / Italian</p>
+              <p class="persona-bio">A writer, who is <strong>a mother</strong> of two kids aged 8 and 11 y.o.</p>
+              <p class="persona-section-label">Goals</p>
+              <ul class="persona-list">
+                <li>Keeping the children physically active and healthy</li>
+                <li>Taking care of herself</li>
+                <li>Socializing</li>
+                <li>Having work-life balance</li>
+              </ul>
+            </div>
+
+          </div>
           <h4>Task matrix</h4>
           <div class="scroll-on-mobile">
             <img src="imgs/Milanosport/taskMatrix.svg" alt="Task matrix" style="border-radius:0; min-width:600px;">
