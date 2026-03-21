@@ -84,6 +84,7 @@
     .cog-table{display:flex; flex-direction:column; gap:12px; margin-top:8px;}
     .cog-row{background:#F2EFE6; border-radius:16px; padding:20px 24px;}
     @media(min-width:600px){.cog-row{display:flex; flex-direction:row; align-items:center; justify-content:space-between;}}
+    @media(min-width:600px){.cog-row .cog-task{flex:1;}}
     .cog-task{display:flex; align-items:center; gap:16px; font-size:15px; line-height:1.4;}
     .cog-num{font-size:22px; color:#FD5201; font-weight:700; flex-shrink:0; min-width:36px;}
     .cog-stats{display:flex; gap:24px; flex-shrink:0; margin-top:12px; padding-left:52px;}
@@ -91,6 +92,12 @@
     .cog-stat{display:flex; align-items:center; gap:10px; font-size:14px; white-space:nowrap;}
     .cog-icon{width:42px; height:42px; background:#FD5201; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
     .cog-icon svg{width:22px; height:22px;}
+    .summary-table{display:flex; flex-direction:column; gap:12px; margin-top:8px;}
+    .summary-row{background:#F2EFE6; border-radius:16px; padding:20px 24px; display:flex; flex-direction:column; gap:12px;}
+    @media(min-width:700px){.summary-row{flex-direction:row; align-items:center; justify-content:space-between;}}
+    @media(min-width:700px){.summary-row .cog-task{flex:1;}}
+    .summary-row .cog-stats{margin-top:0; padding-left:52px;}
+    @media(min-width:700px){.summary-row .cog-stats{padding-left:0; flex-shrink:0;}}
     .scroll-on-mobile img{max-width:none; width:100%;}
     @media(max-width:599px){.scroll-on-mobile img{width:auto;}}
     .goals-grid{display:grid; grid-template-columns:1fr; gap:16px;}
@@ -467,7 +474,72 @@
           <img src="imgs/Milanosport/new.png" alt="New features" style="border-radius:0;"/>
           <h4>Summary</h4>
           <p>For each task we significantly reduced the number of clicks and pages visited, simplifying the navigation flow.</p>
-          <img src="imgs/Milanosport/summary.png" alt="Summary" style="border-radius:0;"/>
+          <div class="summary-table">
+            <div class="summary-row">
+              <div class="cog-task">
+                <span class="cog-num">01</span>
+                <span>Check for a <strong>sport centre</strong> that provides courses of a <strong>specific sport</strong></span>
+              </div>
+              <div class="cog-stats">
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L21 3L12 21L10 14L3 12Z" fill="white"/></svg></div>
+                  <span>4 → 2 clicks</span>
+                </div>
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="3" width="13" height="16" rx="1" stroke="white" stroke-width="2"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2" fill="#FD5201"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2"/></svg></div>
+                  <span>3 → 1 pages</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-row">
+              <div class="cog-task">
+                <span class="cog-num">02</span>
+                <span>Booking for <strong>one entrance/package</strong> of entrances</span>
+              </div>
+              <div class="cog-stats">
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L21 3L12 21L10 14L3 12Z" fill="white"/></svg></div>
+                  <span>16 → 9 clicks</span>
+                </div>
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="3" width="13" height="16" rx="1" stroke="white" stroke-width="2"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2" fill="#FD5201"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2"/></svg></div>
+                  <span>4 → 2 pages</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-row">
+              <div class="cog-task">
+                <span class="cog-num">03</span>
+                <span>Finding <strong>sport-related events</strong> that are relevant for the user</span>
+              </div>
+              <div class="cog-stats">
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L21 3L12 21L10 14L3 12Z" fill="white"/></svg></div>
+                  <span>3 → 2 clicks</span>
+                </div>
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="3" width="13" height="16" rx="1" stroke="white" stroke-width="2"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2" fill="#FD5201"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2"/></svg></div>
+                  <span>3 → 2 pages</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-row">
+              <div class="cog-task">
+                <span class="cog-num">04</span>
+                <span>Finding <strong>inclusive</strong> sporting options that suits the user's needs</span>
+              </div>
+              <div class="cog-stats">
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L21 3L12 21L10 14L3 12Z" fill="white"/></svg></div>
+                  <span>10 → 4 clicks</span>
+                </div>
+                <div class="cog-stat">
+                  <div class="cog-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="3" width="13" height="16" rx="1" stroke="white" stroke-width="2"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2" fill="#FD5201"/><rect x="7" y="6" width="13" height="16" rx="1" stroke="white" stroke-width="2"/></svg></div>
+                  <span>3 → 3 pages</span>
+                </div>
+              </div>
+            </div>
+          </div>
           <h4>Accessibility</h4>
           <p>We tested our prototype considering different types of color blindness conditions using the Stark app.</p>
           <img src="imgs/Milanosport/access.png" alt="Accessibility testing" style="border-radius:0;"/>
