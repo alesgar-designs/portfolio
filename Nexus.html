@@ -14,6 +14,9 @@
     img{max-width:100%; display:block; border-radius:12px} a{color:inherit; text-decoration:none}
     .process-graph{width:100%; border-radius:0;}
     @media(min-width:760px){.process-graph{width:100%; max-width:var(--maxw);}}
+    .research-pair{display:grid; grid-template-columns:1fr; gap:12px;}
+    @media(min-width:600px){.research-pair{grid-template-columns:1fr 1fr;}}
+    .research-pair img{width:100%; border-radius:12px;}
     .wrap{max-width:var(--maxw); margin:auto; padding:24px}
     header{position:sticky; top:0; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:100;}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:var(--maxw); margin:auto; padding:16px 24px;}
@@ -148,7 +151,10 @@
         <div class="section-body">
           <h2 class="section-title-text">Research</h2>
           <p>We started with field research, visiting La Goccia forest, trying to notice and attune to the entities of that natural environment through pictures and sketches.</p>
-          <img src="imgs/Nexus/research1.jpg" alt="Field research sketches" />
+          <div class="research-pair">
+            <img src="imgs/Nexus/nature.png" alt="Field research nature photos" />
+            <img src="imgs/Nexus/notes.png" alt="Field research sketches and notes" />
+          </div>
           <p>From this field trip we identified five core entities for our project:</p>
           <img src="imgs/Nexus/entities.jpg" alt="Identified entities" />
         </div>
