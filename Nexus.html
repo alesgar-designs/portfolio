@@ -17,6 +17,11 @@
     .research-pair{display:grid; grid-template-columns:1fr; gap:12px;}
     @media(min-width:600px){.research-pair{grid-template-columns:1fr 1fr;}}
     .research-pair img{width:100%; border-radius:12px;}
+    .actors-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px;}
+    @media(min-width:600px){.actors-grid{grid-template-columns:repeat(5,1fr);}}
+    .actor-card{display:flex; flex-direction:column; align-items:center; gap:12px;}
+    .actor-card img{width:100%; aspect-ratio:1; object-fit:contain; border-radius:0;}
+    .actor-card span{font-size:14px; color:var(--text);}
     .wrap{max-width:var(--maxw); margin:auto; padding:24px}
     header{position:sticky; top:0; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:100;}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:var(--maxw); margin:auto; padding:16px 24px;}
@@ -156,7 +161,13 @@
             <img src="imgs/Nexus/nature.png" alt="Field research nature photos" />
           </div>
           <p>From this field trip we identified five core entities for our project:</p>
-          <img src="imgs/Nexus/entities.jpg" alt="Identified entities" />
+          <div class="actors-grid">
+            <div class="actor-card"><img src="imgs/Nexus/actors/mammals.svg" alt="Mammals" /></div>
+            <div class="actor-card"><img src="imgs/Nexus/actors/moss.svg" alt="Moss" /></div>
+            <div class="actor-card"><img src="imgs/Nexus/actors/carbon.svg" alt="Carbon" /></div>
+            <div class="actor-card"><img src="imgs/Nexus/actors/bacteria.svg" alt="Bacteria" /></div>
+            <div class="actor-card"><img src="imgs/Nexus/actors/fungi.svg" alt="Fungi" /></div>
+          </div>
         </div>
       </div>
 
