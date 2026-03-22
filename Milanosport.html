@@ -92,6 +92,12 @@
     .ms-swatch{width:100%; aspect-ratio:1; border-radius:20px;}
     .ms-swatch-name{font-size:14px; font-weight:600; color:var(--text);}
     .ms-swatch-hex{font-size:12px; color:var(--muted);}
+    .logo-colors-row{display:flex; flex-direction:column; gap:24px;}
+    @media(min-width:700px){.logo-colors-row{flex-direction:row; align-items:flex-start; gap:32px;}}
+    .logo-colors-col{flex:1; min-width:0;}
+    .logo-colors-col h4{margin-top:0;}
+    .logo-colors-col .ms-palette{grid-template-columns:repeat(2,1fr);}
+    @media(min-width:700px){.logo-colors-col .ms-palette{grid-template-columns:repeat(4,1fr);}}
     .icons-showcase{display:flex; flex-direction:column; gap:20px; margin-top:12px; width:100%;}
     @media(min-width:600px){.icons-showcase{width:50%;}}
     .icons-sport-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; width:100%;}
@@ -490,68 +496,74 @@
       <div class="stack-section" id="sec-6">
         <div class="section-body">
           <h2 class="section-title-text">Design System</h2>
-          <h4>Logo</h4>
-          <p>We designed a new logo in a more modern and minimal style that is more legible in small sizes.</p>
-          <div class="logo-showcase">
-            <div class="logo-size-row">
-              <span class="logo-size-label">Large</span>
-              <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo large" style="width:100%; border-radius:0;" />
+          <div class="logo-colors-row">
+            <div class="logo-colors-col">
+              <h4>Logo</h4>
+              <p>We designed a new logo in a more modern and minimal style that is more legible in small sizes.</p>
+              <div class="logo-showcase">
+                <div class="logo-size-row">
+                  <span class="logo-size-label">Large</span>
+                  <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo large" style="width:100%; border-radius:0;" />
+                </div>
+                <div class="logo-size-row">
+                  <span class="logo-size-label">Medium</span>
+                  <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo medium" style="width:75%; border-radius:0;" />
+                </div>
+                <div class="logo-size-row">
+                  <span class="logo-size-label">Small</span>
+                  <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo small" style="width:50%; border-radius:0;" />
+                </div>
+                <div class="logo-size-row">
+                  <span class="logo-size-label">XSmall</span>
+                  <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo xsmall" style="width:30%; border-radius:0;" />
+                </div>
+              </div>
             </div>
-            <div class="logo-size-row">
-              <span class="logo-size-label">Medium</span>
-              <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo medium" style="width:75%; border-radius:0;" />
-            </div>
-            <div class="logo-size-row">
-              <span class="logo-size-label">Small</span>
-              <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo small" style="width:50%; border-radius:0;" />
-            </div>
-            <div class="logo-size-row">
-              <span class="logo-size-label">XSmall</span>
-              <img src="imgs/Milanosport/logo.svg" alt="Milanosport logo xsmall" style="width:30%; border-radius:0;" />
-            </div>
-          </div>
-          <h4>Colors</h4>
-          <p>We used Stark app to evaluate and improve the contrast while considering different color blindness conditions.</p>
-          <div class="ms-palette">
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#282725;"></div>
-              <span class="ms-swatch-name">TextBlack</span>
-              <span class="ms-swatch-hex">#282725</span>
-            </div>
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#D4D7D7;"></div>
-              <span class="ms-swatch-name">TextBrown</span>
-              <span class="ms-swatch-hex">#D4D7D7</span>
-            </div>
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#D7D5CE;"></div>
-              <span class="ms-swatch-name">Gray</span>
-              <span class="ms-swatch-hex">#D7D5CE</span>
-            </div>
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#F2EFE6; border:1px solid #e0ddd4;"></div>
-              <span class="ms-swatch-name">Beige</span>
-              <span class="ms-swatch-hex">#F2EFE6</span>
-            </div>
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#045A35;"></div>
-              <span class="ms-swatch-name">Green</span>
-              <span class="ms-swatch-hex">#045A35</span>
-            </div>
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#EC4221;"></div>
-              <span class="ms-swatch-name">Orange</span>
-              <span class="ms-swatch-hex">#EC4221</span>
-            </div>
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#D7E538;"></div>
-              <span class="ms-swatch-name">Yellow</span>
-              <span class="ms-swatch-hex">#D7E538</span>
-            </div>
-            <div class="ms-swatch-wrap">
-              <div class="ms-swatch" style="background:#4F9FF4;"></div>
-              <span class="ms-swatch-name">Blue</span>
-              <span class="ms-swatch-hex">#4F9FF4</span>
+            <div class="logo-colors-col">
+              <h4>Colors</h4>
+              <p>We used Stark app to evaluate and improve the contrast while considering different color blindness conditions.</p>
+              <div class="ms-palette">
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#282725;"></div>
+                  <span class="ms-swatch-name">TextBlack</span>
+                  <span class="ms-swatch-hex">#282725</span>
+                </div>
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#D4D7D7;"></div>
+                  <span class="ms-swatch-name">TextBrown</span>
+                  <span class="ms-swatch-hex">#D4D7D7</span>
+                </div>
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#D7D5CE;"></div>
+                  <span class="ms-swatch-name">Gray</span>
+                  <span class="ms-swatch-hex">#D7D5CE</span>
+                </div>
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#F2EFE6; border:1px solid #e0ddd4;"></div>
+                  <span class="ms-swatch-name">Beige</span>
+                  <span class="ms-swatch-hex">#F2EFE6</span>
+                </div>
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#045A35;"></div>
+                  <span class="ms-swatch-name">Green</span>
+                  <span class="ms-swatch-hex">#045A35</span>
+                </div>
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#EC4221;"></div>
+                  <span class="ms-swatch-name">Orange</span>
+                  <span class="ms-swatch-hex">#EC4221</span>
+                </div>
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#D7E538;"></div>
+                  <span class="ms-swatch-name">Yellow</span>
+                  <span class="ms-swatch-hex">#D7E538</span>
+                </div>
+                <div class="ms-swatch-wrap">
+                  <div class="ms-swatch" style="background:#4F9FF4;"></div>
+                  <span class="ms-swatch-name">Blue</span>
+                  <span class="ms-swatch-hex">#4F9FF4</span>
+                </div>
+              </div>
             </div>
           </div>
           <h4>Typography</h4>
