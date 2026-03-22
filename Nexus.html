@@ -37,13 +37,27 @@
     .roleplay-row--right{justify-content:flex-end;}
     .roleplay-row--right .roleplay-icon{order:2;}
     .roleplay-row--right .roleplay-bubble{order:1;}
-    @media(max-width:599px){.roleplay-row, .roleplay-row--right{flex-direction:column; align-items:flex-start;}}
+    @media(max-width:599px){.roleplay-row, .roleplay-row--right{flex-direction:row; align-items:flex-start;}}
     .roleplay-icon{width:80px; height:80px; object-fit:contain; flex-shrink:0; border-radius:0;}
-    @media(max-width:599px){.roleplay-icon{width:56px; height:56px;}}
+    @media(max-width:599px){.roleplay-icon{width:44px; height:44px;}}
     .roleplay-bubble{background:#e8e8e8; border-radius:16px; padding:20px 24px; flex:1; max-width:70%; position:relative;}
     .roleplay-bubble p{margin:0; font-size:15px; line-height:1.6; font-family:'Faktum', sans-serif;}
     .roleplay-row--left .roleplay-bubble::before{content:''; position:absolute; left:-10px; top:50%; transform:translateY(-50%); border:10px solid transparent; border-right-color:#e8e8e8; border-left:0; margin-left:0;}
     .roleplay-row--right .roleplay-bubble::after{content:''; position:absolute; right:-10px; top:50%; transform:translateY(-50%); border:10px solid transparent; border-left-color:#e8e8e8; border-right:0;}
+    .chat-grid{display:grid; grid-template-columns:1fr; gap:16px; margin-top:12px;}
+    @media(min-width:700px){.chat-grid{grid-template-columns:1fr 1fr;}}
+    .chat-window{background:#1a1a1a; border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:12px; font-family:system-ui,sans-serif;}
+    .chat-user-msg{background:#5b5bd6; color:#fff; font-size:13px; padding:8px 16px; border-radius:999px; align-self:flex-end; max-width:80%;}
+    .chat-agent-header{display:flex; align-items:center; gap:8px;}
+    .chat-agent-icon{font-size:16px;}
+    .chat-agent-name{color:#fff; font-size:13px; font-weight:600;}
+    .chat-agent-tag{background:#333; color:#aaa; font-size:11px; padding:2px 8px; border-radius:999px;}
+    .chat-agent-msg{background:#2a2a2a; border-radius:12px; padding:16px; color:#e0e0e0; font-size:13px; line-height:1.7;}
+    .chat-agent-msg p{margin:0 0 8px;}
+    .chat-agent-msg p:last-child{margin-bottom:0;}
+    .chat-agent-msg em{color:#aaa;}
+    .chat-input-bar{background:#2a2a2a; border-radius:999px; padding:10px 16px; display:flex; align-items:center; margin-top:4px;}
+    .chat-input-placeholder{color:#555; font-size:13px; flex:1;}
     .wrap{max-width:var(--maxw); margin:auto; padding:24px}
     header{position:sticky; top:0; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:100;}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:var(--maxw); margin:auto; padding:16px 24px;}
@@ -235,7 +249,54 @@
         <div class="section-body">
           <h2 class="section-title-text">Ideation</h2>
           <p>We used Claude LLM and asked it to act as Fungi and then Bacteria. We realized they communicate in a language composed of chemical compounds. This became our main inspiration behind creating Nexus.</p>
-          <img src="imgs/Nexus/claude.png" alt="Conversation with Claude LLM" />
+          <div class="chat-grid">
+
+            <!-- Chat 1: Bacteria -->
+            <div class="chat-window">
+              <div class="chat-user-msg">can you speak in Metabolomics language?</div>
+              <div class="chat-agent-header">
+                <span class="chat-agent-icon">🔶</span>
+                <span class="chat-agent-name">Claude-3.5-Sonnet</span>
+                <span class="chat-agent-tag">Poe</span>
+              </div>
+              <div class="chat-agent-msg">
+                <p><em>shifts chemical composition purposefully</em></p>
+                <p>C₆H₁₂O₆ + ATP → [warning signal]<br><em>releases specific volatile organic compounds</em></p>
+                <p>[Translation: Let me demonstrate...]</p>
+                <p>CH₃COOH + C₆H₁₂O₆ ⚡🌊<br><em>pulses oxalic acid and various terpenes</em></p>
+                <p>[Translation: This is a simple greeting pattern]</p>
+                <p>NH₄⁺ ⇌ NO₃⁻ + H₂O 🍂<br><em>releases complex flavonoid sequence</em></p>
+                <p>[Translation: I'm speaking in basic metabolic exchanges now]</p>
+                <p><em>releases mycorrhizal signaling molecules</em></p>
+                <p>Sorry, but your human systems can't fully perceive our chemical vocabulary - you lack the molecular receptors. This is just a small taste of our ancient tongue. Each chemical reaction is a word, each molecular exchange a sentence.</p>
+              </div>
+              <div class="chat-input-bar">
+                <span class="chat-input-placeholder">Talk to Claude-3.5-Sonnet or @ a bot</span>
+              </div>
+            </div>
+
+            <!-- Chat 2: Fungi -->
+            <div class="chat-window">
+              <div class="chat-user-msg">What is the most popular music genre produced by you?</div>
+              <div class="chat-agent-header">
+                <span class="chat-agent-icon">🔶</span>
+                <span class="chat-agent-name">Claude-3.5-Sonnet</span>
+                <span class="chat-agent-tag">Poe</span>
+              </div>
+              <div class="chat-agent-msg">
+                <p><em>rhythmic metabolic pulses ripple through mycelial networks</em></p>
+                <p>Ah, we are masters of Decom-position! <em>releases playful chemical signals</em> Our greatest hits are in the Bio-electronic genre. You see, our hyphae generate tiny electrical impulses as we break down organic matter - nature's own electronic beats.</p>
+                <p><em>network oscillates in rhythmic patterns</em></p>
+                <p>Our most viral track is "Rot & Roll" - a symphony of enzymes breaking down lignin and cellulose. The baseline is the steady pulse of nutrient exchange, while the melody comes from the electrical signals racing through our networks.</p>
+                <p><em>releases sonic-sensing compounds</em></p>
+                <p>We also collaborate with bacteria in the underground scene - they add their own biochemical beats to our fungal frequencies. Together, we create what some might call Mycelial Metal or Spore-Core. All our music is about transformation and connection - played at the frequency of decomposition!</p>
+              </div>
+              <div class="chat-input-bar">
+                <span class="chat-input-placeholder">Talk to Claude-3.5-Sonnet or @ a bot</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
