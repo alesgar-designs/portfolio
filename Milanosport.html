@@ -174,6 +174,11 @@
     .a11y-label{display:flex; align-items:center; gap:8px;}
     .a11y-dot{width:10px; height:10px; border-radius:50%; flex-shrink:0;}
     .a11y-name{font-size:13px; color:var(--text); font-weight:500; text-align:center;}
+    .redesign-pair{display:grid; grid-template-columns:1fr; gap:12px; margin-top:8px;}
+    @media(min-width:600px){.redesign-pair{grid-template-columns:1fr 1fr;}}
+    .redesign-col{display:flex; flex-direction:column; gap:6px;}
+    .redesign-col img{width:100%; border-radius:12px;}
+    .redesign-label{font-size:12px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em;}
     .benchmarking-img{width:100% !important;}}
     .section-title-text{font-size:22px; font-weight:700; margin:0 0 20px; padding:32px 0 0; color:var(--text); line-height:1.2;}
     figure{margin:14px 0;}
@@ -811,27 +816,55 @@
       <div class="stack-section" id="sec-7">
         <div class="section-body">
           <h2 class="section-title-text">Redesign</h2>
+
           <h4>Home page</h4>
           <p>We simplified the overall look and content, organized content by hierarchy, and added an interactive map to highlight centres and their locations.</p>
-          <img src="imgs/Milanosport/home.png" alt="Homepage comparison" style="border-radius:0;"/>
+          <div class="redesign-pair">
+            <div class="redesign-col"><span class="redesign-label">Before</span><img src="imgs/Milanosport/redesign/home_before.png" alt="Home before" /></div>
+            <div class="redesign-col"><span class="redesign-label">After</span><img src="imgs/Milanosport/redesign/home_after.png" alt="Home after" /></div>
+          </div>
+
           <h4>Centres page</h4>
           <p>We added filters and an interactive map to help users find the relevant centre faster and more efficiently.</p>
-          <img src="imgs/Milanosport/centers.png" alt="Centres page comparison" style="border-radius:0;"/>
+          <div class="redesign-pair">
+            <div class="redesign-col"><span class="redesign-label">Before</span><img src="imgs/Milanosport/redesign/centers_before.png" alt="Centres before" /></div>
+            <div class="redesign-col"><span class="redesign-label">After</span><img src="imgs/Milanosport/redesign/centers_after.png" alt="Centres after" /></div>
+          </div>
+
           <h4>Specific centre page</h4>
           <p>We highlighted the booking CTA and carried important information to the top. We embedded the booking process in the same page.</p>
-          <img src="imgs/Milanosport/specific.png" alt="Centre page comparison" style="border-radius:0;"/>
+          <div class="redesign-pair">
+            <div class="redesign-col"><span class="redesign-label">Before</span><img src="imgs/Milanosport/redesign/specificCentre_before.png" alt="Specific centre before" /></div>
+            <div class="redesign-col"><span class="redesign-label">After</span><img src="imgs/Milanosport/redesign/specificCentre_after.png" alt="Specific centre after" /></div>
+          </div>
+
           <h4>Events page</h4>
           <p>We added images, price, date, place and a short description for events, plus filters so users can find relevant events. We improved the single event page.</p>
-          <img src="imgs/Milanosport/events.png" alt="Events page comparison" style="border-radius:0;"/>
+          <div class="redesign-pair">
+            <div class="redesign-col"><span class="redesign-label">Before</span><img src="imgs/Milanosport/redesign/events_before.png" alt="Events before" /></div>
+            <div class="redesign-col"><span class="redesign-label">After</span><img src="imgs/Milanosport/redesign/events_after.png" alt="Events after" /></div>
+          </div>
+
           <h4>Summercamps page</h4>
           <p>We renamed and restructured this page for clarity, creating a clear hierarchy and making available options very clear.</p>
-          <img src="imgs/Milanosport/summer.png" alt="Summercamps comparison" style="border-radius:0;"/>
+          <div class="redesign-pair">
+            <div class="redesign-col"><span class="redesign-label">Before</span><img src="imgs/Milanosport/redesign/summercamps_before.png" alt="Summercamps before" /></div>
+            <div class="redesign-col"><span class="redesign-label">After</span><img src="imgs/Milanosport/redesign/summercamps_after.png" alt="Summercamps after" /></div>
+          </div>
+
           <h4>New features</h4>
           <h5>Personal profile</h5>
           <p>A profile where users can check upcoming and past bookings and manage personal data, with a review system for past bookings.</p>
+          <div class="redesign-pair">
+            <div class="redesign-col"><span class="redesign-label">Profile</span><img src="imgs/Milanosport/redesign/profile.png" alt="Profile page" /></div>
+            <div class="redesign-col"><span class="redesign-label">Reviews</span><img src="imgs/Milanosport/redesign/reviews.png" alt="Reviews" /></div>
+          </div>
           <h5>Routes page</h5>
           <p>Inspired by Spor Istanbul, sport route suggestions around Milan catered to users' physical activity preferences.</p>
-          <img src="imgs/Milanosport/new.png" alt="New features" style="border-radius:0;"/>
+          <div class="redesign-pair">
+            <div class="redesign-col"><span class="redesign-label">Routes</span><img src="imgs/Milanosport/redesign/routes.png" alt="Routes page" /></div>
+            <div class="redesign-col"></div>
+          </div>
           <h4>Summary</h4>
           <p>For each task we significantly reduced the number of clicks and pages visited, simplifying the navigation flow.</p>
           <div class="summary-table">
