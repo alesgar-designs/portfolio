@@ -8,6 +8,16 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
+    @font-face {
+      font-family: 'Faktum';
+      src: url('imgs/Nexus/fonts/Faktum-Regular.otf') format('opentype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Faktum';
+      src: url('imgs/Nexus/fonts/Faktum-Bold.otf') format('opentype');
+      font-weight: 700;
+    }
     :root{ --bg:#ffffff; --text:#1a1a1a; --muted:#666; --accent:#B99A5B; --card:#f7f7f8; --radius:16px; --shadow:0 6px 20px rgba(0,0,0,.08); --maxw:1100px; --wide:1280px; --card-hover:#A8BBCE; }
     *{box-sizing:border-box} html,body{margin:0}
     body{font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;}
@@ -22,6 +32,18 @@
     .actor-card{display:flex; flex-direction:column; align-items:center; gap:12px;}
     .actor-card img{width:100%; aspect-ratio:1; object-fit:contain; border-radius:0;}
     .actor-card span{font-size:14px; color:var(--text);}
+    .roleplay-list{display:flex; flex-direction:column; gap:24px; margin-top:8px;}
+    .roleplay-row{display:flex; align-items:center; gap:20px;}
+    .roleplay-row--right{justify-content:flex-end;}
+    .roleplay-row--right .roleplay-icon{order:2;}
+    .roleplay-row--right .roleplay-bubble{order:1;}
+    @media(max-width:599px){.roleplay-row, .roleplay-row--right{flex-direction:column; align-items:flex-start;}}
+    .roleplay-icon{width:80px; height:80px; object-fit:contain; flex-shrink:0; border-radius:0;}
+    @media(max-width:599px){.roleplay-icon{width:56px; height:56px;}}
+    .roleplay-bubble{background:#e8e8e8; border-radius:16px; padding:20px 24px; flex:1; max-width:70%; position:relative;}
+    .roleplay-bubble p{margin:0; font-size:15px; line-height:1.6; font-family:'Faktum', sans-serif;}
+    .roleplay-row--left .roleplay-bubble::before{content:''; position:absolute; left:-10px; top:50%; transform:translateY(-50%); border:10px solid transparent; border-right-color:#e8e8e8; border-left:0; margin-left:0;}
+    .roleplay-row--right .roleplay-bubble::after{content:''; position:absolute; right:-10px; top:50%; transform:translateY(-50%); border:10px solid transparent; border-left-color:#e8e8e8; border-right:0;}
     .wrap{max-width:var(--maxw); margin:auto; padding:24px}
     header{position:sticky; top:0; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:100;}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:var(--maxw); margin:auto; padding:16px 24px;}
@@ -175,7 +197,37 @@
         <div class="section-body">
           <h2 class="section-title-text">Role Playing</h2>
           <p>To understand the connections within these entities, we did role playing where each designer embodied one entity and asked each other questions to better understand their points of view.</p>
-          <img src="imgs/Nexus/roleplay.jpg" alt="Role playing research" />
+          <div class="roleplay-list">
+
+            <div class="roleplay-row roleplay-row--left">
+              <img class="roleplay-icon" src="imgs/Nexus/rolePlay/bacteria.svg" alt="Bacteria icon" />
+              <div class="roleplay-bubble">
+                <p>I communicate by <strong>stealing,</strong> but also by <strong>giving back</strong> to the community and supporting the environment I live in.</p>
+              </div>
+            </div>
+
+            <div class="roleplay-row roleplay-row--right">
+              <div class="roleplay-bubble">
+                <p>We communicate with <strong>electrical impulses,</strong> we form a <strong>collective brain,</strong> which allows us to communicate even if we are apart, as one.</p>
+              </div>
+              <img class="roleplay-icon" src="imgs/Nexus/rolePlay/fungi.svg" alt="Fungi icon" />
+            </div>
+
+            <div class="roleplay-row roleplay-row--left">
+              <img class="roleplay-icon" src="imgs/Nexus/rolePlay/moss.svg" alt="Moss icon" />
+              <div class="roleplay-bubble">
+                <p>My favorite seasons are autumn and summer, where I can feel the rain and I try to help others by <strong>guiding them to water.</strong></p>
+              </div>
+            </div>
+
+            <div class="roleplay-row roleplay-row--right">
+              <div class="roleplay-bubble">
+                <p>We feel the <strong>scorching heat,</strong> every day it gets harder for us to move around and find enough water to survive.</p>
+              </div>
+              <img class="roleplay-icon" src="imgs/Nexus/rolePlay/mammals.svg" alt="Mammal icon" />
+            </div>
+
+          </div>
         </div>
       </div>
 
