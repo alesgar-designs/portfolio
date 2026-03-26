@@ -285,29 +285,94 @@
 
     .card-link { display: block; height: 100%; text-decoration: none; color: inherit; }
     .card {
-      background: var(--card);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       height: 100%;
-      transition: background-color 0.3s ease;
+      aspect-ratio: 3/4;
+      position: relative;
+      background: #111;
     }
-    .card-body { padding: 16px; flex: 1; }
-    .thumb { aspect-ratio: 16/9; background: #ddd; width: 100%; object-fit: cover; }
-    .card h3 { margin: 0 0 6px; font-size: 18px; }
-    .pill { display: inline-block; font-size: 14px; padding: 4px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--gold); margin-right: 6px; }
-    .card-footer { padding: 12px 16px; display: flex; gap: 10px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: transparent; font-weight: 600; }
-    .btn-arrow::after { content: "→"; opacity: 0; transform: translateX(-6px); transition: transform .25s ease, opacity .25s ease; }
-    .card-link .btn { pointer-events: none; }
-    .card-link:hover .card { background-color: var(--card-hover); }
-    .card-link:hover .btn-arrow::after,
-    .card-link:focus-visible .btn-arrow::after { opacity: 1; transform: translateX(0); }
-    .list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .thumb {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: transform 0.4s ease;
+    }
+    .card-link:hover .thumb { transform: scale(1.03); }
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 40%, transparent 55%, rgba(0,0,0,0.55) 100%);
+      border-radius: var(--radius);
+    }
+    .card-tags {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .card-tag {
+      background: rgba(255,255,255,0.92);
+      color: #1a1a1a;
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+      line-height: 1.2;
+    }
+    .card-handle {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+    }
+    .card-bottom {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .card-title {
+      color: #fff;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      line-height: 1.15;
+      font-style: italic;
+    }
+    .card-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+      color: #1a1a1a;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .card-link:hover .card-arrow { background: #fff; transform: scale(1.08); }
 
-    .empty-state {
+    .skills-cards{display:grid; grid-template-columns:1fr; gap:12px;}
+    @media(min-width:600px){.skills-cards{grid-template-columns:repeat(3,1fr);}}
+    .skills-card{background:var(--card); border-radius:var(--radius); padding:20px; display:flex; flex-direction:column; gap:14px;}
+    .skills-card-title{font-size:14px; font-weight:700; color:var(--text);}
+    .skills-card-pills{display:flex; flex-wrap:wrap; gap:6px;}
+    .skills-card .pill-badge{font-size:12px;}
+    .card-handle{display:none;}
       display: none;
       grid-column: 1 / -1;
       text-align: center;
@@ -394,9 +459,8 @@
 
       <!-- Bio -->
       <div class="hero-mid">
-        <h1>Hi, I'm Alessandra.</h1>
-        <p class="lead">A designer based between Rome and Milan. My background spans UX/UI, interaction design, branding, and creative direction — I work with people who want their digital presence to feel as intentional as it looks.</p>
-        <p class="lead" style="margin-top:-8px;">I care about the whole experience: from the first impression to the last interaction. Whether that's a product, a brand, or a system — I bring research, craft, and a point of view.</p>
+        <h1>A Product and Content Designer based between Rome and Milan.</h1>
+        <p class="lead">I help wellness, psychology, and ecological brands build digital platforms and media that feel as intentional as they look. Combining UI/UX, brand identity, and content production, I turn complex ideas into engaging human experiences.</p>
       </div>
 
     </div>
@@ -405,15 +469,30 @@
   <!-- ====== WHAT I DO — full width ====== -->
   <div class="skills-section">
     <p class="skills-label">What I do</p>
-    <div class="pills-list">
-      <span class="pill-badge clickable" data-filter="UX/UI Design">UX/UI Design</span>
-      <span class="pill-badge clickable" data-filter="Interaction Design">Interaction Design</span>
-      <span class="pill-badge clickable" data-filter="Branding & Identity">Branding & Identity</span>
-      <span class="pill-badge clickable" data-filter="Art Direction">Art Direction</span>
-      <span class="pill-badge clickable" data-filter="Prototyping">Prototyping</span>
-      <span class="pill-badge clickable" data-filter="Illustration">Illustration</span>
-      <span class="pill-badge clickable" data-filter="Content Production">Content Production</span>
-      <span class="pill-badge clickable" data-filter="Video Making & Editing">Video Making & Editing</span>
+    <div class="skills-cards">
+      <div class="skills-card">
+        <span class="skills-card-title">Digital Product & UX/UI</span>
+        <div class="skills-card-pills">
+          <span class="pill-badge clickable" data-filter="UX/UI Design">UX/UI Design</span>
+          <span class="pill-badge clickable" data-filter="Interaction Design">Interaction Design</span>
+          <span class="pill-badge clickable" data-filter="Prototyping">Prototyping</span>
+        </div>
+      </div>
+      <div class="skills-card">
+        <span class="skills-card-title">Visual Identity & Branding</span>
+        <div class="skills-card-pills">
+          <span class="pill-badge clickable" data-filter="Branding & Identity">Branding & Identity</span>
+          <span class="pill-badge clickable" data-filter="Art Direction">Art Direction</span>
+          <span class="pill-badge clickable" data-filter="Illustration">Illustration</span>
+        </div>
+      </div>
+      <div class="skills-card">
+        <span class="skills-card-title">Content & Media Production</span>
+        <div class="skills-card-pills">
+          <span class="pill-badge clickable" data-filter="Content Production">Content Production</span>
+          <span class="pill-badge clickable" data-filter="Video Making & Editing">Video Making & Editing</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -432,7 +511,7 @@
         <span class="cta-icon">📷</span>
         <span class="cta-text">
           <span class="cta-title">Instagram</span>
-          <span class="cta-sub">@alesgar_design</span>
+          <span class="cta-sub">@alesgar_designs</span>
         </span>
       </a>
       <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="cta-link">
@@ -442,11 +521,11 @@
           <span class="cta-sub">Alessandra Sgariglia</span>
         </span>
       </a>
-      <a href="https://linktr.ee/pazzamente.podcast" target="_blank" rel="noreferrer" class="cta-link">
-        <span class="cta-icon">🎙</span>
+      <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" class="cta-link">
+        <span class="cta-icon">✍️</span>
         <span class="cta-text">
-          <span class="cta-title">Pazzamente</span>
-          <span class="cta-sub">Psychology podcast</span>
+          <span class="cta-title">Substack</span>
+          <span class="cta-sub">@alesgar</span>
         </span>
       </a>
     </div>
@@ -473,97 +552,108 @@
     </div>
 
     <div class="grid" id="projectGrid">
-      <!-- AirPal: UX/UI Design, Prototyping -->
+      <!-- 1. AirPal -->
       <div class="card-wrap" data-tags='["UX/UI Design","Prototyping"]'>
         <a href="AirPal.html" rel="noreferrer" class="card-link">
           <article class="card">
-            <img class="thumb" src="imgs/cover_airpal.png" alt="Project cover" />
-            <div class="card-body">
-              <h3>AirPal<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Urban Wellbeing Companion</span></h3>
-              <p>A physical device and app that makes air quality visible — draining your "health battery" in polluted areas and recharging it in green spaces.</p>
+            <img class="thumb" src="imgs/covers/cover_AirPal.png" alt="AirPal cover" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">UX/UI Design</span>
+              <span class="card-tag">Prototyping</span>
             </div>
-            <div class="card-footer">
-              <p><span class="btn btn-arrow">Discover more</span></p>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- Milanosport: UX/UI Design -->
-      <div class="card-wrap" data-tags='["UX/UI Design"]'>
-        <a href="Milanosport.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/cover_milanosport.png" alt="Project cover" />
-            <div class="card-body">
-              <h3>Milanosport<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Website Redesign</span></h3>
-              <p>A full UX redesign of Milan's public sports platform — cutting the booking flow from 16 to 9 steps and rebuilding navigation from scratch.</p>
-            </div>
-            <div class="card-footer">
-              <p><span class="btn btn-arrow">Discover more</span></p>
+            <div class="card-bottom">
+              <span class="card-title">AirPal</span>
+              <span class="card-arrow">→</span>
             </div>
           </article>
         </a>
       </div>
 
-      <!-- Nexus: Interaction Design, Art Direction, Prototyping -->
-      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
-        <a href="Nexus.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/cover_nexus.png" alt="Project cover" />
-            <div class="card-body">
-              <h3>Nexus<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">An Immersive Installation</span></h3>
-              <p>A speculative installation set in 2150, where humans donate their breath — and their chemistry — to help a wounded ecosystem survive.</p>
-            </div>
-            <div class="card-footer">
-              <p><span class="btn btn-arrow">Discover more</span></p>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- Luma: Interaction Design, Art Direction, Prototyping -->
-      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
-        <a href="Luma.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/cover_luma.png" alt="Project cover" />
-            <div class="card-body">
-              <h3>Luma<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Personal Dome Experience</span></h3>
-              <p>An umbrella that turns a travel photo into light and sound — letting you re-live a memory inside a personal dome, or share it with a stranger.</p>
-            </div>
-            <div class="card-footer">
-              <p><span class="btn btn-arrow">Discover more</span></p>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- Behind Closed Doors: Branding & Identity, Art Direction -->
-      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Illustration"]'>
-        <a href="BehindClosedDoors.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/cover_BehindClosedDoors.png" alt="Behind Closed Doors poster" style="object-fit:contain; background:#1a1a2e;" />
-            <div class="card-body">
-              <h3>Behind Closed Doors<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Theatre Visual Identity</span></h3>
-              <p>Poster, illustration, and digital assets for a mental health theatre show — hand-drawn, deliberately intimate, commissioned by Actors Circle Berlin.</p>
-            </div>
-            <div class="card-footer">
-              <p><span class="btn btn-arrow">Discover more</span></p>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- Pazzamente: Branding & Identity, Art Direction, Content Production, Video Making & Editing -->
+      <!-- 2. Pazzamente -->
       <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Content Production","Video Making & Editing"]'>
         <a href="Pazzamente.html" rel="noreferrer" class="card-link">
           <article class="card">
-            <img class="thumb" src="imgs/Pazzamente/cover.png" alt="Pazzamente podcast cover" />
-            <div class="card-body">
-              <h3>Pazzamente<br/><span style="font-weight:400; font-size:0.85em; color:var(--muted);">Italian Psychology Podcast</span></h3>
-              <p>A psychology podcast making mental health accessible and human — concept, brand identity, production, and social media, all from scratch.</p>
+            <img class="thumb" src="imgs/covers/cover_Pazzamente.png" alt="Pazzamente cover" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Branding & Identity</span>
+              <span class="card-tag">Content Production</span>
             </div>
-            <div class="card-footer">
-              <p><span class="btn btn-arrow">Discover more</span></p>
+            <div class="card-bottom">
+              <span class="card-title">Pazzamente</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 3. Behind Closed Doors -->
+      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Illustration"]'>
+        <a href="BehindClosedDoors.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_BehindClosedDoors.png" alt="Behind Closed Doors cover" style="object-fit:contain; background:#1a1a2e;" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Branding & Identity</span>
+              <span class="card-tag">Illustration</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Behind Closed Doors</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 4. Milanosport -->
+      <div class="card-wrap" data-tags='["UX/UI Design"]'>
+        <a href="Milanosport.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_MilanosPort.png" alt="Milanosport cover" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">UX/UI Design</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Milanosport</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 5. Nexus -->
+      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
+        <a href="Nexus.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_nexus.png" alt="Nexus cover" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Interaction Design</span>
+              <span class="card-tag">Prototyping</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Nexus</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 6. Luma -->
+      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
+        <a href="Luma.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_Luma.png" alt="Luma cover" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Interaction Design</span>
+              <span class="card-tag">Art Direction</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Luma</span>
+              <span class="card-arrow">→</span>
             </div>
           </article>
         </a>
