@@ -65,41 +65,21 @@
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
     .tips-grid{display:grid; grid-template-columns:1fr; gap:12px; margin-top:16px;}
     @media(min-width:600px){.tips-grid{grid-template-columns:1fr 1fr;}}
-
-    /* UPDATED IDENTITY GRID */
-    .identity-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 8px;
-      background: var(--card);
-      border-radius: 16px;
-      padding: 16px;
-      align-items: stretch;
-    }
-    @media(min-width:700px) {
-      .identity-grid { grid-template-columns: 1.2fr 1.2fr 2.5fr; }
-    }
-    .identity-col1 { display: flex; flex-direction: column; gap: 12px; }
-    .logo-container {
-      background: #954D91;
-      border-radius: 12px;
-      padding: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .identity-logo { width: 100%; height: auto; border-radius: 0; }
-    .identity-cover { width: 100%; border-radius: 8px; flex-grow: 1; object-fit: cover; }
-    .icon-strip { display: flex; gap: 12px; justify-content: center; padding: 4px 0; }
-    .icon-strip img { height: 32px; width: auto; border-radius: 0; }
-    .identity-col2 { display: flex; }
-    .paz-palette { display: grid; grid-template-columns: 1fr 1fr; width: 100%; border-radius: 8px; overflow: hidden; height: 100%; }
-    .paz-swatch { display: flex; align-items: flex-end; padding: 10px 8px; color: #fff; font-size: 11px; font-weight: 600; }
-    .identity-col3 { display: flex; flex-direction: column; gap: 12px; }
-    .identity-envelopes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .identity-envelopes img { width: 100%; border-radius: 8px; }
-    .identity-pattern { width: 100%; border-radius: 8px; object-fit: cover; flex-grow: 1; min-height: 120px; }
+    .identity-grid{display:grid; grid-template-columns:1fr; gap:12px; margin-top:8px; background:var(--card); border-radius:16px; padding:16px;}
+    @media(min-width:700px){.identity-grid{grid-template-columns:1fr 1fr 2fr;}}
+    .identity-col1{display:flex; flex-direction:column; gap:8px;}
+    .identity-logo{width:100%; border-radius:8px;}
+    .identity-cover{width:100%; border-radius:8px; flex:1; object-fit:cover;}
+    .identity-col2{display:flex; align-items:stretch;}
+    .paz-palette{display:grid; grid-template-columns:1fr 1fr; width:100%; border-radius:8px; overflow:hidden;}
+    .paz-swatch{display:flex; align-items:flex-end; padding:10px 8px; min-height:60px; color:#fff; font-size:11px; font-weight:600;}
+    .identity-col3{display:flex; flex-direction:column; gap:8px;}
+    .identity-envelopes{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+    .identity-envelopes img{width:100%; border-radius:8px; }
+    .identity-icons-row{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+    .identity-icons-group{display:grid; grid-template-columns:1fr 1fr; gap:8px; align-content:start;}
+    .identity-icons-group img{width:100%; border-radius:8px;  padding:12px;}
+    .identity-pattern{width:100%; border-radius:8px; object-fit:cover; height:100%;}
   </style>
 </head>
 <body>
@@ -159,30 +139,59 @@
         <div class="section-body">
           <h2 class="section-title-text">Overview</h2>
           <p>Mental health content in Italy tends to fall into one of two traps: it's either clinical and inaccessible, or it's oversimplified to the point of being useless. Pazzamente was built to occupy the space in between — a place where psychology is taken seriously but talked about like a conversation between two friends on a couch.</p>
-          <p>Pazzamente is an Italian psychology podcast co-hosted by Angela Mammana (psychologist, psychotherapist, and author) and Martina Gatto (TV presenter and actress).</p>
+          <p>Pazzamente is an Italian psychology podcast co-hosted by Angela Mammana (psychologist, psychotherapist, and author) and Martina Gatto (TV presenter and actress). Each episode starts from a topic rooted in Angela's book <em>A modo mio — la libertà di essere</em>, then expands into a free-ranging conversation ending with a practical tip the listener can actually try.</p>
+          <p>I conceived the format, built the brand from scratch, and took responsibility for everything: the filming, the editing, the platform distribution, and the social media strategy. It is currently live on YouTube and Spotify.</p>
           <div class="grid cols-2" style="margin-top:16px;">
-            <div class="callout"><strong>My role</strong><br/><br/>Sole Creative Director & Producer. Concept and format design, brand identity, filming and directing, video editing, platform distribution, and social media content and strategy.</div>
+            <div class="callout"><strong>My role</strong><br/><br/>Sole Creative Director &amp; Producer. Concept and format design, brand identity, filming and directing, video editing, platform distribution, and social media content and strategy.</div>
             <div class="callout"><strong>Tools</strong><br/><ul><li>Figma</li><li>Adobe Premiere Pro</li><li>Adobe Illustrator</li><li>Adobe Photoshop</li></ul><br/><strong>Status</strong><br/>Live · New episodes in production</div>
           </div>
+          <div class="btn-group">
+            <a class="btn" href="https://www.youtube.com/@PAZZAMENTE.podcast" target="_blank" rel="noreferrer">Watch on YouTube</a>
+            <a class="btn" href="https://open.spotify.com/show/5ZPWiVu8hsDf9JzDkjuvKX" target="_blank" rel="noreferrer">Listen on Spotify</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-section" id="sec-1">
+        <div class="section-body">
+          <h2 class="section-title-text">Concept & Format: Designing the Container</h2>
+          <p>The starting point was Angela's book — <em>A modo mio</em> is about self-affirmation and identity, about the freedom to be exactly who you are. The question I kept asking: <em>How do you make people feel like they're learning something real about themselves without feeling like they're in a lecture?</em></p>
+          <p>The answer was the couch. Two people, different worlds — a psychotherapist and a TV presenter — having the kind of honest, wandering conversation that friends have when they trust each other. The tension between their perspectives is the format.</p>
+          <h4>Episode Structure & Framework</h4>
+          <p>Each episode runs approximately 20 minutes following a consistent arc:</p>
+          <ul>
+            <li><strong>The Opening:</strong> Drawn from the book.</li>
+            <li><strong>The Free Exploration:</strong> Connecting psychological and personal themes.</li>
+            <li><strong>The Practical Tip:</strong> Something concrete the viewer can actually try.</li>
+          </ul>
+          <p>Ending every episode with a tool was a deliberate design choice. Mental health content often leaves people with insight but no action. Designing a container for content is as much a design problem as designing a visual identity.</p>
+          <div class="tips-grid">
+            <img src="imgs/Pazzamente/tips1.png" alt="Practical tip envelope reveal" />
+            <img src="imgs/Pazzamente/tips2.png" alt="Practical tip card on screen" />
+          </div>
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>UI for Video: highlighting the 5-minute practical tip at the end of each episode to bridge the gap between insight and action.</em></p>
         </div>
       </div>
 
       <div class="stack-section" id="sec-2">
         <div class="section-body">
           <h2 class="section-title-text">Brand Identity</h2>
-          <p>The name <strong>Pazzamente</strong> is an Italian adverb meaning "madly" — but it also splits into <em>pazza</em> (crazy/woman) and <em>mente</em> (mind). The wordplay is visible in the logo: <strong>PAZZA</strong> in yellow and <strong>MENTE</strong> in white.</p>
-          
+          <p>The name <strong>Pazzamente</strong> is an Italian adverb meaning "madly" — but it also splits into <em>pazza</em> (crazy/woman) and <em>mente</em> (mind). The wordplay is visible in the logo: <strong>PAZZA</strong> in yellow — warm, bold, playful — and <strong>MENTE</strong> in white, grounding it.</p>
+          <h4>Visual System</h4>
+          <ul>
+            <li><strong>Primary Canvas:</strong> A deep saturated violet-purple as the base — the colour of the mind and introspection. Against it, the yellow of <em>PAZZA</em> pops with energy.</li>
+            <li><strong>Secondary Registers:</strong> A teal for episode backgrounds adds a calmer register.</li>
+            <li><strong>Texture:</strong> The brain engraving texture has a vintage, curious quality that matches the show's tone: serious about psychology but not afraid to be playful.</li>
+          </ul>
           <div class="identity-grid">
+
+            <!-- Col 1: Logo + Cover -->
             <div class="identity-col1">
-              <div class="logo-container">
-                <img src="PAZZAMENTE.svg" alt="Pazzamente logo" class="identity-logo" />
-              </div>
+              <img src="imgs/Pazzamente/identity/logo.png" alt="Pazzamente logo" class="identity-logo" />
               <img src="imgs/Pazzamente/identity/cover.png" alt="Pazzamente cover" class="identity-cover" />
-              <div class="icon-strip">
-                <img src="like_icons.svg" alt="Like icons" />
-              </div>
             </div>
 
+            <!-- Col 2: Colour palette (coded) -->
             <div class="identity-col2">
               <div class="paz-palette">
                 <div class="paz-swatch" style="background:#A55999;"><span>#A55999</span></div>
@@ -196,27 +205,150 @@
               </div>
             </div>
 
+            <!-- Col 3: Envelopes + icons + pattern -->
             <div class="identity-col3">
               <div class="identity-envelopes">
                 <img src="imgs/Pazzamente/identity/envelope1.png" alt="Envelope closed" />
                 <img src="imgs/Pazzamente/identity/envelope2.png" alt="Envelope open" />
                 <img src="imgs/Pazzamente/identity/envelope3.png" alt="Envelope with tip" />
               </div>
-              <div class="icon-strip" style="justify-content: flex-start; padding-left: 8px;">
-                <img src="bell_icons.svg" alt="Bell icons" />
+              <div class="identity-icons-row">
+                <div class="identity-icons-group">
+                  <img src="imgs/Pazzamente/identity/like_full.png" alt="Like filled" />
+                  <img src="imgs/Pazzamente/identity/like_outline.png" alt="Like outline" />
+                  <img src="imgs/Pazzamente/identity/bell_full.png" alt="Bell filled" />
+                  <img src="imgs/Pazzamente/identity/bell_outline.png" alt="Bell outline" />
+                </div>
+                <img src="imgs/Pazzamente/identity/pattern.png" alt="Brain pattern texture" class="identity-pattern" />
               </div>
-              <img src="imgs/Pazzamente/identity/pattern.png" alt="Brain pattern texture" class="identity-pattern" />
             </div>
+
           </div>
           <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>The visual system: logo, colour palette, and the brain engraving texture that runs through every touchpoint.</em></p>
         </div>
       </div>
+
+      <div class="stack-section" id="sec-3">
+        <div class="section-body">
+          <h2 class="section-title-text">Production & Multi-Platform Distribution</h2>
+
+          <h4>The Set & Atmosphere</h4>
+          <p>Every episode was filmed, directed, and edited by me. The visual language — the couch setting, warm lighting, intimate two-shot framing — was a deliberate choice to make the conversation feel like something you're overhearing rather than watching.</p>
+          <img src="imgs/Pazzamente/production.png" alt="Behind the scenes — filming and production" />
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>Warm lighting choices to mimic a safe, living-room conversation environment.</em></p>
+
+          <h4>The Live Episodes</h4>
+          <p>Three episodes are currently live, each exploring a different dimension of the book's central theme of identity and self-affirmation:</p>
+          <div class="grid cols-3" style="margin-top:16px;">
+            <div class="episode">
+              <div class="episode-number">Episodio #1</div>
+              <div class="episode-title">A modo mio</div>
+              <div class="episode-sub">La libertà di essere</div>
+              <p>Where identity begins and how we learn to claim it.</p>
+            </div>
+            <div class="episode">
+              <div class="episode-number">Episodio #2</div>
+              <div class="episode-title">Trasformazione</div>
+              <div class="episode-sub">Ritrovare se stessi dopo una crisi</div>
+              <p>Finding yourself again after everything changes.</p>
+            </div>
+            <div class="episode">
+              <div class="episode-number">Episodio #3</div>
+              <div class="episode-title">Esplorazione</div>
+              <div class="episode-sub">Scoprirsi attraverso nuove esperienze</div>
+              <p>How new experiences reveal parts of ourselves we didn't know existed.</p>
+            </div>
+          </div>
+          <img src="imgs/Pazzamente/youtube.png" alt="Pazzamente YouTube channel" style="margin-top:24px;"/>
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>The YouTube channel — all three episodes live, with a consistent visual identity across thumbnails and banners.</em></p>
+
+          <h4>Platform-Native Social Media Content</h4>
+          <p>The social media strategy was built around making content feel native to each platform rather than repurposing the same clip everywhere.</p>
+          <ul>
+            <li>On Instagram and TikTok, the teal-graded vertical cuts work as standalone moments — complete enough to make sense without the full episode, but interesting enough to send people looking for it.</li>
+            <li>Every touchpoint — from the YouTube banner to the Spotify cover to an Instagram post — reads as unmistakably Pazzamente.</li>
+          </ul>
+          <img src="imgs/Pazzamente/social.png" alt="Pazzamente social media posts" />
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>Platform-native vertical cuts — designed to work as standalone moments on Instagram and TikTok.</em></p>
+          <img src="imgs/Pazzamente/spotify.png" alt="Pazzamente on Spotify" style="margin-top:24px;"/>
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>The Spotify channel — consistent brand identity carried across every platform.</em></p>
+        </div>
       </div>
+
+      <div class="stack-section" id="sec-4">
+        <div class="section-body">
+          <h2 class="section-title-text">Reflection</h2>
+          <p>Pazzamente started as a commission and became something I genuinely care about — which is the best thing a project can do. It stretched me not because any single part was beyond my skills, but because I had to hold all of it together at once: designing the brand, directing the shoot, editing the footage, managing the distribution, and running social media all in service of one coherent vision.</p>
+          <p>The most important takeaway from watching people engage with it is that <strong>the tone is the product</strong>. The warmth, the lightness, the sense that two people are genuinely talking rather than performing — that had to be designed just as deliberately as the logo or the colour palette.</p>
+        </div>
+      </div>
+
+    </div>
+    <div id="credits-line" style="padding:48px 0 0; margin-top:32px; border-top:1px solid #eee;">
+      <h2 style="font-size:22px; font-weight:700; margin:0 0 12px;">Credits</h2>
+      <div style="color:var(--muted); font-size:14px;">
+        <strong style="color:var(--text);">Commissioned by:</strong> Angela Mammana & Martina Gatto<br>
+        <strong style="color:var(--text);">Brand identity & creative direction:</strong> Alessandra Sgariglia<br>
+        <strong style="color:var(--text);">Filming, directing & editing:</strong> Alessandra Sgariglia<br>
+        <strong style="color:var(--text);">Hosts:</strong> Angela Mammana · Martina Gatto<br>
+        <strong style="color:var(--text);">Inspired by:</strong> <em>A modo mio — la libertà di essere</em> by Angela Mammana
+      </div>
+    </div>
   </main>
 
-  <script src="nav.js"></script>
+  <footer>
+    <div class="wrap">
+      <a class="btn btn-arrow" href="index.html">← Back to my projects</a>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="nav.js"></script>
   <script>
-    // Include the standard scrolling navigation script from Pazzamente (1).html here
+    const titles    = [...document.querySelectorAll('.section-title-text')];
+    const stepPills = [...document.querySelectorAll('.step-pill')];
+    const stepLines = [...document.querySelectorAll('.step-line')];
+    const stickyHeader = document.getElementById('sticky-header');
+
+    function getBase() {
+      return document.querySelector('header').offsetHeight +
+             document.getElementById('sticky-header').offsetHeight;
+    }
+    function update() {
+      if (window.scrollY > 10) stickyHeader.classList.add('scrolled');
+      else stickyHeader.classList.remove('scrolled');
+      const base = getBase();
+      let activeIdx = -1;
+      titles.forEach((t, i) => { if (t.getBoundingClientRect().top <= base + 8) activeIdx = i; });
+      stepPills.forEach((p, i) => { p.classList.remove('active','past'); if (i===activeIdx) p.classList.add('active'); else if (i<activeIdx) p.classList.add('past'); });
+            stepLines.forEach((l, i) => { l.classList.remove('active','past'); if (i<activeIdx) l.classList.add('past'); else if (i===activeIdx) l.classList.add('active'); });
+
+      // Scroll active pill into view on mobile
+      const activePill = stepPills.find(p => p.classList.contains('active'));
+      if (activePill) {
+        const bar = document.querySelector('.step-pills');
+        if (bar) {
+          const pillRight = activePill.offsetLeft + activePill.offsetWidth;
+          const barWidth = bar.offsetWidth;
+          bar.scrollLeft = pillRight - barWidth + 16;
+        }
+      }
+    }
+
+    // Make pills clickable — scroll to section
+    stepPills.forEach((pill, i) => {
+      pill.style.cursor = 'pointer';
+      pill.addEventListener('click', () => {
+        const target = titles[i];
+        if (!target) return;
+        const base = getBase();
+        const top = target.getBoundingClientRect().top + window.scrollY - base - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    window.addEventListener('resize', update);
+    document.addEventListener('scroll', update, {passive: true});
+    update();
   </script>
 </body>
 </html>
