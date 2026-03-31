@@ -66,34 +66,25 @@
     .tips-grid{display:grid; grid-template-columns:1fr; gap:12px; margin-top:16px;}
     @media(min-width:600px){.tips-grid{grid-template-columns:1fr 1fr;}}
 
-    /* IDENTITY GRID STYLES */
-    .identity-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 8px;
-      background: var(--card);
-      border-radius: 16px;
-      padding: 24px;
-      align-items: stretch;
-    }
-    @media(min-width:700px){.identity-grid{grid-template-columns: 1fr 1fr 1.8fr;}}
-
-    .identity-col1 { display: flex; flex-direction: column; gap: 12px; }
-    .identity-logo { width: 100%; border-radius: 0; }
-    .identity-cover { width: 100%; height: auto; border-radius: 8px; object-fit: contain; }
-
-    .identity-col2 { display: flex; align-items: stretch; }
-    .paz-palette { display: grid; grid-template-columns: 1fr 1fr; width: 100%; border-radius: 8px; overflow: hidden; }
-    .paz-swatch { display: flex; align-items: flex-end; padding: 10px 8px; min-height: 60px; color:#fff; font-size: 11px; font-weight: 600; }
-
-    .identity-col3 { display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
-    .identity-envelopes { display: flex; gap: 8px; align-items: flex-end; }
-    .identity-envelopes img { width: 32%; height: auto; border-radius: 0; }
-
-    .identity-icons-row { display: flex; align-items: flex-end; gap: 12px; }
-    .identity-svg-icons { width: 45%; height: auto; }
-    .identity-pattern { width: 55%; border-radius: 8px; object-fit: cover; height: 120px; }
+    /* UPDATED BRAND IDENTITY GRID */
+    .identity-grid{display:grid; grid-template-columns:1fr; gap:12px; margin-top:8px; background:var(--card); border-radius:16px; padding:16px; align-items: stretch;}
+    @media(min-width:700px){.identity-grid{grid-template-columns:1.2fr 1.2fr 2.5fr;}}
+    
+    .identity-col1{display:flex; flex-direction:column; gap:12px;}
+    .identity-logo{width:100%; border-radius:8px; background:#FAF8EC; padding:12px; object-fit: contain;}
+    .identity-cover{width:100%; border-radius:8px; flex:1; object-fit:cover;}
+    
+    .identity-col2{display:flex; align-items:stretch;}
+    .paz-palette{display:grid; grid-template-columns:1fr 1fr; width:100%; border-radius:8px; overflow:hidden; height: 100%;}
+    .paz-swatch{display:flex; align-items:flex-end; padding:10px 8px; color:#fff; font-size:11px; font-weight:600; min-height: 0;}
+    
+    .identity-col3{display:flex; flex-direction:column; justify-content:space-between; gap:12px;}
+    .identity-envelopes{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+    .identity-envelopes img{width:100%; border-radius:8px; }
+    
+    .identity-icons-row{display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items: flex-end;}
+    .identity-svg-icons{width:100%; height: auto;}
+    .identity-pattern{width:100%; border-radius:8px; object-fit:cover; height:140px;}
   </style>
 </head>
 <body>
@@ -218,13 +209,13 @@
                 <img src="imgs/Pazzamente/identity/envelope3.png" alt="Envelope with tip" />
               </div>
               <div class="identity-icons-row">
-                <img src="imgs/Pazzamente/identity/icons.svg" alt="Action icons" class="identity-svg-icons" />
+                <img src="icons.svg" alt="Action icons" class="identity-svg-icons" />
                 <img src="imgs/Pazzamente/identity/pattern.png" alt="Brain pattern texture" class="identity-pattern" />
               </div>
             </div>
           </div>
           
-          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>The visual system: logo, colour palette, and the brain engraving texture that runs through every touchpoint.</em></p>
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>The visual system: logo, color palette, and the brain engraving texture that runs through every touchpoint.</em></p>
         </div>
       </div>
 
