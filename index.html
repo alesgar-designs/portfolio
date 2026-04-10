@@ -91,6 +91,28 @@
     .nav-say-hi svg path { fill: #1a1a1a; }
     .nav-say-hi:hover svg path { fill: var(--gold); }
 
+    /* ====== Hero roles tagline ====== */
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      align-items: center;
+      margin: 0 0 18px;
+    }
+    .hero-role {
+      font-size: clamp(11px, 1.1vw, 13px);
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .hero-role-sep {
+      font-size: 11px;
+      color: #ccc;
+      margin: 0 10px;
+      letter-spacing: 0;
+    }
+
     /* ====== Hero ====== */
     .hero { padding: 64px 0 40px; overflow: visible; }
     .hero-inner {
@@ -253,6 +275,8 @@
     .pill-badge.clickable { cursor: pointer; }
     .pill-badge.clickable:hover { border-color: var(--gold); color: var(--gold); background: #fff; }
     .pill-badge.clickable.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+    .pill-badge.hoverable { cursor: default; }
+    .pill-badge.hoverable:hover { border-color: var(--gold); color: var(--gold); background: #fff; }
 
     /* ====== Divider ====== */
     .section-divider { border: none; border-top: 1px solid #eee; margin: 0; }
@@ -367,12 +391,66 @@
     .card-link:hover .card-arrow { background: #fff; transform: scale(1.08); }
 
     .skills-cards{display:grid; grid-template-columns:1fr; gap:12px;}
-    @media(min-width:600px){.skills-cards{grid-template-columns:repeat(3,1fr);}}
+    @media(min-width:600px){.skills-cards{grid-template-columns:repeat(2,1fr);}}
+    @media(min-width:900px){.skills-cards{grid-template-columns:repeat(4,1fr);}}
     .skills-card{background:var(--card); border-radius:var(--radius); padding:20px; display:flex; flex-direction:column; gap:14px;}
     .skills-card-title{font-size:14px; font-weight:700; color:var(--text);}
     .skills-card-pills{display:flex; flex-wrap:wrap; gap:6px;}
     .skills-card .pill-badge{font-size:12px;}
     .card-handle{display:none;}
+
+    /* ====== I care about ====== */
+    .care-section {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    .care-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media(min-width: 680px) {
+      .care-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .care-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      border: 1px solid #eeede9;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .care-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(121,151,181,0.12);
+    }
+    .care-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .care-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .care-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
       display: none;
       grid-column: 1 / -1;
       text-align: center;
@@ -521,8 +599,15 @@
 
       <!-- Bio -->
       <div class="hero-mid">
-        <h1>A Product and Content Designer based between Rome and Milan.</h1>
-        <p class="lead">I help wellness, psychology, and ecological brands build digital platforms and media that feel as intentional as they look. Combining UI/UX, brand identity, and content production, I turn complex ideas into engaging human experiences.</p>
+        <div class="hero-roles">
+          <span class="hero-role">UX/UI</span>
+          <span class="hero-role-sep">·</span>
+          <span class="hero-role">Interaction</span>
+          <span class="hero-role-sep">·</span>
+          <span class="hero-role">Graphic Design</span>
+        </div>
+        <h1>Designer working at the intersection of research, technology, and lived experience.</h1>
+        <p class="lead">Based between Rome and Milan. I help wellness, psychology, and ecological brands design digital products and visual identities that feel as considered as they look — from interactive prototypes and UX research to brand systems and content.</p>
       </div>
 
     </div>
@@ -533,26 +618,32 @@
     <p class="skills-label">What I do</p>
     <div class="skills-cards">
       <div class="skills-card">
-        <span class="skills-card-title">Digital Product & UX/UI</span>
+        <span class="skills-card-title">UX/UI Design</span>
         <div class="skills-card-pills">
-          <span class="pill-badge clickable" data-filter="UX/UI Design">UX/UI Design</span>
-          <span class="pill-badge clickable" data-filter="Interaction Design">Interaction Design</span>
-          <span class="pill-badge clickable" data-filter="Prototyping">Prototyping</span>
+          <span class="pill-badge hoverable">UX/UI Design</span>
+          <span class="pill-badge hoverable">Prototyping</span>
         </div>
       </div>
       <div class="skills-card">
-        <span class="skills-card-title">Visual Identity & Branding</span>
+        <span class="skills-card-title">Interaction Design</span>
         <div class="skills-card-pills">
-          <span class="pill-badge clickable" data-filter="Branding & Identity">Branding & Identity</span>
-          <span class="pill-badge clickable" data-filter="Art Direction">Art Direction</span>
-          <span class="pill-badge clickable" data-filter="Illustration">Illustration</span>
+          <span class="pill-badge hoverable">Interaction Design</span>
+          <span class="pill-badge hoverable">Prototyping</span>
         </div>
       </div>
       <div class="skills-card">
-        <span class="skills-card-title">Content & Media Production</span>
+        <span class="skills-card-title">Graphic Design</span>
         <div class="skills-card-pills">
-          <span class="pill-badge clickable" data-filter="Content Production">Content Production</span>
-          <span class="pill-badge clickable" data-filter="Video Making & Editing">Video Making & Editing</span>
+          <span class="pill-badge hoverable">Branding & Identity</span>
+          <span class="pill-badge hoverable">Art Direction</span>
+          <span class="pill-badge hoverable">Illustration</span>
+        </div>
+      </div>
+      <div class="skills-card">
+        <span class="skills-card-title">Content & Media</span>
+        <div class="skills-card-pills">
+          <span class="pill-badge hoverable">Content Production</span>
+          <span class="pill-badge hoverable">Video Making & Editing</span>
         </div>
       </div>
     </div>
@@ -593,9 +684,34 @@
     </div>
   </div>
 
-  <hr class="section-divider" />
+  <!-- ====== I CARE ABOUT ====== -->
+  <div class="care-section">
+    <p class="care-label">What I care about</p>
+    <div class="care-grid">
+      <div class="care-card">
+        <span class="care-icon">🧠</span>
+        <span class="care-title">Mental Health</span>
+        <p class="care-desc">Design that reduces friction for people navigating psychological complexity.</p>
+      </div>
+      <div class="care-card">
+        <span class="care-icon">🌿</span>
+        <span class="care-title">Wellness</span>
+        <p class="care-desc">Interfaces and identities that calm, restore, and meet people where they are.</p>
+      </div>
+      <div class="care-card">
+        <span class="care-icon">🏃</span>
+        <span class="care-title">Movement</span>
+        <p class="care-desc">Physical–digital experiences that engage the body, not just the screen.</p>
+      </div>
+      <div class="care-card">
+        <span class="care-icon">🌍</span>
+        <span class="care-title">Ecology</span>
+        <p class="care-desc">Systems thinking — design that considers the world it inhabits and shapes.</p>
+      </div>
+    </div>
+  </div>
 
-  <!-- ====== PROJECTS ====== -->
+  <hr class="section-divider" />
   <section id="projects" class="wrap">
     <div class="section-header">
       <h2 class="section-title">My projects</h2>
