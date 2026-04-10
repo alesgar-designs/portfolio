@@ -3,583 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alessandra Sgariglia — Portfolio</title>
-  <meta name="description" content="UX & Interaction Designer portfolio — projects, skills, and contact." />
-
-  <style>
-    /* ====== Base ====== */
-    :root{
-      --bg:#ffffff;
-      --text:#1a1a1a;
-      --muted:#666;
-      --accent:#7997b5;
-      --accent-2:#dcecfc;
-      --gold:#B99A5B;
-      --card:#f7f7f8;
-      --radius:16px;
-      --shadow: 0 6px 20px rgba(0,0,0,.08);
-      --maxw:1100px;
-      --card-hover:#A8BBCE;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text);
-      background:var(--bg);
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--maxw);margin:auto;padding:24px}
-
-    /* ====== Nav ====== */
-    header {
-      border-bottom: 1px solid #eee;
-      background: var(--bg);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 16px;
-      padding-bottom: 16px;
-    }
-    .brand { font-size: 22px; font-weight: 600; line-height: 1; color: var(--gold); }
-    .links { display: flex; gap: 24px; align-items: center; }
-    .links a { font-size: 15px; color: var(--muted); }
-
-    .menu-toggle { display: none; }
-
-    @media (max-width: 679px) {
-      .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        border: none;
-        padding: 4px;
-        text-decoration: none;
-        line-height: 1;
-        margin-left: auto;
-      }
-      .menu-toggle svg path { fill: #1a1a1a; }
-      .nav-say-hi { display: none !important; }
-    }
-
-    .nav-say-hi {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border: none;
-      background: transparent;
-      text-decoration: none;
-      flex-shrink: 0;
-      position: relative;
-    }
-    .nav-say-hi::after { display: none; }
-    .nav-say-hi svg { width: 22px; height: 22px; position: absolute; transition: opacity 0.18s; }
-    .nav-say-hi .icon-outline { opacity: 1; }
-    .nav-say-hi .icon-filled { opacity: 0; }
-    .nav-say-hi:hover .icon-outline { opacity: 0; }
-    .nav-say-hi:hover .icon-filled { opacity: 1; }
-    .nav-say-hi svg path { fill: #1a1a1a; }
-    .nav-say-hi:hover svg path { fill: var(--gold); }
-
-    /* ====== Hero roles tagline ====== */
-    .hero-roles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      align-items: center;
-      margin: 0 0 18px;
-    }
-    .hero-role {
-      font-size: clamp(11px, 1.1vw, 13px);
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-    .hero-role-sep {
-      font-size: 11px;
-      color: #ccc;
-      margin: 0 10px;
-      letter-spacing: 0;
-    }
-
-    /* ====== Hero ====== */
-    .hero { padding: 64px 0 40px; overflow: visible; }
-    .hero-inner {
-      max-width: var(--maxw);
-      margin: auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: 220px 1fr auto;
-      gap: 32px 48px;
-      align-items: start;
-    }
-    @media(max-width:900px){
-      .hero-inner { grid-template-columns: 160px 1fr; gap: 24px 32px; }
-      .hero-right { grid-column: 1 / -1; }
-    }
-    @media(max-width:580px){
-      .hero-inner { grid-template-columns: 1fr; gap: 24px; }
-      .hero { padding: 40px 0 40px; }
-    }
-
-    /* Photo */
-    .hero-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: #e8e5e0;
-      border-radius: var(--radius);
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-    .photo-mobile { display: none; }
-    .photo-desktop { display: block; }
-    @media (max-width: 580px) {
-      .photo-desktop { display: none; }
-      .photo-mobile { display: block; }
-      .hero-photo {
-        background: #111;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        width: 50%;
-        margin: 0 auto;
-      }
-      .hero-photo img { object-fit: cover; object-position: center center; }
-    }
-
-    /* Middle col */
-    h1 { font-size: clamp(26px, 3.2vw, 42px); line-height: 1.15; margin: 0 0 14px; }
-    .lead {
-      font-size: clamp(15px, 1.6vw, 18px);
-      color: #333;
-      margin: 0 0 20px;
-      line-height: 1.65;
-    }
-
-    /* Right col — no card background */
-    .hero-right {
-      min-width: 200px;
-    }
-    .hero-right-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    /* Skills section — full width below hero */
-    .skills-section {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 24px 40px;
-    }
-    .skills-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      align-items: stretch;
-    }
-    .cta-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 11px 12px;
-      background: #fff;
-      border: 1px solid #e7e7e9;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 500;
-      transition: border-color 0.18s, background 0.18s;
-      color: var(--text);
-      height: 100%;
-    }
-    .cta-link:hover { border-color: var(--accent); background: var(--accent-2); }
-    .cta-link .cta-icon {
-      width: 28px; height: 28px;
-      border-radius: 8px;
-      background: var(--accent-2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-    .cta-link .cta-text { display: flex; flex-direction: column; }
-    .cta-link .cta-title { font-weight: 600; font-size: 13px; line-height: 1.2; }
-    .cta-link .cta-sub { font-size: 11px; color: var(--muted); line-height: 1.2; margin-top: 1px; }
-
-    /* Filter pills under My projects */
-    .project-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-    .project-filter-btn {
-      font: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 5px 14px;
-      border-radius: 999px;
-      border: 1px solid #e0e0e0;
-      background: #fff;
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .project-filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .project-filter-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
-
-    .pills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .pill-badge {
-      display: inline-block;
-      font-size: 13px;
-      padding: 6px 16px;
-      border-radius: 999px;
-      border: 1px solid #e7e7e9;
-      background: var(--card);
-      color: var(--text);
-      line-height: 1;
-      cursor: default;
-      transition: background 0.18s, border-color 0.18s, color 0.18s;
-    }
-    .pill-badge.clickable { cursor: pointer; }
-    .pill-badge.clickable:hover { border-color: var(--gold); color: var(--gold); background: #fff; }
-    .pill-badge.clickable.active { background: var(--gold); border-color: var(--gold); color: #fff; }
-    .pill-badge.hoverable { cursor: default; }
-    .pill-badge.hoverable:hover { border-color: var(--gold); color: var(--gold); background: #fff; }
-
-    /* ====== Divider ====== */
-    .section-divider { border: none; border-top: 1px solid #eee; margin: 0; }
-
-    /* ====== Sections ====== */
-    section { padding: 40px 0; }
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-    .section-title { font-size: 22px; margin: 0; }
-    .muted { color: var(--muted); }
-
-    /* ====== Projects grid ====== */
-    .grid {
-      display: grid;
-      gap: 18px;
-      grid-auto-flow: row;
-      align-items: stretch;
-    }
-    @media (max-width: 679px){ .grid{ grid-template-columns: 1fr; } }
-    @media (min-width:680px) and (max-width:999px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width:1000px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
-
-    .card-wrap { display: block; min-width: 0; }
-    .card-wrap.hidden { display: none; }
-
-    .card-link { display: block; height: 100%; text-decoration: none; color: inherit; }
-    .card {
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      aspect-ratio: 3/4;
-      position: relative;
-      background: #111;
-    }
-    .thumb {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: var(--radius);
-      transition: transform 0.4s ease;
-    }
-    .card-link:hover .thumb { transform: scale(1.03); }
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 40%, transparent 55%, rgba(0,0,0,0.55) 100%);
-      border-radius: var(--radius);
-    }
-    .card-tags {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: flex-start;
-    }
-    .card-tag {
-      background: rgba(255,255,255,0.92);
-      color: #1a1a1a;
-      font-size: 12px;
-      padding: 5px 14px;
-      border-radius: 999px;
-      backdrop-filter: blur(4px);
-      line-height: 1.2;
-    }
-    .card-handle {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      color: rgba(255,255,255,0.85);
-      font-size: 12px;
-    }
-    .card-bottom {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      right: 16px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-    }
-    .card-title {
-      color: #fff;
-      font-size: clamp(22px, 3vw, 30px);
-      font-weight: 700;
-      line-height: 1.15;
-      font-style: italic;
-    }
-    .card-arrow {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.95);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 18px;
-      color: #1a1a1a;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .card-link:hover .card-arrow { background: #fff; transform: scale(1.08); }
-
-    .skills-cards{display:grid; grid-template-columns:1fr; gap:12px;}
-    @media(min-width:600px){.skills-cards{grid-template-columns:repeat(2,1fr);}}
-    @media(min-width:900px){.skills-cards{grid-template-columns:repeat(4,1fr);}}
-    .skills-card{background:var(--card); border-radius:var(--radius); padding:20px; display:flex; flex-direction:column; gap:14px;}
-    .skills-card-title{font-size:14px; font-weight:700; color:var(--text);}
-    .skills-card-pills{display:flex; flex-wrap:wrap; gap:6px;}
-    .skills-card .pill-badge{font-size:12px;}
-    .card-handle{display:none;}
-
-    /* ====== I care about ====== */
-    .care-section {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 24px 48px;
-    }
-    .care-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .care-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    @media(min-width: 680px) {
-      .care-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-    .care-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 20px 18px;
-      border: 1px solid #eeede9;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .care-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(121,151,181,0.12);
-    }
-    .care-icon {
-      font-size: 22px;
-      line-height: 1;
-    }
-    .care-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.2;
-    }
-    .care-desc {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.55;
-      margin: 0;
-    }
-      display: none;
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 48px 24px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-    .empty-state.show { display: block; }
-
-    /* ====== Thinking ====== */
-    .thinking-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: 1fr;
-    }
-    @media(min-width:680px){ .thinking-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media(min-width:1000px){ .thinking-grid { grid-template-columns: repeat(3, 1fr); } }
-
-    .thinking-card {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 24px;
-      background: var(--card);
-      border-radius: var(--radius);
-      border: 1px solid #eee;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.18s, box-shadow 0.18s;
-    }
-    .thinking-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow);
-    }
-    .thinking-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .thinking-tag {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-    .thinking-date {
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .thinking-title {
-      font-size: 17px;
-      font-weight: 700;
-      margin: 0;
-      line-height: 1.3;
-    }
-    .thinking-excerpt {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0;
-      flex: 1;
-    }
-    .thinking-arrow {
-      font-size: 16px;
-      color: var(--accent);
-      align-self: flex-end;
-      transition: transform 0.18s;
-    }
-    .thinking-card:hover .thinking-arrow { transform: translateX(4px); }
-
-    /* ====== Contact ====== */
-    .contact-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-    .contact-row a {
-      border: 1px solid var(--gold);
-      border-radius: 12px;
-      padding: 10px 14px;
-      background: #fff;
-      font-weight: 500;
-      color: var(--gold);
-      transition: background 0.18s, color 0.18s;
-    }
-    .contact-row a:hover { background: var(--gold); color: #fff; }
-
-    /* ====== Footer ====== */
-    footer { padding: 24px 0 40px; color: var(--muted); border-top: 1px solid #eee; }
-
-    /* ====== Experience / Education ====== */
-    .exp-grid { display: flex; flex-direction: column; gap: 0; }
-    .exp-item {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-meta { padding-top: 2px; }
-    .exp-period { font-size: 13px; color: var(--muted); font-weight: 500; white-space: nowrap; }
-    .exp-role { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
-    .exp-company { font-size: 14px; color: var(--muted); font-weight: 400; }
-    .exp-desc { font-size: 14px; color: #444; line-height: 1.6; margin: 6px 0 0; }
-    .edu-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-    @media(max-width:640px){
-      .edu-row { grid-template-columns: 1fr; gap: 32px; }
-      .exp-item { grid-template-columns: 80px 1fr; gap: 12px; }
-    }
-  </style>
-
-  <link rel="stylesheet" href="nav.css">
+  <title>Tap & Know — Case Study</title>
+  <meta name="description" content="Tap & Know — a wearable smart pin that makes sharing your creative portfolio playful and frictionless." />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    :root{ --bg:#ffffff; --text:#1a1a1a; --muted:#666; --accent:#B99A5B; --card:#f7f7f8; --radius:16px; --shadow:0 6px 20px rgba(0,0,0,.08); --maxw:1100px; --wide:1280px; }
+    *{box-sizing:border-box} html,body{margin:0}
+    body{font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;}
+    img{max-width:100%; display:block; border-radius:12px} a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+    header{position:sticky; top:0; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid #eee; z-index:100;}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:var(--maxw); margin:auto; padding:16px 24px;}
+    .brand{font-size:22px; font-weight:600; color:var(--accent); white-space:nowrap; text-decoration:none;}
+    .links{display:flex; align-items:center;} .menu-toggle{display:none;}
+    @media(max-width:679px){ .menu-toggle{display:inline-flex; align-items:center; justify-content:center; background:transparent; border:none; padding:4px; margin-left:auto; cursor:pointer; text-decoration:none;} .nav-say-hi{display:none !important;} #primary-nav{display:none !important;} }
+    .nav-say-hi{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:none; background:transparent; text-decoration:none; position:relative;}
+    .nav-say-hi svg{width:22px; height:22px; position:absolute; transition:opacity 0.18s;}
+    .nav-say-hi .icon-outline{opacity:1;} .nav-say-hi .icon-filled{opacity:0;}
+    .nav-say-hi:hover .icon-outline{opacity:0;} .nav-say-hi:hover .icon-filled{opacity:1;}
+    .nav-say-hi svg path{fill:#1a1a1a;} .nav-say-hi:hover svg path{fill:var(--accent);}
+    .sticky-header{position:sticky; top:58px; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); z-index:90;}
+    .hero{border-bottom:none;}
+    .hero-inner{max-width:var(--maxw); margin:auto; padding:32px 24px 16px;}
+    .breadcrumbs{font-size:13px; color:var(--muted);} .breadcrumbs a{color:var(--muted);}
+    h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:4px 0 8px;}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; font-size:14px; margin:0;}
+    .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#fff; border:1px solid #eee;}
+    .mast{margin:16px auto; max-width:var(--wide);}
+    .step-bar{border-top:1px solid #eee; border-bottom:1px solid #eee; padding:8px 0 10px;}
+    .step-bar-inner{max-width:var(--maxw); margin:auto; padding:0 24px;}
+    .step-bar-label{display:block; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin:0 0 6px; font-weight:400;}
+    .step-pills{display:flex; align-items:center; gap:0; overflow-x:auto;}
+    .step-pill{font-size:12px; padding:4px 12px; border-radius:999px; border:1px solid #eee; white-space:nowrap; color:var(--muted); background:#fff; transition:background .2s,color .2s,border-color .2s; flex-shrink:0;}
+    .step-pill.active{background:var(--accent); color:#fff; border-color:var(--accent); font-weight:600;}
+    .step-pill.past{background:var(--accent); color:#fff; border-color:var(--accent); opacity:0.45;}
+    .step-line{flex:1; height:1px; background:#eee; min-width:8px; max-width:32px;}
+    .step-line.past{background:var(--accent); opacity:0.45;} .step-line.active{background:var(--accent); opacity:0.45;}
+    .breadcrumbs,.meta{transition:opacity .25s,max-height .25s,margin .25s; overflow:hidden; max-height:60px;}
+    .hero-inner h1{transition:font-size .25s;}
+    .sticky-header.scrolled .breadcrumbs{opacity:0; max-height:0; margin:0; pointer-events:none;}
+    .sticky-header.scrolled .meta{opacity:0; max-height:0; margin:0; pointer-events:none;}
+    .sticky-header.scrolled h1{font-size:18px; margin:0; line-height:1;}
+    .sticky-header.scrolled .hero-inner{padding-top:24px; padding-bottom:8px;}
+    .stack-section{} .section-body{padding-bottom:40px;}
+    .section-title-text{font-size:22px; font-weight:700; margin:0 0 20px; padding:32px 0 0; color:var(--text); line-height:1.2;}
+    figure{margin:14px 0;} figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
+    h4{margin-top:32px; margin-bottom:8px;}
+    .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px;}
+    @media(min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr;}}
+    @media(min-width:980px){.grid.cols-3{grid-template-columns:repeat(3,1fr);}}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #e7e7e9; background:#fff; transition:background .18s,border-color .18s,color .18s;}
+    .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
+    .btn-group{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;}
+    footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
+
+    /* Shape showcase grid */
+    .shapes-grid{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+    @media(max-width:680px){
+      .shapes-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+    .shape-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+    }
+    .shape-card img{ border-radius:8px; width:100%; }
+    .shape-label{ font-size:11px; color:var(--muted); text-align:center; }
+
+    /* Interaction step diagram */
+    .interaction-steps{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:16px;
+      margin-top:16px;
+    }
+    @media(max-width:680px){ .interaction-steps{ grid-template-columns:1fr; } }
+    .interaction-step{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .interaction-step-num{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+    .interaction-step-title{ font-size:14px; font-weight:700; margin:0; }
+    .interaction-step-desc{ font-size:13px; color:var(--muted); line-height:1.55; margin:0; }
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="wrap nav">
-      <div class="brand">Alessandra Sgariglia</div>
-      <a href="/cdn-cgi/l/email-protection#0c6d60697f6b6d7e2268697f656b627f4c6b616d6560226f6361" class="menu-toggle" aria-label="Send email">
+    <div class="nav">
+      <a href="index.html" class="brand">Alessandra Sgariglia</a>
+      <a href="mailto:alessandra.sgariglia@gmail.com" target="_blank" class="menu-toggle" aria-label="Send email">
         <svg viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z" fill="#1a1a1a"/></svg>
       </a>
       <nav id="primary-nav" class="links">
-        <a href="/cdn-cgi/l/email-protection#03626f66706462712d6766706a646d7043646e626a6f2d606c6e" class="nav-say-hi" aria-label="Send email">
+        <a href="mailto:alessandra.sgariglia@gmail.com" target="_blank" class="nav-say-hi" aria-label="Send email">
           <svg class="icon-outline" viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z"/></svg>
           <svg class="icon-filled" viewBox="0 0 382.27 268.77" xmlns="http://www.w3.org/2000/svg"><path d="M382.27,29.11v210.54c-1.05,3.24-1.97,6.45-3.52,9.75l-115.76-115.02,115.76-115.02c1.55,3.3,2.47,6.5,3.52,9.75Z"/><path d="M214.8,150.79c-13.12,13.05-34.22,13.01-47.13.17L19.38,3.52C23.55,1.42,27.87,0,33.03,0h316.21c5.17,0,9.48,1.42,13.65,3.52l-148.09,147.26Z"/><path d="M362.81,265.16c-4.18,2.45-8.9,3.61-14.33,3.61H33.03c-5.17,0-9.46-1.42-13.66-3.52l115.71-114.97,17.21,16.98c21.6,21.3,56.49,20.93,78.06-.36l16.82-16.61,115.62,114.87Z"/><path d="M3.63,249.31c-1.88-3.48-3.6-7.53-3.6-12.05l-.03-205.03c.42-4.89,1.4-8.81,3.52-12.88l115.76,115.03L3.63,249.31Z"/></svg>
         </a>
@@ -587,424 +124,261 @@
     </div>
   </header>
 
-  <!-- ====== HERO ====== -->
-  <section class="hero" id="home">
-    <div class="hero-inner">
-
-      <!-- Photo -->
-      <div class="hero-photo">
-        <img class="photo-desktop" src="imgs/profile_pic.png" alt="Alessandra Sgariglia" />
-        <img class="photo-mobile" src="imgs/profile_pic_mobile.png" alt="Alessandra Sgariglia" />
-      </div>
-
-      <!-- Bio -->
-      <div class="hero-mid">
-        <div class="hero-roles">
-          <span class="hero-role">UX/UI</span>
-          <span class="hero-role-sep">·</span>
-          <span class="hero-role">Interaction</span>
-          <span class="hero-role-sep">·</span>
-          <span class="hero-role">Graphic Design</span>
+  <div class="sticky-header" id="sticky-header">
+    <div class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="breadcrumbs"><a href="index.html">My projects</a> / Tap &amp; Know</div>
+        <h1>Tap &amp; Know</h1>
+        <div class="meta">
+          <span style="font-size:13px; color:var(--accent); font-weight:500;">#InteractionDesign</span>
+          <span style="font-size:13px; color:var(--muted); font-weight:500;">#PhysicalPrototyping</span>
+          <span style="font-size:13px; color:var(--muted); font-weight:500;">#WearableTech</span>
+          
         </div>
-        <h1>Designer working at the intersection of research, technology, and lived experience.</h1>
-        <p class="lead">Based between Rome and Milan. I help wellness, psychology, and ecological brands design digital products and visual identities that feel as considered as they look — from interactive prototypes and UX research to brand systems and content.</p>
       </div>
-
     </div>
-  </section>
-
-  <!-- ====== WHAT I DO — full width ====== -->
-  <div class="skills-section">
-    <p class="skills-label">What I do</p>
-    <div class="skills-cards">
-      <div class="skills-card">
-        <span class="skills-card-title">UX/UI Design</span>
-        <div class="skills-card-pills">
-          <span class="pill-badge hoverable">UX/UI Design</span>
-          <span class="pill-badge hoverable">Prototyping</span>
-        </div>
-      </div>
-      <div class="skills-card">
-        <span class="skills-card-title">Interaction Design</span>
-        <div class="skills-card-pills">
-          <span class="pill-badge hoverable">Interaction Design</span>
-          <span class="pill-badge hoverable">Prototyping</span>
-        </div>
-      </div>
-      <div class="skills-card">
-        <span class="skills-card-title">Graphic Design</span>
-        <div class="skills-card-pills">
-          <span class="pill-badge hoverable">Branding & Identity</span>
-          <span class="pill-badge hoverable">Art Direction</span>
-          <span class="pill-badge hoverable">Illustration</span>
-        </div>
-      </div>
-      <div class="skills-card">
-        <span class="skills-card-title">Content & Media</span>
-        <div class="skills-card-pills">
-          <span class="pill-badge hoverable">Content Production</span>
-          <span class="pill-badge hoverable">Video Making & Editing</span>
+    <div class="step-bar" id="step-bar">
+      <div class="step-bar-inner">
+        <span class="step-bar-label">The Process</span>
+        <div class="step-pills">
+          <span class="step-pill" data-idx="0">Overview</span>
+          <span class="step-line"></span>
+          <span class="step-pill" data-idx="1">Ideation</span>
+          <span class="step-line"></span>
+          <span class="step-pill" data-idx="2">Prototyping</span>
+          <span class="step-line"></span>
+          <span class="step-pill" data-idx="3">Interaction</span>
+          <span class="step-line"></span>
+          <span class="step-pill" data-idx="4">Final Prototype</span>
+          <span class="step-line"></span>
+          <span class="step-pill" data-idx="5">Reflection</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ====== FIND ME ON — full width ====== -->
-  <div class="skills-section" style="padding-top:0;">
-    <p class="hero-right-label">Find me on</p>
-    <div class="cta-grid">
-      <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="cta-link">
-        <span class="cta-icon">🌿</span>
-        <span class="cta-text">
-          <span class="cta-title">Work with me</span>
-          <span class="cta-sub">Tell me about your project</span>
-        </span>
-      </a>
-      <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="cta-link">
-        <span class="cta-icon">📷</span>
-        <span class="cta-text">
-          <span class="cta-title">Instagram</span>
-          <span class="cta-sub">@alesgar_designs</span>
-        </span>
-      </a>
-      <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="cta-link">
-        <span class="cta-icon">💼</span>
-        <span class="cta-text">
-          <span class="cta-title">LinkedIn</span>
-          <span class="cta-sub">Alessandra Sgariglia</span>
-        </span>
-      </a>
-      <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" class="cta-link">
-        <span class="cta-icon">✍️</span>
-        <span class="cta-text">
-          <span class="cta-title">Substack</span>
-          <span class="cta-sub">@alesgar</span>
-        </span>
-      </a>
-    </div>
-  </div>
+  <main class="wrap">
+    <figure class="mast">
+      <img src="imgs/TapAndKnow/cover.gif" alt="Tap & Know — wearable smart pin" />
+    </figure>
+    <div class="stack-container">
 
-  <!-- ====== I CARE ABOUT ====== -->
-  <div class="care-section">
-    <p class="care-label">What I care about</p>
-    <div class="care-grid">
-      <div class="care-card">
-        <span class="care-icon">🧠</span>
-        <span class="care-title">Mental Health</span>
-        <p class="care-desc">Design that reduces friction for people navigating psychological complexity.</p>
-      </div>
-      <div class="care-card">
-        <span class="care-icon">🌿</span>
-        <span class="care-title">Wellness</span>
-        <p class="care-desc">Interfaces and identities that calm, restore, and meet people where they are.</p>
-      </div>
-      <div class="care-card">
-        <span class="care-icon">🏃</span>
-        <span class="care-title">Movement</span>
-        <p class="care-desc">Physical–digital experiences that engage the body, not just the screen.</p>
-      </div>
-      <div class="care-card">
-        <span class="care-icon">🌍</span>
-        <span class="care-title">Ecology</span>
-        <p class="care-desc">Systems thinking — design that considers the world it inhabits and shapes.</p>
-      </div>
-    </div>
-  </div>
-
-  <hr class="section-divider" />
-  <section id="projects" class="wrap">
-    <div class="section-header">
-      <h2 class="section-title">My projects</h2>
-    </div>
-    <div class="project-filters">
-      <p style="font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin:0 0 10px; width:100%;">Filter by skill</p>
-      <button class="project-filter-btn active" data-filter="all">All</button>
-      <button class="project-filter-btn" data-filter="UX/UI Design">UX/UI Design</button>
-      <button class="project-filter-btn" data-filter="Interaction Design">Interaction Design</button>
-      <button class="project-filter-btn" data-filter="Branding & Identity">Branding & Identity</button>
-      <button class="project-filter-btn" data-filter="Art Direction">Art Direction</button>
-      <button class="project-filter-btn" data-filter="Prototyping">Prototyping</button>
-      <button class="project-filter-btn" data-filter="Illustration">Illustration</button>
-      <button class="project-filter-btn" data-filter="Content Production">Content Production</button>
-      <button class="project-filter-btn" data-filter="Video Making & Editing">Video Making & Editing</button>
-    </div>
-
-    <div class="grid" id="projectGrid">
-      <!-- 1. Tap & Know -->
-      <div class="card-wrap" data-tags='["Interaction Design","Prototyping"]'>
-        <a href="Tap&Know.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/cover_portfolio.png" alt="Tap & Know cover" />
-            <div class="card-overlay"></div>
-            <div class="card-tags">
-              <span class="card-tag">Interaction Design</span>
-              <span class="card-tag">Prototyping</span>
+      <!-- OVERVIEW -->
+      <div class="stack-section" id="sec-0">
+        <div class="section-body">
+          <h2 class="section-title-text">Overview</h2>
+          <p>Networking at creative events — gallery openings, design conferences, graduate shows — tends to follow a familiar and slightly uncomfortable script: small talk, a fumbled business card, a promise to follow up that rarely happens. The card gets lost. The connection doesn't form. For designers, whose work lives in digital portfolios and social profiles, handing over a rectangle of card stock feels like the worst possible representation of who they are.</p>
+          <p>Tap &amp; Know is a wearable smart pin that replaces that exchange with something more honest to how creatives actually exist online. You wear it. Someone gets curious. They take the detachable piece, tap it to their phone, and your portfolio — or any link you've set — opens instantly. No app to download, no QR code to squint at, no friction at all.</p>
+          <p>The project was designed and built as a physical–digital interaction exercise: how do you make a networked object that earns attention because of how it looks, then delivers on that curiosity through the interaction itself? Co-designed with <strong>Duru Erdem</strong>, the whole process — from concept to final prototypes — was handled by the two of us.</p>
+          <div class="grid cols-2" style="margin-top:16px;">
+            <div class="callout">
+              <strong>My role</strong><br/><br/>
+              Equal co-designer with Duru Erdem — concept, interaction design, 3D modelling, prototyping, and visual direction.
             </div>
-            <div class="card-bottom">
-              <span class="card-title">Tap & Know</span>
-              <span class="card-arrow">→</span>
+            <div class="callout">
+              <strong>Tools</strong><br/>
+              <ul>
+                <li>Rhino 8</li>
+                <li>3D Printer (PLA filament)</li>
+                <li>Figma</li>
+                
+              </ul>
+              <strong>Type</strong><br/>
+              Physical–digital prototype · Personal project
             </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- 2. AirPal -->
-      <div class="card-wrap" data-tags='["UX/UI Design","Prototyping"]'>
-        <a href="AirPal.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/covers/cover_AirPal.png" alt="AirPal cover" />
-            <div class="card-overlay"></div>
-            <div class="card-tags">
-              <span class="card-tag">UX/UI Design</span>
-              <span class="card-tag">Prototyping</span>
-            </div>
-            <div class="card-bottom">
-              <span class="card-title">AirPal</span>
-              <span class="card-arrow">→</span>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- 2. Pazzamente -->
-      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Content Production","Video Making & Editing"]'>
-        <a href="Pazzamente.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/covers/cover_Pazzamente.png" alt="Pazzamente cover" />
-            <div class="card-overlay"></div>
-            <div class="card-tags">
-              <span class="card-tag">Branding & Identity</span>
-              <span class="card-tag">Content Production</span>
-            </div>
-            <div class="card-bottom">
-              <span class="card-title">Pazzamente</span>
-              <span class="card-arrow">→</span>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- 3. Behind Closed Doors -->
-      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Illustration"]'>
-        <a href="BehindClosedDoors.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/covers/cover_BehindClosedDoors.png" alt="Behind Closed Doors cover" />
-            <div class="card-overlay"></div>
-            <div class="card-tags">
-              <span class="card-tag">Branding & Identity</span>
-              <span class="card-tag">Illustration</span>
-            </div>
-            <div class="card-bottom">
-              <span class="card-title">Behind Closed Doors</span>
-              <span class="card-arrow">→</span>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- 4. Milanosport -->
-      <div class="card-wrap" data-tags='["UX/UI Design"]'>
-        <a href="Milanosport.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/covers/cover_MilanoSport.png" alt="Milanosport cover" />
-            <div class="card-overlay"></div>
-            <div class="card-tags">
-              <span class="card-tag">UX/UI Design</span>
-            </div>
-            <div class="card-bottom">
-              <span class="card-title">Milanosport</span>
-              <span class="card-arrow">→</span>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- 5. Nexus -->
-      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
-        <a href="Nexus.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/covers/cover_nexus.png" alt="Nexus cover" />
-            <div class="card-overlay"></div>
-            <div class="card-tags">
-              <span class="card-tag">Interaction Design</span>
-              <span class="card-tag">Prototyping</span>
-            </div>
-            <div class="card-bottom">
-              <span class="card-title">Nexus</span>
-              <span class="card-arrow">→</span>
-            </div>
-          </article>
-        </a>
-      </div>
-
-      <!-- 6. Luma -->
-      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
-        <a href="Luma.html" rel="noreferrer" class="card-link">
-          <article class="card">
-            <img class="thumb" src="imgs/covers/cover_Luma.png" alt="Luma cover" />
-            <div class="card-overlay"></div>
-            <div class="card-tags">
-              <span class="card-tag">Interaction Design</span>
-              <span class="card-tag">Art Direction</span>
-            </div>
-            <div class="card-bottom">
-              <span class="card-title">Luma</span>
-              <span class="card-arrow">→</span>
-            </div>
-          </article>
-        </a>
-      </div>
-
-
-
-    </div>
-  </section>
-
-  <hr class="section-divider" />
-
-  <!-- ====== THINKING ====== -->
-  <section id="thinking" class="wrap">
-    <div class="section-header">
-      <h2 class="section-title">Thinking</h2>
-      <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" style="font-size:13px; color:var(--muted); margin-left:auto;">All essays →</a>
-    </div>
-    <p class="muted" style="margin:0 0 28px;">Essays on design, behavior, and the systems we inhabit.</p>
-    <div class="thinking-grid">
-
-      <a href="https://open.substack.com/pub/alesgar/p/what-is-design?utm_campaign=post-expanded-share&utm_medium=web" target="_blank" rel="noreferrer" class="thinking-card">
-        <div class="thinking-meta">
-          <span class="thinking-tag">Design</span>
-          <span class="thinking-date">2026</span>
-        </div>
-        <h3 class="thinking-title">What is Design?</h3>
-        <p class="thinking-excerpt">What does design actually mean? Not aesthetics — intention, planning, and the invisible layer of communication that shapes everything we make and inhabit.</p>
-        <span class="thinking-arrow">→</span>
-      </a>
-
-    </div>
-  </section>
-
-  <hr class="section-divider" />
-
-  <!-- ====== EXPERIENCE / EDUCATION / LANGUAGES ====== -->
-  <section id="background" class="wrap">
-
-    <h2 class="section-title" style="margin-bottom:20px;">Experience</h2>
-    <div class="exp-grid">
-
-      <div class="exp-item">
-        <div class="exp-meta"><span class="exp-period">2025</span></div>
-        <div class="exp-body">
-          <p class="exp-role">UX/UI Design Intern <span class="exp-company">— Colla Studio</span></p>
-          <p class="exp-desc">Implemented app flow updates based on client feedback; designed an e-commerce proposal with responsive wireframes and interactive prototypes; contributed to a scalable design system and client presentation materials.</p>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-meta"><span class="exp-period">2022–now</span></div>
-        <div class="exp-body">
-          <p class="exp-role">Freelance Designer <span class="exp-company">— Self-employed</span></p>
-          <p class="exp-desc">Built an e-learning platform (Squarespace + Thinkific); developed cohesive digital presences and content strategies for clients across web and social. Worked independently from brief to delivery.</p>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-meta"><span class="exp-period">2022–2023</span></div>
-        <div class="exp-body">
-          <p class="exp-role">Teaching Assistant & Academic Collaborator <span class="exp-company">— NABA Roma</span></p>
-          <p class="exp-desc">Invited to co-lead sessions on user-centred design and creative problem-solving for the Graphic Design department. Mentored students, supported exhibitions, and contributed to the academic life of the department.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="section-divider" style="margin: 32px 0;" />
-
-    <div class="edu-row">
-      <div class="edu-col">
-        <h2 class="section-title" style="margin-bottom:20px;">Education</h2>
-        <div class="exp-item" style="border-bottom:none; padding-bottom:0;">
-          <div class="exp-meta"><span class="exp-period">2023–2025</span></div>
-          <div class="exp-body">
-            <p class="exp-role">MSc Digital & Interaction Design</p>
-            <p class="exp-company" style="margin:2px 0 0;">Politecnico di Milano · 110/110</p>
           </div>
-        </div>
-        <div class="exp-item" style="border-bottom:none; padding-bottom:0; margin-top:16px;">
-          <div class="exp-meta"><span class="exp-period">2019–2022</span></div>
-          <div class="exp-body">
-            <p class="exp-role">BA Graphic Design & Art Direction</p>
-            <p class="exp-company" style="margin:2px 0 0;">NABA Roma · 110L/110</p>
+          <div class="btn-group">
+            <a class="btn" href="https://www.behance.net/gallery/246775811/Tap-Know-Making-connections-playful" target="_blank" rel="noreferrer">View on Behance</a>
           </div>
         </div>
       </div>
 
-      <div class="edu-col">
-        <h2 class="section-title" style="margin-bottom:20px;">Languages</h2>
-        <div style="padding-top:20px;">
-          <span style="font-size:15px; display:block; margin-bottom:6px;">🇮🇹 Italian — Native</span>
-          <span style="font-size:15px; display:block;">🇬🇧 English — Fluent</span>
+      <!-- IDEATION -->
+      <div class="stack-section" id="sec-1">
+        <div class="section-body">
+          <h2 class="section-title-text">Ideation</h2>
+          <p>The starting point was personal: we both found networking genuinely difficult. Not because of shyness, but because the available tools feel mismatched to how creative professionals think about themselves. A business card implies a fixed identity. Scanning a QR code asks the other person to do work. Typing a username into a phone while someone watches is awkward for everyone involved.</p>
+          <p>As interaction designers, the question we kept returning to was: <em>what if the object itself created the opening for a conversation, rather than asking the person to create it?</em> A wearable made sense immediately — it's always with you at an event, it's visible without you having to do anything, and it shifts the dynamic from "let me give you my card" to "I notice you're wearing something interesting."</p>
+          <h4>Why a pin?</h4>
+          <p>The pin form was a deliberate choice on several fronts. It attaches to any outfit without asking the wearer to commit to a bag or lanyard. It sits at chest height — in the natural field of view during a face-to-face conversation. And it has a long cultural history as a marker of identity and affiliation, which meant the object would carry meaning even before someone understood what it did.</p>
+          <p>The key interaction constraint we set early: the person sharing must be able to hand something physical to the receiver. Not just show a QR code or hold up a phone. The act of passing an object — even a small one — changes the social register of the interaction. It creates a moment of contact that a screen-to-screen exchange simply doesn't.</p>
+          <img src="imgs/TapAndKnow/ideation.png" alt="Tap & Know ideation sketches and concepts" style="margin-top:16px;" />
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>Early concept exploration — sketches, form studies, and interaction models.</em></p>
         </div>
       </div>
+
+      <!-- PROTOTYPING -->
+      <div class="stack-section" id="sec-2">
+        <div class="section-body">
+          <h2 class="section-title-text">Prototyping</h2>
+          <p>We modelled the pin in Rhino 8, iterating through multiple shape families before settling on a set of geometric forms — angular, minimal, and distinct enough to read as designed objects rather than generic wearables. The two-part structure (a fixed base that attaches to clothing and a detachable component with the embedded technology) was resolved early and stayed consistent across all shape variants.</p>
+          <p>Prototypes were 3D printed in PLA filament. Printing in PLA let us test proportions and fitment quickly, and the material's slight rigidity meant the detachable piece had a satisfying physical resistance when removed and replaced — which turned out to matter more than we expected. The tactile quality of the handoff is part of what makes the interaction feel intentional rather than incidental.</p>
+          <div class="grid cols-2" style="margin-top:16px;">
+            <img src="imgs/TapAndKnow/prototyping_model.png" alt="Rhino 3D model of Tap & Know pin" />
+            <img src="imgs/TapAndKnow/prototyping_print.png" alt="3D printed prototypes in PLA" />
+          </div>
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>Rhino 8 model (left) and early PLA prints (right) — testing proportions, fitment, and the detach mechanism.</em></p>
+        </div>
+      </div>
+
+      <!-- INTERACTION -->
+      <div class="stack-section" id="sec-3">
+        <div class="section-body">
+          <h2 class="section-title-text">Interaction</h2>
+          <p>The full interaction sequence was designed to feel effortless for both people involved — the wearer and the person they're sharing with. Before the event, the wearer sets their link — a portfolio, a Linktree, a LinkedIn profile, or any URL they choose. The technology is embedded in the detachable component, which clips securely into the base but can be removed with one hand.</p>
+          <div class="interaction-steps">
+            <div class="interaction-step">
+              <span class="interaction-step-num">Step 01</span>
+              <p class="interaction-step-title">Set your link</p>
+              <p class="interaction-step-desc">Before the event, Set your link — portfolio, Linktree, or any URL. Takes under a minute, no app needed.</p>
+            </div>
+            <div class="interaction-step">
+              <span class="interaction-step-num">Step 02</span>
+              <p class="interaction-step-title">Wear it</p>
+              <p class="interaction-step-desc">Attach the pin to your outfit. The object does the work of starting the conversation — curiosity is built into the form.</p>
+            </div>
+            <div class="interaction-step">
+              <span class="interaction-step-num">Step 03</span>
+              <p class="interaction-step-title">Hand it over</p>
+              <p class="interaction-step-desc">Detach the piece and pass it to the other person. They tap it to the back of their phone — your link opens instantly, no app required.</p>
+            </div>
+          </div>
+          <div class="grid cols-3" style="margin-top:24px;">
+            <img src="imgs/TapAndKnow/interaction_1.png" alt="Tap & Know interaction step 1" />
+            <img src="imgs/TapAndKnow/interaction_2.png" alt="Tap & Know interaction step 2" />
+            <img src="imgs/TapAndKnow/interaction_3.png" alt="Tap & Know interaction step 3" />
+          </div>
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>The interaction sequence — detaching the piece, passing it over, and tapping it to the receiver's phone.</em></p>
+        </div>
+      </div>
+
+      <!-- FINAL PROTOTYPE -->
+      <div class="stack-section" id="sec-4">
+        <div class="section-body">
+          <h2 class="section-title-text">Final Prototype</h2>
+          <p>The final set comprises five shapes, each available in multiple colourways. The shape range was a deliberate response to something we noticed early: a single generic design would have made the object feel like a product, where the wearer is a customer. Different shapes for different personalities — geometric, organic, angular, rounded — makes it feel like a choice. You pick the one that fits how you want to present yourself, which is exactly what a networking tool should ask you to do.</p>
+          <p>Each variant uses the same internal structure and technology, so the interaction is identical regardless of which shape you choose. The modularity also means the detachable piece is interchangeable across shapes — useful when you want to share at speed and don't need to think about which one you're handing over.</p>
+          <div class="grid cols-3" style="margin-top:16px;">
+            <img src="imgs/TapAndKnow/application1.png" alt="Tap & Know worn on outfit" />
+            <img src="imgs/TapAndKnow/application2.png" alt="Tap & Know in context" />
+            <img src="imgs/TapAndKnow/application3.png" alt="Tap & Know at an event" />
+          </div>
+          <p style="font-size:13px; color:var(--muted); margin-top:8px;"><em>The full set — five shapes, multiple colourways, one interaction.</em></p>
+          <div class="shapes-grid" style="margin-top:24px;">
+            <div class="shape-card">
+              <img src="imgs/TapAndKnow/shape1.png" alt="Shape 01" />
+              <span class="shape-label">Shape 01</span>
+            </div>
+            <div class="shape-card">
+              <img src="imgs/TapAndKnow/shape2.png" alt="Shape 02" />
+              <span class="shape-label">Shape 02</span>
+            </div>
+            <div class="shape-card">
+              <img src="imgs/TapAndKnow/shape3.png" alt="Shape 03" />
+              <span class="shape-label">Shape 03</span>
+            </div>
+            <div class="shape-card">
+              <img src="imgs/TapAndKnow/shape4.png" alt="Shape 04" />
+              <span class="shape-label">Shape 04</span>
+            </div>
+            <div class="shape-card">
+              <img src="imgs/TapAndKnow/shape5.png" alt="Shape 05" />
+              <span class="shape-label">Shape 05</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFLECTION -->
+      <div class="stack-section" id="sec-5">
+        <div class="section-body">
+          <h2 class="section-title-text">Reflection</h2>
+          <p>Tap &amp; Know sits at the intersection of interaction design and object design in a way that pushed both of us beyond our usual tools. Designing a physical product is categorically different from designing a screen — the constraints are less forgiving, the iteration is slower, and the feedback you get from holding something in your hand is harder to articulate but much harder to ignore.</p>
+
+          <h4>What was hard</h4>
+          <p>The two-part structure — the fixed base and the detachable piece — turned out to be the most technically demanding part of the project. Getting the connection tight enough to feel secure when worn, but loose enough to detach one-handed without fumbling, required far more iteration than we anticipated. Several early prints had the wrong tolerances; the piece either fell out or couldn't be removed cleanly. We ended up printing the joint mechanism at least a dozen times before the fitment felt right.</p>
+          <p>The other challenge was the conceptual one: designing something that works as both a functional tool and a conversation object. A pin that simply transmitted a link without any considered form or interaction would have been technically sufficient but socially inert — no one would notice it, no curiosity would form, no interaction would happen. The object had to earn the interaction before the interaction could work. That meant every form decision carried both aesthetic and social weight, which is an unusual design brief to hold in your head simultaneously.</p>
+
+          <h4>What I learned</h4>
+          <p>The most useful thing this project taught me is that physical interactions have a texture that digital ones don't. The small resistance of detaching the piece, the weight of it in your hand, the gesture of passing it to another person — these aren't decorative details. They're what makes the exchange feel like something that actually happened, rather than a data transfer that could have been an email. Designing for that kind of embodied quality requires you to think about moments, not just functions.</p>
+          <p>I also came away with a much sharper sense of what makes a wearable object work socially. It has to be visible enough to be noticed without demanding attention. It has to signal something about the wearer before anyone understands what it does. And it has to make the person on the receiving end feel invited rather than pitched to. Those are soft design constraints — you can't model them in Rhino — but they end up driving every decision that matters.</p>
+        </div>
+      </div>
+
     </div>
 
-  </section>
-
-  <hr class="section-divider" />
-
-  <!-- ====== CONTACT ====== -->
-  <section id="contact" class="wrap">
-    <h2 class="section-title">Contacts</h2>
-    <p class="muted">Working on something interesting? I'd love to hear about it.</p>
-    <div class="contact-row">
-      <a href="/cdn-cgi/l/email-protection#4829242d3b2f293a662c2d3b212f263b082f25292124662b2725">Email</a>
-      <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer">LinkedIn</a>
+    <div id="credits-line" style="padding:48px 0 0; margin-top:32px; border-top:1px solid #eee;">
+      <h2 style="font-size:22px; font-weight:700; margin:0 0 12px;">Credits</h2>
+      <div style="color:var(--muted); font-size:14px;">
+        <strong style="color:var(--text);">Concept & design:</strong> Alessandra Sgariglia &amp; Duru Erdem<br>
+        <strong style="color:var(--text);">3D modelling & prototyping:</strong> Alessandra Sgariglia &amp; Duru Erdem<br>
+        <strong style="color:var(--text);">Published on Behance:</strong> April 2026
+      </div>
     </div>
-  </section>
+  </main>
 
   <footer>
-    <div class="wrap">© <span id="y"></span> Alessandra Sgariglia · Website built by me with HTML, CSS & JavaScript</div>
+    <div class="wrap">
+      <a class="btn" href="index.html">← Back to my projects</a>
+    </div>
   </footer>
 
   <script src="nav.js"></script>
   <script>
-    const skillPills    = document.querySelectorAll('.pill-badge.clickable');
-    const projectBtns   = document.querySelectorAll('.project-filter-btn');
-    const cardWraps     = document.querySelectorAll('.card-wrap');
-    const emptyState    = document.getElementById('emptyState');
-    const projectsSection = document.getElementById('projects');
+    const titles     = [...document.querySelectorAll('.section-title-text')];
+    const stepPills  = [...document.querySelectorAll('.step-pill')];
+    const stepLines  = [...document.querySelectorAll('.step-line')];
+    const stickyHeader = document.getElementById('sticky-header');
 
-    function applyFilter(f) {
-      skillPills.forEach(p => p.classList.toggle('active', p.dataset.filter === f));
-      projectBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === f));
-      let visible = 0;
-      cardWraps.forEach(wrap => {
-        const tags = JSON.parse(wrap.dataset.tags || '[]');
-        const match = f === 'all' || tags.includes(f);
-        wrap.classList.toggle('hidden', !match);
-        if (match) visible++;
-      });
-      emptyState.classList.toggle('show', visible === 0);
+    function getBase() {
+      return document.querySelector('header').offsetHeight +
+             document.getElementById('sticky-header').offsetHeight;
     }
 
-    skillPills.forEach(pill => {
+    function update() {
+      if (window.scrollY > 10) stickyHeader.classList.add('scrolled');
+      else stickyHeader.classList.remove('scrolled');
+
+      const base = getBase();
+      let activeIdx = -1;
+      titles.forEach((t, i) => { if (t.getBoundingClientRect().top <= base + 8) activeIdx = i; });
+
+      stepPills.forEach((p, i) => {
+        p.classList.remove('active', 'past');
+        if (i === activeIdx) p.classList.add('active');
+        else if (i < activeIdx) p.classList.add('past');
+      });
+      stepLines.forEach((l, i) => {
+        l.classList.remove('active', 'past');
+        if (i < activeIdx) l.classList.add('past');
+        else if (i === activeIdx) l.classList.add('active');
+      });
+
+      // Scroll active pill into view on mobile
+      const activePill = stepPills.find(p => p.classList.contains('active'));
+      if (activePill) {
+        const bar = document.querySelector('.step-pills');
+        if (bar) {
+          const pillRight = activePill.offsetLeft + activePill.offsetWidth;
+          bar.scrollLeft = pillRight - bar.offsetWidth + 16;
+        }
+      }
+    }
+
+    // Clickable pills
+    stepPills.forEach((pill, i) => {
+      pill.style.cursor = 'pointer';
       pill.addEventListener('click', () => {
-        const f = pill.dataset.filter;
-        applyFilter(pill.classList.contains('active') ? 'all' : f);
-        const headerH = document.querySelector('header')?.offsetHeight || 0;
-        const top = projectsSection.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        const target = titles[i];
+        if (!target) return;
+        const base = getBase();
+        const top = target.getBoundingClientRect().top + window.scrollY - base - 8;
         window.scrollTo({ top, behavior: 'smooth' });
       });
     });
 
-    projectBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const f = btn.dataset.filter;
-        applyFilter(btn.classList.contains('active') && f !== 'all' ? 'all' : f);
-      });
-    });
-
-    document.getElementById('y').textContent = new Date().getFullYear();
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   </script>
 
 </body>
