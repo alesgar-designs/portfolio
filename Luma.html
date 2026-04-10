@@ -55,7 +55,7 @@
     .mast{margin:16px auto; max-width:var(--wide);}
     .stack-section{}
     .section-body{padding-bottom:40px;}
-    .section-title-text{position:sticky; background:var(--bg); border-bottom:1px solid #eee; font-size:18px; font-weight:700; margin:0 0 20px; padding:14px 0; color:var(--text); line-height:1.2;}
+    .section-title-text{font-size:22px; font-weight:700; margin:0 0 20px; padding:32px 0 0; color:var(--text); line-height:1.2;}
     figure{margin:14px 0;}
     figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
     .callout{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
@@ -66,6 +66,78 @@
     .btn:hover{background:#B99A5B; border-color:#B99A5B; color:#fff;}
     .btn-arrow::after{display:none;}
     footer{margin-top:32px; padding:24px 0 48px; color:var(--muted); border-top:1px solid #eee;}
+    @media(max-width:580px){ .process-cards{ grid-template-columns: repeat(2,1fr) !important; } }
+    .proc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+    @media(max-width:580px){ .proc-grid{ grid-template-columns:repeat(2,1fr); } }
+    .proc-step{ display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; }
+    .proc-num{ width:28px; height:28px; border-radius:50%; background:#e8eff5; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600; color:#7997b5; flex-shrink:0; }
+    .proc-label{ font-size:12px; color:var(--text); margin:0; line-height:1.4; }
+    .proc-sublabel{ font-size:11px; color:var(--muted); margin:4px 0 0; line-height:1.4; font-style:italic; }
+    .proc-visual{ display:flex; align-items:center; justify-content:center; width:100%; }
+    .twirl-badge{ background:#7997B5; color:#fff; border-radius:10px; padding:14px 16px; font-size:12px; font-weight:700; text-align:center; line-height:1.5; max-width:120px; }
+    .sliced-grid{ display:grid; grid-template-columns:1fr 1fr; gap:3px; width:84px; height:84px; }
+    .proc-quadrant{ background-size:200% 200%; border-radius:3px; }
+    .proc-q1{ background-position:0% 0%; }
+    .proc-q2{ background-position:100% 0%; }
+    .proc-q3{ background-position:0% 100%; }
+    .proc-q4{ background-position:100% 100%; }
+    .color-dots{ display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap; }
+    .sb-wrap{ overflow-x:auto; margin-top:8px; }
+    .sb-inner{ min-width:580px; }
+    .sb-grid{ display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:minmax(90px,auto) 20px auto 20px minmax(80px,auto); column-gap:8px; row-gap:0; }
+    .sb-card-ff{ background:#B99A5B; color:#fff; border-radius:12px; padding:14px 12px; font-size:13px; text-align:center; line-height:1.55; height:100%; box-sizing:border-box; }
+    .sb-card-action{ background:#cdd8e2; border-radius:12px; padding:14px 12px; font-size:13px; text-align:center; line-height:1.55; width:100%; }
+    .sb-card-fb{ background:#fff; border:1.5px solid #a8c0d0; border-radius:12px; padding:14px 12px; font-size:13px; text-align:center; line-height:1.55; height:100%; box-sizing:border-box; }
+    .sb-conn-v{ display:flex; justify-content:center; align-items:stretch; height:100%; }
+    .sb-conn-v div{ width:1.5px; background:#a8c0d0; }
+    .sb-legend{ display:flex; align-items:center; justify-content:center; gap:20px; margin-bottom:16px; flex-wrap:wrap; }
+    .sb-legend-item{ display:flex; align-items:center; gap:7px; font-size:12px; color:var(--muted); }
+    .sb-legend-dot{ width:14px; height:14px; border-radius:4px; flex-shrink:0; }
+    .sb-cards-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:8px; }
+    @media(max-width:600px){ .sb-cards-grid{ grid-template-columns:repeat(2,1fr); } }
+    .sb-step-card{ background:var(--card); border-radius:var(--radius); padding:14px; display:flex; flex-direction:column; gap:8px; }
+    .sb-step-num{ font-size:20px; font-weight:700; color:var(--accent); line-height:1; }
+    .sb-subcards{ display:flex; flex-direction:column; gap:6px; }
+    .sb-sc{ border-radius:8px; padding:9px 10px; font-size:12px; line-height:1.5; }
+    .sb-sc--ff{ background:#B99A5B; color:#fff; }
+    .sb-sc--action{ background:#cdd8e2; color:#1a1a1a; }
+    .sb-sc--fb{ background:#fff; border:1.5px solid #a8c0d0; color:#1a1a1a; }
+    .sb-cards-grid-5{ display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:8px; }
+    @media(max-width:800px){ .sb-cards-grid-5{ grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:500px){ .sb-cards-grid-5{ grid-template-columns:repeat(2,1fr); } }
+    .insights-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
+    @media(max-width:600px){ .insights-grid{ grid-template-columns:1fr; } }
+    .insights-col{ display:flex; flex-direction:column; gap:12px; }
+    .insight-card{ border-radius:var(--radius); padding:20px 16px; font-size:13px; line-height:1.65; text-align:center; }
+    .insight-card--obs{ background:#B99A5B; color:#fff; }
+    .insight-card--int{ background:#cdd8e2; color:var(--text); }
+    .insight-stat{ display:block; font-size:14px; font-weight:700; margin-bottom:4px; }
+    .storyboard-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px; }
+    @media(max-width:680px){ .storyboard-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:420px){ .storyboard-grid{ grid-template-columns:1fr; } }
+    .test-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:8px; }
+    @media(max-width:800px){ .test-grid{ grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:500px){ .test-grid{ grid-template-columns:repeat(2,1fr); } }
+    .test-card{ background:var(--card); border-radius:var(--radius); padding:14px; display:flex; flex-direction:column; gap:6px; border-left:3px solid transparent; }
+    .test-card--obs{ background:rgba(185,154,91,0.09); border-left-color:var(--accent); }
+    .test-card-num{ font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
+    .test-card-num--obs{ color:var(--accent); }
+    .test-card-title{ font-size:13px; font-weight:700; margin:0; line-height:1.3; }
+    .test-card-desc{ font-size:12px; color:var(--muted); margin:0; line-height:1.5; }
+    .test-obs-badge{ display:inline-block; font-size:10px; font-weight:600; letter-spacing:0.8px; text-transform:uppercase; color:var(--accent); background:rgba(185,154,91,0.15); border-radius:999px; padding:2px 8px; align-self:flex-start; }
+    .problems-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:8px; }
+    @media(max-width:600px){ .problems-grid{ grid-template-columns:1fr; } }
+    .prob-card{ background:var(--card); border-radius:var(--radius); padding:16px; display:flex; flex-direction:column; gap:10px; border-left:3px solid transparent; }
+    .prob-card--int{ border-left-color:#B99A5B; }
+    .prob-card--proto{ border-left-color:#7997B5; }
+    .prob-badge{ font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; border-radius:999px; align-self:flex-start; }
+    .prob-badge--int{ background:rgba(185,154,91,0.15); color:#B99A5B; }
+    .prob-badge--proto{ background:rgba(121,151,181,0.18); color:#5a7fa0; }
+    .prob-problem{ font-size:13px; color:var(--text); line-height:1.55; margin:0; }
+    .prob-divider{ height:1px; background:#eee; border:none; margin:0; }
+    .prob-solution-label{ font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0; }
+    .prob-solutions{ font-size:12px; color:var(--muted); line-height:1.6; margin:0; padding-left:14px; }
+    .prob-solutions li{ margin-bottom:2px; }
 
     /* ====== Hero collapse on scroll ====== */
     .breadcrumbs, .meta { transition: opacity .25s, max-height .25s, margin .25s; overflow:hidden; max-height: 60px; }
@@ -80,11 +152,11 @@
   <header>
     <div class="nav">
       <a href="index.html" class="brand">Alessandra Sgariglia</a>
-      <a href="mailto:alesgar.designs@gmail.com" target="_blank" class="menu-toggle" aria-label="Send email">
+      <a href="/cdn-cgi/l/email-protection#bddcd1d8cedadccf93d9d8ced4dad3cefddad0dcd4d193ded2d0" target="_blank" class="menu-toggle" aria-label="Send email">
         <svg viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z" fill="#1a1a1a"/></svg>
       </a>
       <nav id="primary-nav" class="links">
-        <a href="mailto:alesgar.designs@gmail.com" target="_blank" class="nav-say-hi" aria-label="Send email">
+        <a href="/cdn-cgi/l/email-protection#9efff2fbedf9ffecb0fafbedf7f9f0eddef9f3fff7f2b0fdf1f3" target="_blank" class="nav-say-hi" aria-label="Send email">
           <svg class="icon-outline" viewBox="0 0 384 269.98" xmlns="http://www.w3.org/2000/svg"><path d="M384,29.24v211.5c-3.14,16.42-16.17,29.24-33.87,29.24H33.87c-17.7,0-30.75-12.85-33.87-29.24V29.24C3.18,12.99,15.94.06,33.12.05L350.13,0c17.66,0,30.73,12.76,33.87,29.24ZM200.47,167.56L345.1,22.48H38.91s144.85,145.28,144.85,145.28c5.15,3.76,11.31,3.95,16.71-.2ZM119.31,135.01L22.51,37.87v194.19s96.8-97.04,96.8-97.04ZM361.46,232.04l.03-194.12-96.78,97.05,96.75,97.08ZM248.85,150.95l-33.11,33.15c-13.69,12.09-34.19,12.02-47.72-.26l-32.87-32.88-96.2,96.53h306.12s-96.22-96.54-96.22-96.54Z"/></svg>
           <svg class="icon-filled" viewBox="0 0 382.27 268.77" xmlns="http://www.w3.org/2000/svg"><path d="M382.27,29.11v210.54c-1.05,3.24-1.97,6.45-3.52,9.75l-115.76-115.02,115.76-115.02c1.55,3.3,2.47,6.5,3.52,9.75Z"/><path d="M214.8,150.79c-13.12,13.05-34.22,13.01-47.13.17L19.38,3.52C23.55,1.42,27.87,0,33.03,0h316.21c5.17,0,9.48,1.42,13.65,3.52l-148.09,147.26Z"/><path d="M362.81,265.16c-4.18,2.45-8.9,3.61-14.33,3.61H33.03c-5.17,0-9.46-1.42-13.66-3.52l115.71-114.97,17.21,16.98c21.6,21.3,56.49,20.93,78.06-.36l16.82-16.61,115.62,114.87Z"/><path d="M3.63,249.31c-1.88-3.48-3.6-7.53-3.6-12.05l-.03-205.03c.42-4.89,1.4-8.81,3.52-12.88l115.76,115.03L3.63,249.31Z"/></svg>
         </a>
@@ -109,15 +181,11 @@
         <div class="step-pills">
           <span class="step-pill" data-idx="0">Overview</span>
           <span class="step-line"></span>
-          <span class="step-pill" data-idx="1">Concept</span>
+          <span class="step-pill" data-idx="1">Concept & Prototyping</span>
           <span class="step-line"></span>
-          <span class="step-pill" data-idx="2">Prototyping</span>
+          <span class="step-pill" data-idx="2">User Testing</span>
           <span class="step-line"></span>
-          <span class="step-pill" data-idx="3">User Testing</span>
-          <span class="step-line"></span>
-          <span class="step-pill" data-idx="4">Ideal Scenario</span>
-          <span class="step-line"></span>
-          <span class="step-pill" data-idx="5">Reflection</span>
+          <span class="step-pill" data-idx="3">Reflection</span>
         </div>
       </div>
     </div>
@@ -130,91 +198,452 @@
 
     <div class="stack-container">
 
+      <!-- OVERVIEW -->
       <div class="stack-section" id="sec-0">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-0">Overview</h2>
+          <h2 class="section-title-text">Overview</h2>
           <p>Travel memories are deeply sensory — the quality of light in a particular afternoon, the colour palette of a city you loved. Yet when we try to share them, we reach for photos that show the place but rarely convey how it <em>felt</em>. Luma was an attempt to close that gap.</p>
           <p>Luma is an immersive, physical installation that lets people re-live a travel memory inside a personal dome — an umbrella. Colours extracted from a user's photo are translated into light and ambient sound, creating a calm, meditative space unique to that memory. In shared settings, two domes can approach each other and "contaminate" one another's colour fields, turning private memory into a collective experience.</p>
           <div class="grid cols-2" style="margin-top:16px;">
-            <div class="callout"><strong>My role</strong><br/><br/>I contributed to the initial concept and idea generation, and was hands-on during the creation of the phygital installation itself. My main individual lead was the user testing: I planned both testing rounds, facilitated the sessions, and synthesised the insights that drove our iterations between round one and round two.</div>
-            <div class="callout"><strong>Tools</strong><br/><ul><li>Figma</li><li>Arduino/ESP32</li></ul></div>
+            <div class="callout"><strong>My role</strong><br/><br/>I contributed to the initial concept and idea generation, and was hands-on during the creation of the physical installation. My main individual lead was the user testing: I planned both rounds, facilitated the sessions, and synthesised the insights that drove our iterations.</div>
+            <div class="callout"><strong>Tools</strong><br/><ul><li>Figma</li><li>Arduino / ESP32</li></ul><strong>Context</strong><br/>Embodied Interaction Studio · MSc Digital & Interaction Design, Politecnico di Milano</div>
           </div>
         </div>
       </div>
 
+      <!-- CONCEPT & PROTOTYPING -->
       <div class="stack-section" id="sec-1">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-1">Concept</h2>
-          <p>Rooted in the metaphor of the umbrella as a personal dome, Luma explores how light and sound can embody memory. Photos become <em>palettes</em>, not pictures, preserving intimacy while evoking place. When multiple domes meet, their color fields blend — making memory sharing visible and felt.</p>
-          <h4>Our process</h4>
-          <figure><img src="imgs/Luma/process.png" alt="Umbrella dome concept diagram" style="margin:5% 0;"/></figure>
-          <h4>Our approach</h4>
-          <p>As a project we decided to use the <strong>Research through Design</strong> approach — experimenting with future practices and experiences using objects that might be. This way we aimed at researching the correlation between feelings experienced while traveling and the recall of these feelings through colors, in a personal and meditative space.</p>
+          <h2 class="section-title-text">Concept & Prototyping</h2>
+          <p>Rooted in the metaphor of the umbrella as a personal dome, Luma explores how light and sound can embody memory. Photos become <em>palettes</em>, not pictures — preserving the feeling of a place rather than its record. When multiple domes meet, their colour fields blend, turning private memory into something shared and visible.</p>
+          <p>We used a <strong>Research through Design</strong> approach: experimenting with future practices through objects that might be. The research question driving us was how feelings experienced while travelling could be recalled through colour, in a personal and meditative space.</p>
+          <div class="process-cards" style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px;">
+            <div style="background:var(--card); border-radius:var(--radius); padding:16px;">
+              <span style="font-size:22px; font-weight:700; color:var(--accent); line-height:1;">01</span>
+              <p style="margin:8px 0 4px; font-size:14px; font-weight:700;">Research</p>
+              <p style="margin:0; font-size:13px; color:var(--muted); line-height:1.5;">Travelling research & embodied interaction case studies</p>
+            </div>
+            <div style="background:var(--card); border-radius:var(--radius); padding:16px;">
+              <span style="font-size:22px; font-weight:700; color:var(--accent); line-height:1;">02</span>
+              <p style="margin:8px 0 4px; font-size:14px; font-weight:700;">Define</p>
+              <p style="margin:0; font-size:13px; color:var(--muted); line-height:1.5;">Focus on re-living past travel memories</p>
+            </div>
+            <div style="background:var(--card); border-radius:var(--radius); padding:16px;">
+              <span style="font-size:22px; font-weight:700; color:var(--accent); line-height:1;">03</span>
+              <p style="margin:8px 0 4px; font-size:14px; font-weight:700;">Research</p>
+              <p style="margin:0; font-size:13px; color:var(--muted); line-height:1.5;">New digital art case studies</p>
+            </div>
+            <div style="background:var(--card); border-radius:var(--radius); padding:16px;">
+              <span style="font-size:22px; font-weight:700; color:var(--accent); line-height:1;">04</span>
+              <p style="margin:8px 0 4px; font-size:14px; font-weight:700;">Define & Prototype</p>
+              <p style="margin:0; font-size:13px; color:var(--muted); line-height:1.5;">Final Luma concept & first prototype built</p>
+            </div>
+            <div style="background:var(--card); border-radius:var(--radius); padding:16px;">
+              <span style="font-size:22px; font-weight:700; color:var(--accent); line-height:1;">05</span>
+              <p style="margin:8px 0 4px; font-size:14px; font-weight:700;">Test</p>
+              <p style="margin:0; font-size:13px; color:var(--muted); line-height:1.5;">First user testing & prototype refining</p>
+            </div>
+            <div style="background:var(--card); border-radius:var(--radius); padding:16px;">
+              <span style="font-size:22px; font-weight:700; color:var(--accent); line-height:1;">06</span>
+              <p style="margin:8px 0 4px; font-size:14px; font-weight:700;">Test</p>
+              <p style="margin:0; font-size:13px; color:var(--muted); line-height:1.5;">Second user testing & prototype refining</p>
+            </div>
+          </div>
+
+          <h4>First prototype</h4>
+          <p>The first prototype used an Arduino Uno, a powerbank for portability, an accelerometer to detect twisting, a proximity sensor to detect a second umbrella, and LED strips as the main interface. To translate images into colour, we detected the overall RGB distribution for the pre-twirl state, then divided each image into four sections whose average colours appeared in the LEDs after the twirl.</p>
+          <figure><img src="imgs/Luma/prototype_1.png" alt="First prototype structure"/></figure>
+          <div class="grid cols-2">
+            <figure><img src="imgs/Luma/umbrella1.png" alt="First umbrella prototype"/></figure>
+            <figure><img src="imgs/Luma/test1.png" alt="First prototype in use"/></figure>
+          </div>
+          <div class="proc-grid">
+
+            <!-- 1. Uploaded image -->
+            <div class="proc-step">
+              <div class="proc-num">1</div>
+              <div class="proc-visual">
+                <img src="imgs/Luma/processing_photo.jpg" style="width:90px; aspect-ratio:3/4; object-fit:cover; border-radius:8px;" alt="Uploaded image sample" />
+              </div>
+              <p class="proc-label">Uploaded image</p>
+            </div>
+
+            <!-- 2. Scaled image -->
+            <div class="proc-step">
+              <div class="proc-num">2</div>
+              <div class="proc-visual">
+                <img src="imgs/Luma/processing_photo.jpg" style="width:72px; height:72px; object-fit:cover; border-radius:8px;" alt="Scaled image" />
+              </div>
+              <p class="proc-label">Scaled image</p>
+            </div>
+
+            <!-- 3. RGB pie chart -->
+            <div class="proc-step">
+              <div class="proc-num">3</div>
+              <div class="proc-visual">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                  <path d="M50,50 L50,8 A42,42 0 1 1 50,92 Z" fill="#E84040" stroke="#fff" stroke-width="1.5"/>
+                  <path d="M50,50 L50,92 A42,42 0 0 1 10,37 Z" fill="#4060C8" stroke="#fff" stroke-width="1.5"/>
+                  <path d="M50,50 L10,37 A42,42 0 0 1 50,8 Z" fill="#40A840" stroke="#fff" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <p class="proc-label">Overall distribution of RGB colors</p>
+              <p class="proc-sublabel">Shown on the umbrella before the 'twirl' action.</p>
+            </div>
+
+            <!-- 4. Twirling action -->
+            <div class="proc-step">
+              <div class="proc-num">4</div>
+              <div class="proc-visual" style="flex:1; display:flex; align-items:center; justify-content:center; min-height:84px;">
+                <div class="twirl-badge">TWIRLING OF<br>THE UMBRELLA</div>
+              </div>
+            </div>
+
+            <!-- 5. Sliced image -->
+            <div class="proc-step">
+              <div class="proc-num">5</div>
+              <div class="proc-visual">
+                <div class="sliced-grid">
+                  <div class="proc-quadrant proc-q1" style="background-image:url('imgs/Luma/processing_photo.jpg');"></div>
+                  <div class="proc-quadrant proc-q2" style="background-image:url('imgs/Luma/processing_photo.jpg');"></div>
+                  <div class="proc-quadrant proc-q3" style="background-image:url('imgs/Luma/processing_photo.jpg');"></div>
+                  <div class="proc-quadrant proc-q4" style="background-image:url('imgs/Luma/processing_photo.jpg');"></div>
+                </div>
+              </div>
+              <p class="proc-label">Sliced image</p>
+            </div>
+
+            <!-- 6. Extracted colors -->
+            <div class="proc-step">
+              <div class="proc-num">6</div>
+              <div class="proc-visual" style="min-height:84px; display:flex; align-items:center; justify-content:center;">
+                <div class="color-dots">
+                  <div style="width:22px; height:22px; border-radius:50%; background:#C46830;"></div>
+                  <div style="width:22px; height:22px; border-radius:50%; background:#E05820;"></div>
+                  <div style="width:22px; height:22px; border-radius:50%; background:#3A2840;"></div>
+                  <div style="width:22px; height:22px; border-radius:50%; background:#9A4848;"></div>
+                </div>
+              </div>
+              <p class="proc-label">Extracted colors from slice RGB distribution</p>
+            </div>
+
+          </div>
         </div>
       </div>
 
+      <!-- USER TESTING -->
       <div class="stack-section" id="sec-2">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-2">Prototyping</h2>
-          <p>The first prototype used: an Arduino Uno, a Powerbank (to make the umbrella portable), an Accelerometer (to detect twisting), a Proximity sensor (to detect a second umbrella), and LED strips as the main interface.</p>
-          <figure><img src="imgs/Luma/prototype_1.png" alt="Prototype structure"/></figure>
-          <div class="grid cols-2">
-            <figure><img src="imgs/Luma/umbrella1.png" alt="Umbrella prototype photo"/></figure>
-            <figure><img src="imgs/Luma/test1.png" alt="Umbrella prototype photo"/></figure>
+          <h2 class="section-title-text">User Testing</h2>
+          <p>We ran two rounds of user testing, using each to identify problems, iterate, and retest. My role across both rounds was to plan the sessions, facilitate them, and synthesise the findings into concrete design changes.</p>
+
+          <h4>Round 1 — 8 users</h4>
+          <p>The research questions were: does twirling feel natural? Do users associate colours to images? Do users understand the two-umbrella interaction? The results were instructive — people didn't naturally understand the twirling gesture, and many stood still rather than moving through the space. The two-umbrella interaction was unclear without a path guiding users toward it.</p>
+          <div class="sb-legend" style="margin-top:16px;">
+            <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#B99A5B;"></span>Feedforward</span>
+            <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#cdd8e2;"></span>Action</span>
+            <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#fff; border:1.5px solid #a8c0d0;"></span>Feedback</span>
+            <span class="sb-legend-item"><span style="font-size:10px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:var(--accent); background:rgba(185,154,91,0.15); border-radius:999px; padding:2px 8px;">obs</span>Observed during test</span>
           </div>
-          <h4>Image processing</h4>
-          <p>To process the images and transform them into colours for the umbrella, we used sample images representing what users could upload in an ideal scenario. The image would be scaled and through a program we'd detect the overall distribution of RGB colours (shown before the twirling motion). After the twirl, the image would be divided into four sections and the average colour of each section would appear in the umbrella LEDs.</p>
-          <figure><img src="imgs/Luma/processing.png" alt="Image processing process"/></figure>
+          <div class="sb-cards-grid">
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">01</span>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 0; line-height:1.3;">Instructions</p>
+              <p style="font-size:12px; color:var(--muted); margin:4px 0 0; line-height:1.5;">Explanation of the whole experience before entering</p>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">02</span>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 4px; line-height:1.3;">Choose an image</p>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--action">Choosing an image of a travel journey and sending it to Luma</div>
+              </div>
+              <p style="font-size:12px; color:var(--muted); margin:6px 0 0; line-height:1.5;">A palette is assigned based on the image</p>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">03</span>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 0; line-height:1.3;">Colors uploaded to umbrella LEDs</p>
+              <p style="font-size:12px; color:var(--muted); margin:4px 0 0; line-height:1.5;">First RGB colors are shown on the umbrella</p>
+            </div>
+
+            <div class="sb-step-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="sb-step-num">04</span>
+                <span class="test-obs-badge">obs</span>
+              </div>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 4px; line-height:1.3;">Open the umbrella</p>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--ff">Seeing an umbrella in a room with rain that blinks</div>
+                <div class="sb-sc sb-sc--action">Opening the umbrella</div>
+                <div class="sb-sc sb-sc--fb">Switching LEDs on showing RGB of image</div>
+              </div>
+            </div>
+
+            <div class="sb-step-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="sb-step-num">05</span>
+                <span class="test-obs-badge">obs</span>
+              </div>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 4px; line-height:1.3;">Twirl the umbrella</p>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--ff">Instruction LEDs suggest the twirling with a light going around the umbrella</div>
+                <div class="sb-sc sb-sc--action">Twirling the umbrella</div>
+                <div class="sb-sc sb-sc--fb">The RGB turn into the colors of the image chosen</div>
+              </div>
+            </div>
+
+            <div class="sb-step-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="sb-step-num">06</span>
+                <span class="test-obs-badge">obs</span>
+              </div>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 4px; line-height:1.3;">Get close to another umbrella</p>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--ff">Blinking of instruction LEDs gets higher in intensity</div>
+                <div class="sb-sc sb-sc--action">Getting close to another umbrella</div>
+                <div class="sb-sc sb-sc--fb">Color LEDs are invaded with neighbour umbrella colors</div>
+              </div>
+            </div>
+
+            <div class="sb-step-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="sb-step-num">07</span>
+                <span class="test-obs-badge">obs</span>
+              </div>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 0; line-height:1.3;">Contamination of colors</p>
+              <p style="font-size:12px; color:var(--muted); margin:4px 0 0; line-height:1.5;">When the two umbrellas touch, colors get transferred to the other</p>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">08</span>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 0; line-height:1.3;">Questionnaire</p>
+              <p style="font-size:12px; color:var(--muted); margin:4px 0 0; line-height:1.5;">Asking users about their experience and impressions</p>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">09</span>
+              <p style="font-size:13px; font-weight:700; margin:4px 0 0; line-height:1.3;">Reward</p>
+              <p style="font-size:12px; color:var(--muted); margin:4px 0 0; line-height:1.5;">Biscuits 🍪</p>
+            </div>
+
+          </div>
+          <div style="display:flex; align-items:center; gap:20px; margin-bottom:12px; margin-top:32px; flex-wrap:wrap;">
+            <span style="font-size:13px; font-weight:600;">Problems & opportunities</span>
+            <span style="display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted);"><span style="width:12px; height:12px; border-radius:3px; background:#B99A5B; display:inline-block;"></span>Interaction</span>
+            <span style="display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted);"><span style="width:12px; height:12px; border-radius:3px; background:#7997B5; display:inline-block;"></span>Prototype</span>
+          </div>
+          <div class="problems-grid">
+
+            <div class="prob-card prob-card--int">
+              <span class="prob-badge prob-badge--int">Interaction</span>
+              <p class="prob-problem">Some users didn't understand what they had to do at first</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solution</p>
+              <ul class="prob-solutions"><li>Telling users to follow instruction LEDs</li></ul>
+            </div>
+
+            <div class="prob-card prob-card--int">
+              <span class="prob-badge prob-badge--int">Interaction</span>
+              <p class="prob-problem">Some users were scared of moving because of all the cables showing</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solutions</p>
+              <ul class="prob-solutions">
+                <li>Hide the cables</li>
+                <li>Create a path to follow</li>
+              </ul>
+            </div>
+
+            <div class="prob-card prob-card--int">
+              <span class="prob-badge prob-badge--int">Interaction</span>
+              <p class="prob-problem">Some colors were too similar to the first RGB colors — after the twirl, users didn't notice the change</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solutions</p>
+              <ul class="prob-solutions">
+                <li>Switch LEDs off and on with new colors</li>
+                <li>Choose more distinct colors</li>
+              </ul>
+            </div>
+
+            <div class="prob-card prob-card--int">
+              <span class="prob-badge prob-badge--int">Interaction</span>
+              <p class="prob-problem">The interaction between umbrellas was not clear — most people stood still in the centre of the room</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solution</p>
+              <ul class="prob-solutions"><li>Create a floor path guiding two umbrellas to meet</li></ul>
+            </div>
+
+            <div class="prob-card prob-card--proto">
+              <span class="prob-badge prob-badge--proto">Prototype</span>
+              <p class="prob-problem">The twirl sensor is too sensitive</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solution</p>
+              <ul class="prob-solutions"><li>Solve with code</li></ul>
+            </div>
+
+            <div class="prob-card prob-card--proto">
+              <span class="prob-badge prob-badge--proto">Prototype</span>
+              <p class="prob-problem">Cables kept unplugging because they were too short</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solution</p>
+              <ul class="prob-solutions"><li>Use longer cables</li></ul>
+            </div>
+
+            <div class="prob-card prob-card--proto">
+              <span class="prob-badge prob-badge--proto">Prototype</span>
+              <p class="prob-problem">Can't keep LEDs connected to Arduino for long periods of time</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solution</p>
+              <ul class="prob-solutions"><li>Reduce the number of LEDs</li></ul>
+            </div>
+
+            <div class="prob-card prob-card--proto">
+              <span class="prob-badge prob-badge--proto">Prototype</span>
+              <p class="prob-problem">Having the Arduino board in a separate bag limits the twirling action</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solution</p>
+              <ul class="prob-solutions"><li>Find a way to attach the Arduino board directly to the umbrella</li></ul>
+            </div>
+
+            <div class="prob-card prob-card--proto">
+              <span class="prob-badge prob-badge--proto">Prototype</span>
+              <p class="prob-problem">The proximity sensor with two umbrellas didn't work</p>
+              <hr class="prob-divider"/>
+              <p class="prob-solution-label">Possible solution</p>
+              <ul class="prob-solutions"><li>Use ESP32 board with Bluetooth to detect proximity</li></ul>
+            </div>
+
+          </div>
+
+          <h4>Round 2 — 16 users</h4>
+          <p>To address what we found, we upgraded to an <strong>ESP32</strong> board (compact, Wi-Fi, Bluetooth), added longer cables, lined the inside of the umbrella with cotton to diffuse the LEDs, and introduced a physical path guiding users toward the centre where the shared interaction happens. The testing was conducted in Politecnico di Milano's Edme Lab — a meditative space with rain projected on three walls and ambient rain sound throughout.</p>
+          <figure><img src="imgs/Luma/prototype_2.png" alt="Updated prototype" style="border-radius:0;"/></figure>
+          <figure><img src="imgs/Luma/new.png" alt="Updated prototype detail"/></figure>
+          <p>The three redesigned interactions: a LED turning around the circumference prompts the twirl; after twirling, the personal colours spin around the umbrella; when two umbrellas approach, they contaminate each other's colour fields.</p>
+          <div class="grid cols-3" style="margin-top:8px;">
+            <figure><img src="imgs/Luma/action1.png" alt="Interaction 1 — prompt to twirl"/></figure>
+            <figure><img src="imgs/Luma/action2.png" alt="Interaction 2 — colours spin"/></figure>
+            <figure><img src="imgs/Luma/action3.png" alt="Interaction 3 — colour contamination"/></figure>
+          </div>
+          <div class="sb-legend" style="margin-top:16px;">
+            <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#B99A5B;"></span>Feedforward</span>
+            <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#cdd8e2;"></span>Action</span>
+            <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#fff; border:1.5px solid #a8c0d0;"></span>Feedback</span>
+          </div>
+          <div class="sb-cards-grid-5">
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">01</span>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--action">Uploading an image of a past travel through a form</div>
+              </div>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">02</span>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--action">Entering the installation and following the path on the floor</div>
+              </div>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">03</span>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--ff">Seeing an umbrella in a room with rain</div>
+                <div class="sb-sc sb-sc--action">Opening the umbrella</div>
+                <div class="sb-sc sb-sc--fb">Switching LEDs on</div>
+              </div>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">04</span>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--ff">Instruction LEDs suggest the twirling with a light going around the umbrella</div>
+                <div class="sb-sc sb-sc--action">Twirling the umbrella</div>
+                <div class="sb-sc sb-sc--fb">Color LEDs start turning around the umbrella</div>
+              </div>
+            </div>
+
+            <div class="sb-step-card">
+              <span class="sb-step-num">05</span>
+              <div class="sb-subcards">
+                <div class="sb-sc sb-sc--ff">Blinking of instruction LEDs gets higher in intensity and color LEDs animation stops</div>
+                <div class="sb-sc sb-sc--action">Getting close to another umbrella</div>
+                <div class="sb-sc sb-sc--fb">Color LEDs are invaded with neighbour umbrella colors</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="grid cols-3" style="margin-top:8px;">
+            <img src="imgs/Luma/exhibition1.png" alt="User holding umbrella under cotton lining" style="border-radius:8px;"/>
+            <img src="imgs/Luma/exhibition2.png" alt="User in the installation room with umbrella" style="border-radius:8px;"/>
+            <img src="imgs/Luma/exhibition3.png" alt="User looking at umbrella with coloured LEDs" style="border-radius:8px;"/>
+          </div>
+          <div class="storyboard-grid"> alt="Storyboard step 1" style="border-radius:8px;"/>
+              <figcaption style="text-align:center; margin-top:8px;">The umbrella attracts user's attention by pulsing white light</figcaption>
+            </figure>
+            <figure style="margin:0;">
+              <img src="imgs/Luma/storyboard/2.png" alt="Storyboard step 2" style="border-radius:8px;"/>
+              <figcaption style="text-align:center; margin-top:8px;">User picks up the umbrella, starting the instructional LEDs</figcaption>
+            </figure>
+            <figure style="margin:0;">
+              <img src="imgs/Luma/storyboard/3.png" alt="Storyboard step 3" style="border-radius:8px;"/>
+              <figcaption style="text-align:center; margin-top:8px;">Instructional LEDs start going around the umbrella, suggesting twirling motion</figcaption>
+            </figure>
+            <figure style="margin:0;">
+              <img src="imgs/Luma/storyboard/4.png" alt="Storyboard step 4" style="border-radius:8px;"/>
+              <figcaption style="text-align:center; margin-top:8px;">After twirl the colors from the uploaded image appear in the umbrella</figcaption>
+            </figure>
+            <figure style="margin:0;">
+              <img src="imgs/Luma/storyboard/5.png" alt="Storyboard step 5" style="border-radius:8px;"/>
+              <figcaption style="text-align:center; margin-top:8px;">Simulation of second person with umbrella entering the room and exchange of colors</figcaption>
+            </figure>
+            <figure style="margin:0;">
+              <img src="imgs/Luma/storyboard/6.png" alt="Storyboard step 6" style="border-radius:8px;"/>
+              <figcaption style="text-align:center; margin-top:8px;">By getting apart from each other the personal colors return inside of the umbrella</figcaption>
+            </figure>
+          </div>
+
+          <div style="margin-top:32px;">
+            <div style="display:flex; align-items:center; gap:20px; margin-bottom:12px; flex-wrap:wrap;">
+              <span style="font-size:13px; font-weight:600;">Insights</span>
+              <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#B99A5B;"></span>From observation</span>
+              <span class="sb-legend-item"><span class="sb-legend-dot" style="background:#cdd8e2; border:1px solid #a8c0d0;"></span>From interview</span>
+            </div>
+            <div class="insights-grid">
+
+              <div class="insights-col">
+                <div class="insight-card insight-card--obs">Some users didn't understand the twirling interaction with the umbrella. This confirms that the solution from the first showcase — when the LEDs weren't in a circular pattern — was more intuitive than the new one.</div>
+                <div class="insight-card insight-card--obs">Users felt comfort and calmness in the immersive space, due to the sound of rain and low light.</div>
+                <div class="insight-card insight-card--obs">By simulating the second umbrella interaction, users started questioning themselves more about how they could create interactions with other people.</div>
+                <div class="insight-card insight-card--obs">The path wasn't mandatory to follow. Most users started by using it but then continued freely, so we felt there was no need for it — and removed it.</div>
+              </div>
+
+              <div class="insights-col">
+                <div class="insight-card insight-card--int"><span class="insight-stat">11 out of 16 users</span>liked the physical presentation of the umbrella with the cotton, since it gave a feeling of coziness.</div>
+                <div class="insight-card insight-card--int"><span class="insight-stat">5 out of 16 users</span>mentioned they enjoyed the connection between both umbrellas but found it confusing due to the simulation of the second umbrella.</div>
+                <div class="insight-card insight-card--int"><span class="insight-stat">12 out of 16 users</span>made the specific comment of enjoying the experience and the feeling the immersiveness gave them.</div>
+                <div class="insight-card insight-card--int"><span class="insight-stat">7 out of 16 users</span>commented that the RGB colors were not specifically matching the colors of the picture they shared.</div>
+                <div class="insight-card insight-card--int"><span class="insight-stat">3 out of 16 users</span>mentioned that it is a nice conversation starter in an outside setting to know more about other people.</div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- REFLECTION -->
       <div class="stack-section" id="sec-3">
         <div class="section-body">
-          <h2 class="section-title-text" id="st-3">User Testing</h2>
-          <h4>Round 1 (8 users)</h4>
-          <p>Research questions: Does twirling feel natural? Do users associate colours to images? Do users understand the two-umbrella interaction?</p>
-          <figure><img src="imgs/Luma/interaction1.png" alt="Interaction storyboard" style="border-radius:0;"/></figure>
-          <figure><img src="imgs/Luma/test_1.png" alt="User testing" style="border-radius:0;"/></figure>
-          <figure><img src="imgs/Luma/problems.png" alt="Discovered opportunities" style="border-radius:0;"/></figure>
-
-          <h4>Round 2 (16 users)</h4>
-          <p>To address problems from round one we integrated: an <strong>ESP32</strong> board (compact, Wi-Fi, Bluetooth), <strong>longer cables</strong>, <strong>cotton lining inside the umbrella</strong> to diffuse LEDs, and a <strong>path to follow</strong> guiding users toward the centre where the two-umbrella interaction happens.</p>
-          <img src="imgs/Luma/prototype_2.png" alt="Updated prototype" style="border-radius:0;"/>
-          <figure><img src="imgs/Luma/new.png" alt="Updated prototype"/></figure>
-          <h4>New integrated interactions</h4>
-          <figure><img src="imgs/Luma/action1.png" alt="Interaction 1" style="width:100%;"/></figure>
-          <p>At the beginning, a LED turning around the circumference prompts the user to twirl the umbrella.</p>
-          <figure><img src="imgs/Luma/action2.png" alt="Interaction 2" style="width:100%;"/></figure>
-          <p>After the twirl the colours of the personal image continue spinning around the umbrella.</p>
-          <figure><img src="imgs/Luma/action3.png" alt="Interaction 3" style="width:100%;"/></figure>
-          <p>When one umbrella approaches another it gets contaminated with the other's colours.</p>
-          <figure><img src="imgs/Luma/new_interaction_flow.png" alt="New interaction flow" style="border-radius:0;"/></figure>
-          <h4>The testing setting</h4>
-          <p>Conducted in Politecnico di Milano's Edme Lab — a meditative space with rain projected on three walls and ambient rain sound throughout the experience.</p>
-          <figure><img src="imgs/Luma/setting.png" alt="Testing setting" style="width:100%;"/></figure>
-          <figure><img src="imgs/Luma/testing.png" alt="Photos during testing" style="width:100%;"/></figure>
-          <h4>Storyboard</h4>
-          <figure><img src="imgs/Luma/storyboard.png" alt="Storyboard of the interaction" style="border-radius:0;"/></figure>
-        </div>
-      </div>
-
-      <div class="stack-section" id="sec-4">
-        <div class="section-body">
-          <h2 class="section-title-text" id="st-4">Ideal Scenario</h2>
-          <p>After the second testing session we imagined the ideal scenario: Luma in a public space such as an exhibition, keeping the possibility for users to experiment with a personal or collective experience based on their mood.</p>
-          <figure><img src="imgs/Luma/ideal.png" alt="Ideal scenario" style="border-radius:0;"/></figure>
-          <h4>Ideal interaction flow</h4>
-          <p>For the ideal interaction flow we integrated ideas collected during the second testing's interviews and questionnaire.</p>
-          <figure><img src="imgs/Luma/ideal_interaction.png" alt="Ideal scenario interaction flow" style="border-radius:0;"/></figure>
-        </div>
-      </div>
-
-      <div class="stack-section" id="sec-5">
-        <div class="section-body">
-          <h2 class="section-title-text" id="st-5">Reflection</h2>
+          <h2 class="section-title-text">Reflection</h2>
           <p>Luma is the project I'm most emotionally attached to, because the design problem was fundamentally about feeling rather than function. There's no right or wrong way to experience a memory — which made the design challenge much harder and more interesting than a typical UX brief.</p>
           <p>Running the user testing was where I learned the most. The first round quickly revealed that the interaction wasn't as intuitive as we assumed: people didn't naturally understand the twirling gesture, and many stood still rather than moving through the space. What I found valuable wasn't just discovering those problems — it was realising how differently people experience the same interaction.</p>
           <p>The second round, after integrating a clearer path, the ESP32 upgrade, and the rain projections, confirmed that context and atmosphere matter as much as the interaction itself. Setting shapes meaning. That's a lesson that applies far beyond installation design.</p>
+          <p>After the second round, we also imagined the ideal version of Luma: a public exhibition space where users could choose between a personal or collective experience based on their mood — a quieter solo dome on one side, an open shared space on the other. The ideal interaction flow below integrates the ideas collected through interviews and questionnaires during testing.</p>
+          <figure><img src="imgs/Luma/ideal.png" alt="Ideal scenario" style="border-radius:0;"/></figure>
+          <figure><img src="imgs/Luma/ideal_interaction.png" alt="Ideal interaction flow" style="border-radius:0;"/></figure>
         </div>
       </div>
 
@@ -238,9 +667,10 @@
 
   <script src="nav.js"></script>
   <script>
-    const titles    = [...document.querySelectorAll('.section-title-text')];
-    const stepPills = [...document.querySelectorAll('.step-pill')];
-    const stepLines = [...document.querySelectorAll('.step-line')];
+    const titles     = [...document.querySelectorAll('.section-title-text')];
+    const stepPills  = [...document.querySelectorAll('.step-pill')];
+    const stepLines  = [...document.querySelectorAll('.step-line')];
+    const stickyHeader = document.getElementById('sticky-header');
 
     function getBase() {
       return document.querySelector('header').offsetHeight +
@@ -248,53 +678,44 @@
     }
 
     function update() {
+      if (window.scrollY > 10) stickyHeader.classList.add('scrolled');
+      else stickyHeader.classList.remove('scrolled');
+
       const base = getBase();
       let activeIdx = -1;
-      titles.forEach((t, i) => {
-        if (t.getBoundingClientRect().top <= base + 8) activeIdx = i;
-      });
+      titles.forEach((t, i) => { if (t.getBoundingClientRect().top <= base + 8) activeIdx = i; });
+
       stepPills.forEach((p, i) => {
         p.classList.remove('active', 'past');
-        if (i === activeIdx)    p.classList.add('active');
+        if (i === activeIdx) p.classList.add('active');
         else if (i < activeIdx) p.classList.add('past');
       });
       stepLines.forEach((l, i) => {
         l.classList.remove('active', 'past');
-        if (i < activeIdx)        l.classList.add('past');
+        if (i < activeIdx) l.classList.add('past');
         else if (i === activeIdx) l.classList.add('active');
       });
 
-      // Scroll active pill into view on mobile (stick to right margin)
       const activePill = stepPills.find(p => p.classList.contains('active'));
       if (activePill) {
         const bar = document.querySelector('.step-pills');
-        if (bar) {
-          bar.scrollLeft = activePill.offsetLeft + activePill.offsetWidth - bar.offsetWidth + 16;
-        }
+        if (bar) bar.scrollLeft = activePill.offsetLeft + activePill.offsetWidth - bar.offsetWidth + 16;
       }
     }
 
-    // Make pills clickable — scroll to section
     stepPills.forEach((pill, i) => {
       pill.style.cursor = 'pointer';
       pill.addEventListener('click', () => {
         const target = titles[i];
         if (!target) return;
-        const top = target.getBoundingClientRect().top + window.scrollY - getBase() - 16;
+        const top = target.getBoundingClientRect().top + window.scrollY - getBase() - 8;
         window.scrollTo({ top, behavior: 'smooth' });
       });
     });
 
-
-      // Collapse hero on scroll
-      const stickyHeader = document.getElementById('sticky-header');
-      document.addEventListener('scroll', () => {
-        if (window.scrollY > 10) stickyHeader.classList.add('scrolled');
-        else stickyHeader.classList.remove('scrolled');
-      }, {passive: true});
-    window.addEventListener('resize', update);
-    document.addEventListener('scroll', update, {passive: true});
+    window.addEventListener('scroll', update, { passive: true });
     update();
   </script>
+
 </body>
 </html>
