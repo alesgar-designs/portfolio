@@ -1263,5 +1263,14 @@
       pill.addEventListener('click', () => {
         const target = titles[i];
         if (!target) return;
-        const top = target.getBoundingClientRect().top + window.scrollY - getBase() - 16;
-        window.scrollTo
+        const top = target.getBoundingClientRect().top + window.scrollY - getBase() - 8;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  </script>
+
+</body>
+</html>
