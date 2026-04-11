@@ -180,6 +180,35 @@
     .redesign-col img{width:100%; border-radius:12px;}
     .redesign-label{font-size:14px; font-weight:500; color:var(--text); background:#F2EFE6; border-radius:10px; padding:8px 24px; text-align:center; align-self:center; margin-bottom:4px;}
     .benchmarking-img{width:100% !important;}}
+    /* Competitor table */
+    .comp-table{ display:flex; flex-direction:column; gap:12px; margin-top:12px; }
+    .comp-card{ background:var(--card); border-radius:var(--radius); padding:16px; display:flex; flex-direction:column; gap:12px; }
+    .comp-logo-row{ display:flex; align-items:center; gap:12px; }
+    .comp-logo{ width:48px; height:48px; border-radius:50%; background:#ede9e0; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .comp-logo img{ width:36px; height:36px; object-fit:contain; border-radius:0; }
+    .comp-name{ font-size:14px; font-weight:700; }
+    .comp-features{ display:grid; grid-template-columns:repeat(2,1fr); gap:6px; }
+    @media(min-width:600px){ .comp-features{ grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:900px){ .comp-features{ grid-template-columns:repeat(7,1fr); } }
+    .comp-feature{ display:flex; flex-direction:column; gap:4px; align-items:center; text-align:center; padding:8px 4px; background:#fff; border-radius:8px; border:1px solid #eee; }
+    .comp-feature-label{ font-size:10px; color:var(--muted); line-height:1.3; }
+    .comp-icon{ font-size:18px; line-height:1; }
+    .comp-icon--good{ color:#2d7a4f; }
+    .comp-icon--partial{ color:#c8961a; }
+    .comp-icon--absent{ color:#c0392b; }
+    .comp-icon--na{ color:var(--muted); font-size:11px; font-weight:700; }
+    .comp-legend{ display:flex; gap:16px; flex-wrap:wrap; margin-top:8px; font-size:12px; color:var(--muted); }
+    .comp-legend-item{ display:flex; align-items:center; gap:6px; }
+    /* IA tree */
+    .ia-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px; }
+    @media(max-width:680px){ .ia-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:420px){ .ia-grid{ grid-template-columns:1fr; } }
+    .ia-section{ background:var(--card); border-radius:var(--radius); padding:14px; display:flex; flex-direction:column; gap:8px; }
+    .ia-section-title{ font-size:13px; font-weight:700; background:#ede9e0; padding:6px 10px; border-radius:8px; margin:0; }
+    .ia-items{ display:flex; flex-direction:column; gap:2px; padding-left:4px; }
+    .ia-item{ font-size:12px; color:var(--text); line-height:1.5; padding:1px 0 1px 10px; border-left:2px solid #ddd; }
+    .ia-sub-title{ font-size:12px; font-weight:700; color:var(--accent); background:#ede9e0; padding:4px 8px; border-radius:6px; margin:4px 0 2px; }
+    .ia-subitem{ font-size:11px; color:var(--muted); padding:1px 0 1px 10px; border-left:2px solid #eee; line-height:1.5; }
     .section-title-text{font-size:22px; font-weight:700; margin:0 0 20px; padding:32px 0 0; color:var(--text); line-height:1.2;}
     figure{margin:14px 0;}
     figcaption{font-size:13px; color:var(--muted); margin-top:6px;}
@@ -312,11 +341,11 @@
           <p>This project was a full UX redesign: from research and diagnosis through to a new information architecture, visual identity, and high-fidelity prototype. The brief was clear — make it usable, make it accessible, make it feel like a modern public service.</p>
           <h4>Timeline</h4>
           <div class="timeline-steps" style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:2%; justify-content:center;">
-            <img src="imgs/Milanosport/timeline/1_research.svg" alt="Research" style="flex:1; min-width:120px;"/>
-            <img src="imgs/Milanosport/timeline/2_define.svg" alt="Define" style="flex:1; min-width:120px;"/>
-            <img src="imgs/Milanosport/timeline/3_redesign.svg" alt="Redesign" style="flex:1; min-width:120px;"/>
-            <img src="imgs/Milanosport/timeline/4_prototype.svg" alt="Prototype" style="flex:1; min-width:120px;"/>
-            <img src="imgs/Milanosport/timeline/5_testing.svg" alt="Testing" style="flex:1; min-width:120px;"/>
+            <img src="imgs/Milanosport/timeline/1_research.svg" alt="Research" style="flex:1; min-width:120px; max-width:180px;"/>
+            <img src="imgs/Milanosport/timeline/2_define.svg" alt="Define" style="flex:1; min-width:120px; max-width:180px;"/>
+            <img src="imgs/Milanosport/timeline/3_redesign.svg" alt="Redesign" style="flex:1; min-width:120px; max-width:180px;"/>
+            <img src="imgs/Milanosport/timeline/4_prototype.svg" alt="Prototype" style="flex:1; min-width:120px; max-width:180px;"/>
+            <img src="imgs/Milanosport/timeline/5_testing.svg" alt="Testing" style="flex:1; min-width:120px; max-width:180px;"/>
           </div>
           <div class="grid cols-2" style="margin-top:16px;">
             <div class="callout"><strong>My role</strong><br/><br/>This was a fully collaborative project — Duru, Yaren and I contributed equally across every phase, from the initial heuristic evaluation and competitor analysis through to the information architecture, visual identity, and high-fidelity prototype. Every major decision was made together.</div>
@@ -357,7 +386,79 @@
           </div>
           <h4>Competitor Analysis</h4>
           <p>We analyzed the main direct and indirect competitors of Milanosport to see how it is performing and in which areas it is lagging behind.</p>
-          <img src="imgs/Milanosport/competitors.png" alt="Competitor analysis" style="border-radius:0;">
+          <div class="comp-legend">
+            <span class="comp-legend-item"><span class="comp-icon comp-icon--good">✓</span> Good</span>
+            <span class="comp-legend-item"><span class="comp-icon comp-icon--partial">−</span> Not sufficient</span>
+            <span class="comp-legend-item"><span class="comp-icon comp-icon--absent">✕</span> Absent</span>
+            <span class="comp-legend-item"><span class="comp-icon comp-icon--na">N.A.</span> Not applicable</span>
+          </div>
+          <div class="comp-table">
+
+            <div class="comp-card">
+              <div class="comp-logo-row">
+                <div class="comp-logo"><img src="imgs/Milanosport/logos/sporIstanbul.png" alt="Spor İstanbul" /></div>
+                <span class="comp-name">Spor İstanbul</span>
+              </div>
+              <div class="comp-features">
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Checking a sport center</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Find courses of a specific sport</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Booking entrances</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Managing orders</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Sport-related events</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Inclusive sporting options</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--absent">✕</span><span class="comp-feature-label">Personalized experiences</span></div>
+              </div>
+            </div>
+
+            <div class="comp-card">
+              <div class="comp-logo-row">
+                <div class="comp-logo"><img src="imgs/Milanosport/logos/getFit.png" alt="GetFit" /></div>
+                <span class="comp-name">GetFit</span>
+              </div>
+              <div class="comp-features">
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Checking a sport center</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--partial">−</span><span class="comp-feature-label">Find courses of a specific sport</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--partial">−</span><span class="comp-feature-label">Booking entrances</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Managing orders</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--absent">✕</span><span class="comp-feature-label">Sport-related events</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--partial">−</span><span class="comp-feature-label">Inclusive sporting options</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Personalized experiences</span></div>
+              </div>
+            </div>
+
+            <div class="comp-card">
+              <div class="comp-logo-row">
+                <div class="comp-logo"><img src="imgs/Milanosport/logos/aquaniene.png" alt="Aquaniene" /></div>
+                <span class="comp-name">Aquaniene</span>
+              </div>
+              <div class="comp-features">
+                <div class="comp-feature"><span class="comp-icon comp-icon--na">N.A.</span><span class="comp-feature-label">Checking a sport center</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--na">N.A.</span><span class="comp-feature-label">Find courses of a specific sport</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--na">N.A.</span><span class="comp-feature-label">Booking entrances</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--na">N.A.</span><span class="comp-feature-label">Managing orders</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Sport-related events</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Inclusive sporting options</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--na">N.A.</span><span class="comp-feature-label">Personalized experiences</span></div>
+              </div>
+            </div>
+
+            <div class="comp-card">
+              <div class="comp-logo-row">
+                <div class="comp-logo"><img src="imgs/Milanosport/logos/milanosport.png" alt="Milanosport" /></div>
+                <span class="comp-name">Milanosport</span>
+              </div>
+              <div class="comp-features">
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Checking a sport center</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Find courses of a specific sport</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--good">✓</span><span class="comp-feature-label">Booking entrances</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--absent">✕</span><span class="comp-feature-label">Managing orders</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--partial">−</span><span class="comp-feature-label">Sport-related events</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--absent">✕</span><span class="comp-feature-label">Inclusive sporting options</span></div>
+                <div class="comp-feature"><span class="comp-icon comp-icon--absent">✕</span><span class="comp-feature-label">Personalized experiences</span></div>
+              </div>
+            </div>
+
+          </div>
           <h4>Benchmarking findings</h4>
           <ul>
             <li><strong>Consistency and coherence</strong> is the parameter competitors excel at and should be improved in Milanosport.</li>
@@ -444,10 +545,6 @@
               </ul>
             </div>
 
-          </div>
-          <h4>Task matrix</h4>
-          <div class="scroll-on-mobile">
-            <img src="imgs/Milanosport/taskMatrix.svg" alt="Task matrix" style="border-radius:0; min-width:600px;">
           </div>
           <h4>Cognitive walkthrough</h4>
           <p>We identified four main tasks and analyzed the flow and number of clicks required on the current Milanosport website for each one.</p>
@@ -540,7 +637,107 @@
         <div class="section-body">
           <h2 class="section-title-text">Information Architecture</h2>
           <p>We simplified the structure of the website and added new sections, such as profile and routes.</p>
-          <img src="imgs/Milanosport/ia.png" alt="Information architecture map" />
+          <div class="ia-grid">
+
+            <div class="ia-section">
+              <p class="ia-section-title">Home</p>
+              <div class="ia-items">
+                <span class="ia-item">Map with the location of all centres</span>
+                <span class="ia-subitem">Filter for sports</span>
+                <span class="ia-subitem">Filter for neighbourhood</span>
+                <span class="ia-subitem">Search bar</span>
+                <span class="ia-item">Routes around the city – biking/running</span>
+                <span class="ia-item">Events</span>
+                <span class="ia-item">Summer camp</span>
+                <span class="ia-item">Contacts – social media</span>
+              </div>
+            </div>
+
+            <div class="ia-section">
+              <p class="ia-section-title">Centres</p>
+              <div class="ia-items">
+                <span class="ia-item">Map with the location of all centres</span>
+                <span class="ia-subitem">Filter for sports</span>
+                <span class="ia-subitem">Filter for neighbourhood</span>
+                <span class="ia-subitem">Search bar</span>
+                <span class="ia-item">List of centers</span>
+              </div>
+              <p class="ia-sub-title">Specific center page</p>
+              <div class="ia-items">
+                <span class="ia-item">Info on the centre</span>
+                <span class="ia-subitem">Location/address</span>
+                <span class="ia-subitem">Images</span>
+                <span class="ia-subitem">Available sports</span>
+                <span class="ia-subitem">Club facilities</span>
+                <span class="ia-subitem">Working hours</span>
+                <span class="ia-item">Booking</span>
+                <span class="ia-subitem">Choose date</span>
+                <span class="ia-subitem">Choose hour</span>
+              </div>
+            </div>
+
+            <div class="ia-section">
+              <p class="ia-section-title">Summer camp</p>
+              <div class="ia-items">
+                <span class="ia-item">List of summer camps</span>
+              </div>
+              <p class="ia-sub-title">Specific summer camp</p>
+              <div class="ia-items">
+                <span class="ia-item">Info about event</span>
+                <span class="ia-subitem">Location/address</span>
+                <span class="ia-subitem">Images</span>
+                <span class="ia-subitem">Date</span>
+                <span class="ia-subitem">Price</span>
+                <span class="ia-item">Registration button</span>
+              </div>
+            </div>
+
+            <div class="ia-section">
+              <p class="ia-section-title">Events</p>
+              <div class="ia-items">
+                <span class="ia-item">Filters</span>
+                <span class="ia-subitem">Search</span>
+                <span class="ia-subitem">Sport</span>
+                <span class="ia-subitem">Type of event</span>
+                <span class="ia-item">Events</span>
+              </div>
+              <p class="ia-sub-title">Specific events page</p>
+              <div class="ia-items">
+                <span class="ia-item">Info about event</span>
+                <span class="ia-subitem">Location/address</span>
+                <span class="ia-subitem">Images</span>
+                <span class="ia-subitem">Date</span>
+                <span class="ia-subitem">Price</span>
+                <span class="ia-item">Registration button</span>
+              </div>
+            </div>
+
+            <div class="ia-section">
+              <p class="ia-section-title">Profile</p>
+              <div class="ia-items">
+                <span class="ia-item">About me</span>
+                <span class="ia-subitem">Medical certificate</span>
+                <span class="ia-subitem">Personal info &amp; health data</span>
+                <span class="ia-item">Bookings</span>
+                <span class="ia-subitem">Upcoming</span>
+                <span class="ia-subitem">Past</span>
+                <span class="ia-item">Settings</span>
+                <span class="ia-item">Log Out</span>
+              </div>
+            </div>
+
+            <div class="ia-section">
+              <p class="ia-section-title">Routes</p>
+              <div class="ia-items">
+                <span class="ia-item">Map with the routes</span>
+                <span class="ia-subitem">Sport</span>
+                <span class="ia-subitem">Difficulty</span>
+                <span class="ia-subitem">Distance</span>
+                <span class="ia-item">Info</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
