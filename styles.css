@@ -1849,7 +1849,8 @@ section { padding: 40px 0; }
   gap: 12px;
 }
 /* Cover + envelope (the natural-ratio anchors) — auto height, no stretch */
-.case-brand-col > img.case-brand-anchor {
+.case-brand-col > img.case-brand-anchor,
+.case-brand-col > video.case-brand-anchor {
   width: 100%;
   height: auto;
   display: block;
@@ -1857,7 +1858,8 @@ section { padding: 40px 0; }
   border-radius: var(--radius);
 }
 /* Pattern (texture, can be cropped) — fills remaining space below the envelope */
-.case-brand-col > img.case-brand-fill {
+.case-brand-col > img.case-brand-fill,
+.case-brand-col > video.case-brand-fill {
   width: 100%;
   display: block;
   margin: 0;
@@ -1889,7 +1891,8 @@ section { padding: 40px 0; }
 @media (max-width: 899px) {
   .case-brand-grid { grid-template-columns: 1fr; }
   .case-logo-frame { flex: none; height: 200px; }
-  .case-brand-col > img.case-brand-fill { flex: none; height: auto; }
+  .case-brand-col > img.case-brand-fill,
+  .case-brand-col > video.case-brand-fill { flex: none; height: auto; }
   .case-brand-palette { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); height: auto; }
 }
 @media (max-width: 599px) {
