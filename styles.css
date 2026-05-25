@@ -3079,3 +3079,34 @@ section { padding: 40px 0; }
   .menu-checkbox,
   .menu-close-label { display: none; }
 }
+
+/* ======================================================
+   VIDEO ELEMENTS — autoplay loops used in place of GIFs
+   Inherits visual treatment from the surrounding image grids
+   so a <video> can sit alongside <img> without restyling.
+   ====================================================== */
+.case-body video,
+.case-pair video,
+.case-triple video,
+.case-backstage video,
+.case-hardware-row video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+/* In case-pair / case-triple where images use contain by default */
+.case-pair video,
+.case-triple video {
+  object-fit: contain;
+}
+/* In case-triple--contain, video also stays contain */
+.case-triple--contain video { object-fit: contain; }
+/* In case-backstage cells the video fills its cell like the images */
+.case-backstage video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
