@@ -3041,15 +3041,25 @@ section { padding: 40px 0; }
     transform: translateX(0);
   }
 
-  /* Big centered links inside the panel — Atkinson sans, generous spacing */
+  /* Big centered links inside the panel — match desktop navbar style:
+     Atkinson Mono, uppercase, with the active page in gold. */
   .nav .links a {
-    font-family: var(--font-sans);
-    font-size: clamp(28px, 7vw, 40px);
+    font-family: var(--font-mono);
+    font-size: clamp(22px, 6vw, 32px);
     font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--text);
     text-decoration: none;
-    letter-spacing: -0.01em;
-    padding: 8px 16px;
+    padding: 10px 16px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s, border-bottom-color 0.18s;
+  }
+  .nav .links a:hover { color: var(--gold); }
+  .nav .links a.is-active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    font-weight: 600;
   }
 
   /* Close (X) icon — top-right, only visible when menu open */
