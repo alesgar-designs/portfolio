@@ -2986,3 +2986,96 @@ section { padding: 40px 0; }
   height: auto;
   object-fit: contain;
 }
+
+/* ======================================================
+   MOBILE NAV — pure CSS slide-in menu (no JS required)
+   ====================================================== */
+
+/* Hidden checkbox is the state holder — checked = menu open */
+.menu-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* On desktop the toggle label is invisible. Show it on mobile only. */
+.menu-toggle-label {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 8px;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-toggle-label svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Mobile only — show hamburger, hide inline links, prep slide-in panel */
+@media (max-width: 899px) {
+  .menu-toggle-label { display: inline-flex; }
+
+  /* Full-screen overlay panel — hidden off-screen by default */
+  .nav .links {
+    position: fixed;
+    inset: 0;
+    background: #FAF6EE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 24px;
+  }
+  /* Slide in when checkbox is checked */
+  .menu-checkbox:checked ~ .links {
+    transform: translateX(0);
+  }
+
+  /* Big centered links inside the panel — Atkinson sans, generous spacing */
+  .nav .links a {
+    font-family: var(--font-sans);
+    font-size: clamp(28px, 7vw, 40px);
+    font-weight: 400;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    padding: 8px 16px;
+  }
+
+  /* Close (X) icon — top-right, only visible when menu open */
+  .menu-close-label {
+    display: none;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 1001;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .menu-checkbox:checked ~ .menu-close-label { display: inline-flex; }
+  .menu-close-label svg { width: 24px; height: 24px; display: block; }
+
+  /* Lock body scroll while menu is open */
+  body:has(.menu-checkbox:checked) { overflow: hidden; }
+}
+
+/* Hide the checkbox-hack assist elements on desktop entirely */
+@media (min-width: 900px) {
+  .menu-checkbox,
+  .menu-close-label { display: none; }
+}
