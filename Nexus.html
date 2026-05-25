@@ -22,9 +22,13 @@
   <header>
     <div class="nav page-grid">
       <a href="index.html" class="brand">Alessandra Sgariglia</a>
-      <button type="button" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
-      </button>
+      <input type="checkbox" class="menu-checkbox" id="menu-toggle" aria-hidden="true" />
+      <label for="menu-toggle" class="menu-toggle-label" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </label>
+      <label for="menu-toggle" class="menu-close-label" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </label>
       <nav id="primary-nav" class="links" aria-label="Primary">
         <a href="index.html">My work</a>
         <a href="about.html">About me</a>
