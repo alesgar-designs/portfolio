@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tap &amp; Know — Alessandra Sgariglia</title>
+  <meta name="description" content="Tap & Know — a wearable smart pin that makes sharing your creative portfolio playful and frictionless." />
+
+  <!-- Local fonts (Gaya, Cactus Jack Alternate, Atkinson Hyperlegible) + Google (Atkinson Hyperlegible Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav page-grid">
+      <a href="index.html" class="brand">Alessandra Sgariglia</a>
+      <button type="button" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+      <nav id="primary-nav" class="links" aria-label="Primary">
+        <a href="index.html">My work</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="case-section">
+    <a href="index.html#projects" class="case-backlink">
+      <span class="case-backlink-arrow">←</span>
+      <span>Other projects</span>
+    </a>
+    <div class="case-hero">
+
+      <!-- Left: title, tags, year, summary, award badge -->
+      <div class="case-hero-info">
+        <h1 class="case-title">Tap &amp; Know</h1>
+        <div class="case-tags">
+          <span class="case-tag">Interaction Design</span>
+          <span class="case-tag">Physical Prototyping</span>
+          <span class="case-tag">Wearable Tech</span>
+        </div>
+        <p class="case-year">2026</p>
+        <p class="case-summary">A wearable smart pin that makes sharing your creative portfolio playful and frictionless.</p>
+
+        <!-- Gold award badge -->
+        <div class="case-award">
+          <div class="case-award-icon"><img src="imgs/award.svg" alt="" /></div>
+          <div class="case-award-text">Showcased at Milan Design Week 2026<br>Fuorisalone, Milan</div>
+        </div>
+      </div>
+
+      <!-- Right: hero image -->
+      <div class="case-hero-image">
+        <img src="imgs/TapAndKnow/cover.webp" alt="Tap & Know wearable smart pin" />
+      </div>
+
+      <!-- Pull-quote question below the hero image -->
+      <p class="case-question">What if there was a more playful way to approach networking in the creative field?</p>
+
+    </div>
+  </section>
+
+  <!-- ====== BODY ====== -->
+  <main class="case-body">
+
+    <!-- The problem -->
+    <section>
+      <h2 class="case-section-title">The problem</h2>
+      <p>Networking at creative events — gallery openings, design conferences, graduate shows — tends to follow a familiar, slightly uncomfortable script: small talk, a fumbled business card, a promise to follow up that rarely happens. The card gets lost. The connection doesn't form.</p>
+      <p>For designers, whose work lives in <mark>digital portfolios and social profiles</mark>, handing over a rectangle of card stock feels like the worst possible representation of who they are.</p>
+    </section>
+
+    <!-- The idea -->
+    <section>
+      <h2 class="case-section-title">The idea</h2>
+      <p>Tap &amp; Know is a <mark>wearable smart pin</mark> that replaces that exchange with something more honest to how creatives actually exist online. You wear it. Someone gets curious. They take the detachable piece, tap it to their phone, and your portfolio — or any link you've set — <mark>opens instantly.</mark> No app, no QR code, no friction.</p>
+
+      <p>The pin form was a deliberate choice. It sits at chest height — in the natural field of view during a conversation. It has a long cultural history as a marker of identity and affiliation, so the object carries meaning before anyone understands what it does. And the key constraint we set early: <mark>the wearer has to be able to hand something physical to the receiver.</mark> The act of passing an object — even a small one — changes the social register of the interaction.</p>
+
+      <div class="case-callouts">
+        <div class="case-callout">
+          <p class="case-callout-title">My role</p>
+          <div class="case-callout-content">
+            Equal co-designer with Duru Erdem — concept, interaction design, 3D modelling, prototyping, and visual direction.
+          </div>
+        </div>
+        <div class="case-callout">
+          <p class="case-callout-title">Tools</p>
+          <div class="case-callout-content">
+            <ul>
+              <li>Rhino 8</li>
+              <li>3D Printer (PLA filament)</li>
+              <li>NFC tag</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The process -->
+    <section>
+      <h2 class="case-section-title">The process</h2>
+      <p>We started with sketches and form studies — exploring how a wearable could signal identity without screaming for attention. Different shapes for different personalities: geometric, organic, angular, rounded.</p>
+      <img src="imgs/TapAndKnow/ideation.webp" alt="Tap & Know ideation sketches and concepts" />
+
+      <p style="margin-top:28px;">We then modelled the pin in <mark>Rhino 8</mark>, iterating through multiple shape families. The two-part structure — a fixed base that attaches to clothing and a detachable component with the embedded technology — was resolved early and stayed consistent across all shape variants.</p>
+      <p>Prototypes were <mark>3D printed in PLA</mark>. The material's slight rigidity meant the detachable piece had a satisfying physical resistance when removed and replaced — which turned out to matter more than we expected. The tactile quality of the handoff is part of what makes the interaction feel intentional rather than incidental.</p>
+      <div class="case-pair" style="grid-template-columns: 1fr;">
+        <img src="imgs/TapAndKnow/prototyping_model.webp" alt="Rhino 3D model of Tap & Know pin" />
+        <img src="imgs/TapAndKnow/prototyping_print.webp" alt="3D printed prototypes in PLA" />
+      </div>
+    </section>
+
+    <!-- The outcome -->
+    <section>
+      <h2 class="case-section-title">The outcome</h2>
+      <p>The full interaction sequence was designed to feel <mark>effortless for both people</mark> involved — the wearer and the person they're sharing with.</p>
+
+      <div class="case-steps">
+        <div class="case-step">
+          <p class="case-step-num">Step 01</p>
+          <p class="case-step-title">Set your link</p>
+          <p class="case-step-desc">Portfolio, Linktree, LinkedIn — any URL. Takes under a minute, no app needed.</p>
+        </div>
+        <div class="case-step">
+          <p class="case-step-num">Step 02</p>
+          <p class="case-step-title">Wear it</p>
+          <p class="case-step-desc">Attach the pin to your outfit. The object does the work of starting the conversation — curiosity is built into the form.</p>
+        </div>
+        <div class="case-step">
+          <p class="case-step-num">Step 03</p>
+          <p class="case-step-title">Hand it over</p>
+          <p class="case-step-desc">Detach the piece and pass it. They tap it to the back of their phone — your link opens instantly.</p>
+        </div>
+      </div>
+
+      <div class="case-triple">
+        <img src="imgs/TapAndKnow/interaction_1.webp" alt="Tap & Know interaction step 1" />
+        <img src="imgs/TapAndKnow/interaction_2.webp" alt="Tap & Know interaction step 2" />
+        <img src="imgs/TapAndKnow/interaction_3.webp" alt="Tap & Know interaction step 3" />
+      </div>
+
+      <p style="margin-top:28px;">The final set is <mark>five shapes</mark>, each available in multiple colourways. A single generic design would have made the object feel like a product, where the wearer is a customer. Different shapes for different personalities makes it feel like <mark>a choice</mark> — you pick the one that fits how you want to present yourself, which is exactly what a networking tool should ask you to do.</p>
+
+      <div class="case-shapes">
+        <div class="case-shape">
+          <img src="imgs/TapAndKnow/shape1.webp" alt="Shape 01" />
+          <span class="case-shape-label">Shape 01</span>
+        </div>
+        <div class="case-shape">
+          <img src="imgs/TapAndKnow/shape2.webp" alt="Shape 02" />
+          <span class="case-shape-label">Shape 02</span>
+        </div>
+        <div class="case-shape">
+          <img src="imgs/TapAndKnow/shape3.webp" alt="Shape 03" />
+          <span class="case-shape-label">Shape 03</span>
+        </div>
+        <div class="case-shape">
+          <img src="imgs/TapAndKnow/shape4.webp" alt="Shape 04" />
+          <span class="case-shape-label">Shape 04</span>
+        </div>
+        <div class="case-shape">
+          <img src="imgs/TapAndKnow/shape5.webp" alt="Shape 05" />
+          <span class="case-shape-label">Shape 05</span>
+        </div>
+      </div>
+
+      <div class="case-triple">
+        <img src="imgs/TapAndKnow/application1.webp" alt="Tap & Know worn on outfit" />
+        <img src="imgs/TapAndKnow/application2.webp" alt="Tap & Know in context" />
+        <img src="imgs/TapAndKnow/application3.webp" alt="Tap & Know at an event" />
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section>
+      <h2 class="case-section-title">Reflection</h2>
+      <p>The main challenge was conceptual: designing something that works as both a functional tool and a <mark>conversation object</mark>. A pin that simply transmitted a link without considered form or interaction would have been technically sufficient but socially inert — no one would notice it, no curiosity would form, no interaction would happen. The object had to earn the interaction before the interaction could work.</p>
+
+      <p>What this project taught me is that <mark>physical interactions have a texture that digital ones don't.</mark> The small resistance of detaching the piece, the weight of it in your hand, the gesture of passing it to another person — these aren't decorative details. They're what makes the exchange feel like something that actually happened, rather than a data transfer that could have been an email.</p>
+    </section>
+
+  </main>
+
+  <!-- Credits -->
+  <div class="case-credits">
+    <div class="case-credits-inner">
+      <p class="case-credits-title">Credits</p>
+      <div class="case-credits-body">
+        <strong>Concept &amp; design:</strong> Alessandra Sgariglia &amp; Duru Erdem<br>
+        <strong>Type:</strong> Physical–digital prototype · Personal project
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- ====== LET'S WORK TOGETHER ====== -->
+  <section id="work-together" class="lwt-section">
+    <div class="page-grid lwt-grid">
+      <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="lwt-bento">
+        <div class="lwt-bento-content">
+          <h2 class="section-title lwt-heading">Let's work together</h2>
+          <p class="contacts-intro">Working on something interesting?<br>I'd love to hear about it.</p>
+        </div>
+        <span class="lwt-cta">
+          <span>Let's go!</span>
+          <span class="lwt-cta-arrow" aria-hidden="true">→</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== CONTACTS (footer) ====== -->
+  <footer id="contact" class="contacts-footer">
+    <div class="contacts-grid page-grid">
+
+      <div class="contacts-left">
+        <h2 class="section-title contacts-heading">Contacts</h2>
+        <div class="contacts-socials">
+
+          <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="contacts-social" aria-label="LinkedIn">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">LinkedIn</span>
+              <span class="contacts-social-handle">Alessandra Sgariglia</span>
+            </span>
+          </a>
+
+          <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Instagram">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Instagram</span>
+              <span class="contacts-social-handle">@alesgar_designs</span>
+            </span>
+          </a>
+
+          <a href="mailto:alesgar.designs@gmail.com" class="contacts-social" aria-label="Email">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V6A2 2 0 0 0 20 4M20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Email</span>
+              <span class="contacts-social-handle">alesgar.designs@gmail.com</span>
+            </span>
+          </a>
+
+          <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Substack">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.078V0z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Substack</span>
+              <span class="contacts-social-handle">@alesgar</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <p class="contacts-copyright">© <span id="y"></span> Alessandra Sgariglia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

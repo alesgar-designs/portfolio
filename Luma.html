@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luma — Alessandra Sgariglia</title>
+  <meta name="description" content="Luma — an immersive installation translating travel memories into light and sound, inside a personal dome." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav page-grid">
+      <a href="index.html" class="brand">Alessandra Sgariglia</a>
+      <button type="button" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+      <nav id="primary-nav" class="links" aria-label="Primary">
+        <a href="index.html">My work</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="case-section">
+    <a href="index.html#projects" class="case-backlink">
+      <span class="case-backlink-arrow">←</span>
+      <span>Other projects</span>
+    </a>
+    <div class="case-hero">
+
+      <div class="case-hero-info">
+        <h1 class="case-title">Luma</h1>
+        <div class="case-tags">
+          <span class="case-tag">Interaction Design</span>
+          <span class="case-tag">Embodied Interaction</span>
+          <span class="case-tag">Installation Design</span>
+        </div>
+        <p class="case-year">2024</p>
+        <p class="case-summary">An immersive installation that lets people re-live a travel memory inside a personal dome, by translating its colour palette into light and ambient sound.</p>
+      </div>
+
+      <div class="case-hero-image">
+        <img src="imgs/Luma/cover.webp" alt="Luma — personal dome installation" />
+      </div>
+
+      <p class="case-question">What if a photo could make you relive the memory of a place you visited on a journey?</p>
+
+    </div>
+  </section>
+
+  <!-- ====== BODY ====== -->
+  <main class="case-body">
+
+    <!-- The problem -->
+    <section>
+      <h2 class="case-section-title">The problem</h2>
+      <p>Travel memories are deeply sensory — the quality of light in a particular afternoon, the colour palette of a city you loved. Yet when we try to share them, we reach for photos that show the place but rarely convey <mark>how it felt</mark> to be there.</p>
+      <p>For the <strong>Embodied Interaction Studio</strong> at Politecnico di Milano, the brief asked us to design an <mark>embodied experience</mark> — physical, sensory, in space — not just a screen-based one. So we set out to close the gap between a place and the feeling of it.</p>
+    </section>
+
+    <!-- The idea -->
+    <section>
+      <h2 class="case-section-title">The idea</h2>
+      <p>Luma is a <mark>personal dome installation</mark>, an umbrella, that translates a travel photo into light and ambient sound. Colours extracted from the user's photo become a calm, meditative space unique to that memory. Photos become <em>palettes</em>, not pictures: preserving the feeling of a place rather than its record.</p>
+      <p>The umbrella was experienced in a <mark>room with the sound of rain and a looping rain video projected on the walls</mark>, to deepen the contemplative atmosphere of the moment.</p>
+      <p>In shared settings, two domes can approach each other and <mark>"contaminate"</mark> one another's colour fields — turning private memory into something visible and shared.</p>
+
+      <div class="case-callouts">
+        <div class="case-callout">
+          <p class="case-callout-title">My role</p>
+          <div class="case-callout-content">
+            I contributed to the initial concept and was hands-on during the build of the physical installation. My main individual lead was the user testing — I planned both rounds, facilitated the sessions, and synthesised the insights that drove our iterations.
+          </div>
+        </div>
+        <div class="case-callout">
+          <p class="case-callout-title">Tools</p>
+          <div class="case-callout-content">
+            <ul>
+              <li>Figma</li>
+              <li>Arduino Uno &amp; ESP32</li>
+              <li>Accelerometer &amp; proximity sensor</li>
+              <li>Umbrella, LED strips, cotton lining</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The process -->
+    <section>
+      <h2 class="case-section-title">The process</h2>
+      <p>We took a <mark>Research through Design</mark> approach: experimenting with future practices through objects that might be. The driving question was how feelings experienced while travelling could be recalled through colour, inside a personal and meditative space.</p>
+
+      <p style="margin-top:28px;">The first prototype used an <strong>Arduino Uno</strong> with a powerbank for portability, an <strong>accelerometer</strong> to detect twisting, a <strong>proximity sensor</strong> to detect a second umbrella, and <strong>LED strips</strong> running along the inside as the main visual interface.</p>
+      <div class="case-triple case-triple--contain">
+        <img src="imgs/Luma/umbrella1.webp" alt="First umbrella prototype" />
+        <img src="imgs/Luma/umbrella1_2.webp" alt="First umbrella prototype — alternate view" />
+        <img src="imgs/Luma/test1.webp" alt="First prototype in use" />
+      </div>
+    </section>
+
+    <!-- The outcome -->
+    <section>
+      <h2 class="case-section-title">The outcome</h2>
+      <p>We ran <mark>two rounds of user testing</mark>, using each to identify problems, iterate, and retest.</p>
+
+      <p style="margin-top:18px;"><strong>Round 1 — 8 users.</strong> The results were instructive. People didn't naturally understand the <mark>twirling gesture</mark>, and many stood still rather than moving through the space. The two-umbrella interaction was unclear without something guiding users toward it.</p>
+
+      <p style="margin-top:18px;"><strong>Round 2 — 16 users.</strong> To address what we found, we upgraded to an <strong>ESP32</strong> board for better proximity detection, added longer cables, lined the inside of the umbrella with <mark>cotton to diffuse the LEDs</mark>, and introduced a physical path guiding users toward the centre, where the shared interaction happens. The testing was conducted in Politecnico di Milano's Edme Lab.</p>
+
+      <div class="case-pair">
+        <img src="imgs/Luma/updated_prototype1.webp" alt="Updated prototype — LED setup" style="object-fit: cover;" />
+        <img src="imgs/Luma/updated_prototype2.webp" alt="Updated prototype — cotton lining with LEDs" />
+      </div>
+
+      <p style="margin-top:28px;">We redesigned the interaction into three clear moments, each building on the previous:</p>
+
+      <div class="case-interaction-row">
+        <div>
+          <span class="case-interaction-num">01</span>
+          <p class="case-interaction-title">Opening the umbrella</p>
+          <p class="case-interaction-desc">White instructional LEDs pulse when the umbrella opens, then begin rotating around the rim — prompting the user to twirl.</p>
+        </div>
+        <img src="imgs/Luma/interaction/opening.svg" alt="Opening the umbrella — instructional LEDs" />
+      </div>
+
+      <div class="case-interaction-row">
+        <div>
+          <span class="case-interaction-num">02</span>
+          <p class="case-interaction-title">Twirling the umbrella</p>
+          <p class="case-interaction-desc">After the twirl, the LEDs display the colours extracted from the user's uploaded travel image — one colour per spoke, spinning continuously.</p>
+        </div>
+        <img src="imgs/Luma/interaction/twirling.svg" alt="Twirling the umbrella — colours spin" />
+      </div>
+
+      <div class="case-interaction-row">
+        <div>
+          <span class="case-interaction-num">03</span>
+          <p class="case-interaction-title">Approaching another umbrella</p>
+          <p class="case-interaction-desc">When two umbrellas approach, a proximity alert triggers — the personal colours blend and contaminate each other's LED patterns.</p>
+        </div>
+        <img src="imgs/Luma/interaction/invasion.svg" alt="Approaching another umbrella — colour contamination" />
+      </div>
+
+      <p style="margin-top:32px;">The final installation, in use:</p>
+      <div class="case-triple">
+        <img src="imgs/Luma/exhibition1.webp" alt="User holding umbrella under cotton lining" />
+        <img src="imgs/Luma/exhibition2.webp" alt="User in the installation room with umbrella" />
+        <img src="imgs/Luma/exhibition3.webp" alt="User looking at umbrella with coloured LEDs" />
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section>
+      <h2 class="case-section-title">Reflection</h2>
+      <p>Luma is one of the projects I enjoyed the most, because the design problem was fundamentally about <mark>feeling rather than function</mark>. There's no right or wrong way to experience a memory — which made the design challenge harder, and more interesting, than a typical UX brief.</p>
+
+      <p>Running the user testing was where I learned the most. The first round quickly revealed that the interaction wasn't as intuitive as we assumed. What I found valuable wasn't just discovering the problems — it was realising <mark>how differently people experience the same interaction</mark>.</p>
+
+      <p>The second round, after integrating a clearer path and the right atmosphere, confirmed that <mark>context and atmosphere matter as much as the interaction itself</mark>. Setting shapes meaning. That's a lesson that applies far beyond installation design.</p>
+    </section>
+
+  </main>
+
+  <!-- Credits -->
+  <div class="case-credits">
+    <div class="case-credits-inner">
+      <p class="case-credits-title">Credits</p>
+      <div class="case-credits-body">
+        <strong>Course:</strong> Embodied Interaction Studio (MSc in Digital &amp; Interaction Design, Politecnico di Milano)<br>
+        <strong>Professors:</strong> Fiammetta Costa, Carlo Emilio Standoli<br>
+        <strong>Team:</strong> Camila Contreras, Francesco Scaramuzzi, Alessandra Sgariglia, Sara Sorrentino, Andrea Villarreal
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- ====== LET'S WORK TOGETHER ====== -->
+  <section id="work-together" class="lwt-section">
+    <div class="page-grid lwt-grid">
+      <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="lwt-bento">
+        <div class="lwt-bento-content">
+          <h2 class="section-title lwt-heading">Let's work together</h2>
+          <p class="contacts-intro">Working on something interesting?<br>I'd love to hear about it.</p>
+        </div>
+        <span class="lwt-cta">
+          <span>Let's go!</span>
+          <span class="lwt-cta-arrow" aria-hidden="true">→</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== CONTACTS (footer) ====== -->
+  <footer id="contact" class="contacts-footer">
+    <div class="contacts-grid page-grid">
+
+      <div class="contacts-left">
+        <h2 class="section-title contacts-heading">Contacts</h2>
+        <div class="contacts-socials">
+
+          <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="contacts-social" aria-label="LinkedIn">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">LinkedIn</span>
+              <span class="contacts-social-handle">Alessandra Sgariglia</span>
+            </span>
+          </a>
+
+          <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Instagram">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Instagram</span>
+              <span class="contacts-social-handle">@alesgar_designs</span>
+            </span>
+          </a>
+
+          <a href="mailto:alesgar.designs@gmail.com" class="contacts-social" aria-label="Email">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V6A2 2 0 0 0 20 4M20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Email</span>
+              <span class="contacts-social-handle">alesgar.designs@gmail.com</span>
+            </span>
+          </a>
+
+          <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Substack">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.078V0z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Substack</span>
+              <span class="contacts-social-handle">@alesgar</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <p class="contacts-copyright">© <span id="y"></span> Alessandra Sgariglia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

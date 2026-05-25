@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alessandra Sgariglia — Portfolio</title>
+  <meta name="description" content="UX & Interaction Designer portfolio — projects, skills, and contact." />
+
+  <!-- Local fonts (Gaya, Cactus Jack Alternate, Atkinson Hyperlegible) + Google (Atkinson Hyperlegible Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="nav.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" as="image" href="imgs/covers/cover_nexus.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav page-grid">
+      <a href="#home" class="brand">Alessandra Sgariglia</a>
+      <button type="button" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+      <nav id="primary-nav" class="links" aria-label="Primary">
+        <a href="#projects" class="is-active">My work</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <div class="hero-roles">
+        <span class="hero-role">UX/UI</span>
+        <span class="hero-role-sep">·</span>
+        <span class="hero-role">Interaction</span>
+        <span class="hero-role-sep">·</span>
+        <span class="hero-role">Graphic Designer</span>
+      </div>
+
+      <h1 class="hero-headline">
+        who loves mental health, wellness, movement,<br class="br-desktop"> and the environment
+      </h1>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+  <section id="projects" class="wrap">
+    <div class="section-header">
+      <h2 class="section-title">My projects</h2>
+    </div>
+    <div class="project-filters">
+      <p class="filter-label">Filter by skill</p>
+      <button class="project-filter-btn active" data-filter="all">All</button>
+      <button class="project-filter-btn" data-filter="UX/UI Design">UX/UI Design</button>
+      <button class="project-filter-btn" data-filter="Interaction Design">Interaction Design</button>
+      <button class="project-filter-btn" data-filter="Branding & Identity">Branding & Identity</button>
+      <button class="project-filter-btn" data-filter="Art Direction">Art Direction</button>
+      <button class="project-filter-btn" data-filter="Prototyping">Prototyping</button>
+      <button class="project-filter-btn" data-filter="Illustration">Illustration</button>
+      <button class="project-filter-btn" data-filter="Content Production">Content Production</button>
+      <button class="project-filter-btn" data-filter="Video Making & Editing">Video Making & Editing</button>
+    </div>
+
+    <div class="grid" id="projectGrid">
+
+      <!-- 1. Nexus -->
+      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
+        <a href="Nexus.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_nexus.webp" alt="Nexus cover" loading="eager" fetchpriority="high" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Interaction Design</span>
+              <span class="card-tag">Prototyping</span>
+            </div>
+            <div class="card-award" aria-label="Award-winning project" title="Award-winning project">
+              <img src="imgs/award.svg" alt="" />
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Nexus</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 2. Tap & Know -->
+      <div class="card-wrap" data-tags='["Interaction Design","Prototyping"]'>
+        <a href="Tap&Know.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_tapAndKnow.webp" alt="Tap & Know cover" loading="lazy" decoding="async" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Interaction Design</span>
+              <span class="card-tag">Prototyping</span>
+            </div>
+            <div class="card-award" aria-label="Award-winning project" title="Award-winning project">
+              <img src="imgs/award.svg" alt="" />
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Tap & Know</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 3. Luma -->
+      <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
+        <a href="Luma.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_Luma.webp" alt="Luma cover" loading="lazy" decoding="async" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Interaction Design</span>
+              <span class="card-tag">Art Direction</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Luma</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 4. Pazzamente -->
+      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Content Production","Video Making & Editing"]'>
+        <a href="Pazzamente.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_Pazzamente.webp" alt="Pazzamente cover" loading="lazy" decoding="async" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Branding & Identity</span>
+              <span class="card-tag">Content Production</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Pazzamente</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 5. AirPal -->
+      <div class="card-wrap" data-tags='["UX/UI Design","Prototyping"]'>
+        <a href="AirPal.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_AirPal.webp" alt="AirPal cover" loading="lazy" decoding="async" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">UX/UI Design</span>
+              <span class="card-tag">Prototyping</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">AirPal</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 6. Milanosport -->
+      <div class="card-wrap" data-tags='["UX/UI Design"]'>
+        <a href="Milanosport.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_MilanoSport.webp" alt="Milanosport cover" loading="lazy" decoding="async" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">UX/UI Design</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Milanosport</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- 7. Behind Closed Doors -->
+      <div class="card-wrap" data-tags='["Branding & Identity","Art Direction","Illustration"]'>
+        <a href="BehindClosedDoors.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_BehindClosedDoors.webp" alt="Behind Closed Doors cover" loading="lazy" decoding="async" />
+            <div class="card-overlay"></div>
+            <div class="card-tags">
+              <span class="card-tag">Branding & Identity</span>
+              <span class="card-tag">Illustration</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">Behind Closed Doors</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== THINKING ====== -->
+  <section id="thinking" class="wrap">
+    <div class="section-header">
+      <h2 class="section-title">Thinking</h2>
+      <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" style="font-size:13px; color:var(--muted); margin-left:auto;">All essays →</a>
+    </div>
+    <p class="muted" style="margin:0 0 28px;">Essays on design, behavior, and the systems we inhabit.</p>
+    <div class="thinking-grid">
+
+      <a href="https://open.substack.com/pub/alesgar/p/what-is-design?utm_campaign=post-expanded-share&utm_medium=web" target="_blank" rel="noreferrer" class="thinking-card">
+        <div class="thinking-meta">
+          <span class="thinking-tag">Design</span>
+          <span class="thinking-date">2026</span>
+        </div>
+        <h3 class="thinking-title">What is Design?</h3>
+        <p class="thinking-excerpt">What does design actually mean? Not aesthetics — intention, planning, and the invisible layer of communication that shapes everything we make and inhabit.</p>
+        <span class="thinking-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== EXPERIMENTS ====== -->
+  <section id="experiments" class="wrap">
+    <div class="section-header">
+      <h2 class="section-title">Experimenting</h2>
+    </div>
+    <p class="muted" style="margin:0 0 28px;">Side projects and explorations.</p>
+
+    <div class="grid">
+
+      <div class="card-wrap">
+        <a href="DesignersOfMilan.html" class="card-link exp-link">
+          <article class="card exp-card">
+            <img class="thumb" src="imgs/experiments/DoM.webp" alt="Designers of Milan cover" loading="lazy" decoding="async" />
+            <div class="exp-card-overlay"></div>
+            <div class="exp-card-meta">
+              <span class="exp-card-year">2026</span>
+              <span class="exp-card-title">Designers of Milan</span>
+            </div>
+            <div class="exp-card-arrow"><span class="card-arrow">→</span></div>
+          </article>
+        </a>
+      </div>
+
+      <div class="card-wrap">
+        <a href="HomageToAlbers.html" class="card-link exp-link">
+          <article class="card exp-card">
+            <img class="thumb" src="imgs/experiments/Albers.webp" alt="Homage to Albers cover" loading="lazy" decoding="async" />
+            <div class="exp-card-overlay"></div>
+            <div class="exp-card-meta">
+              <span class="exp-card-year">2026</span>
+              <span class="exp-card-title">Homage to Albers</span>
+            </div>
+            <div class="exp-card-arrow"><span class="card-arrow">→</span></div>
+          </article>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== LET'S WORK TOGETHER ====== -->
+  <section id="work-together" class="lwt-section">
+    <div class="page-grid lwt-grid">
+      <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="lwt-bento">
+        <div class="lwt-bento-content">
+          <h2 class="section-title lwt-heading">Let's work together</h2>
+          <p class="contacts-intro">Working on something interesting?<br>I'd love to hear about it.</p>
+        </div>
+        <span class="lwt-cta">
+          <span>Let's go!</span>
+          <span class="lwt-cta-arrow" aria-hidden="true">→</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== CONTACTS (footer) ====== -->
+  <footer id="contact" class="contacts-footer">
+    <div class="contacts-grid page-grid">
+
+      <!-- Left: heading + social pills -->
+      <div class="contacts-left">
+        <h2 class="section-title contacts-heading">Contacts</h2>
+        <div class="contacts-socials">
+
+          <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="contacts-social" aria-label="LinkedIn">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">LinkedIn</span>
+              <span class="contacts-social-handle">Alessandra Sgariglia</span>
+            </span>
+          </a>
+
+          <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Instagram">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Instagram</span>
+              <span class="contacts-social-handle">@alesgar_designs</span>
+            </span>
+          </a>
+
+          <a href="mailto:alesgar.designs@gmail.com" class="contacts-social" aria-label="Email">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V6A2 2 0 0 0 20 4M20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Email</span>
+              <span class="contacts-social-handle">alesgar.designs@gmail.com</span>
+            </span>
+          </a>
+
+          <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Substack">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.078V0z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Substack</span>
+              <span class="contacts-social-handle">@alesgar</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Copyright line -->
+      <p class="contacts-copyright">© <span id="y"></span> Alessandra Sgariglia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const skillPills    = document.querySelectorAll('.pill-badge.clickable');
+    const projectBtns   = document.querySelectorAll('.project-filter-btn');
+    const cardWraps     = document.querySelectorAll('.card-wrap');
+    const emptyState    = document.getElementById('emptyState');
+    const projectsSection = document.getElementById('projects');
+
+    function applyFilter(f) {
+      skillPills.forEach(p => p.classList.toggle('active', p.dataset.filter === f));
+      projectBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+      let visible = 0;
+      cardWraps.forEach(wrap => {
+        const tags = JSON.parse(wrap.dataset.tags || '[]');
+        const match = f === 'all' || tags.includes(f);
+        wrap.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      if (emptyState) emptyState.classList.toggle('show', visible === 0);
+    }
+
+    skillPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const f = pill.dataset.filter;
+        applyFilter(pill.classList.contains('active') ? 'all' : f);
+        const headerH = document.querySelector('header')?.offsetHeight || 0;
+        const top = projectsSection.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    projectBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        applyFilter(btn.classList.contains('active') && f !== 'all' ? 'all' : f);
+      });
+    });
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

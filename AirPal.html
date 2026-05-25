@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AirPal — Alessandra Sgariglia</title>
+  <meta name="description" content="AirPal — a physical companion device that turns invisible air quality into a personal health battery you care about." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav page-grid">
+      <a href="index.html" class="brand">Alessandra Sgariglia</a>
+      <button type="button" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+      <nav id="primary-nav" class="links" aria-label="Primary">
+        <a href="index.html">My work</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="case-section">
+    <a href="index.html#projects" class="case-backlink">
+      <span class="case-backlink-arrow">←</span>
+      <span>Other projects</span>
+    </a>
+    <div class="case-hero">
+
+      <div class="case-hero-info">
+        <h1 class="case-title">AirPal</h1>
+        <div class="case-tags">
+          <span class="case-tag">UX/UI Design</span>
+          <span class="case-tag">Prototyping</span>
+          <span class="case-tag">Wellness Tech</span>
+        </div>
+        <p class="case-year">2023</p>
+        <p class="case-summary">A physical companion device paired with an app that turns your invisible air quality exposition into a personal "health battery" you care about.</p>
+      </div>
+
+      <div class="case-hero-image">
+        <img src="imgs/AirPal/heroImage.webp" alt="AirPal device and app mockups" />
+      </div>
+
+      <p class="case-question">What if taking care of your health (air quality exposure) felt like taking care of a Tamagotchi?</p>
+
+    </div>
+  </section>
+
+  <!-- ====== BODY ====== -->
+  <main class="case-body">
+
+    <!-- The problem -->
+    <section>
+      <h2 class="case-section-title">The problem</h2>
+      <p>Air quality is <mark>invisible</mark> — and that's exactly the problem. Most people know pollution exists, but without being able to see or feel it in real time, it rarely changes behaviour. City life makes it worse: polluted air, tight schedules, little time for self-care.</p>
+    </section>
+
+    <!-- The idea -->
+    <section>
+      <h2 class="case-section-title">The idea</h2>
+      <p>AirPal is a <mark>physical companion device</mark> paired with a mobile app that visualises your "health battery" against real-time air quality. Time spent in polluted areas drains your PAL and makes it look sick; time in cleaner, greener spaces recharges it.</p>
+      <p>The framing borrows from <mark>Tamagotchi-like play</mark>: by taking care of your PAL, you also take care of yourself. The goal was to nudge small, healthier habits — without guilt or shame — and make self-care feel like a game.</p>
+
+      <div class="case-callouts">
+        <div class="case-callout">
+          <p class="case-callout-title">My role</p>
+          <div class="case-callout-content">
+            A two-person project. I worked across concept development, UX/UI design in Figma, ProtoPie prototyping, and the physical build of the device.
+          </div>
+        </div>
+        <div class="case-callout">
+          <p class="case-callout-title">Tools</p>
+          <div class="case-callout-content">
+            <ul>
+              <li>Figma</li>
+              <li>ProtoPie</li>
+              <li>Arduino &amp; sensors</li>
+              <li>Illustrator</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The process -->
+    <section>
+      <h2 class="case-section-title">The process</h2>
+      <p>We designed AirPal around three modes — <mark>City, Nature, and Social</mark> — each shaping how the PAL responds to your environment and your community.</p>
+
+      <div class="case-modes">
+        <div class="case-mode">
+          <img src="imgs/AirPal/cityMode.webp" alt="City mode" />
+          <p class="case-mode-label">City mode</p>
+          <p class="case-mode-desc">After more than an hour in polluted air, one notch of the LED circle powers off. You can check your PAL's status in the app — if it loses battery, it gets sick.</p>
+        </div>
+        <div class="case-mode">
+          <img src="imgs/AirPal/natureMode.webp" alt="Nature mode" />
+          <p class="case-mode-label">Nature mode</p>
+          <p class="case-mode-desc">To recharge, you need to spend time where the air is clean. Every hour in nature recharges one notch — and your PAL gradually feels better.</p>
+        </div>
+        <div class="case-mode">
+          <img src="imgs/AirPal/socialMode.webp" alt="Social mode" />
+          <p class="case-mode-label">Social mode</p>
+          <p class="case-mode-desc">AirPAL connects you with people who share your interests. You can join their network and challenge friends in the rankings.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:28px;">On the hardware side, the prototype used an Arduino Uno board, an MQ135 air quality sensor, a piezo buzzer, and an LED ring — all positioned inside a <mark>3D-printed case</mark> with holes for the sensor and the LEDs.</p>
+
+      <div class="case-hardware-row">
+        <img src="imgs/AirPal/connections.svg" alt="Connections diagram" />
+        <img src="imgs/AirPal/building.webp" alt="Building the prototype" />
+        <img src="imgs/AirPal/airpal.webp" alt="The final AirPal device" />
+      </div>
+    </section>
+
+    <!-- The outcome -->
+    <section>
+      <h2 class="case-section-title">The outcome</h2>
+      <p>Four principles shaped the final design:</p>
+      <ul style="font-family: var(--font-sans); font-size: 16px; line-height: 1.75; padding-left: 22px;">
+        <li><strong>Feedback:</strong> only positive nudges — celebrate achievements instead of shaming.</li>
+        <li><strong>A cute character:</strong> an interactive PAL to keep the experience light and fun.</li>
+        <li><strong>Personalisation:</strong> change your PAL's colour and nickname.</li>
+        <li><strong>Gamification:</strong> a simple ranking to encourage group activity in green areas.</li>
+      </ul>
+
+      <p style="margin-top:28px;">The PAL itself has <mark>nine expressions</mark>, reflecting how it feels based on the air around it — from glowing and happy to wilting and sad.</p>
+
+      <div class="case-pals">
+        <img src="imgs/AirPal/pals/1.svg" alt="PAL expression 1" />
+        <img src="imgs/AirPal/pals/2.svg" alt="PAL expression 2" />
+        <img src="imgs/AirPal/pals/3.svg" alt="PAL expression 3" />
+        <img src="imgs/AirPal/pals/4.svg" alt="PAL expression 4" />
+        <img src="imgs/AirPal/pals/5.svg" alt="PAL expression 5" />
+        <img src="imgs/AirPal/pals/6.svg" alt="PAL expression 6" />
+        <img src="imgs/AirPal/pals/7.svg" alt="PAL expression 7" />
+        <img src="imgs/AirPal/pals/8.svg" alt="PAL expression 8" />
+        <img src="imgs/AirPal/pals/9.svg" alt="PAL expression 9" />
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section>
+      <h2 class="case-section-title">Reflection</h2>
+      <p>AirPal was the project where I most clearly felt the connection between <mark>design and wellbeing</mark> — the two things I care about most. Designing something that could genuinely shift a person's relationship with their environment, without lecturing them, was a challenge I found deeply motivating.</p>
+
+      <p>The biggest lesson was about <mark>framing</mark>. Early versions of the concept leaned toward warning and data — showing people how bad the air was. User feedback quickly told us that felt anxious and discouraging. Shifting to a positive, celebratory model completely changed how people related to the device.</p>
+
+      <p>If I were to take this further, I'd explore integrating official AQI APIs for real city data, wearable form factors, and a more developed social layer.</p>
+    </section>
+
+  </main>
+
+  <!-- Credits -->
+  <div class="case-credits">
+    <div class="case-credits-inner">
+      <p class="case-credits-title">Credits</p>
+      <div class="case-credits-body">
+        <strong>Course:</strong> Hardware &amp; Software Technologies for Design (MSc in Digital &amp; Interaction Design, Politecnico di Milano)<br>
+        <strong>Professor:</strong> Paolo Perego<br>
+        <strong>Team:</strong> Alessandra Sgariglia &amp; Erika Caffo
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- ====== LET'S WORK TOGETHER ====== -->
+  <section id="work-together" class="lwt-section">
+    <div class="page-grid lwt-grid">
+      <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="lwt-bento">
+        <div class="lwt-bento-content">
+          <h2 class="section-title lwt-heading">Let's work together</h2>
+          <p class="contacts-intro">Working on something interesting?<br>I'd love to hear about it.</p>
+        </div>
+        <span class="lwt-cta">
+          <span>Let's go!</span>
+          <span class="lwt-cta-arrow" aria-hidden="true">→</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== CONTACTS (footer) ====== -->
+  <footer id="contact" class="contacts-footer">
+    <div class="contacts-grid page-grid">
+
+      <div class="contacts-left">
+        <h2 class="section-title contacts-heading">Contacts</h2>
+        <div class="contacts-socials">
+
+          <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="contacts-social" aria-label="LinkedIn">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">LinkedIn</span>
+              <span class="contacts-social-handle">Alessandra Sgariglia</span>
+            </span>
+          </a>
+
+          <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Instagram">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Instagram</span>
+              <span class="contacts-social-handle">@alesgar_designs</span>
+            </span>
+          </a>
+
+          <a href="mailto:alesgar.designs@gmail.com" class="contacts-social" aria-label="Email">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V6A2 2 0 0 0 20 4M20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Email</span>
+              <span class="contacts-social-handle">alesgar.designs@gmail.com</span>
+            </span>
+          </a>
+
+          <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Substack">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.078V0z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Substack</span>
+              <span class="contacts-social-handle">@alesgar</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <p class="contacts-copyright">© <span id="y"></span> Alessandra Sgariglia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

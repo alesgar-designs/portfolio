@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milanosport — Alessandra Sgariglia</title>
+  <meta name="description" content="Milanosport — a full UX redesign of the platform that manages Milan's 24 public sports facilities." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav page-grid">
+      <a href="index.html" class="brand">Alessandra Sgariglia</a>
+      <button type="button" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+      <nav id="primary-nav" class="links" aria-label="Primary">
+        <a href="index.html">My work</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="case-section">
+    <a href="index.html#projects" class="case-backlink">
+      <span class="case-backlink-arrow">←</span>
+      <span>Other projects</span>
+    </a>
+    <div class="case-hero">
+
+      <div class="case-hero-info">
+        <h1 class="case-title">Milanosport</h1>
+        <div class="case-tags">
+          <span class="case-tag">UX/UI Design</span>
+          <span class="case-tag">User Research</span>
+          <span class="case-tag">Design System</span>
+        </div>
+        <p class="case-year">2024</p>
+        <p class="case-summary">A full UX redesign of the platform that manages Milan's 24 public sports facilities — making it usable, accessible, and finally modern.</p>
+      </div>
+
+      <div class="case-hero-image">
+        <img src="imgs/Milanosport/cover.webp" alt="Milanosport redesigned platform" />
+      </div>
+
+      <p class="case-question">How do you redesign a city service that people are forced to use, into one they actually want to?</p>
+
+    </div>
+  </section>
+
+  <!-- ====== BODY ====== -->
+  <main class="case-body">
+
+    <!-- The problem -->
+    <section>
+      <h2 class="case-section-title">The problem</h2>
+      <p>Milanosport manages <mark>24 public sports facilities across Milan</mark>, but using them was unnecessarily hard. Booking a single session took <mark>16 clicks across multiple disconnected pages</mark>. Finding accessibility information required 10 steps. The information architecture was inconsistent, the visual design was dated, and key accessibility standards were unmet — all for a platform serving a diverse, city-wide public.</p>
+      <p>The brief was clear: make it usable, make it accessible, make it feel like a <mark>modern public service</mark>.</p>
+    </section>
+
+    <!-- The idea -->
+    <section>
+      <h2 class="case-section-title">The idea</h2>
+      <p>We set three goals to anchor every decision:</p>
+      <ul style="font-family: var(--font-sans); font-size: 16px; line-height: 1.75; padding-left: 22px;">
+        <li><mark>Reorganise content</mark> and simplify navigation.</li>
+        <li>Design a <mark>clear end-to-end booking flow</mark>.</li>
+        <li>Improve <mark>accessibility and visual coherence</mark> with a proper design system.</li>
+      </ul>
+
+      <div class="case-callouts">
+        <div class="case-callout">
+          <p class="case-callout-title">My role</p>
+          <div class="case-callout-content">
+            A fully collaborative project. Duru, Yaren, and I contributed equally across every phase — from the initial heuristic evaluation and competitor analysis through to the information architecture, visual identity, and high-fidelity prototype.
+          </div>
+        </div>
+        <div class="case-callout">
+          <p class="case-callout-title">Tools</p>
+          <div class="case-callout-content">
+            <ul>
+              <li>Figma</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section>
+      <h2 class="case-section-title">Research</h2>
+      <p>Before redesigning anything, we needed an evidence-based picture of <mark>what was broken and why</mark>. We layered four diagnostic methods on top of each other so every redesign decision could be traced back to a specific finding.</p>
+
+      <p style="margin-top:24px;"><strong>Heuristic evaluation.</strong> We mapped Milanosport against Nielsen's heuristics. Of the ten we tested, <mark>four came back as critical severity</mark> — affecting the platform's most-used flows.</p>
+
+      <div class="case-heuristics">
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--critical">Critical</p>
+          <p class="case-heuristic-name">User control &amp; freedom</p>
+          <p class="case-heuristic-desc">No profile or settings page. Users couldn't filter content or adjust their bookings once started.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--critical">Critical</p>
+          <p class="case-heuristic-name">Consistency &amp; standards</p>
+          <p class="case-heuristic-desc">No design language. Menus changed between pages, the logo moved around, content didn't match.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--critical">Critical</p>
+          <p class="case-heuristic-name">Error prevention</p>
+          <p class="case-heuristic-desc">No warnings, no way to modify bookings, no way to log out. The system never protected users from mistakes.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--critical">Critical</p>
+          <p class="case-heuristic-name">Aesthetic &amp; minimalist design</p>
+          <p class="case-heuristic-desc">Inconsistent visual style, unnecessary elements, illegible text, irrelevant content layered across pages.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--high">High</p>
+          <p class="case-heuristic-name">Visibility of system status</p>
+          <p class="case-heuristic-desc">No profile section, feedback messages were unclear — users had no sense of where they were or what was happening.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--high">High</p>
+          <p class="case-heuristic-name">Recognition rather than recall</p>
+          <p class="case-heuristic-desc">UI and navigation were not standardised, forcing users to remember rather than recognise patterns.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--high">High</p>
+          <p class="case-heuristic-name">Flexibility &amp; efficiency of use</p>
+          <p class="case-heuristic-desc">Too many steps in the navigation, no personalisation, no shortcuts for repeat users.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--medium">Medium</p>
+          <p class="case-heuristic-name">Match between system &amp; real world</p>
+          <p class="case-heuristic-desc">Icons and section names were unintuitive; the information architecture used unfamiliar categorisation.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--low">Low</p>
+          <p class="case-heuristic-name">Help users recover from errors</p>
+          <p class="case-heuristic-desc">When warnings did exist, they appeared in the wrong place — making recovery harder than it needed to be.</p>
+        </div>
+        <div class="case-heuristic">
+          <p class="case-heuristic-tag case-heuristic-tag--low">Low</p>
+          <p class="case-heuristic-name">Help &amp; documentation</p>
+          <p class="case-heuristic-desc">Contact section buried, no FAQ — users had nowhere to turn when stuck.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:28px;"><strong>Competitor analysis.</strong> We benchmarked Milanosport against four direct and indirect competitors — including <mark>Spor İstanbul</mark> (best-in-class for public sports infrastructure), <mark>GetFit</mark>, <mark>Aquaniene</mark>, and platforms like <mark>Airbnb</mark> and <mark>Trainline</mark> for their complex booking flows. The benchmarking made one thing clear: Milanosport was lagging on consistency, error-proofing, minimalism, and ease of navigation — exactly where the best competitors excel.</p>
+
+      <div class="case-competitors">
+        <div class="case-competitors-head">
+          <div></div>
+          <div>Checking a sport centre</div>
+          <div>Finding courses</div>
+          <div>Booking entrances</div>
+          <div>Managing orders</div>
+          <div>Sport events</div>
+          <div>Inclusive options</div>
+          <div>Personalised experience</div>
+        </div>
+
+        <div class="case-competitor-row">
+          <div class="case-competitor-name">Spor İstanbul</div>
+          <div class="case-competitor-cell" data-task="Checking a sport centre"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Finding courses"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Booking entrances"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Managing orders"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Sport events"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Inclusive options"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Personalised experience"><span class="case-competitors-icon case-competitors-icon--bad"></span></div>
+        </div>
+
+        <div class="case-competitor-row">
+          <div class="case-competitor-name">GetFit</div>
+          <div class="case-competitor-cell" data-task="Checking a sport centre"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Finding courses"><span class="case-competitors-icon case-competitors-icon--mid"></span></div>
+          <div class="case-competitor-cell" data-task="Booking entrances"><span class="case-competitors-icon case-competitors-icon--mid"></span></div>
+          <div class="case-competitor-cell" data-task="Managing orders"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Sport events"><span class="case-competitors-icon case-competitors-icon--bad"></span></div>
+          <div class="case-competitor-cell" data-task="Inclusive options"><span class="case-competitors-icon case-competitors-icon--mid"></span></div>
+          <div class="case-competitor-cell" data-task="Personalised experience"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+        </div>
+
+        <div class="case-competitor-row">
+          <div class="case-competitor-name">Aquaniene</div>
+          <div class="case-competitor-cell" data-task="Checking a sport centre"><span class="case-competitors-icon case-competitors-icon--na"></span></div>
+          <div class="case-competitor-cell" data-task="Finding courses"><span class="case-competitors-icon case-competitors-icon--na"></span></div>
+          <div class="case-competitor-cell" data-task="Booking entrances"><span class="case-competitors-icon case-competitors-icon--na"></span></div>
+          <div class="case-competitor-cell" data-task="Managing orders"><span class="case-competitors-icon case-competitors-icon--na"></span></div>
+          <div class="case-competitor-cell" data-task="Sport events"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Inclusive options"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Personalised experience"><span class="case-competitors-icon case-competitors-icon--na"></span></div>
+        </div>
+
+        <div class="case-competitor-row">
+          <div class="case-competitor-name">Milanosport</div>
+          <div class="case-competitor-cell" data-task="Checking a sport centre"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Finding courses"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Booking entrances"><span class="case-competitors-icon case-competitors-icon--good"></span></div>
+          <div class="case-competitor-cell" data-task="Managing orders"><span class="case-competitors-icon case-competitors-icon--bad"></span></div>
+          <div class="case-competitor-cell" data-task="Sport events"><span class="case-competitors-icon case-competitors-icon--mid"></span></div>
+          <div class="case-competitor-cell" data-task="Inclusive options"><span class="case-competitors-icon case-competitors-icon--bad"></span></div>
+          <div class="case-competitor-cell" data-task="Personalised experience"><span class="case-competitors-icon case-competitors-icon--bad"></span></div>
+        </div>
+
+        <div class="case-competitors-legend">
+          <span><span class="case-competitors-icon case-competitors-icon--good"></span> Good</span>
+          <span><span class="case-competitors-icon case-competitors-icon--mid"></span> Not sufficient</span>
+          <span><span class="case-competitors-icon case-competitors-icon--bad"></span> Absent</span>
+          <span><span class="case-competitors-icon case-competitors-icon--na"></span> Not applicable</span>
+        </div>
+      </div>
+
+      <p style="margin-top:28px;">We then rated each competitor across seven UX quality dimensions — information architecture, consistency, minimalism, navigation, error-proofing, readability, and responsiveness. The result told the whole story in one glance: <mark>Milanosport sits at the centre — the smallest shape on the chart.</mark></p>
+      <figure class="case-figure">
+        <img src="imgs/Milanosport/benchmarking.webp" alt="Radar chart comparing competitors across seven UX quality dimensions" />
+        <figcaption>Quality benchmarking — Milanosport (orange) vs. five competitors across seven UX dimensions.</figcaption>
+      </figure>
+
+      <p style="margin-top:28px;">Mapping the same brands across <mark>usability</mark> and <mark>unique features</mark> made the strategic question explicit: where should Milanosport move? The redesign aimed to push it up and to the right — closer to the platforms that get both right.</p>
+      <figure class="case-figure">
+        <img src="imgs/Milanosport/positioning.webp" alt="Brand positioning chart on usability and unique features axes" />
+        <figcaption>Positioning map — usability vs. unique features across the competitive set.</figcaption>
+      </figure>
+
+      <p style="margin-top:28px;"><strong>User personas.</strong> We built five personas representing the platform's actual users — from international students to wheelchair users, retired seniors, and parents — to make sure the redesign worked for everyone, not just the easy cases.</p>
+
+      <div class="case-personas">
+        <div class="case-persona">
+          <img src="imgs/Milanosport/personas/bob.svg" alt="Bob" />
+          <p class="case-persona-name">Bob</p>
+          <p class="case-persona-meta">25 · American</p>
+          <p class="case-persona-bio">International student, just moved to Milan.</p>
+        </div>
+        <div class="case-persona">
+          <img src="imgs/Milanosport/personas/carla.svg" alt="Carla" />
+          <p class="case-persona-name">Carla</p>
+          <p class="case-persona-meta">37 · Italian</p>
+          <p class="case-persona-bio">Wheelchair user, basketball supporter.</p>
+        </div>
+        <div class="case-persona">
+          <img src="imgs/Milanosport/personas/lorenzo.svg" alt="Lorenzo" />
+          <p class="case-persona-name">Lorenzo</p>
+          <p class="case-persona-meta">78 · Italian</p>
+          <p class="case-persona-bio">Retired senior managing health.</p>
+        </div>
+        <div class="case-persona">
+          <img src="imgs/Milanosport/personas/fabio.svg" alt="Fabio" />
+          <p class="case-persona-name">Fabio</p>
+          <p class="case-persona-meta">43 · Italian</p>
+          <p class="case-persona-bio">Colourblind gym manager.</p>
+        </div>
+        <div class="case-persona">
+          <img src="imgs/Milanosport/personas/chiara.svg" alt="Chiara" />
+          <p class="case-persona-name">Chiara</p>
+          <p class="case-persona-meta">38 · Italian</p>
+          <p class="case-persona-bio">Writer and mother of two.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:28px;"><strong>Cognitive walkthrough.</strong> We traced four key user tasks step by step, counting the clicks and pages required on the current platform. The results gave us a sharp, numerical picture of how broken the flows actually were.</p>
+
+      <div class="case-cog-table">
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">01</span><span>Check for a sport centre with courses for a specific sport</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat">4 clicks</span>
+            <span class="case-cog-stat">3 pages</span>
+          </div>
+        </div>
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">02</span><span>Booking one entrance or a package of entrances</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat case-cog-stat--big">16 clicks</span>
+            <span class="case-cog-stat">4 pages</span>
+          </div>
+        </div>
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">03</span><span>Finding sport-related events relevant for the user</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat">3 clicks</span>
+            <span class="case-cog-stat">3 pages</span>
+          </div>
+        </div>
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">04</span><span>Finding inclusive sporting options that suit the user's needs</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat case-cog-stat--big">10 clicks</span>
+            <span class="case-cog-stat">3 pages</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Redesign -->
+    <section>
+      <h2 class="case-section-title">Redesign</h2>
+      <p>With the diagnosis in hand, we restructured the <mark>information architecture</mark> from scratch — flattening duplicate paths, surfacing the booking flow at the top level, and adding two new sections (a personal Profile and a Routes page). Then we wireframed and built out the full set of redesigned pages.</p>
+
+      <p style="margin-top:28px;"><strong>Home page.</strong> Simplified the overall look and content, organised by hierarchy, and added an interactive map highlighting all 24 centres.</p>
+      <div class="case-redesign-pair">
+        <div class="case-redesign-col">
+          <span class="case-redesign-label">Before</span>
+          <img src="imgs/Milanosport/redesign/home_before.webp" alt="Home page — before" />
+        </div>
+        <div class="case-redesign-col">
+          <span class="case-redesign-label">After</span>
+          <img src="imgs/Milanosport/redesign/home_after.webp" alt="Home page — after" />
+        </div>
+      </div>
+
+      <p style="margin-top:32px;"><strong>Specific centre page.</strong> Highlighted the booking CTA, carried important information to the top, and embedded the booking flow in the same page.</p>
+      <div class="case-redesign-pair">
+        <div class="case-redesign-col">
+          <span class="case-redesign-label">Before</span>
+          <img src="imgs/Milanosport/redesign/specificCentre_before.webp" alt="Specific centre — before" />
+        </div>
+        <div class="case-redesign-col">
+          <span class="case-redesign-label">After</span>
+          <img src="imgs/Milanosport/redesign/specificCentre_after.webp" alt="Specific centre — after" />
+        </div>
+      </div>
+
+      <p style="margin-top:32px;"><strong>Summercamps page.</strong> Renamed and restructured for clarity, with a clear hierarchy that finally made the available options obvious.</p>
+      <div class="case-redesign-pair">
+        <div class="case-redesign-col">
+          <span class="case-redesign-label">Before</span>
+          <img src="imgs/Milanosport/redesign/summercamps_before.webp" alt="Summercamps — before" />
+        </div>
+        <div class="case-redesign-col">
+          <span class="case-redesign-label">After</span>
+          <img src="imgs/Milanosport/redesign/summercamps_after.webp" alt="Summercamps — after" />
+        </div>
+      </div>
+
+      <p style="margin-top:32px;">We also added two <mark>new features</mark>: a personal profile to manage bookings and leave reviews, and a Routes page suggesting sport routes around Milan, catered to each user's preferences.</p>
+      <div class="case-newfeatures">
+        <div class="case-newfeatures-left">
+          <img src="imgs/Milanosport/redesign/profile.webp" alt="Personal profile" />
+          <img src="imgs/Milanosport/redesign/reviews.webp" alt="Reviews" />
+        </div>
+        <div class="case-newfeatures-right">
+          <img src="imgs/Milanosport/redesign/routes.webp" alt="Routes page" />
+        </div>
+      </div>
+
+      <p style="margin-top:32px;"><strong>Accessibility check.</strong> We tested the prototype against three types of <mark>colour blindness</mark> using the Stark app, to make sure the redesign worked for everyone — not just users with full-colour vision.</p>
+      <div class="case-accessibility">
+        <figure>
+          <img src="imgs/Milanosport/accessibility/original.webp" alt="Original colours" />
+          <figcaption>Original</figcaption>
+        </figure>
+        <figure>
+          <img src="imgs/Milanosport/accessibility/protanopia.webp" alt="Protanopia simulation" />
+          <figcaption>Protanopia</figcaption>
+        </figure>
+        <figure>
+          <img src="imgs/Milanosport/accessibility/tritanopia.webp" alt="Tritanopia simulation" />
+          <figcaption>Tritanopia</figcaption>
+        </figure>
+        <figure>
+          <img src="imgs/Milanosport/accessibility/achromatopsia.webp" alt="Achromatopsia simulation" />
+          <figcaption>Achromatopsia</figcaption>
+        </figure>
+      </div>
+
+      <p style="margin-top:32px;"><strong>The results.</strong> For every task we measured, we <mark>significantly reduced clicks and pages visited</mark>. Booking a sports session dropped from 16 clicks to 9 — a 44% reduction in friction for the platform's most-used flow.</p>
+
+      <div class="case-cog-table">
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">01</span><span>Check for a sport centre with courses for a specific sport</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat case-cog-stat--big">4 → 2 clicks</span>
+            <span class="case-cog-stat">3 → 1 pages</span>
+          </div>
+        </div>
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">02</span><span>Booking one entrance or a package of entrances</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat case-cog-stat--big">16 → 9 clicks</span>
+            <span class="case-cog-stat">4 → 2 pages</span>
+          </div>
+        </div>
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">03</span><span>Finding sport-related events relevant for the user</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat case-cog-stat--big">3 → 2 clicks</span>
+            <span class="case-cog-stat">3 → 2 pages</span>
+          </div>
+        </div>
+        <div class="case-cog-row">
+          <div class="case-cog-task"><span class="case-cog-num">04</span><span>Finding inclusive sporting options that suit the user's needs</span></div>
+          <div class="case-cog-stats">
+            <span class="case-cog-stat case-cog-stat--big">10 → 4 clicks</span>
+            <span class="case-cog-stat">3 pages</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-links">
+        <a href="https://www.figma.com/proto/yqXNSnzRU0b9U369VcUS2g/Milanosport?page-id=0%3A1&node-id=1-1264&viewport=13%2C293%2C0.1&t=7e4tESL1m22uF6A8-1&scaling=scale-down-width&content-scaling=fixed" target="_blank" rel="noreferrer" class="case-link">
+          <span>Open the interactive prototype</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section>
+      <h2 class="case-section-title">Reflection</h2>
+      <p>Milanosport taught us the value of <mark>rigorous diagnosis before jumping to solutions</mark>. The heuristic evaluation and cognitive walkthroughs weren't just academic exercises — they gave us a shared, evidence-based language to talk about what was broken and why. When you can show that booking a sports session takes 16 steps and should take 9, the case for redesign practically makes itself.</p>
+
+      <p>The competitor analysis was a turning point. Mapping how platforms like Airbnb and Trainline handle complex booking flows — and understanding exactly <em>why</em> they feel effortless — sharpened our eye for the difference between <mark>a UI that looks clean and one that actually thinks about the user's mental load</mark>. That distinction now shapes how I approach every UX project.</p>
+    </section>
+
+  </main>
+
+  <!-- Credits -->
+  <div class="case-credits">
+    <div class="case-credits-inner">
+      <p class="case-credits-title">Credits</p>
+      <div class="case-credits-body">
+        <strong>Course:</strong> Ergonomics applied to the design of usable web pages and apps (MSc in Digital &amp; Interaction Design, Politecnico di Milano)<br>
+        <strong>Professors:</strong> Roberto Dadda, Paolo Negri<br>
+        <strong>Team:</strong> Duru Erdem, Alessandra Sgariglia, Yaren Yavuz
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- ====== LET'S WORK TOGETHER ====== -->
+  <section id="work-together" class="lwt-section">
+    <div class="page-grid lwt-grid">
+      <a href="https://tally.so/r/Y5ORD6" target="_blank" rel="noreferrer" class="lwt-bento">
+        <div class="lwt-bento-content">
+          <h2 class="section-title lwt-heading">Let's work together</h2>
+          <p class="contacts-intro">Working on something interesting?<br>I'd love to hear about it.</p>
+        </div>
+        <span class="lwt-cta">
+          <span>Let's go!</span>
+          <span class="lwt-cta-arrow" aria-hidden="true">→</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ====== CONTACTS (footer) ====== -->
+  <footer id="contact" class="contacts-footer">
+    <div class="contacts-grid page-grid">
+
+      <div class="contacts-left">
+        <h2 class="section-title contacts-heading">Contacts</h2>
+        <div class="contacts-socials">
+
+          <a href="https://www.linkedin.com/in/alessandra-sgariglia-671277104/" target="_blank" rel="noreferrer" class="contacts-social" aria-label="LinkedIn">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">LinkedIn</span>
+              <span class="contacts-social-handle">Alessandra Sgariglia</span>
+            </span>
+          </a>
+
+          <a href="https://www.instagram.com/alesgar_designs?igsh=YjlmdGQ1Nm4xbG0w&utm_source=qr" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Instagram">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Instagram</span>
+              <span class="contacts-social-handle">@alesgar_designs</span>
+            </span>
+          </a>
+
+          <a href="mailto:alesgar.designs@gmail.com" class="contacts-social" aria-label="Email">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V6A2 2 0 0 0 20 4M20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Email</span>
+              <span class="contacts-social-handle">alesgar.designs@gmail.com</span>
+            </span>
+          </a>
+
+          <a href="https://substack.com/@alesgar" target="_blank" rel="noreferrer" class="contacts-social" aria-label="Substack">
+            <span class="contacts-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.078V0z"/>
+              </svg>
+            </span>
+            <span class="contacts-social-text">
+              <span class="contacts-social-name">Substack</span>
+              <span class="contacts-social-handle">@alesgar</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <p class="contacts-copyright">© <span id="y"></span> Alessandra Sgariglia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
