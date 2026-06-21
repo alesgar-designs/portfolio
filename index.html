@@ -16,7 +16,20 @@
   <link rel="stylesheet" href="nav.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" as="image" href="imgs/covers/cover_nexus.png">
+  <link rel="preload" as="image" href="imgs/covers/cover_Acta.webp">
+
+  <style>
+    /* Top gradient so the skill tags stay legible over light covers */
+    .card-overlay-top {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 42%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+      pointer-events: none;
+    }
+    /* Keep the in-progress icon at its native opacity (don't inherit the award icon styling) */
+    .card-progress img { opacity: 1; filter: none; }
+  </style>
 </head>
 <body>
 
@@ -68,6 +81,10 @@
       <button class="project-filter-btn" data-filter="UX/UI Design">UX/UI Design</button>
       <button class="project-filter-btn" data-filter="Interaction Design">Interaction Design</button>
       <button class="project-filter-btn" data-filter="Branding & Identity">Branding & Identity</button>
+      <button class="project-filter-btn" data-filter="Brand Strategy">Brand Strategy</button>
+      <button class="project-filter-btn" data-filter="Design System">Design System</button>
+      <button class="project-filter-btn" data-filter="Systems Thinking">Systems Thinking</button>
+      <button class="project-filter-btn" data-filter="Accessibility">Accessibility</button>
       <button class="project-filter-btn" data-filter="Web Design">Web Design</button>
       <button class="project-filter-btn" data-filter="Vibe Coding">Vibe Coding</button>
       <button class="project-filter-btn" data-filter="Art Direction">Art Direction</button>
@@ -79,11 +96,33 @@
 
     <div class="grid" id="projectGrid">
 
+      <!-- ACTA -->
+      <div class="card-wrap" data-tags='["Branding & Identity","Brand Strategy","Design System","Systems Thinking","Accessibility"]'>
+        <a href="Acta.html" rel="noreferrer" class="card-link">
+          <article class="card">
+            <img class="thumb" src="imgs/covers/cover_Acta.webp" alt="ACTA cover" loading="eager" fetchpriority="high" />
+            <div class="card-overlay"></div>
+            <div class="card-overlay-top"></div>
+            <div class="card-tags">
+              <span class="card-tag">Brand Strategy</span>
+              <span class="card-tag">Design System</span>
+            </div>
+            <div class="card-award card-progress" aria-label="Work in progress" title="Work in progress">
+              <img src="imgs/inProgress.svg" alt="" />
+            </div>
+            <div class="card-bottom">
+              <span class="card-title">ACTA</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </article>
+        </a>
+      </div>
+
       <!-- 1. Nexus -->
       <div class="card-wrap" data-tags='["Interaction Design","Art Direction","Prototyping"]'>
         <a href="Nexus.html" rel="noreferrer" class="card-link">
           <article class="card">
-            <img class="thumb" src="imgs/covers/cover_nexus.webp" alt="Nexus cover" loading="eager" fetchpriority="high" />
+            <img class="thumb" src="imgs/covers/cover_nexus.webp" alt="Nexus cover" loading="lazy" decoding="async" />
             <div class="card-overlay"></div>
             <div class="card-tags">
               <span class="card-tag">Interaction Design</span>
