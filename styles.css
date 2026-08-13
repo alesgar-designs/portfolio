@@ -1009,7 +1009,7 @@ section { padding: 40px 0; }
   width: 100%;
   max-width: var(--grid-maxw);
   margin: 0 auto;
-  padding: 60px var(--grid-margin) 40px;
+  padding: 60px var(--grid-margin);
 }
 
 /* About: photo left + text right on desktop.
