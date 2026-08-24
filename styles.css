@@ -1,8 +1,7 @@
 /* ====== Local @font-face ====== */
 @font-face {
-  font-family: "Thestral Neue";
-  /* only a Bold cut exists; mapped to 400 so existing font-weight rules keep working */
-  src: url("fonts/ThestralNeue-Bold.otf") format("opentype");
+  font-family: "Gloock";
+  src: url("fonts/Gloock-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -64,7 +63,7 @@
   --grid-maxw: 1440px; /* safety cap on very large screens */
 
   /* Typography */
-  --font-logo: "Thestral Neue", Georgia, serif;
+  --font-logo: "Gloock", Georgia, serif;
   --font-display: "Cactus Jack Alternate", var(--font-logo);
   --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, monospace;
