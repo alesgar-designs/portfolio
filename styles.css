@@ -1,9 +1,9 @@
 /* ====== Local @font-face ====== */
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src: url("fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf") format("truetype-variations");
-  font-weight: 200 800;
-  font-stretch: 75% 100%;
+  font-family: "Thestral Neue";
+  /* only a Bold cut exists; mapped to 400 so existing font-weight rules keep working */
+  src: url("fonts/ThestralNeue-Bold.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -64,7 +64,7 @@
   --grid-maxw: 1440px; /* safety cap on very large screens */
 
   /* Typography */
-  --font-logo: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-logo: "Thestral Neue", Georgia, serif;
   --font-display: "Cactus Jack Alternate", var(--font-logo);
   --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, monospace;
