@@ -201,31 +201,6 @@ header {
 
 /* (envelope icon removed from nav) */
 
-/* ====== Hero roles tagline ====== */
-.hero-roles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 28px;
-}
-.hero-role {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.hero-role-sep {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--accent);
-  margin: 0 14px;
-  letter-spacing: 0;
-}
-
 /* ====== Hero ====== */
 .hero {
   width: 100%;
@@ -269,8 +244,6 @@ header {
 }
 @media (max-width: 599px) {
   .hero { min-height: 55vh; padding-top: 40px; padding-bottom: 40px; }
-  .hero-roles { margin-bottom: 22px; }
-  .hero-role-sep { margin: 0 8px; }
 }
 
 /* Right col — no card background */
