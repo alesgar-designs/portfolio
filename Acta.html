@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ACTA — Alessandra Sgariglia</title>
-  <meta name="description" content="ACTA — strategy first, then a composable visual system that lets a volunteer-run Berlin community keep a coherent identity without a designer." />
+  <meta name="description" content="ACTA: brand strategy, a composable visual identity, and a content system a volunteer-run Berlin community runs on its own." />
 
   <!-- Local fonts (Gaya, Cactus Jack Alternate, Atkinson Hyperlegible) + Google (Atkinson Hyperlegible Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,26 +54,23 @@
     </a>
     <div class="case-hero">
 
-      <!-- Left: title, tags, year, summary -->
       <div class="case-hero-info">
         <h1 class="case-title">ACTA</h1>
         <div class="case-tags">
           <span class="case-tag">Brand Strategy</span>
           <span class="case-tag">Brand Identity</span>
-          <span class="case-tag">Design System</span>
-          <span class="case-tag">Visual Identity</span>
+          <span class="case-tag">Content Strategy</span>
+          <span class="case-tag">Content Production</span>
         </div>
         <p class="case-year">2026</p>
-        <p class="case-summary">A brand built from the ground up: strategy first, then a composable visual system a volunteer-run Berlin community can keep coherent without a designer.</p>
+        <p class="case-summary">Strategy, identity and content for a volunteer-run Berlin community: a foundation built from a vague brief, a composable visual system, and an editorial system the team now publishes with on its own.</p>
       </div>
 
-      <!-- Right: hero image. NEW SLOT — a diagonal composition of the redesigned posts running through the frame,
-           echoing the signature angle. Export as imgs/Acta/hero.webp -->
       <div class="case-hero-image">
         <img src="imgs/Acta/hero.webp" alt="A diagonal composition of ACTA's redesigned posts" />
       </div>
 
-      <p class="case-question">How does a Berlin community become recognisable, when so much around it is noise?</p>
+      <p class="case-question">How does a community of thirty non-designers become recognisable, and stay that way once the designer leaves?</p>
 
     </div>
   </section>
@@ -81,29 +78,96 @@
   <!-- ====== BODY ====== -->
   <main class="case-body">
 
-    <!-- 1 — CONTEXT -->
+    <style>
+      /* Chapter navigation and chapter openers */
+      .ch-nav { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 8px; }
+      .ch-nav a { display: block; text-decoration: none; color: inherit; background: #FFFFFF; border: 1px solid #E7E5D2; border-radius: 14px; padding: clamp(16px, 2.4vw, 22px); }
+      .ch-nav a:hover, .ch-nav a:focus-visible { border-color: #1F1F1A; }
+      .ch-nav-num { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .55; margin-bottom: 6px; }
+      .ch-nav-title { display: block; font-size: clamp(17px, 2vw, 21px); font-weight: 600; line-height: 1.2; margin-bottom: 6px; }
+      .ch-nav-sub { display: block; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.35; opacity: .85; }
+      .ch-open { border-top: 2px solid #1F1F1A; padding-top: 18px; margin-top: 8px; }
+      .ch-open-num { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .55; margin-bottom: 4px; }
+      .ch-brief { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 18px 0 8px; }
+      .ch-brief div { background: #FFFFFF; border: 1px solid #E7E5D2; border-radius: 14px; padding: clamp(14px, 2vw, 18px); }
+      .ch-brief b { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .55; margin-bottom: 6px; }
+      .ch-brief p { margin: 0; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.4; }
+      /* Shared card and grid primitives */
+      .sf { margin-top: 8px; }
+      .sf-sub { font-size: clamp(16px, 2vw, 19px); font-weight: 600; margin: 26px 0 12px; }
+      .sf-grid { display: grid; gap: 14px; }
+      .sf-cards { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      .sf-cards-2 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .sf-cards-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .sf-card { background: #FFFFFF; border: 1px solid #E7E5D2; border-radius: 14px; padding: clamp(16px, 2.4vw, 22px); }
+      .sf-card h4 { margin: 0 0 6px; font-size: clamp(16px, 1.9vw, 19px); font-weight: 600; line-height: 1.2; }
+      .sf-card p { margin: 0; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.35; opacity: .85; }
+      .sf-card .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .55; margin-bottom: 6px; }
+      /* Touchpoint table */
+      .tp { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: clamp(14px, 1.6vw, 16px); }
+      .tp th, .tp td { text-align: left; vertical-align: top; padding: 12px 10px; border-bottom: 1px solid #E7E5D2; line-height: 1.35; }
+      .tp th { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .55; }
+      .tp td:first-child { font-weight: 600; white-space: nowrap; }
+      /* Details (optional depth) */
+      .more { margin-top: 18px; border: 1px solid #E7E5D2; border-radius: 14px; background: #FFFFFF; }
+      .more summary { cursor: pointer; padding: clamp(14px, 2vw, 18px) clamp(16px, 2.4vw, 22px); font-weight: 600; list-style: none; }
+      .more summary::-webkit-details-marker { display: none; }
+      .more summary::after { content: "+"; float: right; font-weight: 400; }
+      .more[open] summary::after { content: "–"; }
+      .more-body { padding: 0 clamp(16px, 2.4vw, 22px) clamp(16px, 2.4vw, 22px); }
+      .more-body p { font-size: clamp(14px, 1.6vw, 16px); line-height: 1.5; }
+      /* Image grids */
+      .g { display: grid; gap: 14px; margin-top: 8px; }
+      .g img { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 12px; }
+      .g-2 { grid-template-columns: repeat(2, 1fr); }
+      .g-3 { grid-template-columns: repeat(3, 1fr); }
+      .g-4 { grid-template-columns: repeat(4, 1fr); }
+      .g-5 { grid-template-columns: repeat(5, 1fr); }
+      @media (max-width: 760px) { .g-4, .g-5 { grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 480px) { .g-2, .g-3, .g-4, .g-5 { grid-template-columns: repeat(2, 1fr); } }
+      .g-eq { grid-template-columns: repeat(2, 1fr); align-items: start; }
+      .g-eq img { height: clamp(320px, 48vw, 560px); width: 100%; object-fit: contain; border: none; border-radius: 0; }
+      @media (max-width: 480px) { .g-eq { grid-template-columns: 1fr; } .g-eq img { height: auto; } }
+      .g-eb { grid-template-columns: 2fr 1fr; align-items: start; }
+      .g-eb img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: contain; border: none; border-radius: 0; }
+      @media (max-width: 480px) { .g-eb { grid-template-columns: 1fr; } .g-eb img { height: auto; } }
+      @media (max-width: 760px) {
+        .g-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 6px; scrollbar-width: none; }
+        .g-scroll::-webkit-scrollbar { display: none; }
+        .g-scroll figure { flex: 0 0 72%; scroll-snap-align: start; }
+      }
+      .g figure { margin: 0; }
+      .g figcaption { font-size: 13px; line-height: 1.3; margin-top: 8px; opacity: .75; }
+      .g figcaption b { display: block; font-weight: 600; opacity: 1; color: #1F1F1A; }
+      .g img.plain { border: none; border-radius: 0; }
+      .cat-grid .cat, .cat-red .cat, .cat-green .cat, .cat-teal .cat, .cat-violet .cat { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+      .cat-grid .cat { color: #1F1F1A; opacity: .55; } .cat-red .cat { color: #D94050; } .cat-green .cat { color: #6A9E3F; } .cat-teal .cat { color: #1798AB; } .cat-violet .cat { color: #6F3A98; }
+    </style>
+
+    <!-- ====== CHAPTER NAV ====== -->
+    <section>
+      <p>The work runs in three chapters of equal weight. Each one was needed for the next: nothing visual could be decided before the strategy existed, and no content could be produced before the identity gave it parts to be built from.</p>
+      <nav class="ch-nav" aria-label="Case chapters">
+        <a href="#strategy"><span class="ch-nav-num">Chapter 1</span><span class="ch-nav-title">Strategy</span><span class="ch-nav-sub">Turning a vague brief into a foundation: positioning, audiences, voice, touchpoints.</span></a>
+        <a href="#identity"><span class="ch-nav-num">Chapter 2</span><span class="ch-nav-title">Identity</span><span class="ch-nav-sub">A composable visual system non-designers can operate without drifting.</span></a>
+        <a href="#content"><span class="ch-nav-num">Chapter 3</span><span class="ch-nav-title">Content</span><span class="ch-nav-sub">An editorial system, the templates, and everything that grew from the feed.</span></a>
+      </nav>
+    </section>
+
+    <!-- ====== CONTEXT ====== -->
     <section>
       <h2 class="case-section-title">Context</h2>
       <p>ACTA is a Berlin community association rebuilding the city's <mark>third spaces,</mark> the places beyond home and work where people meet, learn, and act together. It began in September 2025 as a table outside a Späti, where fifteen people pinned their favourite spots on an old map of Berlin, and grew into ACTA, Association for Community, Training, and Action. Today it is around thirty people working across four pillars: <mark>belonging, empowerment, civic engagement, and creative entrepreneurship.</mark></p>
 
-      <p>Berlin is full of community organisations, and a lot of them communicate in the same crowded, busy way. In a feed that gives a passing viewer three or four seconds, that noise blurs together, and a young community is easy to miss. The first job of the identity was simple to say and hard to do: <mark>make ACTA recognisable at a glance,</mark> a grounded presence in a landscape that mostly reads as noise.</p>
+      <p>Berlin is full of community organisations, and most of them communicate in the same crowded way. In a feed that gives a passing viewer three or four seconds, that noise blurs together and a young community is easy to miss. ACTA also had no shared system to work from: communication was made one post at a time, with no logic carrying from one to the next, so nothing accumulated into something recognisable. <mark>The gap was structural: not a lack of effort, but the absence of a system.</mark></p>
 
-      <p>The community also had no shared design system to work from. Communication was made one post at a time, with no common logic carrying from one to the next, so nothing accumulated into something recognisable. <mark>The gap was structural: not a lack of effort, but the absence of a system.</mark></p>
-
-      <p>The brand also had a second job most communities do not. It had to stay <mark>warm and welcoming</mark> for the community, and <mark>structured and credible</mark> for the schools, NGOs, and funders it wants to run training and youth programmes with. Two registers, held in one system that stays coherent no matter who is making things.</p>
-
-    </section>
-
-    <!-- 2 — THE STARTING POINT -->
-    <section>
-      <h2 class="case-section-title">The starting point</h2>
-      <p>ACTA came to me wanting a visual identity, but the brief was loose: a name, a few events, and a feeling of what they wanted rather than a definition of it. So the first task was not design. It was turning that vagueness into something precise enough to design against.</p>
+      <p>And the brand had a second job most communities do not. It had to stay <mark>warm and welcoming</mark> for the community, and <mark>structured and credible</mark> for the schools, NGOs, and funders it wants to run training and youth programmes with. Two registers, held in one system that stays coherent no matter who is making things.</p>
 
       <div class="case-callouts">
         <div class="case-callout">
           <p class="case-callout-title">My role</p>
           <div class="case-callout-content">
-            Solo designer, from brief to handoff. Brand strategy, verbal identity, behavioural guidelines, and the full visual system.
+            Solo designer, from brief to handoff. Brand strategy, verbal and behavioural identity, visual system, content strategy, content production, templates and team training.
           </div>
         </div>
         <div class="case-callout">
@@ -111,36 +175,32 @@
           <div class="case-callout-content">
             <ul>
               <li>Figma</li>
-              <li>Canva (team handoff)</li>
+              <li>Canva (templates and team handoff)</li>
+              <li>Eventbrite</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3 — BUILDING THE STRATEGY -->
-    <section>
-      <h2 class="case-section-title">Building the strategy</h2>
-      <p>To design for a community, I first had to understand it, precisely. ACTA gave me fragments. <mark>So I built the strategic foundation myself,</mark> gathering everything they shared and expanding it into something exact: who ACTA is for, why it exists, what makes it different, and how it should sound.</p>
+    <!-- ====== CHAPTER 1: STRATEGY ====== -->
+    <section id="strategy">
+      <div class="ch-open">
+        <span class="ch-open-num">Chapter 1</span>
+        <h2 class="case-section-title" style="margin-top:0;">Strategy</h2>
+      </div>
+      <div class="ch-brief">
+        <div><b>The problem</b><p>ACTA asked for a visual identity, but had a name, a few events, and a feeling rather than a definition of who they were.</p></div>
+        <div><b>What I did</b><p>Built the strategic foundation and the verbal and behavioural identity myself, as two documents the team still works from.</p></div>
+        <div><b>Why it matters</b><p>Every visual and editorial decision that followed points back to something written here.</p></div>
+      </div>
 
-      <p>The work used the frameworks you would expect of a brand strategy: a positioning statement, audience segmentation across the three groups ACTA serves (peers, youth, and institutional partners), a competitor and white-space analysis of the adjacent Berlin organisations, a brand architecture, and a defined personality and voice. It went beyond strategy into the <mark>verbal identity</mark> (tone of voice, vocabulary, and the pitches ACTA uses) and the <mark>behavioural identity</mark> (event rituals and community guidelines), so the brand holds together in words and in conduct, not only in images.</p>
+      <p>To design for a community, I first had to understand it precisely. ACTA gave me fragments. <mark>So I built the strategic foundation myself,</mark> gathering everything they shared, researching the landscape they sit in, and expanding it into something exact: who ACTA is for, why it exists, what makes it different, and how it should sound.</p>
 
-      <p>A handful of decisions from that work shaped everything visual that came after. ACTA is organised around <mark>third spaces,</mark> the places beyond home and work that are disappearing, and rebuilding them. It runs on four pillars. It speaks in two registers, warm for the community and structured for institutions. Its character is <mark>quietly bold, warm, and unpolished but precise,</mark> and deliberately not corporate, not over-polished, not aestheticised over substance. Two of these set firm rules before any visual work began: the two registers, and inclusion treated as a design principle rather than a label.</p>
+      <p>The first document, the strategic foundation, holds the positioning, mission and vision, the brand story, the four pillars, three audience profiles (peers, youth, institutional partners), a competitor analysis of five adjacent Berlin organisations, the brand personality, and a map of every touchpoint with the job it has to do. The second, the brand essentials, is the operational layer: the <mark>verbal identity</mark> (tone of voice rules, vocabulary, the elevator pitches) and the <mark>behavioural identity</mark> (event rituals, how newcomers are welcomed, community guidelines). Together they mean the brand holds in words and in conduct, not only in images.</p>
 
-      <p>The finished strategy became more than my own brief. It is a document the ACTA team still returns to, to keep their communication and their actions aligned.</p>
-
-      <p>The architecture, the personality, and the guardrails, at a glance:</p>
-
-      <style>
-        .sf { margin-top: 8px; }
-        .sf-sub { font-size: clamp(16px, 2vw, 19px); font-weight: 600; margin: 26px 0 12px; }
-        .sf-grid { display: grid; gap: 14px; }
-        .sf-cards { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-        .sf-cards-2 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-        .sf-card { background: #FFFFFF; border: 1px solid #E7E5D2; border-radius: 14px; padding: clamp(16px, 2.4vw, 22px); }
-        .sf-card h4 { margin: 0 0 6px; font-size: clamp(16px, 1.9vw, 19px); font-weight: 600; line-height: 1.2; }
-        .sf-card p { margin: 0; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.35; opacity: .85; }
-      </style>
+      <h3 class="sf-sub">Where ACTA stands</h3>
+      <p>Researching five adjacent organisations showed what ACTA could and could not claim. The peer-to-peer model is a category convention in Berlin, not a distinction. What nobody else organises around is <mark>the third-space frame,</mark> the integration of community, training and action encoded in the name, and inclusion-by-design for neurodivergence and social preference as a default in everyday community life. That became the defensible position, and the brief for everything after.</p>
 
       <div class="sf">
         <h3 class="sf-sub">The four pillars</h3>
@@ -168,25 +228,52 @@
           <div class="sf-card"><h4>Not performative or hype-driven</h4><p>Grounded and descriptive, no "we're so excited to announce."</p></div>
         </div>
       </div>
+
+      <h3 class="sf-sub">How ACTA sounds</h3>
+      <p>The voice rests on four principles, and every piece of writing has to reflect at least three: <mark>plainspoken, specific over generic, matter-of-fact about meaningful work, inclusive by default.</mark> "24 onions, 24 potatoes" does the work that "an incredible amount of food" would fail at. The same principles flex across two registers, casual for the community and more careful for institutions, without ever becoming bureaucratic.</p>
+
+      <h3 class="sf-sub">Every touchpoint has a job</h3>
+      <p>The strategy maps the path an audience takes from discovery to contribution, and gives each touchpoint one primary goal. This is what turned design decisions into testable ones: the question for any piece stops being "does this look right" and becomes "does this do its job." It is also the bridge to the content chapter, because it told me what Instagram, Eventbrite and the website each had to achieve.</p>
+      <table class="tp">
+        <thead><tr><th>Touchpoint</th><th>Stage</th><th>Primary job</th></tr></thead>
+        <tbody>
+          <tr><td>Instagram posts</td><td>Discovery to curiosity</td><td>Make ACTA recognisable; communicate the third-space frame.</td></tr>
+          <tr><td>Instagram stories</td><td>Curiosity to first attendance</td><td>Show ACTA in action; trigger event attendance.</td></tr>
+          <tr><td>Eventbrite</td><td>First attendance</td><td>Convert curious people to attendees; give sensory and practical info upfront.</td></tr>
+          <tr><td>Website</td><td>Curiosity to partnerships</td><td>Establish credibility; tell the story; demonstrate training methodology.</td></tr>
+          <tr><td>In-person events</td><td>Return to contribution</td><td>Make people feel they belong; invite contribution.</td></tr>
+        </tbody>
+      </table>
+
+      <details class="more">
+        <summary>Inside the strategy documents</summary>
+        <div class="more-body">
+          <p><strong>Audiences.</strong> Peers (adults 25 to 40, international and local, Berlin by choice, who turn off when it feels like another networking thing); youth 13 to 20, reached through schools and Erasmus+ programmes rather than directly, many of them neurodivergent; and institutional partners, who need a credible, documented delivery partner and turn off when communication feels too informal. Each profile lists what they need, where they find ACTA, and what puts them off.</p>
+          <p><strong>Competitor analysis.</strong> Five organisations profiled on positioning, programming, audience, language, funding, tone and inclusion practice, with a synthesis of where ACTA's white space is.</p>
+          <p><strong>Verbal identity.</strong> Tone of voice rules with do's and don'ts, words to use and words to avoid, the six locked format names (Plenum, Third Späti, The Workshop, ACTA Trainings, Spreading Love, Salon), multilingual terms kept as they are, a short and a long elevator pitch, and the public About paragraph.</p>
+          <p><strong>Behavioural identity.</strong> Opening and closing rituals for each format, two-layered welcome for newcomers, candidate signature gestures, and full community guidelines: what ACTA welcomes, expects, will not tolerate, and how it responds when something is flagged.</p>
+        </div>
+      </details>
+
+      <p style="margin-top:28px;">The finished strategy became more than my own brief. <mark>It is a document the ACTA team still returns to,</mark> to keep their communication and their actions aligned.</p>
     </section>
 
-    <!-- 4 — FROM STRATEGY TO SYSTEM (the bridge) -->
-    <section>
-      <h2 class="case-section-title">From strategy to system</h2>
+    <!-- ====== CHAPTER 2: IDENTITY ====== -->
+    <section id="identity">
+      <div class="ch-open">
+        <span class="ch-open-num">Chapter 2</span>
+        <h2 class="case-section-title" style="margin-top:0;">Identity</h2>
+      </div>
+      <div class="ch-brief">
+        <div><b>The constraint</b><p>ACTA is run by non-designers who make their own posts. The brand had to be composed, not drawn.</p></div>
+        <div><b>The system</b><p>A logo built on one idea, four colours with meaning, two typefaces, a kit of named shapes, three set patterns.</p></div>
+        <div><b>The rule</b><p>The parts are locked, the combinations are open. Every diagonal traces back to the logo.</p></div>
+      </div>
+
+      <h3 class="lsys-subtitle">From strategy to system</h3>
       <p>Before deciding what ACTA should look like, I mapped the qualities the identity had to carry, the keywords that came out of the strategy. A small set of dominant ideas surfaced: <mark>quietly bold, warm, unpolished but precise, peer-to-peer, analog, and inclusive.</mark></p>
-
-      <!-- NEW SLOT — the keyword mind-map. Export as imgs/Acta/mind-map.webp -->
       <img src="imgs/Acta/mind-map.webp" alt="A mind-map of the keywords drawn from the strategy" />
-
-      <p style="margin-top:28px;">From that map, and from visual research, one direction held: <mark>a constrained kit of geometric parts that anyone can recombine into a coherent whole.</mark> The reasoning was practical as much as visual. ACTA is run by non-designers who need to make their own posts, so the brand had to be composed rather than drawn, and never leave a layout to chance.</p>
-
-      <p>The approach sits in a clear lineage: Italian rationalist design, Bauhaus geometry, Nordic system identities, and contemporary museum branding, all of which build a coherent visual world from a fixed set of parts.</p>
-    </section>
-
-    <!-- 5 — THE VISUAL IDENTITY -->
-    <section>
-      <h2 class="case-section-title">The visual identity</h2>
-      <p>The result is a fixed vocabulary the brand is built from: a logo system, a colour logic, two typefaces, a kit of shapes, and a set of patterns. <mark>The parts are locked, the combinations are open.</mark></p>
+      <p style="margin-top:28px;">From that map, and from visual research, one direction held: <mark>a constrained kit of geometric parts that anyone can recombine into a coherent whole.</mark> The approach sits in a clear lineage: Italian rationalist design, Bauhaus geometry, Nordic system identities, and contemporary museum branding, all of which build a coherent visual world from a fixed set of parts.</p>
 
       <style>
         .lsys { display: grid; gap: 14px; margin-top: 8px; }
@@ -217,10 +304,9 @@
         .lsys-card .case-episode-desc { margin: 0; margin-top: auto; }
       </style>
 
-      <h3 class="lsys-subtitle">New logo system</h3>
+      <h3 class="lsys-subtitle">Logo system</h3>
       <p>The whole system hangs on one move: reading the <mark>A as a doorway.</mark> Its interior triangle is a threshold, the gap between outside and in, which is ACTA's third-space idea made into a shape.</p>
       <p>The letterforms are built on a construction grid, and the diagonal used everywhere else in the brand, photo cuts, colour splits, container edges, is the <mark>signature angle, taken from the slope of the A's leg.</mark> Every diagonal in the system traces back to the logo, which is what keeps a kit made for non-designers from drifting.</p>
-
 
       <div class="lsys" style="margin-top:14px;">
         <div class="lsys-tile lsys-card lsys-card--full">
@@ -232,12 +318,12 @@
           <div class="lsys-tile lsys-card">
             <span class="case-episode-num">Secondary</span>
             <img src="imgs/Acta/logo_system/secondary.webp" alt="ACTA secondary logo with the full association name" />
-            <p class="case-episode-desc">The secondary logo, for institutional contexts like email signatures.</p>
+            <p class="case-episode-desc">For institutional contexts like email signatures.</p>
           </div>
           <div class="lsys-tile lsys-card">
             <span class="case-episode-num">Brand Mark</span>
             <img src="imgs/Acta/logo_system/brandmark.webp" alt="ACTA brand mark, the A as a doorway" />
-            <p class="case-episode-desc">The icon, used when there isn't room for the full logo, like an Instagram profile picture.</p>
+            <p class="case-episode-desc">When there isn't room for the full logo, like an Instagram profile picture.</p>
           </div>
           <div class="lsys-tile lsys-card">
             <span class="case-episode-num">ACTA Trainings</span>
@@ -247,16 +333,16 @@
           <div class="lsys-tile lsys-card">
             <span class="case-episode-num">Future</span>
             <img src="imgs/Acta/logo_system/future_logo.webp" alt="ACTA Berlin lockup" />
-            <p class="case-episode-desc">A locality lockup, kept in case ACTA expands beyond Berlin in future.</p>
+            <p class="case-episode-desc">A locality lockup, kept in case ACTA expands beyond Berlin.</p>
           </div>
         </div>
         <div class="lsys-row lsys-colours">
           <div class="lsys-tile" style="background:#EFEEDA"><img src="imgs/Acta/logo_system/cream_back.webp" alt="Logo on cream" /></div>
           <div class="lsys-tile" style="background:#1F1F1A"><img src="imgs/Acta/logo_system/black_back.webp" alt="Logo on near-black" /></div>
-          <div class="lsys-tile" style="background:#D94050"><img src="imgs/Acta/logo_system/red_back.webp" alt="Logo on Belonging red" /></div>
-          <div class="lsys-tile" style="background:#6A9E3F"><img src="imgs/Acta/logo_system/green_back.webp" alt="Logo on Empowerment green" /></div>
-          <div class="lsys-tile" style="background:#1798AB"><img src="imgs/Acta/logo_system/turquoise_back.webp" alt="Logo on Civic teal" /></div>
-          <div class="lsys-tile" style="background:#6F3A98"><img src="imgs/Acta/logo_system/purple_back.webp" alt="Logo on Creative violet" /></div>
+          <div class="lsys-tile" style="background:#D94050"><img src="imgs/Acta/logo_system/red_back.webp" alt="Logo on red" /></div>
+          <div class="lsys-tile" style="background:#6A9E3F"><img src="imgs/Acta/logo_system/green_back.webp" alt="Logo on green" /></div>
+          <div class="lsys-tile" style="background:#1798AB"><img src="imgs/Acta/logo_system/turquoise_back.webp" alt="Logo on teal" /></div>
+          <div class="lsys-tile" style="background:#6F3A98"><img src="imgs/Acta/logo_system/purple_back.webp" alt="Logo on violet" /></div>
         </div>
         <div class="lsys-row lsys-context">
           <div class="lsys-tile"><img src="imgs/Acta/logo_system/photo1.webp" alt="Logo over photography" /></div>
@@ -266,8 +352,11 @@
 
       <p style="margin-top:28px;">The split between the lockups is the strategy made visible: the secondary logo and the ACTA Trainings lockup exist because the brand speaks in <mark>two registers,</mark> one warm for the community, one structured for the institutions it wants to run training with.</p>
 
+      <p style="margin-top:28px;">The angle does its most visible work on the event covers, where it cuts the photo from the colour field. One rule, taken from the letterform, decides the composition of every cover the team will ever make.</p>
+      <img src="imgs/Acta/angle-in-use.webp" alt="How the slope of the A's leg becomes the diagonal cut on the event covers" style="margin-top:8px;" />
+
       <h3 class="lsys-subtitle">Colour palette</h3>
-      <p style="margin-top:28px;">Colour carries meaning. Each of the four pillars owns one colour, so <mark>colour tells you which pillar a piece of content belongs to</mark> before you read a word. Anything not tied to a pillar stays in warm near-black and cream.</p>
+      <p style="margin-top:28px;">Colour carries meaning. In the identity, each of the four pillars owns one colour. In everyday content the same four colours become <mark>four categories a reader can grasp at a glance,</mark> three of them taken straight from the association's name: Community, Training, Action, and Topics we care about. Anything not tied to a category stays in warm near-black and cream.</p>
       <style>
         .pal { margin-top: 8px; }
         .pal-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
@@ -281,6 +370,7 @@
         .pal-name { display: block; font-weight: 600; font-size: clamp(17px, 2.1vw, 22px); line-height: 1.15; }
         .pal-hex  { display: block; font-size: clamp(17px, 2.1vw, 22px); line-height: 1.15; opacity: .92; }
         .pal-role { font-size: clamp(14px, 1.7vw, 17px); line-height: 1.3; }
+        .pal-role small { display: block; font-size: 12px; opacity: .8; margin-top: 4px; }
         .pal-caption { margin: 10px 2px 0; font-size: 13px; line-height: 1.3; opacity: .7; text-align: center; }
         .pal-neutrals { margin-top: 22px; }
         .pal-note { font-size: 14px; line-height: 1.45; margin-bottom: 14px; max-width: 62ch; }
@@ -293,28 +383,28 @@
           <div>
             <div class="pal-box" style="background:#D94050">
               <div><span class="pal-name">Amaranth red</span><span class="pal-hex">#D94050</span></div>
-              <div class="pal-role">Belonging &amp; Connection</div>
+              <div class="pal-role">Community<small>Belonging &amp; Connection</small></div>
             </div>
             <p class="pal-caption">warm, alive, gathering</p>
           </div>
           <div>
             <div class="pal-box" style="background:#6A9E3F">
               <div><span class="pal-name">Leaf Green</span><span class="pal-hex">#6A9E3F</span></div>
-              <div class="pal-role">Empowerment &amp; Education</div>
+              <div class="pal-role">Training<small>Empowerment &amp; Education</small></div>
             </div>
             <p class="pal-caption">growth, energy, learning</p>
           </div>
           <div>
             <div class="pal-box" style="background:#1798AB">
               <div><span class="pal-name">Teal</span><span class="pal-hex">#1798AB</span></div>
-              <div class="pal-role">Civic Engagement &amp; Impact</div>
+              <div class="pal-role">Action<small>Civic Engagement &amp; Impact</small></div>
             </div>
             <p class="pal-caption">considered, fresh civic energy</p>
           </div>
           <div>
             <div class="pal-box" style="background:#6F3A98">
               <div><span class="pal-name">Royal violet</span><span class="pal-hex">#6F3A98</span></div>
-              <div class="pal-role">Social &amp; Creative Entrepreneurship</div>
+              <div class="pal-role">Topics we care about<small>Social &amp; Creative Entrepreneurship</small></div>
             </div>
             <p class="pal-caption">creativity, imagination, weight</p>
           </div>
@@ -335,7 +425,7 @@
         </div>
       </div>
 
-      <p style="margin-top:28px;">Colour also carries the inclusion rule. All four pillar colours hold body type on cream, so <mark>meaning is never left to colour alone,</mark> the inclusion-by-design principle made literal rather than stated.</p>
+      <p style="margin-top:28px;">Colour also carries the inclusion rule. All four colours hold body type on cream, so <mark>meaning is never left to colour alone,</mark> the inclusion-by-design principle made literal rather than stated.</p>
 
       <h3 class="lsys-subtitle">Type system</h3>
       <p style="margin-top:28px;">Two typefaces split the work: <mark>Space Grotesk</mark> for identity moments and headlines, <mark>Atkinson Hyperlegible</mark> for body and information, chosen for legibility without looking like an accessibility font.</p>
@@ -369,34 +459,13 @@
         .kit-name { font-weight: 600; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.2; margin: 0; color: #1F1F1A; }
       </style>
       <div class="kit">
-        <div class="kit-item">
-          <div class="kit-shape"><img src="imgs/Acta/shapes/brandmark.svg" alt="Threshold" /></div>
-          <p class="kit-name">Threshold</p>
-        </div>
-        <div class="kit-item">
-          <div class="kit-shape"><img src="imgs/Acta/shapes/quare.svg" alt="Space" /></div>
-          <p class="kit-name">Space</p>
-        </div>
-        <div class="kit-item">
-          <div class="kit-shape"><img src="imgs/Acta/shapes/diagonal.svg" alt="Motion" /></div>
-          <p class="kit-name">Motion</p>
-        </div>
-        <div class="kit-item">
-          <div class="kit-shape"><img src="imgs/Acta/shapes/triangle.svg" alt="Action" /></div>
-          <p class="kit-name">Action</p>
-        </div>
-        <div class="kit-item">
-          <div class="kit-shape"><img src="imgs/Acta/shapes/circle.svg" alt="Gathering" /></div>
-          <p class="kit-name">Gathering</p>
-        </div>
-        <div class="kit-item">
-          <div class="kit-shape"><img src="imgs/Acta/shapes/half-circle.svg" alt="Welcome" /></div>
-          <p class="kit-name">Welcome</p>
-        </div>
-        <div class="kit-item">
-          <div class="kit-shape"><img src="imgs/Acta/shapes/parallelopipedo.svg" alt="Window" /></div>
-          <p class="kit-name">Window</p>
-        </div>
+        <div class="kit-item"><div class="kit-shape"><img src="imgs/Acta/shapes/brandmark.svg" alt="Threshold" /></div><p class="kit-name">Threshold</p></div>
+        <div class="kit-item"><div class="kit-shape"><img src="imgs/Acta/shapes/quare.svg" alt="Space" /></div><p class="kit-name">Space</p></div>
+        <div class="kit-item"><div class="kit-shape"><img src="imgs/Acta/shapes/diagonal.svg" alt="Motion" /></div><p class="kit-name">Motion</p></div>
+        <div class="kit-item"><div class="kit-shape"><img src="imgs/Acta/shapes/triangle.svg" alt="Action" /></div><p class="kit-name">Action</p></div>
+        <div class="kit-item"><div class="kit-shape"><img src="imgs/Acta/shapes/circle.svg" alt="Gathering" /></div><p class="kit-name">Gathering</p></div>
+        <div class="kit-item"><div class="kit-shape"><img src="imgs/Acta/shapes/half-circle.svg" alt="Welcome" /></div><p class="kit-name">Welcome</p></div>
+        <div class="kit-item"><div class="kit-shape"><img src="imgs/Acta/shapes/parallelopipedo.svg" alt="Window" /></div><p class="kit-name">Window</p></div>
       </div>
 
       <p style="margin-top:28px;">Those shapes recombine into a small number of <mark>set patterns:</mark> one for everyday posts, one reserved for Trainings, one for merchandise. The team places a ready-made pattern rather than designing a new one. The Trainings-only pattern is the two-register logic again, a structured signal for the institutional arm.</p>
@@ -408,82 +477,135 @@
         .pat-sub { margin: 0; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.35; opacity: .85; }
       </style>
       <div class="pat">
-        <div class="pat-card">
-          <img class="pat-strip" src="imgs/Acta/pattern1.svg" alt="Pattern 1" />
-          <p class="pat-name">Pattern 1</p>
-          <p class="pat-sub">Used on all posts except Trainings and merch.</p>
-        </div>
-        <div class="pat-card">
-          <img class="pat-strip" src="imgs/Acta/pattern2.svg" alt="Pattern 2, Trainings" />
-          <p class="pat-name">Pattern 2 (Trainings)</p>
-          <p class="pat-sub">Used only on ACTA Trainings posts.</p>
-        </div>
-        <div class="pat-card">
-          <img class="pat-strip" src="imgs/Acta/pattern3.svg" alt="Pattern 3, Merch" />
-          <p class="pat-name">Pattern 3 (Merch)</p>
-          <p class="pat-sub">Used on merch and collateral only.</p>
-        </div>
+        <div class="pat-card"><img class="pat-strip" src="imgs/Acta/pattern1.svg" alt="Pattern 1" /><p class="pat-name">Pattern 1</p><p class="pat-sub">Used on all posts except Trainings and merch.</p></div>
+        <div class="pat-card"><img class="pat-strip" src="imgs/Acta/pattern2.svg" alt="Pattern 2, Trainings" /><p class="pat-name">Pattern 2 (Trainings)</p><p class="pat-sub">Used only on ACTA Trainings posts.</p></div>
+        <div class="pat-card"><img class="pat-strip" src="imgs/Acta/pattern3.svg" alt="Pattern 3, Merch" /><p class="pat-name">Pattern 3 (Merch)</p><p class="pat-sub">Used on merch and collateral only.</p></div>
       </div>
-
     </section>
 
-    <!-- 6 — THE SYSTEM IN USE -->
-    <section>
-      <h2 class="case-section-title">The system in use</h2>
-      <p>The first place the system had to work was the one touchpoint ACTA already had: Instagram. Before any templates, I mapped <mark>what each kind of post is for,</mark> an editorial system covering events, announcements, recaps, training, the people behind ACTA, and the topics they care about. Templates follow purpose, not the other way around.</p>
-
-      <style>
-        .posts-gallery { display: grid; gap: 14px; grid-template-columns: repeat(5, 1fr); margin-top: 8px; }
-        .posts-gallery img { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 12px; }
-        @media (max-width: 760px) { .posts-gallery { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 480px) { .posts-gallery { grid-template-columns: repeat(2, 1fr); } }
-      </style>
-      <div class="posts-gallery">
-        <img src="imgs/Acta/posts/plenum_post.webp" alt="Plenum event post" />
-        <img src="imgs/Acta/posts/Salon_post.webp" alt="Salon event post" />
-        <img src="imgs/Acta/posts/spreadingLove_post.webp" alt="Spreading Love event post" />
-        <img src="imgs/Acta/posts/workshop_post.webp" alt="Workshop event post" />
-        <img src="imgs/Acta/posts/Trainings_post.webp" alt="ACTA Trainings post" />
-        <img src="imgs/Acta/posts/upcomingEvents_post.webp" alt="Upcoming events post" />
-        <img src="imgs/Acta/posts/impressions_post.webp" alt="Impressions post" />
-        <img src="imgs/Acta/posts/TopicsWeCareAbout_post.webp" alt="Topics we care about post" />
-        <img src="imgs/Acta/posts/eventRewind_post.webp" alt="Event rewind post" />
-        <img src="imgs/Acta/posts/ThisIsActa_post.webp" alt="This is ACTA pinned post" />
+    <!-- ====== CHAPTER 3: CONTENT ====== -->
+    <section id="content">
+      <div class="ch-open">
+        <span class="ch-open-num">Chapter 3</span>
+        <h2 class="case-section-title" style="margin-top:0;">Content</h2>
+      </div>
+      <div class="ch-brief">
+        <div><b>The brief</b><p>Instagram's job, from the strategy: make ACTA recognisable and move people from discovery to their first event.</p></div>
+        <div><b>The system</b><p>Four colour-coded categories, an editorial system built on the life of an event, and templates for every post type.</p></div>
+        <div><b>Beyond the feed</b><p>Flyers, an event deck, the Eventbrite page and a link-in-bio site, all extending from the same kit.</p></div>
       </div>
 
-      <p style="margin-top:28px;">Each event post works like a <mark>book cover:</mark> one image, one headline, one colour. In a feed that gives you three or four seconds, someone who knows nothing about the event can still grasp it at a glance, and scroll on for the detail if they want it. It is also a position: a grounded, intentional presence in the noise rather than one more thing shouting.</p>
+      <p>The first place the system had to work was the one touchpoint ACTA already had. Before any templates, I mapped <mark>what each kind of post is for</mark> and when in the life of an event it appears. Templates follow purpose, not the other way around, and the team fills a template rather than deciding a layout.</p>
+
+      <h3 class="lsys-subtitle">The name is the navigation</h3>
+      <p>The association's name already says what it does: Community, Training, Action. So the content categories are those three words, each in its colour, plus <mark>Topics we care about</mark> in violet for the posts where ACTA takes a position on social and political issues, its quietly bold side. A reader who knows nothing about ACTA can tell from the colour of a post what kind of event it is. The same four categories become the story highlights at the top of the profile, so the archive is sorted the moment someone lands on it.</p>
       <style>
-        .book-carousel { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); margin-top: 8px; }
-        .book-carousel img { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 12px; }
-        @media (max-width: 480px) { .book-carousel { grid-template-columns: 1fr; } }
+        .hl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 3vw, 28px); margin-top: 8px; margin-bottom: 22px; align-items: start; max-width: 600px; }
+        .hl figure { margin: 0; text-align: center; min-width: 0; }
+        .hl img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 1px solid #E7E5D2; }
+        .hl figcaption { font-size: 13px; line-height: 1.3; margin-top: 8px; opacity: .75; }
+        .hl figcaption b { display: block; font-weight: 600; opacity: 1; color: #1F1F1A; }
+        @media (max-width: 480px) { .hl figcaption { font-size: 11px; } }
       </style>
-      <div class="book-carousel">
-        <img src="imgs/Acta/bookPost1.webp" alt="Event post, first slide with the essential information" />
-        <img src="imgs/Acta/bookPost2.webp" alt="Event post, second slide going deeper" />
-        <img src="imgs/Acta/bookPost3.webp" alt="Event post, third slide with full details" />
+      <div class="hl">
+        <figure><img src="imgs/Acta/profilePic.webp" alt="ACTA profile picture, also used as the upcoming events highlight" /><figcaption><b>Profile picture</b>Also the Upcoming events highlight</figcaption></figure>
+        <figure><img src="imgs/Acta/highlights/community.webp" alt="Community highlight cover" /><figcaption><b>Community</b></figcaption></figure>
+        <figure><img src="imgs/Acta/highlights/trainings.webp" alt="Trainings highlight cover" /><figcaption><b>Trainings</b></figcaption></figure>
+        <figure><img src="imgs/Acta/highlights/action.webp" alt="Action highlight cover" /><figcaption><b>Action</b></figcaption></figure>
+      </div>
+      <div class="g g-4" style="align-items:end;">
+        <figure class="cat-red"><span class="cat">Community</span><img src="imgs/Acta/posts/Community.webp" alt="Community event cover in red" /></figure>
+        <figure class="cat-green"><span class="cat">Training</span><img src="imgs/Acta/posts/Trainings.webp" alt="Training event cover in green" /></figure>
+        <figure class="cat-teal"><span class="cat">Action</span><img src="imgs/Acta/posts/Action.webp" alt="Action event cover in teal" /></figure>
+        <figure class="cat-violet"><span class="cat">Topics</span><img src="imgs/Acta/posts/Topics.webp" alt="Topics we care about cover in violet" /></figure>
       </div>
 
-      <p style="margin-top:28px;">Smaller decisions do quiet work. The warm <mark>cream background</mark> is easier on the eyes than pure white and reads less corporate. And three separate "who we are" posts became <mark>one pinned carousel,</mark> so a first-time visitor has a single clear place to start.</p>
-
-      <p style="margin-top:28px;">Read as a whole, the redesigned profile is built to hold together. <mark>Coloured posts signal events, photos in matching colours come from those events,</mark> and the rhythm makes the feed scannable at a glance. The current profile and the redesigned system, side by side:</p>
-      <style>
-        .ba-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 8px; }
-        .ba-grid figure { margin: 0; }
-        .ba-grid img { display: block; height: clamp(340px, 46vw, 520px); width: auto; max-width: 100%; margin: 0 auto; border-radius: 14px; }
-        .ba-grid figcaption { font-size: 14px; font-weight: 600; margin-top: 10px; text-align: center; }
-      </style>
-      <div class="ba-grid">
-        <figure>
-          <img src="imgs/Acta/profileGrid_old.webp" alt="ACTA's current Instagram grid" />
-          <figcaption>Before</figcaption>
-        </figure>
-        <figure>
-          <img src="imgs/Acta/profileGrid_new.webp" alt="The redesigned profile grid built on the system" />
-          <figcaption>After</figcaption>
-        </figure>
+      <h3 class="lsys-subtitle">An editorial system built on the life of an event</h3>
+      <p>Most of ACTA's content comes from events, so the editorial system follows the arc of one: it is announced, it happens, it is remembered. Each stage has its own post type with its own job, and together they give the team a rhythm to publish to <mark>without deciding what to post from scratch each week.</mark></p>
+      <div class="g g-3">
+        <figure><img src="imgs/Acta/posts/upcoming.webp" alt="Upcoming events post" /><figcaption><b>Upcoming events</b>Monthly calendar overview: everything happening, in one post.</figcaption></figure>
+        <figure><img src="imgs/Acta/posts/Community.webp" alt="Event announcement post" /><figcaption><b>Event announcement</b>Single event spotlight, one image, one headline, one colour.</figcaption></figure>
+        <figure><img src="imgs/Acta/posts/story1.webp" alt="Story from during an event" /><figcaption><b>During the event</b>Stories from the room as it happens.</figcaption></figure>
+        <figure><img src="imgs/Acta/posts/story2.webp" alt="Story from during an event" /><figcaption><b>During the event</b>Photos in the category colour, so the feed reads as one system.</figcaption></figure>
+        <figure><img src="imgs/Acta/posts/rewind.webp" alt="Event rewind post" /><figcaption><b>Event rewind</b>Media from the event, posted in the days after.</figcaption></figure>
+        <figure><img src="imgs/Acta/posts/impressions.webp" alt="Impressions post" /><figcaption><b>Impressions</b>Quotes and learnings from the people who came.</figcaption></figure>
       </div>
 
-      <p style="margin-top:28px;">The system is handed to the team as <mark>Canva templates,</mark> so they can make things without me, and they begin posting with it from the next handoff session. Social is the foundation the rest grows from: the website, the event registration flow, and printed flyers all extend from the same kit, so they hold together without being rebuilt from scratch each time.</p>
+      <p style="margin-top:28px;">At the end of each season, a reel gathers every event into one <mark>seasonal recap,</mark> the archive of what ACTA actually did rather than what it announced.</p>
+      <div class="g g-2" style="align-items:start;">
+        <figure><img src="imgs/Acta/seasonal_recap/cover.webp" alt="Seasonal recap cover" /><figcaption><b>Seasonal recap</b>Cover</figcaption></figure>
+        <figure><img src="imgs/Acta/seasonal_recap/June-SeasonalRecap.gif" alt="June seasonal recap reel" /><figcaption><b>Seasonal recap</b>June reel</figcaption></figure>
+      </div>
+
+      <h3 class="lsys-subtitle">Outside the cycle</h3>
+      <p>Three post types sit outside the event arc. <mark>This is ACTA</mark> is the pinned carousel, one clear place for a first-time visitor to start, replacing three separate "who we are" posts. <mark>Topics we care about</mark> is where ACTA speaks on the issues behind its work. <mark>ACTA Trainings</mark> carries the institutional register into the feed: information on Erasmus+ and other EU-funded projects, structured for the schools and NGOs who read it, on the Trainings-only pattern.</p>
+      <div class="g g-4 g-scroll">
+        <figure><img src="imgs/Acta/This_is_ACTA/1.webp" alt="This is ACTA carousel, slide 1" /><figcaption><b>This is ACTA</b>Pinned carousel</figcaption></figure>
+        <figure><img src="imgs/Acta/This_is_ACTA/2.gif" alt="This is ACTA carousel, slide 2" /></figure>
+        <figure><img src="imgs/Acta/This_is_ACTA/3.webp" alt="This is ACTA carousel, slide 3" /></figure>
+        <figure><img src="imgs/Acta/This_is_ACTA/4.webp" alt="This is ACTA carousel, slide 4" /></figure>
+      </div>
+      <div class="g g-5 g-scroll" style="margin-top:14px;">
+        <figure><img src="imgs/Acta/TrainingsEU1.webp" alt="ACTA Trainings carousel, slide 1" /><figcaption><b>ACTA Trainings</b>EU-funded projects carousel</figcaption></figure>
+        <figure><img src="imgs/Acta/TrainingsEU2.webp" alt="ACTA Trainings carousel, slide 2" /></figure>
+        <figure><img src="imgs/Acta/TrainingsEU3.webp" alt="ACTA Trainings carousel, slide 3" /></figure>
+        <figure><img src="imgs/Acta/TrainingsEU4.webp" alt="ACTA Trainings carousel, slide 4" /></figure>
+        <figure><img src="imgs/Acta/TrainingsEU5.webp" alt="ACTA Trainings carousel, slide 5" /></figure>
+      </div>
+      <p style="margin-top:28px;">One more type was designed and shelved: Faces of ACTA, portraits and short stories of members in the spirit of Humans of New York. It stays in the system as an option for when the team has the capacity to run it.</p>
+
+      <h3 class="lsys-subtitle">Anatomy of an announcement</h3>
+      <p>Each event post works like a <mark>book cover:</mark> one image, one headline, one colour on the first slide, then the detail for whoever swipes. In a feed that gives you three or four seconds, someone who knows nothing about the event can still grasp it at a glance. Inside the carousel the information follows a fixed order, so every announcement reads the same way, whoever made it: what and when, then why it matters, then the practical and sensory details the strategy asks ACTA to give upfront.</p>
+      <div class="g g-3 g-scroll" style="align-items:end;">
+        <figure class="cat-teal"><span class="cat">Action</span><img src="imgs/Acta/ActionPost1.webp" alt="Action announcement, cover slide" /></figure>
+        <figure><img src="imgs/Acta/ActionPost2.webp" alt="Action announcement, second slide" /></figure>
+        <figure><img src="imgs/Acta/ActionPost3.webp" alt="Action announcement, third slide" /></figure>
+      </div>
+      <div class="g g-3 g-scroll" style="align-items:end; margin-top:14px;">
+        <figure class="cat-green"><span class="cat">Training</span><img src="imgs/Acta/TrainingsPost1.webp" alt="Training announcement, cover slide" /></figure>
+        <figure><img src="imgs/Acta/TrainingsPost2.webp" alt="Training announcement, second slide" /></figure>
+        <figure><img src="imgs/Acta/TrainingsPost3.webp" alt="Training announcement, third slide" /></figure>
+      </div>
+
+      <p style="margin-top:28px;">Read as a whole, the profile is built to hold together. <mark>Coloured covers signal events, photos in matching colours come from those events,</mark> and the rhythm makes the feed scannable at a glance. The profile before, and the system in place:</p>
+      <div class="g g-2 cat-grid" style="align-items:end;">
+        <figure><span class="cat">Before</span><img src="imgs/Acta/profileGrid_old.webp" alt="ACTA's Instagram grid before" /></figure>
+        <figure><span class="cat">After</span><img src="imgs/Acta/profileGrid_new.webp" alt="The profile grid built on the system" /></figure>
+      </div>
+
+      <h3 class="lsys-subtitle">Beyond the feed</h3>
+      <p>The strategy's touchpoint map says most people move from Instagram to Eventbrite to their first event. So the same kit had to carry them the whole way, and into the room. <mark>Every piece below is composed from the same parts</mark> as the posts, which is why the team can keep them consistent without a designer.</p>
+
+      <div class="g g-2 g-eq">
+        <figure><img src="imgs/Acta/event_flyer.webp" alt="Printed event flyer" /><figcaption><b>Event flyer</b>Print version of the event cover, same angle, same colour logic, for Spätis, cafés and venues.</figcaption></figure>
+        <figure><img src="imgs/Acta/ACTA-links.webp" alt="Link-in-bio page" /><figcaption><b>Link-in-bio site</b>Built in Canva for the Instagram bio, so people looking for events land on a page in the same system.</figcaption></figure>
+      </div>
+
+      <p style="margin-top:28px;">The Eventbrite page is where curiosity turns into attendance, and where the strategy asks for practical and sensory information upfront. I set up the organiser page with branded banners and guest imagery, and built <mark>event collections for each category,</mark> Community, Trainings and Action, so the sorting logic from Instagram carries through to registration.</p>
+      <div class="g g-eb">
+        <figure><img src="imgs/Acta/eventbrite_banner.webp" alt="Eventbrite organiser banner" /><figcaption><b>Eventbrite</b>Organiser banner</figcaption></figure>
+        <figure><img src="imgs/Acta/eventbrite_guest.webp" alt="Eventbrite guest imagery" /><figcaption><b>Eventbrite</b>Guest imagery and event collections</figcaption></figure>
+      </div>
+
+      <p style="margin-top:28px;">For events where something has to be presented, a <mark>slide deck template</mark> keeps the room on brand: the same typefaces, patterns and colour rules, so a Plenum or a partner meeting looks like the feed that brought people there.</p>
+      <style>
+        .deck { margin-top: 8px; }
+        .deck-cover { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 12px; }
+        .deck-thumbs { display: grid; gap: 8px; grid-template-columns: repeat(7, 1fr); margin-top: 8px; }
+        .deck-thumbs img { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 6px; }
+        @media (max-width: 640px) { .deck-thumbs { grid-template-columns: repeat(4, 1fr); } }
+      </style>
+      <div class="deck">
+        <img class="deck-cover" src="imgs/Acta/presentation/1.webp" alt="Event presentation deck, cover" />
+        <div class="deck-thumbs">
+          <img src="imgs/Acta/presentation/2.webp" alt="Deck slide 2" /><img src="imgs/Acta/presentation/3.webp" alt="Deck slide 3" /><img src="imgs/Acta/presentation/4.webp" alt="Deck slide 4" /><img src="imgs/Acta/presentation/5.webp" alt="Deck slide 5" /><img src="imgs/Acta/presentation/6.webp" alt="Deck slide 6" /><img src="imgs/Acta/presentation/7.webp" alt="Deck slide 7" /><img src="imgs/Acta/presentation/8.webp" alt="Deck slide 8" />
+          <img src="imgs/Acta/presentation/9.webp" alt="Deck slide 9" /><img src="imgs/Acta/presentation/10.webp" alt="Deck slide 10" /><img src="imgs/Acta/presentation/11.webp" alt="Deck slide 11" /><img src="imgs/Acta/presentation/12.webp" alt="Deck slide 12" /><img src="imgs/Acta/presentation/13.webp" alt="Deck slide 13" /><img src="imgs/Acta/presentation/14.webp" alt="Deck slide 14" /><img src="imgs/Acta/presentation/15.webp" alt="Deck slide 15" />
+          <img src="imgs/Acta/presentation/16.webp" alt="Deck slide 16" /><img src="imgs/Acta/presentation/17.webp" alt="Deck slide 17" /><img src="imgs/Acta/presentation/18.webp" alt="Deck slide 18" /><img src="imgs/Acta/presentation/19.webp" alt="Deck slide 19" /><img src="imgs/Acta/presentation/20.webp" alt="Deck slide 20" /><img src="imgs/Acta/presentation/21.webp" alt="Deck slide 21" /><img src="imgs/Acta/presentation/22.webp" alt="Deck slide 22" />
+        </div>
+      </div>
+
+      <h3 class="lsys-subtitle">Handoff</h3>
+      <p>Everything above is handed to the team as <mark>Canva templates,</mark> one per post type, plus the flyer, the deck and the Eventbrite assets. To make sure they are used the way they were designed, I recorded short screen tutorials walking through each template step by step. The team has started publishing with the system on its own; this case will grow with the numbers as they come in.</p>
 
       <style>
         .wip { margin-top: 28px; border: 1px solid #E7E5D2; border-radius: 14px; padding: clamp(16px, 2.4vw, 22px); background: #FFFFFF; }
@@ -492,16 +614,16 @@
       </style>
       <div class="wip">
         <span class="wip-label">In progress</span>
-        <p>The website, the Eventbrite registration flow, and printed event flyers are being built now, each extending from the same kit. I'll update this case as they go live.</p>
+        <p>The website is being built now, extending from the same kit. I'll update this case as it goes live.</p>
       </div>
     </section>
 
-    <!-- 7 — REFLECTION -->
+    <!-- ====== REFLECTION ====== -->
     <section>
       <h2 class="case-section-title">Reflection</h2>
-      <p>The hardest and most useful part was the strategy. ACTA handed me something vague, and turning it into a precise foundation forced me to <mark>understand the community before designing for it.</mark> Every visual decision after that had something firm to point back to.</p>
-      <p>The system is built on constraints, and that is the point. A fixed kit, one colour per pillar, set patterns: limits that make the right choice the easy choice, so the brand stays recognisable as it grows and as different hands make things. For a community of non-designers, <mark>constraint is a form of generosity.</mark></p>
-      <p>What comes next is rollout: the templates go live, and the website, the registration flow, and the flyer templates each extend from the social foundation, with the team carrying the system forward on their own.</p>
+      <p>The hardest and most useful part was the strategy. ACTA handed me something vague, and turning it into a precise foundation forced me to <mark>understand the community before designing for it.</mark> Every visual and editorial decision after that had something firm to point back to, including the touchpoint map that told me what each piece of content was for.</p>
+      <p>The system is built on constraints, and that is the point. A fixed kit, one colour per category, set patterns, a post type for each stage of an event: limits that make the right choice the easy choice, so the brand stays recognisable as it grows and as different hands make things. For a community of non-designers, <mark>constraint is a form of generosity.</mark></p>
+      <p>The content chapter changed how I think about identity work. A logo and a palette are not a brand until someone can publish with them on a Tuesday night without asking a designer. The templates, the editorial rhythm and the tutorials are where the identity actually lives.</p>
     </section>
 
   </main>
@@ -511,8 +633,8 @@
     <div class="case-credits-inner">
       <p class="case-credits-title">Credits</p>
       <div class="case-credits-body">
-        <strong>Client:</strong> ACTA Berlin — Association for Community, Training, and Action<br>
-        <strong>Role:</strong> Brand strategy, verbal and visual identity, design — Alessandra Sgariglia
+        <strong>Client:</strong> ACTA Berlin, Association for Community, Training, and Action<br>
+        <strong>Role:</strong> Brand strategy, verbal and visual identity, content strategy and production, templates and team training: Alessandra Sgariglia
       </div>
     </div>
   </div>
