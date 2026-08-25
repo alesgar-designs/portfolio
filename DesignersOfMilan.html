@@ -48,14 +48,15 @@
         <div class="case-tags">
           <span class="case-tag">Community</span>
           <span class="case-tag">Brand Identity</span>
-          <span class="case-tag">Content Design</span>
+          <span class="case-tag">Content Strategy</span>
+          <span class="case-tag">Content Production</span>
         </div>
         <p class="case-year">2026</p>
-        <p class="case-summary">A community for designers who want real conversations and real friendships. Co-founded with Duru Erdem.</p>
+        <p class="case-summary">A community for designers who want real conversations and real friendships. Co-founded with Duru Erdem: I run the brand and the content, we run the events together.</p>
       </div>
 
       <div class="case-hero-image">
-        <img src="imgs/experiments/DesignersOfMilan/cover.webp" alt="Designers of Milan" />
+        <img src="imgs/DesignersOfMilan/cover.webp" alt="Designers of Milan" />
       </div>
 
       <p class="case-question">What if meeting creatives in Milan actually felt like meeting friends?</p>
@@ -66,91 +67,151 @@
   <!-- ====== BODY ====== -->
   <main class="case-body">
 
+    <style>
+      .dom-stats { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin: 24px 0 8px; }
+      .dom-stats .case-stat { margin: 0; }
+      .dom-events { list-style: none; padding: 0; margin: 18px 0 0; border-top: 1px solid #E7E5D2; }
+      .dom-events li { display: grid; grid-template-columns: 5.5em 1fr auto; gap: 14px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid #E7E5D2; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.35; }
+      .dom-events .d { font-weight: 600; white-space: nowrap; }
+      .dom-events .f { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .55; white-space: nowrap; }
+      @media (max-width: 480px) { .dom-events li { grid-template-columns: 5em 1fr; } .dom-events .f { grid-column: 2; } }
+      .dom-sub { font-family: var(--font-logo); font-size: 24px; margin: 36px 0 12px 0; }
+      main.case-body p.dom-job { font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .55; margin: 56px 0 12px !important; }
+      @media (max-width: 760px) { main.case-body p.dom-job { margin: 48px 0 12px !important; } main.case-body .dom-g + p.dom-job { margin-top: 48px !important; } }
+      .dom-g { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); margin-top: 8px; align-items: start; }
+      .dom-g figure { margin: 0; }
+      .dom-g img { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 12px; }
+      .dom-g figcaption { font-size: 13px; line-height: 1.35; margin-top: 8px; opacity: .75; }
+      .dom-g figcaption b { display: block; font-weight: 600; opacity: 1; color: var(--text); }
+      @media (max-width: 480px) { .dom-g { grid-template-columns: 1fr 1fr; } }
+      .dom-pair { display: flex; gap: 14px; margin-top: 14px; align-items: flex-start; }
+      .dom-pair figure { margin: 0; flex: 0 1 auto; min-width: 0; }
+      .dom-pair img { display: block; height: clamp(320px, 52vw, 620px); width: auto; max-width: 100%; border-radius: 12px; }
+      .dom-pair figcaption { font-size: 13px; line-height: 1.35; margin-top: 8px; opacity: .75; }
+      .dom-pair figcaption b { display: block; font-weight: 600; opacity: 1; color: var(--text); }
+      @media (max-width: 640px) { .dom-pair { flex-direction: column; } .dom-pair img { height: auto; width: 100%; } }
+      .dom-g-5 { grid-template-columns: repeat(5, 1fr); }
+      @media (max-width: 760px) {
+        .dom-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 6px; scrollbar-width: none; }
+        .dom-scroll::-webkit-scrollbar { display: none; }
+        .dom-scroll figure { flex: 0 0 72%; scroll-snap-align: start; }
+      }
+    </style>
+
     <!-- What was missing -->
     <section>
       <h2 class="case-section-title">What was missing</h2>
-      <p>Design events in Milan tend to feel <mark>formal, institutional, and a little stiff</mark>. People show up to network — to swap business cards, to perform competence, to be seen in the right rooms. There's nothing wrong with any of that, but it doesn't tend to produce friendships. And what's missing from a creative life if not friendships with other creatives?</p>
-      <p>The other gap: most communities here run in Italian, which quietly excludes the international designers Milan keeps attracting. Duru and I had both felt it from opposite sides — me as someone Italian who wanted easier ways to meet international creatives, her as someone who'd moved here and found those rooms harder to enter.</p>
+      <p>Design events in Milan tend to feel <mark>formal, institutional, and a little stiff.</mark> People show up to network, to swap business cards, to perform competence, to be seen in the right rooms. There is nothing wrong with any of that, but it doesn't tend to produce friendships. And what is missing from a creative life if not friendships with other creatives?</p>
+      <p>The other gap: most communities here run in Italian, which quietly excludes the international designers Milan keeps attracting. Duru and I had both felt it from opposite sides, me as someone Italian who wanted easier ways to meet international creatives, her as someone who had moved here and found those rooms harder to enter.</p>
     </section>
 
-    <!-- What we tried -->
+    <!-- From eight people to a community -->
     <section>
-      <h2 class="case-section-title">What we tried</h2>
-      <p>We started <mark>Designers of Milan</mark> on MeetUp, expecting it to grow slowly. Instead it picked up followers almost immediately — there was a real, unmet appetite for what we were trying to build. We expanded onto Telegram and then Instagram, where the visual identity could do more work.</p>
-      <p>The first event was a casual aperitivo. We were nervous nobody would show up.</p>
+      <h2 class="case-section-title">From eight people to a community</h2>
+      <p>We started <mark>Designers of Milan</mark> on Meetup, expecting it to grow slowly. Instead it picked up members almost immediately, all of them organically: there was a real, unmet appetite for what we were trying to build. We added Instagram, where the visual identity and the content could do more work.</p>
+      <p>The first event was a casual aperitivo. We were nervous nobody would show up. Eight strangers did, because we said "come and have a drink with other designers." That was the proof we needed: the appetite was real, <mark>the format worked,</mark> and the bar didn't have to be higher than "show up, be a person, talk to people."</p>
 
-      <div class="case-stat">
-        <p class="case-stat-number">8</p>
-        <p class="case-stat-label">people showed up to the first event</p>
+      <p style="margin-top:24px;">From April to July we ran six events. We deliberately started without formats: the intention was to <mark>learn by doing things rather than by overthinking them,</mark> and to let the formats come from what worked in the room. Two series came out of that. Hands On, once we saw that making something together is an easier way to meet than talking. And Analog day, an afternoon with no screens, built around one analog thing at a time, books first.</p>
+      <ul class="dom-events">
+        <li><span class="d">9 Apr</span><span>Designers, let's get to know each other!</span></li>
+        <li><span class="d">23 Apr</span><span>Fuorisalone: Anima Mundi exhibition and coffee together</span></li>
+        <li><span class="d">12 May</span><span>The practice of noticing and sketching at the park</span></li>
+        <li><span class="d">3 Jun</span><span>Hands On #1: Collaborative drawing</span><span class="f">Series</span></li>
+        <li><span class="d">6 Jul</span><span>Analog day #1: Books</span><span class="f">Series</span></li>
+        <li><span class="d">23 Jul</span><span>Hands On #2: Ballpoint drawing</span><span class="f">Series</span></li>
+      </ul>
+
+      <div class="dom-stats">
+        <div class="case-stat"><p class="case-stat-number">72</p><p class="case-stat-label">members on Meetup, all joined organically</p></div>
+        <div class="case-stat"><p class="case-stat-number">6</p><p class="case-stat-label">events from April to July</p></div>
+        <div class="case-stat"><p class="case-stat-number">5.0</p><p class="case-stat-label">Meetup rating across 10 reviews</p></div>
       </div>
 
-      <p>It sounds small. It wasn't. Eight strangers who'd never met decided to spend a weeknight evening together because we said "come and have a drink with other designers." That was the proof we needed — that the appetite was real, that <mark>the format worked</mark>, that the bar didn't have to be higher than "show up, be a person, talk to people."</p>
-      <p>Events are still ongoing.</p>
+      <p style="margin-top:24px;">Behind each event there is a small production line: choosing a format and a venue, writing the Meetup page, announcing it, counting down on stories, hosting the evening, then turning what happened into content. <mark>Organising the events and producing the content are the same job seen from two sides,</mark> and doing both is what I am practising here.</p>
     </section>
 
     <!-- The visual system -->
     <section>
       <h2 class="case-section-title">The visual system</h2>
-      <p>The visual identity had to do something specific: signal <mark>"this is for designers, but it's not trying too hard"</mark>. We didn't want it to look like a corporate networking event. We didn't want it to look like a casual amateur thing either. We wanted it to land in between — playful, considered, warm, a little imperfect on purpose.</p>
+      <p>The visual identity had to do something specific: signal <mark>"this is for designers, but it's not trying too hard."</mark> Not a corporate networking event, not a casual amateur thing either. Something in between: playful, considered, warm, a little imperfect on purpose. It is what makes every post recognisable as ours before you read the handle.</p>
 
-      <p style="margin-top:24px;"><strong>Logo.</strong> The logo is a small visual echo of <a href="Tap&Know.html" style="color: var(--gold); text-decoration: underline;">Tap &amp; Know</a> — another physical-digital project Duru and I designed together. We liked the idea of two of our shared projects carrying a quiet visual DNA between them.</p>
+      <p style="margin-top:24px;"><strong>Logo.</strong> The logo is a small visual echo of <a href="Tap&Know.html" style="color: var(--gold); text-decoration: underline;">Tap &amp; Know</a>, another physical-digital project Duru and I designed together. We liked the idea of two of our shared projects carrying a quiet visual DNA between them.</p>
 
-      <p style="margin-top:24px;"><strong>Palette.</strong> Three colours — black, red, white — that work as well on a printed flyer as on an Instagram post. Restrained on purpose. The shapes do the talking.</p>
+      <p style="margin-top:24px;"><strong>Palette.</strong> Three colours, black, red and white, that work as well on a printed flyer as on an Instagram post. Restrained on purpose. The shapes do the talking.</p>
       <div class="case-dom-palette">
         <div class="case-dom-swatch case-dom-swatch--black">#000000</div>
         <div class="case-dom-swatch case-dom-swatch--red">#E92D28</div>
         <div class="case-dom-swatch case-dom-swatch--white">#FFFFFF</div>
       </div>
 
-      <p style="margin-top:24px;"><strong>Typography.</strong> <em>Hiragino Maru Gothic Pro</em> for the logo and headings — friendly, rounded, with a quiet Japanese influence. <em>PP Neue Montreal</em> for body text — clean and modern, lets the visuals carry the personality.</p>
+      <p style="margin-top:24px;"><strong>Typography.</strong> <em>Hiragino Maru Gothic Pro</em> for the logo and headings, friendly and rounded, with a quiet Japanese influence. <em>PP Neue Montreal</em> for body text, clean and modern, so the visuals carry the personality.</p>
 
-      <p style="margin-top:24px;"><strong>Shapes.</strong> Geometric shapes paired with <mark>rough sketches</mark> — imperfect, playful, but still curated. The roughness is the point: it signals that real humans made this, that you don't have to come polished, that the bar is friendliness not perfection.</p>
+      <p style="margin-top:24px;"><strong>Shapes.</strong> Geometric shapes paired with <mark>rough sketches:</mark> imperfect, playful, but still curated. The roughness is the point. It signals that real humans made this, that you don't have to come polished, that the bar is friendliness, not perfection.</p>
+      <p style="margin-top:24px;"><strong>Off screen.</strong> The identity also has to work in the street. Duru 3D-printed two extendable red wands that we hold up while waiting for people at the start of each event: <mark>the brand colour, at head height, in a crowd.</mark> A newcomer who has only ever seen us on Instagram knows who to walk towards. On screen, the same parts add up to a recognisable feed, and every reel ends on the same animated sign-off, so even a video you catch halfway through is signed.</p>
+      <div class="dom-pair">
+        <figure><img src="imgs/DesignersOfMilan/wands.webp" alt="The red 3D-printed wands used to be recognisable at the start of events" /><figcaption><b>Off screen</b>The wands</figcaption></figure>
+        <figure><img src="imgs/DesignersOfMilan/profileGrid.webp" alt="The Designers of Milan Instagram feed" /><figcaption><b>On screen</b>The feed</figcaption></figure>
+        <figure><img src="imgs/DesignersOfMilan/sigla.gif" alt="The animated sign-off that closes every reel" /><figcaption><b>In motion</b>The sign-off that closes every reel</figcaption></figure>
+      </div>
+    </section>
 
-      <h3 style="font-family: var(--font-logo); font-size: 24px; margin: 36px 0 12px 0;">Content strategy</h3>
-      <p>Three recurring formats run on the Instagram account — each does a different job for the community.</p>
+    <!-- The content system -->
+    <section>
+      <h2 class="case-section-title">The content system</h2>
+      <p>The Instagram account started with three formats. It now runs on seven, and each one has a job. Some get people to the room, some keep the memory of what happened, and some give the community something to come back for between events. <mark>Every format has a template,</mark> so a post takes minutes, not an evening, and the feed stays consistent.</p>
 
       <div class="case-formats">
         <div class="case-format">
-          <p class="case-format-title">Three recurring formats</p>
-          <ul>
-            <li><strong>Event recaps</strong> — afterglow from the last meet-up.</li>
-            <li><strong>Upcoming events</strong> — when and where to show up next.</li>
-            <li><strong>Book recommendations</strong> — design books worth reading, one at a time.</li>
-          </ul>
-        </div>
-        <div class="case-format">
           <p class="case-format-title">Tone of voice</p>
           <div style="font-family: var(--font-sans); font-size: 14px; line-height: 1.65; color: var(--text);">
-            English (to be inclusive of internationals). <mark>Warm and curated</mark> but not over-polished — the kind of caption a friend with taste would write, without making it feel like work.
+            English, to be inclusive of internationals. <mark>Warm and curated</mark> but not over-polished: the kind of caption a friend with taste would write, without making it feel like work.
+          </div>
+        </div>
+        <div class="case-format">
+          <p class="case-format-title">One rule</p>
+          <div style="font-family: var(--font-sans); font-size: 14px; line-height: 1.65; color: var(--text);">
+            Every event points to one place. The announcement says "link in bio", the story links straight to Meetup. <mark>People never have to search for how to come.</mark>
           </div>
         </div>
       </div>
 
-      <p style="margin-top:32px;">One sample post from each of the three formats:</p>
-      <div class="case-ig-grid">
-        <a href="https://www.instagram.com/p/DYlzhfkDbKi/?igsh=MXRudWgzOGV3YnhxNA==" target="_blank" rel="noreferrer">
-          <img src="imgs/experiments/DesignersOfMilan/bookRec.webp" alt="Sample post — book recommendation" />
-        </a>
-        <a href="https://www.instagram.com/p/DYfCwCINxYT/?igsh=ZzQ2ejBjdXZ1YjBx" target="_blank" rel="noreferrer">
-          <img src="imgs/experiments/DesignersOfMilan/upcomingEvent.webp" alt="Sample post — upcoming event" />
-        </a>
-        <a href="https://www.instagram.com/reel/DYTx8vGufzo/?igsh=aHc0cHZtbmx1NjM3" target="_blank" rel="noreferrer">
-          <img src="imgs/experiments/DesignersOfMilan/eventRecap.webp" alt="Sample post — event recap" />
-        </a>
+      <p class="dom-job">Getting people to the room</p>
+      <div class="dom-g">
+        <figure><img src="imgs/DesignersOfMilan/nextEvent.webp" alt="Event announcement post" /><figcaption><b>Event announcement</b>Details, image, and a "link in bio" pointing to Meetup.</figcaption></figure>
+        <figure><img src="imgs/DesignersOfMilan/countDownStory.webp" alt="Countdown story" /><figcaption><b>Countdown story</b>With the Meetup link, in the days before.</figcaption></figure>
+      </div>
+
+      <p class="dom-job">Keeping the memory</p>
+      <div class="dom-g">
+        <figure><img src="imgs/DesignersOfMilan/recapReel.gif" alt="Event recap reel" /><figcaption><b>Recap reel</b>The afterglow of each event, cut from what we filmed on the night.</figcaption></figure>
+        <figure><img src="imgs/DesignersOfMilan/handsOn.gif" alt="Hands On post" /><figcaption><b>Hands On</b>The drawing and making events, and what came out of them.</figcaption></figure>
+      </div>
+
+      <p class="dom-job">Between events</p>
+      <p style="margin-top:0;">Design books are carousels: one book at a time, why we love it, what it taught us. Below, <em>Playful</em> by Cas Holman.</p>
+      <div class="dom-g dom-g-5 dom-scroll">
+        <figure><img src="imgs/DesignersOfMilan/designBooks/1.gif" alt="Design books carousel, Playful by Cas Holman, slide 1" /><figcaption><b>Design books</b>Books we love and want to share with the design community.</figcaption></figure>
+        <figure><img src="imgs/DesignersOfMilan/designBooks/2.webp" alt="Playful carousel, slide 2" /></figure>
+        <figure><img src="imgs/DesignersOfMilan/designBooks/3.webp" alt="Playful carousel, slide 3" /></figure>
+        <figure><img src="imgs/DesignersOfMilan/designBooks/4.webp" alt="Playful carousel, slide 4" /></figure>
+        <figure><img src="imgs/DesignersOfMilan/designBooks/5.webp" alt="Playful carousel, slide 5" /></figure>
+      </div>
+      <div class="dom-g" style="margin-top:14px;">
+        <figure><img src="imgs/DesignersOfMilan/interviews.webp" alt="Interview reel" /><figcaption><b>Interviews</b>Designers on why they chose the field. Audio reels, podcast style: voice and text, no video, so people talk freely.</figcaption></figure>
       </div>
     </section>
 
     <!-- Where it is now -->
     <section>
       <h2 class="case-section-title">Where it is now</h2>
-      <p>Designers of Milan is <mark>ongoing</mark>. Events keep happening, the community keeps growing, the Instagram account keeps posting. What started as a hunch — that the city's design community wanted something less formal and more human — turned into something real.</p>
+      <p>Designers of Milan is <mark>ongoing.</mark> Events keep happening, the community keeps growing, the account keeps posting. What started as a hunch, that the city's design community wanted something less formal and more human, turned into something real.</p>
 
       <div class="case-stat">
         <p class="case-stat-number">5.0</p>
-        <p class="case-stat-label">Average MeetUp rating across 8 reviews</p>
+        <p class="case-stat-label">Average Meetup rating across 10 reviews</p>
       </div>
 
-      <p>The recurring words across the reviews tell the whole story — exactly the feeling we set out to design for:</p>
+      <p>The recurring words across the reviews tell the whole story, exactly the feeling we set out to design for:</p>
 
       <div class="case-pills">
         <span class="case-pill">Inclusive attendees</span>
@@ -163,7 +224,7 @@
         <span class="case-pill">Punctual start</span>
       </div>
 
-      <p style="margin-top:32px;">The biggest thing I've learned from building it is that <mark>communities are designed too</mark>. The format of the events, the tone of the posts, the choice to write in English, the colours, the typography — every one of those is a design decision, and every one of them shapes whether someone feels welcome enough to show up.</p>
+      <p style="margin-top:32px;">The biggest thing I have learned from building it is that <mark>communities are designed too.</mark> The format of the events, the tone of the posts, the choice to write in English, the colours, the typography: every one of those is a design decision, and every one of them shapes whether someone feels welcome enough to show up.</p>
 
       <div class="case-links">
         <a href="https://www.instagram.com/designers_of_milan?igsh=MW1pMmFwZnVva3d1dQ%3D%3D&utm_source=qr" target="_blank" rel="noreferrer" class="case-link">
@@ -171,7 +232,7 @@
           <span aria-hidden="true">→</span>
         </a>
         <a href="https://meetup.com/designers-of-milan?member_id=401033641" target="_blank" rel="noreferrer" class="case-link">
-          <span>MeetUp</span>
+          <span>Meetup</span>
           <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -184,7 +245,9 @@
     <div class="case-credits-inner">
       <p class="case-credits-title">Credits</p>
       <div class="case-credits-body">
-        <strong>Co-founders &amp; designers:</strong> Alessandra Sgariglia &amp; Duru Erdem<br>
+        <strong>Co-founders:</strong> Alessandra Sgariglia &amp; Duru Erdem<br>
+        <strong>Brand identity, content strategy and production:</strong> Alessandra Sgariglia<br>
+        <strong>Event organisation and hosting:</strong> Alessandra Sgariglia &amp; Duru Erdem<br>
         <strong>Type:</strong> Ongoing community · Personal project
       </div>
     </div>
