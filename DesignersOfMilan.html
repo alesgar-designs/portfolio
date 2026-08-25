@@ -80,7 +80,7 @@
       @media (max-width: 760px) { main.case-body p.dom-job { margin: 48px 0 12px !important; } main.case-body .dom-g + p.dom-job { margin-top: 48px !important; } }
       .dom-g { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); margin-top: 8px; align-items: start; }
       .dom-g figure { margin: 0; }
-      .dom-g img { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 12px; }
+      .dom-g img, .dom-g video { display: block; width: 100%; height: auto; border: 1px solid #E7E5D2; border-radius: 12px; }
       .dom-g figcaption { font-size: 13px; line-height: 1.35; margin-top: 8px; opacity: .75; }
       .dom-g figcaption b { display: block; font-weight: 600; opacity: 1; color: var(--text); }
       @media (max-width: 480px) { .dom-g { grid-template-columns: 1fr 1fr; } }
@@ -183,7 +183,7 @@
 
       <p class="dom-job">Keeping the memory</p>
       <div class="dom-g">
-        <figure><img src="imgs/DesignersOfMilan/recapReel.gif" alt="Event recap reel" /><figcaption><b>Recap reel</b>The afterglow of each event, cut from what we filmed on the night.</figcaption></figure>
+        <figure><video src="imgs/DesignersOfMilan/recapReel.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Event recap reel"></video><figcaption><b>Recap reel</b>The afterglow of each event, cut from what we filmed on the night.</figcaption></figure>
         <figure><img src="imgs/DesignersOfMilan/handsOn.gif" alt="Hands On post" /><figcaption><b>Hands On</b>The drawing and making events, and what came out of them.</figcaption></figure>
       </div>
 
