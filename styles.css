@@ -214,11 +214,6 @@ header {
 }
 
 /* Desktop-only line break (for hero headline) */
-.br-desktop { display: inline; }
-@media (max-width: 899px) {
-  .br-desktop { display: none; }
-}
-
 /* Headline, Atkinson Hyperlegible regular */
 .hero-headline {
   font-family: var(--font-sans);
