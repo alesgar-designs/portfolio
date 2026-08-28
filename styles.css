@@ -8,13 +8,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Cactus Jack Alternate";
-  src: url("fonts/Cactus-Jack-Alternate.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "Atkinson Hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -65,7 +58,6 @@
 
   /* Typography */
   --font-logo: "Thestral Neue", Georgia, serif;
-  --font-display: "Cactus Jack Alternate", var(--font-logo);
   --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
@@ -227,9 +219,9 @@ header {
   .br-desktop { display: none; }
 }
 
-/* Headline — the "who loves..." line in Cactus Jack Alternate */
+/* Headline, Atkinson Hyperlegible regular */
 .hero-headline {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 400;
   line-height: 1.4;
@@ -3169,7 +3161,6 @@ section { padding: 40px 0; }
   margin: 0;
 }
 .case-type-sample--gaya { font-family: var(--font-logo); }
-.case-type-sample--cactus { font-family: var(--font-display); font-weight: 400; }
 .case-type-sample--atkinson { font-family: var(--font-sans); font-weight: 400; font-size: clamp(28px, 4vw, 40px); }
 .case-body .case-type-name {
   font-family: var(--font-sans);
