@@ -8,13 +8,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Elvenes";
-  src: url("fonts/Elvenes-RegularDisplay.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "Atkinson Hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -65,7 +58,6 @@
 
   /* Typography */
   --font-logo: "Thestral Neue", Georgia, serif;
-  --font-display: "Elvenes", var(--font-sans);
   --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
@@ -232,9 +224,9 @@ header {
   margin: 0 0 20px;
 }
 
-/* Headline, Elvenes Regular Display */
+/* Headline, Thestral Neue */
 .hero-headline {
-  font-family: var(--font-display);
+  font-family: var(--font-logo);
   font-size: clamp(30px, 4vw, 54px);
   font-weight: 400;
   line-height: 1.2;
@@ -253,22 +245,27 @@ header {
   margin: 0 0 32px;
 }
 
-/* Links */
+/* Links: gold pills, same family as the skill filters, slightly bigger */
 .hero-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 32px;
+  gap: 12px;
 }
 .hero-link {
   font-family: var(--font-sans);
   font-size: 15px;
-  color: var(--text);
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid var(--text);
-  padding-bottom: 2px;
-  transition: color .15s, border-color .15s;
+  transition: all 0.18s ease;
 }
-.hero-link:hover { color: var(--accent); border-color: var(--accent); }
+.hero-link:hover { background: #fff; color: var(--gold); }
+.hero-link--secondary { background: #fff; color: var(--gold); }
+.hero-link--secondary:hover { background: var(--gold); color: #fff; }
 
 /* Responsive: tighter min-height + padding on mobile */
 @media (max-width: 899px) {
