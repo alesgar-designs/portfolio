@@ -8,6 +8,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Dewy";
+  src: url("fonts/DEWY-SVG_Martin%20Kipper.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Atkinson Hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -58,6 +65,7 @@
 
   /* Typography */
   --font-logo: "Thestral Neue", Georgia, serif;
+  --font-display: "Dewy", var(--font-sans);
   --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
@@ -214,9 +222,9 @@ header {
 }
 
 /* Desktop-only line break (for hero headline) */
-/* Headline, Atkinson Hyperlegible regular */
+/* Headline, Dewy */
 .hero-headline {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 400;
   line-height: 1.4;
